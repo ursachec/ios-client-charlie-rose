@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5F467EE9C9E4D979541AEE8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0DA9567B9E44FC919D177E /* libPods.a */; };
+		E507BCA91699F65E00597F8E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCA71699F65E00597F8E /* Icon@2x.png */; };
+		E507BCAA1699F65E00597F8E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCA81699F65E00597F8E /* Icon.png */; };
+		E507BCB8169A006100597F8E /* navigation_bar_no_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCB4169A006000597F8E /* navigation_bar_no_logo.png */; };
+		E507BCB9169A006100597F8E /* navigation_bar_no_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCB5169A006000597F8E /* navigation_bar_no_logo@2x.png */; };
+		E5140D14166436160087EB81 /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5140D12166436160087EB81 /* ShowDetailViewController.m */; };
+		E5140D15166436160087EB81 /* ShowDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5140D13166436160087EB81 /* ShowDetailViewController.xib */; };
+		E5140D17166436950087EB81 /* jeff_bezos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5140D16166436950087EB81 /* jeff_bezos.jpg */; };
+		E5204F781662B55E00B65A44 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5204F771662B55E00B65A44 /* UIKit.framework */; };
+		E5204F7A1662B55E00B65A44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5204F791662B55E00B65A44 /* Foundation.framework */; };
+		E5204F7C1662B55E00B65A44 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5204F7B1662B55E00B65A44 /* CoreGraphics.framework */; };
+		E5204F7E1662B55E00B65A44 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5204F7D1662B55E00B65A44 /* CoreData.framework */; };
+		E5204F811662B55E00B65A44 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E5204F801662B55E00B65A44 /* Podfile */; };
+		E5204F871662B55E00B65A44 /* CharlieRoseAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204F861662B55E00B65A44 /* CharlieRoseAPIClient.m */; };
+		E5204F8B1662B55E00B65A44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5204F891662B55E00B65A44 /* InfoPlist.strings */; };
+		E5204F8D1662B55E00B65A44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204F8C1662B55E00B65A44 /* main.m */; };
+		E5204F901662B55E00B65A44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204F8F1662B55E00B65A44 /* AppDelegate.m */; };
+		E5204F921662B55E00B65A44 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F911662B55E00B65A44 /* Default.png */; };
+		E5204F941662B55E00B65A44 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F931662B55E00B65A44 /* Default@2x.png */; };
+		E5204F961662B55E00B65A44 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F951662B55E00B65A44 /* Default-568h@2x.png */; };
+		E5204F9A1662B55E00B65A44 /* CharlieRose.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */; };
+		E5204F9D1662B55E00B65A44 /* CharlieRoseIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */; };
+		E5204FB91662B8F000B65A44 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FB61662B8F000B65A44 /* IIViewDeckController.m */; };
+		E5204FBA1662B8F000B65A44 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FB81662B8F000B65A44 /* WrapController.m */; };
+		E5204FBD1662B9BF00B65A44 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5204FBB1662B9AB00B65A44 /* QuartzCore.framework */; };
+		E5204FC21662BB0500B65A44 /* MainFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FC01662BB0500B65A44 /* MainFeedViewController.m */; };
+		E5204FC31662BB0500B65A44 /* MainFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5204FC11662BB0500B65A44 /* MainFeedViewController.xib */; };
+		E5204FCB1662BE9E00B65A44 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FC91662BE9E00B65A44 /* MenuViewController.m */; };
+		E5204FCC1662BE9E00B65A44 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5204FCA1662BE9E00B65A44 /* MenuViewController.xib */; };
+		E5204FCF1662C8AC00B65A44 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FCE1662C8AC00B65A44 /* ShowCell.m */; };
+		E5204FD21662C8CD00B65A44 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD11662C8CD00B65A44 /* MenuCell.m */; };
+		E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD41662C8DE00B65A44 /* TopicCell.m */; };
+		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
+		E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE316655AE500FAD6A5 /* InteractionsController.m */; };
+		E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */; };
+		E55CBEF01665808300FAD6A5 /* UIView+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */; };
+		E55CBEF3166583E700FAD6A5 /* CharlieRoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEF2166583E600FAD6A5 /* CharlieRoseViewController.m */; };
+		E55CBEF816658B7C00FAD6A5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEF616658B7C00FAD6A5 /* ContactViewController.m */; };
+		E55CBEF916658B7C00FAD6A5 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBEF716658B7C00FAD6A5 /* ContactViewController.xib */; };
+		E55CBEFD16658BCA00FAD6A5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEFB16658BCA00FAD6A5 /* SettingsViewController.m */; };
+		E55CBEFE16658BCA00FAD6A5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBEFC16658BCA00FAD6A5 /* SettingsViewController.xib */; };
+		E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBF0016658BF600FAD6A5 /* AboutViewController.m */; };
+		E55CBF0316658BF600FAD6A5 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */; };
+		E565FA4C168B7A58004AC12A /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E565FA4B168B7A58004AC12A /* Show.m */; };
+		E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */; };
+		E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = E595ED5B169F44CC0036B2A2 /* Default-568h.png */; };
+		E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */; };
+		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
+		E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */; };
+		E5C6A78916AAEC990091BD07 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C6A78816AAEC990091BD07 /* play_button.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		BE0DA9567B9E44FC919D177E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E507BCA71699F65E00597F8E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Images/Compiled/AppIcon/Icon@2x.png"; sourceTree = "<group>"; };
+		E507BCA81699F65E00597F8E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Images/Compiled/AppIcon/Icon.png; sourceTree = "<group>"; };
+		E507BCB4169A006000597F8E /* navigation_bar_no_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bar_no_logo.png; path = "Resources/Images/Compiled/Navigation Bar/navigation_bar_no_logo.png"; sourceTree = "<group>"; };
+		E507BCB5169A006000597F8E /* navigation_bar_no_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigation_bar_no_logo@2x.png"; path = "Resources/Images/Compiled/Navigation Bar/navigation_bar_no_logo@2x.png"; sourceTree = "<group>"; };
+		E5140D11166436160087EB81 /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowDetailViewController.h; path = "Classes/View Controllers/ShowDetailViewController.h"; sourceTree = "<group>"; };
+		E5140D12166436160087EB81 /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowDetailViewController.m; path = "Classes/View Controllers/ShowDetailViewController.m"; sourceTree = "<group>"; };
+		E5140D13166436160087EB81 /* ShowDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDetailViewController.xib; path = "Classes/View Controllers/ShowDetailViewController.xib"; sourceTree = "<group>"; };
+		E5140D16166436950087EB81 /* jeff_bezos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jeff_bezos.jpg; sourceTree = "<group>"; };
+		E5204F731662B55E00B65A44 /* CharlieRose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CharlieRose.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5204F771662B55E00B65A44 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E5204F791662B55E00B65A44 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E5204F7B1662B55E00B65A44 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E5204F7D1662B55E00B65A44 /* CoreData.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E5204F801662B55E00B65A44 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		E5204F831662B55E00B65A44 /* CharlieRose-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CharlieRose-Prefix.pch"; sourceTree = "<group>"; };
+		E5204F851662B55E00B65A44 /* CharlieRoseAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CharlieRoseAPIClient.h; path = Classes/CharlieRoseAPIClient.h; sourceTree = "<group>"; };
+		E5204F861662B55E00B65A44 /* CharlieRoseAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CharlieRoseAPIClient.m; path = Classes/CharlieRoseAPIClient.m; sourceTree = "<group>"; };
+		E5204F881662B55E00B65A44 /* CharlieRose-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CharlieRose-Info.plist"; sourceTree = "<group>"; };
+		E5204F8A1662B55E00B65A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E5204F8C1662B55E00B65A44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E5204F8E1662B55E00B65A44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E5204F8F1662B55E00B65A44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E5204F911662B55E00B65A44 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E5204F931662B55E00B65A44 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E5204F951662B55E00B65A44 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E5204F991662B55E00B65A44 /* CharlieRose.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharlieRose.xcdatamodel; sourceTree = "<group>"; };
+		E5204F9B1662B55E00B65A44 /* CharlieRoseIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CharlieRoseIncrementalStore.h; path = Classes/CharlieRoseIncrementalStore.h; sourceTree = "<group>"; };
+		E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CharlieRoseIncrementalStore.m; path = Classes/CharlieRoseIncrementalStore.m; sourceTree = "<group>"; };
+		E5204FB51662B8F000B65A44 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = Vendor/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
+		E5204FB61662B8F000B65A44 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = Vendor/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
+		E5204FB71662B8F000B65A44 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = Vendor/ViewDeck/WrapController.h; sourceTree = "<group>"; };
+		E5204FB81662B8F000B65A44 /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WrapController.m; path = Vendor/ViewDeck/WrapController.m; sourceTree = "<group>"; };
+		E5204FBB1662B9AB00B65A44 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E5204FBF1662BB0500B65A44 /* MainFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainFeedViewController.h; path = "Classes/View Controllers/MainFeedViewController.h"; sourceTree = "<group>"; };
+		E5204FC01662BB0500B65A44 /* MainFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainFeedViewController.m; path = "Classes/View Controllers/MainFeedViewController.m"; sourceTree = "<group>"; };
+		E5204FC11662BB0500B65A44 /* MainFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainFeedViewController.xib; path = "Classes/View Controllers/MainFeedViewController.xib"; sourceTree = "<group>"; };
+		E5204FC81662BE9E00B65A44 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = "Classes/View Controllers/MenuViewController.h"; sourceTree = "<group>"; };
+		E5204FC91662BE9E00B65A44 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = "Classes/View Controllers/MenuViewController.m"; sourceTree = "<group>"; };
+		E5204FCA1662BE9E00B65A44 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = "Classes/View Controllers/MenuViewController.xib"; sourceTree = "<group>"; };
+		E5204FCD1662C8AC00B65A44 /* ShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCell.h; path = Classes/Views/Cells/ShowCell.h; sourceTree = "<group>"; };
+		E5204FCE1662C8AC00B65A44 /* ShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCell.m; path = Classes/Views/Cells/ShowCell.m; sourceTree = "<group>"; };
+		E5204FD01662C8CD00B65A44 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuCell.h; path = Classes/Views/Cells/MenuCell.h; sourceTree = "<group>"; };
+		E5204FD11662C8CD00B65A44 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuCell.m; path = Classes/Views/Cells/MenuCell.m; sourceTree = "<group>"; };
+		E5204FD31662C8DE00B65A44 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicCell.h; path = Classes/Views/Cells/TopicCell.h; sourceTree = "<group>"; };
+		E5204FD41662C8DE00B65A44 /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicCell.m; path = Classes/Views/Cells/TopicCell.m; sourceTree = "<group>"; };
+		E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CharlieRoseAdditions.h"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
+		E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CharlieRoseAdditions.m"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
+		E55CBEE216655AE500FAD6A5 /* InteractionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractionsController.h; path = "Classes/View Controllers/InteractionsController.h"; sourceTree = "<group>"; };
+		E55CBEE316655AE500FAD6A5 /* InteractionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InteractionsController.m; path = "Classes/View Controllers/InteractionsController.m"; sourceTree = "<group>"; };
+		E55CBEE516655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+CharlieRoseAdditions.h"; path = "Classes/Categories/UIApplication+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
+		E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+CharlieRoseAdditions.m"; path = "Classes/Categories/UIApplication+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
+		E55CBEEE1665808300FAD6A5 /* UIView+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CharlieRoseAdditions.h"; path = "Classes/Categories/UIView+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
+		E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CharlieRoseAdditions.m"; path = "Classes/Categories/UIView+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
+		E55CBEF1166583E600FAD6A5 /* CharlieRoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CharlieRoseViewController.h; path = "Classes/View Controllers/CharlieRoseViewController.h"; sourceTree = "<group>"; };
+		E55CBEF2166583E600FAD6A5 /* CharlieRoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CharlieRoseViewController.m; path = "Classes/View Controllers/CharlieRoseViewController.m"; sourceTree = "<group>"; };
+		E55CBEF516658B7C00FAD6A5 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = "Classes/View Controllers/ContactViewController.h"; sourceTree = "<group>"; };
+		E55CBEF616658B7C00FAD6A5 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = "Classes/View Controllers/ContactViewController.m"; sourceTree = "<group>"; };
+		E55CBEF716658B7C00FAD6A5 /* ContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactViewController.xib; path = "Classes/View Controllers/ContactViewController.xib"; sourceTree = "<group>"; };
+		E55CBEFA16658BCA00FAD6A5 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = "Classes/View Controllers/SettingsViewController.h"; sourceTree = "<group>"; };
+		E55CBEFB16658BCA00FAD6A5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = "Classes/View Controllers/SettingsViewController.m"; sourceTree = "<group>"; };
+		E55CBEFC16658BCA00FAD6A5 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = "Classes/View Controllers/SettingsViewController.xib"; sourceTree = "<group>"; };
+		E55CBEFF16658BF600FAD6A5 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = "Classes/View Controllers/AboutViewController.h"; sourceTree = "<group>"; };
+		E55CBF0016658BF600FAD6A5 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = "Classes/View Controllers/AboutViewController.m"; sourceTree = "<group>"; };
+		E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutViewController.xib; path = "Classes/View Controllers/AboutViewController.xib"; sourceTree = "<group>"; };
+		E565FA4A168B7A58004AC12A /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
+		E565FA4B168B7A58004AC12A /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
+		E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CharlieRoseAdditions.h"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
+		E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CharlieRoseAdditions.m"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
+		E595ED5B169F44CC0036B2A2 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
+		E5A7B3B4168DFA7A008A85F4 /* TopicFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicFeedViewController.h; path = "Classes/View Controllers/TopicFeedViewController.h"; sourceTree = "<group>"; };
+		E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicFeedViewController.m; path = "Classes/View Controllers/TopicFeedViewController.m"; sourceTree = "<group>"; };
+		E5AE397E166BBAEB00F217D5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Utilities/Constants.h; sourceTree = "<group>"; };
+		E5AE397F166BBAEB00F217D5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Utilities/Constants.m; sourceTree = "<group>"; };
+		E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E5C6A78816AAEC990091BD07 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_button.png; path = "Resources/Images/Compiled/Play button/play_button.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5204F701662B55E00B65A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */,
+				E5204F781662B55E00B65A44 /* UIKit.framework in Frameworks */,
+				E5204FBD1662B9BF00B65A44 /* QuartzCore.framework in Frameworks */,
+				E5204F7A1662B55E00B65A44 /* Foundation.framework in Frameworks */,
+				E5204F7C1662B55E00B65A44 /* CoreGraphics.framework in Frameworks */,
+				E5204F7E1662B55E00B65A44 /* CoreData.framework in Frameworks */,
+				B5F467EE9C9E4D979541AEE8 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E507BC9A1699D6E000597F8E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E5C6A78A16AAECA10091BD07 /* Play button */,
+				E507BCB3169A005600597F8E /* Navigation Bar */,
+				E507BCA61699F64800597F8E /* App Icon */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E507BCA61699F64800597F8E /* App Icon */ = {
+			isa = PBXGroup;
+			children = (
+				E507BCA71699F65E00597F8E /* Icon@2x.png */,
+				E507BCA81699F65E00597F8E /* Icon.png */,
+			);
+			name = "App Icon";
+			sourceTree = "<group>";
+		};
+		E507BCB3169A005600597F8E /* Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				E507BCB4169A006000597F8E /* navigation_bar_no_logo.png */,
+				E507BCB5169A006000597F8E /* navigation_bar_no_logo@2x.png */,
+			);
+			name = "Navigation Bar";
+			sourceTree = "<group>";
+		};
+		E5140D10166435E70087EB81 /* Show Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E5140D11166436160087EB81 /* ShowDetailViewController.h */,
+				E5140D12166436160087EB81 /* ShowDetailViewController.m */,
+				E5140D13166436160087EB81 /* ShowDetailViewController.xib */,
+			);
+			name = "Show Detail";
+			sourceTree = "<group>";
+		};
+		E5204F681662B55E00B65A44 = {
+			isa = PBXGroup;
+			children = (
+				E5204F7F1662B55E00B65A44 /* CharlieRose */,
+				E507BC9A1699D6E000597F8E /* Images */,
+				E5204FAA1662B88300B65A44 /* Vendor */,
+				E5204F761662B55E00B65A44 /* Frameworks */,
+				E5204F741662B55E00B65A44 /* Products */,
+				B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		E5204F741662B55E00B65A44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5204F731662B55E00B65A44 /* CharlieRose.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5204F761662B55E00B65A44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */,
+				E5204FBB1662B9AB00B65A44 /* QuartzCore.framework */,
+				E5204F771662B55E00B65A44 /* UIKit.framework */,
+				E5204F791662B55E00B65A44 /* Foundation.framework */,
+				E5204F7B1662B55E00B65A44 /* CoreGraphics.framework */,
+				E5204F7D1662B55E00B65A44 /* CoreData.framework */,
+				BE0DA9567B9E44FC919D177E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5204F7F1662B55E00B65A44 /* CharlieRose */ = {
+			isa = PBXGroup;
+			children = (
+				E5204F801662B55E00B65A44 /* Podfile */,
+				E5204F8E1662B55E00B65A44 /* AppDelegate.h */,
+				E5204F8F1662B55E00B65A44 /* AppDelegate.m */,
+				E55CBEDD166548B100FAD6A5 /* Categories */,
+				E5204FBE1662BA9300B65A44 /* View Controllers */,
+				E5204FC51662BD7300B65A44 /* Views */,
+				E5204F841662B55E00B65A44 /* Networking */,
+				E5204F971662B55E00B65A44 /* Models */,
+				E5204F821662B55E00B65A44 /* Supporting Files */,
+			);
+			path = CharlieRose;
+			sourceTree = "<group>";
+		};
+		E5204F821662B55E00B65A44 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5204F831662B55E00B65A44 /* CharlieRose-Prefix.pch */,
+				E5204F881662B55E00B65A44 /* CharlieRose-Info.plist */,
+				E5204F891662B55E00B65A44 /* InfoPlist.strings */,
+				E5204F8C1662B55E00B65A44 /* main.m */,
+				E5140D16166436950087EB81 /* jeff_bezos.jpg */,
+				E5204F911662B55E00B65A44 /* Default.png */,
+				E5204F931662B55E00B65A44 /* Default@2x.png */,
+				E595ED5B169F44CC0036B2A2 /* Default-568h.png */,
+				E5204F951662B55E00B65A44 /* Default-568h@2x.png */,
+				E5AE397E166BBAEB00F217D5 /* Constants.h */,
+				E5AE397F166BBAEB00F217D5 /* Constants.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5204F841662B55E00B65A44 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E5204F851662B55E00B65A44 /* CharlieRoseAPIClient.h */,
+				E5204F861662B55E00B65A44 /* CharlieRoseAPIClient.m */,
+				E5204F9B1662B55E00B65A44 /* CharlieRoseIncrementalStore.h */,
+				E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		E5204F971662B55E00B65A44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */,
+				E565FA4A168B7A58004AC12A /* Show.h */,
+				E565FA4B168B7A58004AC12A /* Show.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E5204FAA1662B88300B65A44 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E5204FB41662B8DC00B65A44 /* ViewDeck */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		E5204FB41662B8DC00B65A44 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				E5204FB51662B8F000B65A44 /* IIViewDeckController.h */,
+				E5204FB61662B8F000B65A44 /* IIViewDeckController.m */,
+				E5204FB71662B8F000B65A44 /* WrapController.h */,
+				E5204FB81662B8F000B65A44 /* WrapController.m */,
+			);
+			name = ViewDeck;
+			sourceTree = "<group>";
+		};
+		E5204FBE1662BA9300B65A44 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E55CBEE216655AE500FAD6A5 /* InteractionsController.h */,
+				E55CBEE316655AE500FAD6A5 /* InteractionsController.m */,
+				E55CBEF4166583EE00FAD6A5 /* Abstract */,
+				E5204FC71662BE4B00B65A44 /* Menu */,
+				E5A7B3B8168DFA9D008A85F4 /* Topic Feed */,
+				E5204FC41662BB0B00B65A44 /* Main Feed */,
+				E5140D10166435E70087EB81 /* Show Detail */,
+				E55CBEEA166569C800FAD6A5 /* Contact */,
+				E55CBEE9166569C400FAD6A5 /* About */,
+				E55CBEE8166569BF00FAD6A5 /* Settings */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E5204FC41662BB0B00B65A44 /* Main Feed */ = {
+			isa = PBXGroup;
+			children = (
+				E5204FBF1662BB0500B65A44 /* MainFeedViewController.h */,
+				E5204FC01662BB0500B65A44 /* MainFeedViewController.m */,
+				E5204FC11662BB0500B65A44 /* MainFeedViewController.xib */,
+			);
+			name = "Main Feed";
+			sourceTree = "<group>";
+		};
+		E5204FC51662BD7300B65A44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E5204FC61662BD7E00B65A44 /* Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E5204FC61662BD7E00B65A44 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E5204FCD1662C8AC00B65A44 /* ShowCell.h */,
+				E5204FCE1662C8AC00B65A44 /* ShowCell.m */,
+				E5204FD01662C8CD00B65A44 /* MenuCell.h */,
+				E5204FD11662C8CD00B65A44 /* MenuCell.m */,
+				E5204FD31662C8DE00B65A44 /* TopicCell.h */,
+				E5204FD41662C8DE00B65A44 /* TopicCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		E5204FC71662BE4B00B65A44 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				E5204FC81662BE9E00B65A44 /* MenuViewController.h */,
+				E5204FC91662BE9E00B65A44 /* MenuViewController.m */,
+				E5204FCA1662BE9E00B65A44 /* MenuViewController.xib */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		E55CBEDD166548B100FAD6A5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */,
+				E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */,
+				E55CBEE516655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.h */,
+				E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */,
+				E55CBEEE1665808300FAD6A5 /* UIView+CharlieRoseAdditions.h */,
+				E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */,
+				E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */,
+				E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		E55CBEE8166569BF00FAD6A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E55CBEFA16658BCA00FAD6A5 /* SettingsViewController.h */,
+				E55CBEFB16658BCA00FAD6A5 /* SettingsViewController.m */,
+				E55CBEFC16658BCA00FAD6A5 /* SettingsViewController.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		E55CBEE9166569C400FAD6A5 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E55CBEFF16658BF600FAD6A5 /* AboutViewController.h */,
+				E55CBF0016658BF600FAD6A5 /* AboutViewController.m */,
+				E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		E55CBEEA166569C800FAD6A5 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				E55CBEF516658B7C00FAD6A5 /* ContactViewController.h */,
+				E55CBEF616658B7C00FAD6A5 /* ContactViewController.m */,
+				E55CBEF716658B7C00FAD6A5 /* ContactViewController.xib */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		E55CBEF4166583EE00FAD6A5 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				E55CBEF1166583E600FAD6A5 /* CharlieRoseViewController.h */,
+				E55CBEF2166583E600FAD6A5 /* CharlieRoseViewController.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		E5A7B3B8168DFA9D008A85F4 /* Topic Feed */ = {
+			isa = PBXGroup;
+			children = (
+				E5A7B3B4168DFA7A008A85F4 /* TopicFeedViewController.h */,
+				E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */,
+			);
+			name = "Topic Feed";
+			sourceTree = "<group>";
+		};
+		E5C6A78A16AAECA10091BD07 /* Play button */ = {
+			isa = PBXGroup;
+			children = (
+				E5C6A78816AAEC990091BD07 /* play_button.png */,
+			);
+			name = "Play button";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5204F721662B55E00B65A44 /* CharlieRose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5204FA01662B55E00B65A44 /* Build configuration list for PBXNativeTarget "CharlieRose" */;
+			buildPhases = (
+				E5204F6F1662B55E00B65A44 /* Sources */,
+				E5204F701662B55E00B65A44 /* Frameworks */,
+				E5204F711662B55E00B65A44 /* Resources */,
+				6959836BBC6449E5B850C0D5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CharlieRose;
+			productName = CharlieRose;
+			productReference = E5204F731662B55E00B65A44 /* CharlieRose.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5204F6A1662B55E00B65A44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Claudiu-Vlad Ursache";
+			};
+			buildConfigurationList = E5204F6D1662B55E00B65A44 /* Build configuration list for PBXProject "CharlieRose" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E5204F681662B55E00B65A44;
+			productRefGroup = E5204F741662B55E00B65A44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5204F721662B55E00B65A44 /* CharlieRose */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5204F711662B55E00B65A44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5204F811662B55E00B65A44 /* Podfile in Resources */,
+				E5204F8B1662B55E00B65A44 /* InfoPlist.strings in Resources */,
+				E5204F921662B55E00B65A44 /* Default.png in Resources */,
+				E5204F941662B55E00B65A44 /* Default@2x.png in Resources */,
+				E5204F961662B55E00B65A44 /* Default-568h@2x.png in Resources */,
+				E5204FC31662BB0500B65A44 /* MainFeedViewController.xib in Resources */,
+				E5204FCC1662BE9E00B65A44 /* MenuViewController.xib in Resources */,
+				E5140D15166436160087EB81 /* ShowDetailViewController.xib in Resources */,
+				E5140D17166436950087EB81 /* jeff_bezos.jpg in Resources */,
+				E55CBEF916658B7C00FAD6A5 /* ContactViewController.xib in Resources */,
+				E55CBEFE16658BCA00FAD6A5 /* SettingsViewController.xib in Resources */,
+				E55CBF0316658BF600FAD6A5 /* AboutViewController.xib in Resources */,
+				E507BCA91699F65E00597F8E /* Icon@2x.png in Resources */,
+				E507BCAA1699F65E00597F8E /* Icon.png in Resources */,
+				E507BCB8169A006100597F8E /* navigation_bar_no_logo.png in Resources */,
+				E507BCB9169A006100597F8E /* navigation_bar_no_logo@2x.png in Resources */,
+				E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */,
+				E5C6A78916AAEC990091BD07 /* play_button.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6959836BBC6449E5B850C0D5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5204F6F1662B55E00B65A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5204F871662B55E00B65A44 /* CharlieRoseAPIClient.m in Sources */,
+				E5204F8D1662B55E00B65A44 /* main.m in Sources */,
+				E5204F901662B55E00B65A44 /* AppDelegate.m in Sources */,
+				E5204F9A1662B55E00B65A44 /* CharlieRose.xcdatamodeld in Sources */,
+				E5204F9D1662B55E00B65A44 /* CharlieRoseIncrementalStore.m in Sources */,
+				E5204FB91662B8F000B65A44 /* IIViewDeckController.m in Sources */,
+				E5204FBA1662B8F000B65A44 /* WrapController.m in Sources */,
+				E5204FC21662BB0500B65A44 /* MainFeedViewController.m in Sources */,
+				E5204FCB1662BE9E00B65A44 /* MenuViewController.m in Sources */,
+				E5204FCF1662C8AC00B65A44 /* ShowCell.m in Sources */,
+				E5204FD21662C8CD00B65A44 /* MenuCell.m in Sources */,
+				E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */,
+				E5140D14166436160087EB81 /* ShowDetailViewController.m in Sources */,
+				E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */,
+				E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */,
+				E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */,
+				E55CBEF01665808300FAD6A5 /* UIView+CharlieRoseAdditions.m in Sources */,
+				E55CBEF3166583E700FAD6A5 /* CharlieRoseViewController.m in Sources */,
+				E55CBEF816658B7C00FAD6A5 /* ContactViewController.m in Sources */,
+				E55CBEFD16658BCA00FAD6A5 /* SettingsViewController.m in Sources */,
+				E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */,
+				E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */,
+				E565FA4C168B7A58004AC12A /* Show.m in Sources */,
+				E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */,
+				E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E5204F891662B55E00B65A44 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5204F8A1662B55E00B65A44 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5204F9E1662B55E00B65A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E5204F9F1662B55E00B65A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5204FA11662B55E00B65A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
+				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E5204FA21662B55E00B65A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
+				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5204F6D1662B55E00B65A44 /* Build configuration list for PBXProject "CharlieRose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5204F9E1662B55E00B65A44 /* Debug */,
+				E5204F9F1662B55E00B65A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5204FA01662B55E00B65A44 /* Build configuration list for PBXNativeTarget "CharlieRose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5204FA11662B55E00B65A44 /* Debug */,
+				E5204FA21662B55E00B65A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E5204F991662B55E00B65A44 /* CharlieRose.xcdatamodel */,
+			);
+			currentVersion = E5204F991662B55E00B65A44 /* CharlieRose.xcdatamodel */;
+			path = CharlieRose.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E5204F6A1662B55E00B65A44 /* Project object */;
+}

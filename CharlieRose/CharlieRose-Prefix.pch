@@ -1,0 +1,14 @@
+//
+// Prefix header for all source files of the 'CharlieRose' target in the 'CharlieRose' project
+//
+
+#ifdef __OBJC__
+	#import <SystemConfiguration/SystemConfiguration.h>
+	#import <MobileCoreServices/MobileCoreServices.h>
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+	#import <CoreData/CoreData.h>
+    #import "UIColor+CharlieRoseAdditions.h"
+#endif
+
+
