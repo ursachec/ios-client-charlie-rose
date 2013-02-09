@@ -30,6 +30,15 @@
 
 @implementation InteractionsController
 
++ (InteractionsController *)sharedInteractionsController {
+    static InteractionsController *_sharedInteractionsController = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInteractionsController = [[InteractionsController alloc] init];
+    });
+    
+    return _sharedInteractionsController;
+}
 - (id)initWithDeckViewController:(IIViewDeckController*)deckViewController {
 	self = [super init];
 	if (self) {

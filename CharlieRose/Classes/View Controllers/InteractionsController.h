@@ -18,6 +18,9 @@
 @class Show;
 
 @interface InteractionsController : NSObject <IIViewDeckControllerDelegate>
+
++ (InteractionsController *)sharedInteractionsController;
+
 - (id)initWithDeckViewController:(IIViewDeckController*)deckViewController;
 
 - (void)showMainFeedAnimated:(BOOL)animated;
