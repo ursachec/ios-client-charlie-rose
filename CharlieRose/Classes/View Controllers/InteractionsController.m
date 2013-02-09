@@ -26,6 +26,10 @@
 @property (readwrite, strong, nonatomic) MenuViewController* menuViewController;
 @property (readwrite, strong, nonatomic) MainFeedViewController* mainFeedViewController;
 @property (readwrite, strong, nonatomic) ShowDetailViewController* showDetailViewController;
+@property (readwrite, strong, nonatomic) SettingsViewController* settingsViewController;
+@property (readwrite, strong, nonatomic) AboutViewController* aboutViewController;
+@property (readwrite, strong, nonatomic) ContactViewController* contactViewController;
+
 @end
 
 @implementation InteractionsController
@@ -42,6 +46,9 @@
 - (id)initWithDeckViewController:(IIViewDeckController*)deckViewController {
 	self = [super init];
 	if (self) {
+        
+        deckViewController.delegate = self;
+        
 		_deckController = deckViewController;
 		_menuViewController = (MenuViewController*)deckViewController.leftController;
 		_mainFeedViewController = (MainFeedViewController*)deckViewController.centerController;

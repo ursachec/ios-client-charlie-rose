@@ -65,9 +65,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 	deckController.rightLedge = 30;
 	self.deckController = deckController;
 	
+    
 	
 	self.interactionsController = [[InteractionsController alloc] initWithDeckViewController:self.deckController];
-	self.deckController.delegate = self.interactionsController;
     
     self.window.rootViewController = deckController;
     [self.window makeKeyAndVisible];
