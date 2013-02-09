@@ -41,6 +41,8 @@
 		E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD41662C8DE00B65A44 /* TopicCell.m */; };
 		E5436BD916C6DE0100200D87 /* CRShow.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BD816C6DE0100200D87 /* CRShow.m */; };
 		E5436BDC16C6DEAF00200D87 /* CRRemoteManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BDB16C6DEAF00200D87 /* CRRemoteManagedObject.m */; };
+		E5436BDF16C6EA0300200D87 /* CRManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BDE16C6EA0200200D87 /* CRManagedTableViewController.m */; };
+		E5436BE116C6F19C00200D87 /* CRManagedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5436BE016C6F19C00200D87 /* CRManagedTableViewController.xib */; };
 		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
 		E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE316655AE500FAD6A5 /* InteractionsController.m */; };
 		E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */; };
@@ -113,6 +115,9 @@
 		E5436BD816C6DE0100200D87 /* CRShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRShow.m; path = Classes/CoreData/CRShow.m; sourceTree = "<group>"; };
 		E5436BDA16C6DEAF00200D87 /* CRRemoteManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRRemoteManagedObject.h; path = Classes/CoreData/CRRemoteManagedObject.h; sourceTree = "<group>"; };
 		E5436BDB16C6DEAF00200D87 /* CRRemoteManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRRemoteManagedObject.m; path = Classes/CoreData/CRRemoteManagedObject.m; sourceTree = "<group>"; };
+		E5436BDD16C6EA0200200D87 /* CRManagedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRManagedTableViewController.h; path = "Classes/View Controllers/CRManagedTableViewController.h"; sourceTree = "<group>"; };
+		E5436BDE16C6EA0200200D87 /* CRManagedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRManagedTableViewController.m; path = "Classes/View Controllers/CRManagedTableViewController.m"; sourceTree = "<group>"; };
+		E5436BE016C6F19C00200D87 /* CRManagedTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CRManagedTableViewController.xib; path = "Classes/View Controllers/CRManagedTableViewController.xib"; sourceTree = "<group>"; };
 		E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CharlieRoseAdditions.h"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
 		E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CharlieRoseAdditions.m"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E55CBEE216655AE500FAD6A5 /* InteractionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractionsController.h; path = "Classes/View Controllers/InteractionsController.h"; sourceTree = "<group>"; };
@@ -371,6 +376,9 @@
 		E5436BD316C6DA0800200D87 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				E5436BDD16C6EA0200200D87 /* CRManagedTableViewController.h */,
+				E5436BDE16C6EA0200200D87 /* CRManagedTableViewController.m */,
+				E5436BE016C6F19C00200D87 /* CRManagedTableViewController.xib */,
 				E5436BDA16C6DEAF00200D87 /* CRRemoteManagedObject.h */,
 				E5436BDB16C6DEAF00200D87 /* CRRemoteManagedObject.m */,
 				E5436BD716C6DE0100200D87 /* CRShow.h */,
@@ -520,6 +528,7 @@
 				E507BCB9169A006100597F8E /* navigation_bar_no_logo@2x.png in Resources */,
 				E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */,
 				E5C6A78916AAEC990091BD07 /* play_button.png in Resources */,
+				E5436BE116C6F19C00200D87 /* CRManagedTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +583,7 @@
 				E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */,
 				E5436BD916C6DE0100200D87 /* CRShow.m in Sources */,
 				E5436BDC16C6DEAF00200D87 /* CRRemoteManagedObject.m in Sources */,
+				E5436BDF16C6EA0300200D87 /* CRManagedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

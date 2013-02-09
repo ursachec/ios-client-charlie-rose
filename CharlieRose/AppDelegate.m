@@ -7,18 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
 #import "AFNetworkActivityIndicatorManager.h"
-
-#import "IIViewDeckController.h"
-#import "MenuViewController.h"
-#import "MainFeedViewController.h"
-#import "ShowDetailViewController.h"
-
-#import "SettingsViewController.h"
-#import "AboutViewController.h"
-#import "ContactViewController.h"
-
 #import "InteractionsController.h"
 
 @implementation AppDelegate

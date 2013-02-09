@@ -10,8 +10,6 @@
 
 #import "CharlieRoseIncrementalStore.h"
 
-@class InteractionsController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
