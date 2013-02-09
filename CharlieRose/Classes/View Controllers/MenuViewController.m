@@ -32,6 +32,8 @@ const NSInteger static kIndexForContact = 2;
 
 @implementation MenuViewController
 
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -196,5 +198,8 @@ const NSInteger static kIndexForContact = 2;
 -(void)configureMenuCell:(MenuCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	cell.menuItemTitle = self.menuItems[indexPath.row];
 }
+
+
+
 
 @end

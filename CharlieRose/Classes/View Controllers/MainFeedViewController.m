@@ -15,6 +15,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CharlieRoseAPIClient.h"
 
+#import "NSFetchedResultsController+CRAdditions.h"
+
+#import "CRShow.h"
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
@@ -22,7 +25,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)refetchData;
 
-@property(nonatomic, strong, readwrite) NSFetchedResultsController* fetchedResultsController;
+
 
 @property(nonatomic, strong, readwrite) IBOutlet UILabel* titleLabel;
 @property(nonatomic, strong, readwrite) IBOutlet UITableView* tableView;
@@ -34,21 +37,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 @implementation MainFeedViewController
 
-- (NSFetchRequest*)fetchRequestWithTopic:(NSString*)topic {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
-
-    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date_published" ascending:NO selector:@selector(compare:)];
-    
-#warning replce this with real topic --> predicate mapping
-    if (topic != nil && [topic caseInsensitiveCompare:@"Home"] != NSOrderedSame) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"topics contains[cd] %@", @"Technology"];
-        [fetchRequest setPredicate:predicate];
-    }
-    
-    fetchRequest.sortDescriptors = @[dateDescriptor];
-    fetchRequest.returnsObjectsAsFaults = NO;
-    return fetchRequest;
-}
 
 - (void)refetchData {
     self.fetchedResultsController.fetchRequest.resultType = NSManagedObjectResultType;
@@ -62,6 +50,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     if (self) {
 		_dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateStyle:NSDateFormatterShortStyle];
+        
+        self.managedObjectContext = [CRShow mainQueueContext];
     }
     return self;
 }
@@ -70,8 +60,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     [super viewDidLoad];
 	
 
-    
-    
     [[CharlieRoseAPIClient sharedClient] getShowsForTopic:@"all" success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"done: %@", operation.responseString);
@@ -80,36 +68,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
         
         NSLog(@"failure: %@", operation.responseString);
     }];
-    
-    return;
-    
-    // create new fetched results controller and perform fetch
-	NSFetchRequest *fetchRequest = [self fetchRequestWithTopic:self.currentTopic];
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
-    self.fetchedResultsController.delegate = self;
-    
-    NSLog(@"performFetch at MainFeedVC viewDidLoad:");
-//    [self.fetchedResultsController performFetch:nil];
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserverForName:AFIncrementalStoreContextDidFetchRemoteValues object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        
-        NSLog(@"DONE!:");
-        
-        
-        
-    }];
-    
-}
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -208,7 +166,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 -(void)triggerLoadingImageAtURL:(NSURL*)url forImageView:(UIImageView*)imageView {
     __block NSURL* blockThumbURL = url;
-    __block UIImageView* blockImageView = imageView;
+    __weak UIImageView* blockImageView = imageView;
     
     [blockImageView setImageWithURL:blockThumbURL
                    placeholderImage:nil
@@ -259,15 +217,26 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	
     self.currentTopic = topic;
     
-#warning replace this with real handling
+    self.fetchedResultsController = [NSFetchedResultsController fetchedResultsControllerWithTopic:topic delegate:self managedObjectContext:self.managedObjectContext];
     
-    NSFetchRequest* newFetchRequest = [self fetchRequestWithTopic:topic];
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:newFetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
-    self.fetchedResultsController.delegate = self;
+    NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+        
+	    /*
+	     Replace this implementation with code to handle the error appropriately.
+         
+	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	     */
+//	    DBLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
     
-    NSLog(@"performFetch at MainFeedVC loadDataForForTopic:");
-    [self.fetchedResultsController performFetch:nil];
     [self.tableView reloadData];
+    
+    
+    return;
+    
+#warning replace this with real handling
     
     NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -312,5 +281,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)showFeedForTopic:(NSString*)topicString {
 }
+
 
 @end

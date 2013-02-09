@@ -43,6 +43,8 @@
 		E5436BDC16C6DEAF00200D87 /* CRRemoteManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BDB16C6DEAF00200D87 /* CRRemoteManagedObject.m */; };
 		E5436BDF16C6EA0300200D87 /* CRManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BDE16C6EA0200200D87 /* CRManagedTableViewController.m */; };
 		E5436BE116C6F19C00200D87 /* CRManagedTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5436BE016C6F19C00200D87 /* CRManagedTableViewController.xib */; };
+		E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */; };
+		E5436BEA16C7183600200D87 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE916C7183600200D87 /* Show.m */; };
 		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
 		E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE316655AE500FAD6A5 /* InteractionsController.m */; };
 		E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */; };
@@ -54,7 +56,6 @@
 		E55CBEFE16658BCA00FAD6A5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBEFC16658BCA00FAD6A5 /* SettingsViewController.xib */; };
 		E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBF0016658BF600FAD6A5 /* AboutViewController.m */; };
 		E55CBF0316658BF600FAD6A5 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */; };
-		E565FA4C168B7A58004AC12A /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E565FA4B168B7A58004AC12A /* Show.m */; };
 		E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */; };
 		E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = E595ED5B169F44CC0036B2A2 /* Default-568h.png */; };
 		E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */; };
@@ -118,6 +119,10 @@
 		E5436BDD16C6EA0200200D87 /* CRManagedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRManagedTableViewController.h; path = "Classes/View Controllers/CRManagedTableViewController.h"; sourceTree = "<group>"; };
 		E5436BDE16C6EA0200200D87 /* CRManagedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRManagedTableViewController.m; path = "Classes/View Controllers/CRManagedTableViewController.m"; sourceTree = "<group>"; };
 		E5436BE016C6F19C00200D87 /* CRManagedTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CRManagedTableViewController.xib; path = "Classes/View Controllers/CRManagedTableViewController.xib"; sourceTree = "<group>"; };
+		E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+CRAdditions.h"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.h"; sourceTree = "<group>"; };
+		E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+CRAdditions.m"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.m"; sourceTree = "<group>"; };
+		E5436BE816C7183600200D87 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
+		E5436BE916C7183600200D87 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
 		E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CharlieRoseAdditions.h"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
 		E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CharlieRoseAdditions.m"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E55CBEE216655AE500FAD6A5 /* InteractionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractionsController.h; path = "Classes/View Controllers/InteractionsController.h"; sourceTree = "<group>"; };
@@ -137,8 +142,6 @@
 		E55CBEFF16658BF600FAD6A5 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = "Classes/View Controllers/AboutViewController.h"; sourceTree = "<group>"; };
 		E55CBF0016658BF600FAD6A5 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = "Classes/View Controllers/AboutViewController.m"; sourceTree = "<group>"; };
 		E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutViewController.xib; path = "Classes/View Controllers/AboutViewController.xib"; sourceTree = "<group>"; };
-		E565FA4A168B7A58004AC12A /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
-		E565FA4B168B7A58004AC12A /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
 		E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CharlieRoseAdditions.h"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
 		E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CharlieRoseAdditions.m"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E595ED5B169F44CC0036B2A2 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
@@ -290,8 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */,
-				E565FA4A168B7A58004AC12A /* Show.h */,
-				E565FA4B168B7A58004AC12A /* Show.m */,
+				E5436BE816C7183600200D87 /* Show.h */,
+				E5436BE916C7183600200D87 /* Show.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -335,6 +338,8 @@
 		E5204FC41662BB0B00B65A44 /* Main Feed */ = {
 			isa = PBXGroup;
 			children = (
+				E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */,
+				E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */,
 				E5204FBF1662BB0500B65A44 /* MainFeedViewController.h */,
 				E5204FC01662BB0500B65A44 /* MainFeedViewController.m */,
 				E5204FC11662BB0500B65A44 /* MainFeedViewController.xib */,
@@ -578,12 +583,13 @@
 				E55CBEFD16658BCA00FAD6A5 /* SettingsViewController.m in Sources */,
 				E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */,
 				E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */,
-				E565FA4C168B7A58004AC12A /* Show.m in Sources */,
 				E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */,
 				E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */,
 				E5436BD916C6DE0100200D87 /* CRShow.m in Sources */,
 				E5436BDC16C6DEAF00200D87 /* CRRemoteManagedObject.m in Sources */,
 				E5436BDF16C6EA0300200D87 /* CRManagedTableViewController.m in Sources */,
+				E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */,
+				E5436BEA16C7183600200D87 /* Show.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

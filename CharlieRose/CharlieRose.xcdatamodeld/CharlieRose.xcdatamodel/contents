@@ -7,6 +7,7 @@
         <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="keywords" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="show_id_string" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="show_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topics" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,6 +25,6 @@
         <attribute name="videoDescription" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Show" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Show" positionX="160" positionY="192" width="128" height="375"/>
     </elements>
 </model>

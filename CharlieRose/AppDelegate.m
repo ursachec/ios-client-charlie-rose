@@ -26,6 +26,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
     InteractionsController *interactionsCtl = [InteractionsController sharedInteractionsController];
+
     [[InteractionsController sharedInteractionsController] initializeAndSetupViewDeckController];
     
     self.window.rootViewController = interactionsCtl.deckController;

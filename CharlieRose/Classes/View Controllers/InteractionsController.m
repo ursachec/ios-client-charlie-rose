@@ -17,9 +17,11 @@
 #import "Show.h"
 
 #import "UIApplication+CharlieRoseAdditions.h"
+#import "CRManagedTableViewController.h"
 
 
 @interface InteractionsController ()
+
 @property (readwrite, strong, nonatomic) IIViewDeckController* deckController;
 @property (readwrite, strong, nonatomic) MenuViewController* menuViewController;
 @property (readwrite, strong, nonatomic) MainFeedViewController* mainFeedViewController;
