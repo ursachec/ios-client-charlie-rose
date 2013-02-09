@@ -1,7 +1,7 @@
 #import "CharlieRoseAPIClient.h"
 #import "AFJSONRequestOperation.h"
 
-static NSString * const kCharlieRoseAPIBaseURLString = @"http://0.0.0.0:5000";
+static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5000";
 
 @implementation CharlieRoseAPIClient
 

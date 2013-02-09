@@ -52,7 +52,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)refetchData {
     self.fetchedResultsController.fetchRequest.resultType = NSManagedObjectResultType;
+    NSLog(@"performFetch at MainFeedVC refetchData:");
     [self.fetchedResultsController performFetch:nil];
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -71,7 +73,19 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	NSFetchRequest *fetchRequest = [self fetchRequestWithTopic:self.currentTopic];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
+    
+    NSLog(@"performFetch at MainFeedVC viewDidLoad:");
     [self.fetchedResultsController performFetch:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:AFIncrementalStoreContextDidFetchRemoteValues object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        
+        NSLog(@"DONE!:");
+        
+        
+        
+    }];
+    
 }
 
 
@@ -236,6 +250,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     NSFetchRequest* newFetchRequest = [self fetchRequestWithTopic:topic];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:newFetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
+    
+    NSLog(@"performFetch at MainFeedVC loadDataForForTopic:");
     [self.fetchedResultsController performFetch:nil];
     [self.tableView reloadData];
     
@@ -273,6 +289,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    
+    NSLog(@"controllerDidChangeContent: ");
     [self.tableView reloadData];
 }
 
