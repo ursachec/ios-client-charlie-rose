@@ -28,7 +28,6 @@
 		E5204F941662B55E00B65A44 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F931662B55E00B65A44 /* Default@2x.png */; };
 		E5204F961662B55E00B65A44 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F951662B55E00B65A44 /* Default-568h@2x.png */; };
 		E5204F9A1662B55E00B65A44 /* CharlieRose.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */; };
-		E5204F9D1662B55E00B65A44 /* CharlieRoseIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */; };
 		E5204FB91662B8F000B65A44 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FB61662B8F000B65A44 /* IIViewDeckController.m */; };
 		E5204FBA1662B8F000B65A44 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FB81662B8F000B65A44 /* WrapController.m */; };
 		E5204FBD1662B9BF00B65A44 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5204FBB1662B9AB00B65A44 /* QuartzCore.framework */; };
@@ -93,8 +92,6 @@
 		E5204F931662B55E00B65A44 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E5204F951662B55E00B65A44 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E5204F991662B55E00B65A44 /* CharlieRose.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharlieRose.xcdatamodel; sourceTree = "<group>"; };
-		E5204F9B1662B55E00B65A44 /* CharlieRoseIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CharlieRoseIncrementalStore.h; path = Classes/CharlieRoseIncrementalStore.h; sourceTree = "<group>"; };
-		E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CharlieRoseIncrementalStore.m; path = Classes/CharlieRoseIncrementalStore.m; sourceTree = "<group>"; };
 		E5204FB51662B8F000B65A44 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = Vendor/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
 		E5204FB61662B8F000B65A44 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = Vendor/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
 		E5204FB71662B8F000B65A44 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = Vendor/ViewDeck/WrapController.h; sourceTree = "<group>"; };
@@ -283,8 +280,6 @@
 			children = (
 				E5204F851662B55E00B65A44 /* CharlieRoseAPIClient.h */,
 				E5204F861662B55E00B65A44 /* CharlieRoseAPIClient.m */,
-				E5204F9B1662B55E00B65A44 /* CharlieRoseIncrementalStore.h */,
-				E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -565,7 +560,6 @@
 				E5204F8D1662B55E00B65A44 /* main.m in Sources */,
 				E5204F901662B55E00B65A44 /* AppDelegate.m in Sources */,
 				E5204F9A1662B55E00B65A44 /* CharlieRose.xcdatamodeld in Sources */,
-				E5204F9D1662B55E00B65A44 /* CharlieRoseIncrementalStore.m in Sources */,
 				E5204FB91662B8F000B65A44 /* IIViewDeckController.m in Sources */,
 				E5204FBA1662B8F000B65A44 /* WrapController.m in Sources */,
 				E5204FC21662BB0500B65A44 /* MainFeedViewController.m in Sources */,

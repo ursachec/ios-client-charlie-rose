@@ -25,7 +25,7 @@
 #pragma mark - SSManagedObject
 
 + (NSString *)entityName {
-	return @"Show";
+	return @"CRShow";
 }
 
 
