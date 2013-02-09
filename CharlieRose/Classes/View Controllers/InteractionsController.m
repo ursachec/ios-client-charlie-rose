@@ -10,8 +10,6 @@
 #import "MenuViewController.h"
 #import "MainFeedViewController.h"
 #import "ShowDetailViewController.h"
-
-
 #import "AboutViewController.h"
 #import "SettingsViewController.h"
 #import "ContactViewController.h"
@@ -43,32 +41,35 @@
     
     return _sharedInteractionsController;
 }
-- (id)initWithDeckViewController:(IIViewDeckController*)deckViewController {
-	self = [super init];
-	if (self) {
-        
-        deckViewController.delegate = self;
-        
-		_deckController = deckViewController;
-		_menuViewController = (MenuViewController*)deckViewController.leftController;
-		_mainFeedViewController = (MainFeedViewController*)deckViewController.centerController;
-		_showDetailViewController = (ShowDetailViewController*)deckViewController.rightController;
-	}
-	return self;
+
+
+- (void)initializeAndSetupViewDeckController {
+    self.mainFeedViewController = [[MainFeedViewController alloc] initWithNibName:nil bundle:nil];
+	self.menuViewController = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
+	self.showDetailViewController = [[ShowDetailViewController alloc] initWithNibName:nil bundle:nil];
+    
+	IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.mainFeedViewController
+                                                                                    leftViewController:self.menuViewController
+                                                                                   rightViewController:self.showDetailViewController];
+    deckController.leftLedge = 120;
+	deckController.rightLedge = 30;
+	self.deckController = deckController;
+    
+    deckController.delegate = self;
 }
 
 - (void)showAboutAnimated:(BOOL)animated {
-	AboutViewController* aboutViewController = [UIApplication sharedAppDelegate].aboutViewController;
+	AboutViewController* aboutViewController = self.aboutViewController;
 	[self showViewController:aboutViewController inCenterViewAnimated:YES];
 }
 
 - (void)showContactAnimated:(BOOL)animated {
-	ContactViewController* contactViewController = [UIApplication sharedAppDelegate].contactViewController;
+	ContactViewController* contactViewController = self.contactViewController;
 	[self showViewController:contactViewController inCenterViewAnimated:YES];
 }
 
 - (void)showSettingsAnimated:(BOOL)animated {
-	SettingsViewController* settingsViewController = [UIApplication sharedAppDelegate].settingsViewController;
+	SettingsViewController* settingsViewController = self.settingsViewController;
 	[self showViewController:settingsViewController inCenterViewAnimated:YES];
 }
 
@@ -135,6 +136,29 @@
 
 - (void)showMenuAnimated:(BOOL)animated {
 	[self.deckController toggleLeftView];
+}
+
+#pragma mark - lazy fetching view controllers
+
+- (SettingsViewController*) settingsViewController {
+	if (_settingsViewController==nil) {
+		_settingsViewController = [[SettingsViewController alloc] initWithNibName:nil bundle:nil];
+	}
+	return _settingsViewController;
+}
+
+- (AboutViewController*) aboutViewController {
+	if (_aboutViewController==nil) {
+		_aboutViewController = [[AboutViewController alloc] initWithNibName:nil bundle:nil];
+	}
+	return _aboutViewController;
+}
+
+- (ContactViewController*) contactViewController {
+	if (_contactViewController==nil) {
+		_contactViewController = [[ContactViewController alloc] initWithNibName:nil bundle:nil];
+	}
+	return _contactViewController;
 }
 
 @end

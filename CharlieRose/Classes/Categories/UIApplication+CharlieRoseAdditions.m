@@ -7,12 +7,13 @@
 //
 
 #import "UIApplication+CharlieRoseAdditions.h"
+#import "InteractionsController.h"
 
 @implementation UIApplication (CharlieRoseAdditions)
 + (AppDelegate*)sharedAppDelegate {
 	return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 + (InteractionsController*)sharedInteractionsController {
-	return ((AppDelegate*)[[UIApplication sharedApplication] delegate]).interactionsController;
+	return [InteractionsController sharedInteractionsController];
 }
 @end

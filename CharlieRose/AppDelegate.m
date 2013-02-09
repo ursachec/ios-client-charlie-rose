@@ -53,23 +53,11 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 	[self setupApperanceProxyCustomizations];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-    
-    self.mainFeedViewController = [[MainFeedViewController alloc] initWithNibName:nil bundle:nil];
 
-	self.menuViewController = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
-	self.showDetailViewController = [[ShowDetailViewController alloc] initWithNibName:nil bundle:nil];
-	IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.mainFeedViewController
-                                                                                    leftViewController:self.menuViewController
-                                                                                   rightViewController:self.showDetailViewController];
-    deckController.leftLedge = 120;
-	deckController.rightLedge = 30;
-	self.deckController = deckController;
-	
+    InteractionsController *interactionsCtl = [InteractionsController sharedInteractionsController];
+    [[InteractionsController sharedInteractionsController] initializeAndSetupViewDeckController];
     
-	
-	self.interactionsController = [[InteractionsController alloc] initWithDeckViewController:self.deckController];
-    
-    self.window.rootViewController = deckController;
+    self.window.rootViewController = interactionsCtl.deckController;
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -102,31 +90,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 	// Saves changes in the application's managed object context before the application terminates.
 	[self saveContext];
 }
-
-#pragma mark - lazy fetching view controllers
-
-- (SettingsViewController*) settingsViewController {
-	if (_settingsViewController==nil) {
-		_settingsViewController = [[SettingsViewController alloc] initWithNibName:nil bundle:nil];
-	}
-	return _settingsViewController;
-}
-
-- (AboutViewController*) aboutViewController {
-	if (_aboutViewController==nil) {
-		_aboutViewController = [[AboutViewController alloc] initWithNibName:nil bundle:nil];
-	}
-	return _aboutViewController;
-}
-
-- (ContactViewController*) contactViewController {
-	if (_contactViewController==nil) {
-		_contactViewController = [[ContactViewController alloc] initWithNibName:nil bundle:nil];
-	}
-	return _contactViewController;
-}
-
-
 
 #pragma mark - Core Data
 

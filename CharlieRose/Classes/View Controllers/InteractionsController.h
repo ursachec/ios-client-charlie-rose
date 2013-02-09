@@ -14,14 +14,24 @@
 @class ShowDetailViewController;
 @class IIViewDeckController;
 
+@class SettingsViewController;
+@class AboutViewController;
+@class ContactViewController;
 
 @class Show;
 
 @interface InteractionsController : NSObject <IIViewDeckControllerDelegate>
 
+
+@property (readonly, strong, nonatomic) IIViewDeckController* deckController;
+
+@property (readonly, strong, nonatomic) SettingsViewController* settingsViewController;
+@property (readonly, strong, nonatomic) AboutViewController* aboutViewController;
+@property (readonly, strong, nonatomic) ContactViewController* contactViewController;
+
 + (InteractionsController *)sharedInteractionsController;
 
-- (id)initWithDeckViewController:(IIViewDeckController*)deckViewController;
+- (void)initializeAndSetupViewDeckController;
 
 - (void)showMainFeedAnimated:(BOOL)animated;
 - (void)showMenuAnimated:(BOOL)animated;
