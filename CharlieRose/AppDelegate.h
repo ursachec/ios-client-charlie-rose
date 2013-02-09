@@ -20,9 +20,6 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (readonly, strong, nonatomic) InteractionsController* interactionsController;
-
-@property (strong, nonatomic) UINavigationController *navigationController;
 - (void)saveContext;
 
 @end

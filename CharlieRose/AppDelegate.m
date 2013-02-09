@@ -21,20 +21,6 @@
 
 #import "InteractionsController.h"
 
-@interface AppDelegate()
-@property (readwrite, strong, nonatomic) IIViewDeckController* deckController;
-@property (readwrite, strong, nonatomic) MenuViewController* menuViewController;
-@property (readwrite, strong, nonatomic) MainFeedViewController* mainFeedViewController;
-@property (readwrite, strong, nonatomic) ShowDetailViewController* showDetailViewController;
-
-@property (readwrite, strong, nonatomic) SettingsViewController* settingsViewController;
-@property (readwrite, strong, nonatomic) AboutViewController* aboutViewController;
-@property (readwrite, strong, nonatomic) ContactViewController* contactViewController;
-
-@property (readwrite, strong, nonatomic) InteractionsController* interactionsController;
-
-@end
-
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -43,11 +29,7 @@
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
-    [NSURLCache setSharedURLCache:URLCache];
-
-    
+{    
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	[self setupApperanceProxyCustomizations];
