@@ -39,6 +39,8 @@
 		E5204FCF1662C8AC00B65A44 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FCE1662C8AC00B65A44 /* ShowCell.m */; };
 		E5204FD21662C8CD00B65A44 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD11662C8CD00B65A44 /* MenuCell.m */; };
 		E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD41662C8DE00B65A44 /* TopicCell.m */; };
+		E5436BD916C6DE0100200D87 /* CRShow.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BD816C6DE0100200D87 /* CRShow.m */; };
+		E5436BDC16C6DEAF00200D87 /* CRRemoteManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BDB16C6DEAF00200D87 /* CRRemoteManagedObject.m */; };
 		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
 		E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE316655AE500FAD6A5 /* InteractionsController.m */; };
 		E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */; };
@@ -107,6 +109,10 @@
 		E5204FD11662C8CD00B65A44 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuCell.m; path = Classes/Views/Cells/MenuCell.m; sourceTree = "<group>"; };
 		E5204FD31662C8DE00B65A44 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicCell.h; path = Classes/Views/Cells/TopicCell.h; sourceTree = "<group>"; };
 		E5204FD41662C8DE00B65A44 /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicCell.m; path = Classes/Views/Cells/TopicCell.m; sourceTree = "<group>"; };
+		E5436BD716C6DE0100200D87 /* CRShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRShow.h; path = Classes/CoreData/CRShow.h; sourceTree = "<group>"; };
+		E5436BD816C6DE0100200D87 /* CRShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRShow.m; path = Classes/CoreData/CRShow.m; sourceTree = "<group>"; };
+		E5436BDA16C6DEAF00200D87 /* CRRemoteManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRRemoteManagedObject.h; path = Classes/CoreData/CRRemoteManagedObject.h; sourceTree = "<group>"; };
+		E5436BDB16C6DEAF00200D87 /* CRRemoteManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRRemoteManagedObject.m; path = Classes/CoreData/CRRemoteManagedObject.m; sourceTree = "<group>"; };
 		E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CharlieRoseAdditions.h"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
 		E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CharlieRoseAdditions.m"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E55CBEE216655AE500FAD6A5 /* InteractionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractionsController.h; path = "Classes/View Controllers/InteractionsController.h"; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 				E55CBEDD166548B100FAD6A5 /* Categories */,
 				E5204FBE1662BA9300B65A44 /* View Controllers */,
 				E5204FC51662BD7300B65A44 /* Views */,
+				E5436BD316C6DA0800200D87 /* Core Data */,
 				E5204F841662B55E00B65A44 /* Networking */,
 				E5204F971662B55E00B65A44 /* Models */,
 				E5204F821662B55E00B65A44 /* Supporting Files */,
@@ -359,6 +366,17 @@
 				E5204FCA1662BE9E00B65A44 /* MenuViewController.xib */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+		E5436BD316C6DA0800200D87 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				E5436BDA16C6DEAF00200D87 /* CRRemoteManagedObject.h */,
+				E5436BDB16C6DEAF00200D87 /* CRRemoteManagedObject.m */,
+				E5436BD716C6DE0100200D87 /* CRShow.h */,
+				E5436BD816C6DE0100200D87 /* CRShow.m */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		E55CBEDD166548B100FAD6A5 /* Categories */ = {
@@ -554,6 +572,8 @@
 				E565FA4C168B7A58004AC12A /* Show.m in Sources */,
 				E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */,
 				E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */,
+				E5436BD916C6DE0100200D87 /* CRShow.m in Sources */,
+				E5436BDC16C6DEAF00200D87 /* CRRemoteManagedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

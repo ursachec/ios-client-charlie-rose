@@ -69,13 +69,27 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+
+    
+    
+    [[CharlieRoseAPIClient sharedClient] getShowsForTopic:@"all" success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"done: %@", operation.responseString);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"failure: %@", operation.responseString);
+    }];
+    
+    return;
+    
     // create new fetched results controller and perform fetch
 	NSFetchRequest *fetchRequest = [self fetchRequestWithTopic:self.currentTopic];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
     
     NSLog(@"performFetch at MainFeedVC viewDidLoad:");
-    [self.fetchedResultsController performFetch:nil];
+//    [self.fetchedResultsController performFetch:nil];
     
     
     [[NSNotificationCenter defaultCenter] addObserverForName:AFIncrementalStoreContextDidFetchRemoteValues object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
