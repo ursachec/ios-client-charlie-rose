@@ -37,6 +37,7 @@
 		E5204FCF1662C8AC00B65A44 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FCE1662C8AC00B65A44 /* ShowCell.m */; };
 		E5204FD21662C8CD00B65A44 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD11662C8CD00B65A44 /* MenuCell.m */; };
 		E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD41662C8DE00B65A44 /* TopicCell.m */; };
+		E53044A916C80258009E3D3D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E53044A816C80258009E3D3D /* placeholder.png */; };
 		E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */; };
 		E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BEC16C71CFC00200D87 /* CRDBHandler.m */; };
 		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
@@ -108,6 +109,7 @@
 		E5204FD11662C8CD00B65A44 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuCell.m; path = Classes/Views/Cells/MenuCell.m; sourceTree = "<group>"; };
 		E5204FD31662C8DE00B65A44 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicCell.h; path = Classes/Views/Cells/TopicCell.h; sourceTree = "<group>"; };
 		E5204FD41662C8DE00B65A44 /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicCell.m; path = Classes/Views/Cells/TopicCell.m; sourceTree = "<group>"; };
+		E53044A816C80258009E3D3D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = Resources/Images/Compiled/Cells/placeholder.png; sourceTree = "<group>"; };
 		E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+CRAdditions.h"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.h"; sourceTree = "<group>"; };
 		E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+CRAdditions.m"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.m"; sourceTree = "<group>"; };
 		E5436BEB16C71CFC00200D87 /* CRDBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDBHandler.h; path = Classes/Utilities/CRDBHandler.h; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		E507BC9A1699D6E000597F8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E53044AA16C8025C009E3D3D /* Cells */,
 				E5C6A78A16AAECA10091BD07 /* Play button */,
 				E507BCB3169A005600597F8E /* Navigation Bar */,
 				E507BCA61699F64800597F8E /* App Icon */,
@@ -376,6 +379,14 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		E53044AA16C8025C009E3D3D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E53044A816C80258009E3D3D /* placeholder.png */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		E5436BD316C6DA0800200D87 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +541,7 @@
 				E507BCB9169A006100597F8E /* navigation_bar_no_logo@2x.png in Resources */,
 				E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */,
 				E5C6A78916AAEC990091BD07 /* play_button.png in Resources */,
+				E53044A916C80258009E3D3D /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
