@@ -111,12 +111,19 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	[self tryLoadingAllShowsFromNetworkOrDB];
+}
+
+- (void)tryLoadingAllShowsFromNetworkOrDB {
     [self loadAllShowsFromNetworkOrDBWithSuccess:^{
         [self handleDidLoadAllShowsFromNetworkOrDB];
     } failure:^(NSError *error) {
         [self handleDidFailLoadingAllShowsFromNetworkOrDBWithError:error];
     }];
+}
+
+- (void)showViewForCouldNotFindDataFromInitialImport {
+    [self showViewForCouldNotContactServer];
 }
 
 - (void)showViewForCouldNotContactServer {
@@ -192,22 +199,34 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 		return;
 	}
     
-    [self fetchDataAndShowFeedForTopic:topic];
+    [self fetchDataAndShowFeedForTopic:topic success:^(NSFetchedResultsController *controller) {
+        if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
+            [self.tableView reloadData];
+            [self hideLoadingViewAnimated:YES];
+            [self hideErrorViewAnimated:YES];
+        } else if (UIApplication.sharedAppDelegate.isImportingShowsForInitialImport) {
+        
+        }
+        else {
+            [self handleTriedToFetchDataAndFoundNoDataFromInitialImport];
+        }
+    } failure:^(NSFetchedResultsController *controller, NSError *error) {
+        [self showViewForCoreDataError];
+    }];
 }
 
-- (void)fetchDataAndShowFeedForTopic:(NSString*)topic {
+- (void)handleTriedToFetchDataAndFoundNoDataFromInitialImport {
+    [self showViewForCouldNotFindDataFromInitialImport];
+    [self tryLoadingAllShowsFromNetworkOrDB];
+}
+
+- (void)fetchDataAndShowFeedForTopic:(NSString*)topic
+                             success:(void (^)(NSFetchedResultsController* controller))success
+                             failure:(void (^)(NSFetchedResultsController* controller, NSError* error ))failure {
     self.currentTopic = topic;
     self.titleLabel.text = [MainFeedViewController titleForTopic:topic];
 	[self fetchDataForTopic:self.currentTopic
-                    success:^(NSFetchedResultsController *controller) {
-                        if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
-                            [self.tableView reloadData];
-                            [self hideLoadingViewAnimated:YES];
-                            [self hideErrorViewAnimated:YES];
-                        }
-                    } failure:^(NSFetchedResultsController *controller, NSError *error) {
-                        [self showViewForCoreDataError];
-                    }];
+                    success:success failure:failure];
 }
 
 - (void)fetchDataForTopic:(NSString*)topic

@@ -19,4 +19,6 @@
 - (void)showTopicHome;
 - (void)showTopic:(NSString*)topic;
 
+- (void)tryLoadingAllShowsFromNetworkOrDB;
+
 @end

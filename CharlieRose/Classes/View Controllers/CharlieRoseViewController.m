@@ -51,7 +51,11 @@
                       message:(NSString*)message
                    completion:(void (^)(BOOL finished))completion {
     UIView* errorView = self.errorView;
-	if (animated==NO) {
+    if (errorView.superview) {
+        return;
+    }
+    
+	if (NO == animated) {
 		errorView.alpha = 1.0f;
 		[self.view addSubview:errorView];
 	} else {
@@ -70,16 +74,17 @@
 }
 
 - (void)hideErrorViewAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
-	UIView* loadingView = self.errorView;
-	if (animated==NO) {
-		[loadingView removeFromSuperview];
+	UIView* errorView = self.errorView;
+    
+	if (NO == animated) {
+		[errorView removeFromSuperview];
 	} else {
-		loadingView.alpha = 1.0f;
-		loadingView.userInteractionEnabled = YES;
-		[self.view addSubview:loadingView];
+		errorView.alpha = 1.0f;
+		errorView.userInteractionEnabled = YES;
+		[self.view addSubview:errorView];
 		[UIView animateWithDuration:self.errorViewAnimationDuration
 						 animations:^{
-							 loadingView.alpha = 0.0f;
+							 errorView.alpha = 0.0f;
 						 } completion:completion];
 	}
 }
@@ -99,7 +104,11 @@
 
 - (void)showLoadingViewAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
 	UIView* loadingView = self.loadingView;
-	if (animated==NO) {
+    if (loadingView.superview) {
+        return;
+    }
+    
+	if (NO == animated) {
 		loadingView.alpha = 1.0f;
 		[self.view addSubview:loadingView];
 	} else {
@@ -119,7 +128,7 @@
 
 - (void)hideLoadingViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion {
 	UIView* loadingView = self.loadingView;
-	if (animated==NO) {
+	if (NO == animated) {
 		[loadingView removeFromSuperview];
 	} else {
 		loadingView.alpha = 1.0f;
@@ -144,7 +153,7 @@
 }
 
 - (CGFloat)loadingViewAnimationDuration {
-	return .3f;
+	return .7f;
 }
 
 - (CGFloat)errorViewAnimationDuration {
