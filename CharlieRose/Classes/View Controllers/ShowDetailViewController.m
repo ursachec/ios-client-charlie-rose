@@ -128,9 +128,9 @@
 }
 
 - (void)setupImageViewWithShow:(Show *)show {
-    __weak NSURL* blockThumbURL = [NSURL URLWithString:show.imageURL];
+    NSURL* thumbURL = [NSURL URLWithString:show.imageURL];
     __weak UIImageView* blockImageView = self.showImageView;
-    [blockImageView setImageWithURL:blockThumbURL
+    [blockImageView setImageWithURL:thumbURL
                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                               blockImageView.alpha = .0f;
@@ -143,7 +143,7 @@
 
 - (void)setShow:(Show *)show {
 	_show = show;
-	if (show != nil) {
+	if (show) {
 		[self setupHeadlineLabelWithShow:show];
 		[self setupGuestsLabelWithShow:show];
 		[self setupTopicsLabelWithShow:show];
