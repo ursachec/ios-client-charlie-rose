@@ -14,7 +14,6 @@
 #import "UIView+CharlieRoseAdditions.h"
 #import "Show.h"
 
-
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;
 @property(nonatomic, readwrite, strong) NSString* currentShowId;
@@ -60,8 +59,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
@@ -69,9 +67,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	
-	
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,7 +119,7 @@
 }
 
 - (void)setupPublishingDateLabelWithShow:(Show *)show {
-    NSString *dateString = [self.dateFormatter stringFromDate:show.date_published];
+    NSString *dateString = [self.dateFormatter stringFromDate:show.datePublished];
 	self.publishingDateLabel.backgroundColor = [UIColor clearColor];
 	self.publishingDateLabel.text = dateString;
 	self.publishingDateLabel.textColor = [UIColor publishingDateTextColor];
@@ -132,14 +127,13 @@
 
 - (void)setupDescriptionTextViewWithShow:(Show *)show {
 	self.descriptionTextView.backgroundColor = [UIColor clearColor];
-	self.descriptionTextView.text = show.videoDescription;
+	self.descriptionTextView.text = show.clipDescription;
 	self.descriptionTextView.textColor = [UIColor descriptionTextViewTextColor];
 }
 
 - (void)setupImageViewWithShow:(Show *)show {
-    __block NSURL* blockThumbURL = [NSURL URLWithString:show.imageURL];
-    __block UIImageView* blockImageView = self.showImageView;
-    
+    __weak NSURL* blockThumbURL = [NSURL URLWithString:show.imageURL];
+    __weak UIImageView* blockImageView = self.showImageView;
     [blockImageView setImageWithURL:blockThumbURL
                    placeholderImage:nil
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
@@ -148,6 +142,7 @@
                                   blockImageView.alpha = 1.0f;
                               }];
                           }];
+
 }
 
 - (void)setShow:(Show *)show {
@@ -165,8 +160,8 @@
 #pragma mark - high level show
 
 - (void)presentWithShow:(Show*)show {
-	BOOL showIdTheSameAsCurrent = ([self.show.show_id_string compare:show.show_id_string]==NSOrderedSame);
-	if (self.show.show_id_string!=nil && showIdTheSameAsCurrent) {
+	BOOL showIdTheSameAsCurrent = ([self.show.showID compare:show.showID]==NSOrderedSame);
+	if (self.show.showID!=nil && showIdTheSameAsCurrent) {
 		return;
 	}
 	

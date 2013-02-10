@@ -11,77 +11,103 @@
 #import "IIViewDeckController.h"
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "UIView+CharlieRoseAdditions.h"
-#import "Show.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+
 #import "CharlieRoseAPIClient.h"
 
+#import "NSError+CRAdditions.h"
+#import "NSString+CRAdditions.h"
+#import "NSFetchedResultsController+CRAdditions.h"
+
+#import "Show.h"
+#import "CRDBHandler.h"
+
+#import "MainFeedViewController+CRTableViewAdditions.h"
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 @interface MainFeedViewController ()<NSFetchedResultsControllerDelegate>
-
-- (void)refetchData;
-
-@property(nonatomic, strong, readwrite) NSFetchedResultsController* fetchedResultsController;
-
 @property(nonatomic, strong, readwrite) IBOutlet UILabel* titleLabel;
 @property(nonatomic, strong, readwrite) IBOutlet UITableView* tableView;
 @property(nonatomic, strong, readwrite) NSString* currentTopic;
-
 @property(nonatomic, strong, readwrite) NSDateFormatter *dateFormatter;
-
 @end
 
 @implementation MainFeedViewController
-
-- (NSFetchRequest*)fetchRequestWithTopic:(NSString*)topic {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
-
-    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date_published" ascending:NO selector:@selector(compare:)];
-    
-#warning replce this with real topic --> predicate mapping
-    if (topic != nil && [topic caseInsensitiveCompare:@"Home"] != NSOrderedSame) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"topics contains[cd] %@", @"Technology"];
-        [fetchRequest setPredicate:predicate];
-    }
-    
-    fetchRequest.sortDescriptors = @[dateDescriptor];
-    fetchRequest.returnsObjectsAsFaults = NO;
-    return fetchRequest;
-}
-
-- (void)refetchData {
-    self.fetchedResultsController.fetchRequest.resultType = NSManagedObjectResultType;
-    [self.fetchedResultsController performFetch:nil];
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 		_dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateStyle:NSDateFormatterShortStyle];
+        
+        self.managedObjectContext = nil;
     }
     return self;
+}
+
+-(void)loadAllShowsFromNetworkOrDBWithSuccess:(void (^)(void))success
+                                      failure:(void (^)(NSError* error))failure {
+    NSString *topic = @"all";
+    [self fetchDataForTopic:topic success:^(NSFetchedResultsController *controller) {
+        if (controller.fetchedObjects.count == 0) {
+            [self networkImportShowsForTopic:topic success:success failure:failure];
+        } else {
+            success();
+        }
+    } failure:^(NSFetchedResultsController *controller, NSError *error) {
+        failure(error);
+    }];
+}
+
+- (void)networkImportShowsForTopic:(NSString*)topic
+                           success:(void (^)(void))success
+                           failure:(void (^)(NSError* error))failure {
+    [self showLoadingViewAnimated:YES];
+    [[CharlieRoseAPIClient sharedClient] getShowsForTopic:topic
+                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                      
+                                                      NSError *error = nil;
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            [[CRDBHandler sharedDBHandler] importShowsArray:responseObject
+                                                   forTopic:topic
+                                                    success:success
+                                                    failure:failure];
+            [self hideLoadingViewAnimated:YES];
+        } else {
+            failure(error);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
+}
+
+
+- (void)handleDidLoadAllShowsFromNetworkOrDB {
+}
+
+- (void)handleDidFailLoadingAllShowsFromNetworkOrDBWithError:(NSError*)error {
+    if ([error isNetworkingError]) {
+        NSLog(@"could not load all shows from network: %@", error);
+        
+    } else if ([error isCoreDataError]) {
+        NSLog(@"core data error: %@", error);
+        
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    // create new fetched results controller and perform fetch
-	NSFetchRequest *fetchRequest = [self fetchRequestWithTopic:self.currentTopic];
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
-    self.fetchedResultsController.delegate = self;
-    [self.fetchedResultsController performFetch:nil];
+    [self loadAllShowsFromNetworkOrDBWithSuccess:^{
+        [self handleDidLoadAllShowsFromNetworkOrDB];
+    } failure:^(NSError *error) {
+        [self handleDidFailLoadingAllShowsFromNetworkOrDBWithError:error];
+    }];
 }
 
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
+- (void)showCouldNotContactServer {
+#warning TODO: implement method
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,7 +134,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     if (cell == nil) {
         cell = [self newCellForRowAtIndexPath:indexPath identifier:currentIdentifier];
     }
-	
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+	[self triggerImageLoadingForCell:(ShowCell*)cell indexPath:indexPath];
+    
     return cell;
 }
 
@@ -116,6 +144,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self configureCell:cell forRowAtIndexPath:indexPath];
+    NSLog(@"willDisplayCell: %d", indexPath.row);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -130,73 +159,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	}
 }
 
-#pragma mark - table view cells instanstiation
-
--(UITableViewCell*)newCellForRowAtIndexPath:(NSIndexPath *)indexPath identifier:(NSString*)identifier {
-	UITableViewCell *cell = nil;
-	cell = [self newShowCellForRowAtIndexPath:indexPath identifier:identifier];
-	return cell;
-}
-
-- (ShowCell*)newShowCellForRowAtIndexPath:(NSIndexPath *)indexPath identifier:(NSString*)identifier {
-	ShowCell *cell = [[ShowCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-	return cell;
-}
-
-#pragma mark - table view helpers
--(NSString*)cellIdentifierForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifierShowCell = @"ShowCell";
-	NSString* currentIdentifier = nil;
-	currentIdentifier = CellIdentifierShowCell;
-	return currentIdentifier;
-}
-
-#pragma mark - table view cells configuration
-
--(void)configureCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	[self configureShowCell:(ShowCell *)cell forRowAtIndexPath:indexPath];
-}
-
--(void)configureShowCell:(ShowCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	Show* show = [self showForRowAtIndexPath:indexPath];
-    cell.show = show;
-	if (show.date_published) {
-		cell.publishingDate = [self.dateFormatter stringFromDate:show.date_published];
-	}
-	[self triggerImageLoadingForCell:cell];
-}
-
-
-#pragma mark - resource loading
--(void)triggerImageLoadingForCell:(ShowCell*)cell {
-	Show* show = cell.show;
-	NSString* currentShowId = show.show_id_string;
-	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:currentShowId];
-    if (show.imageURL) {
-        url = [NSURL URLWithString:show.imageURL];
-    }    
-	[self triggerLoadingImageAtURL:url forImageView:cell.showImageView];
-}
-
--(void)triggerLoadingImageAtURL:(NSURL*)url forImageView:(UIImageView*)imageView {
-    __block NSURL* blockThumbURL = url;
-    __block UIImageView* blockImageView = imageView;
-    
-    [blockImageView setImageWithURL:blockThumbURL
-                   placeholderImage:nil
-                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                              blockImageView.alpha = .0f;
-                              [UIView animateWithDuration:0.5f animations:^{
-                                  blockImageView.alpha = 1.0f;
-                              }];
-                          }];
-}
-
-- (Show*)showForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSManagedObject *managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
-	return (Show*)managedObject;
-}
-
 #pragma mark - loading view
 - (UIView*)superViewForLoadingView {
 	return self.tableView;
@@ -204,66 +166,62 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 #pragma mark - show topic
 
-- (NSString*)titleForTopic:(NSString*)topic {
-    
-#warning rewrite this using topic -> title mapping
-    
-    NSString* newTitle = @"";
-    if ([topic caseInsensitiveCompare:@"HOME"]==NSOrderedSame) {
-        newTitle = @"latest charlie rose shows";
-    } else {
-        newTitle = [NSString stringWithFormat:@"topic: %@",topic];
-    }
-    return [newTitle uppercaseString];
-}
-
 - (void)showTopic:(NSString*)topic {
 	BOOL topicTheSameAsCurrentTopic = ([self.currentTopic compare:topic]==NSOrderedSame);
 	if (self.currentTopic!=nil && topicTheSameAsCurrentTopic) {
 		return;
 	}
 	self.currentTopic = topic;
-    self.titleLabel.text = [self titleForTopic:topic];
-	[self loadDataForForTopic:self.currentTopic];
+    self.titleLabel.text = [NSString titleForTopic:topic];
+	[self fetchDataForTopic:self.currentTopic
+                    success:^(NSFetchedResultsController *controller) {
+    } failure:^(NSFetchedResultsController *controller, NSError *error) {
+        NSLog(@"did not fetch: %@", error);
+        
+#warning TODO: handle error
+    }];
 }
 
-- (void)loadDataForForTopic:(NSString*)topic {
+- (void)fetchDataForTopic:(NSString*)topic
+                  success:(void (^)(NSFetchedResultsController* controller))success
+                  failure:(void (^)(NSFetchedResultsController* controller, NSError* error ))failure {
 	
     self.currentTopic = topic;
     
-#warning replace this with real handling
+    self.fetchedResultsController = [NSFetchedResultsController fetchedResultsControllerWithTopic:topic delegate:self managedObjectContext:[CRDBHandler sharedDBHandler].insertionContext];
     
-    NSFetchRequest* newFetchRequest = [self fetchRequestWithTopic:topic];
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:newFetchRequest managedObjectContext:[(id)[[UIApplication sharedApplication] delegate] managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
-    self.fetchedResultsController.delegate = self;
-    [self.fetchedResultsController performFetch:nil];
+    NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+        failure(self.fetchedResultsController, error);
+        
+	    /*
+	     Replace this implementation with code to handle the error appropriately.
+         
+	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	     */
+//	    DBLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    
+    success(self.fetchedResultsController);
+    
     [self.tableView reloadData];
     
-    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    
+#warning replace this with real handling
+    
+//    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
     
 	if (TRUE) {
 		[self loadDataForTheFirstTimeForTopic:topic];
 	}
 	
-	if (FALSE) {
-		[self loadLatestDataForTopic:topic];
-	}
-	
-	if (FALSE) {
-		[self loadMoreDataForTopic:topic];
-	}
+    return;
 }
 
 - (void)loadDataForTheFirstTimeForTopic:(NSString*)topic {
     self.currentTopic = topic;
-    
-	[self showLoadingViewAnimated:YES];
-	int64_t delayInSeconds = 1.0;
-	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-			[self hideLoadingViewAnimated:YES];
-	});
 }
 
 - (void)loadLatestDataForTopic:(NSString*)topic {
@@ -280,5 +238,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)showFeedForTopic:(NSString*)topicString {
 }
+
 
 @end

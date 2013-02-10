@@ -11,10 +11,12 @@
 @interface MainFeedViewController : CharlieRoseViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 @property(nonatomic,readonly,strong) UITableView* tableView;
 @property(nonatomic,readonly,strong) NSString* currentTopic;
+@property(nonatomic, readonly, readwrite) NSDateFormatter *dateFormatter;
+
+@property(nonatomic, strong, readwrite) NSFetchedResultsController* fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (void)showTopic:(NSString*)topic;
-
-- (NSFetchRequest*)fetchRequestWithTopic:(NSString*)topic;
 
 - (void)showFeedForTopic:(NSString*)topicString;
 

@@ -27,8 +27,6 @@
 		E5204F921662B55E00B65A44 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F911662B55E00B65A44 /* Default.png */; };
 		E5204F941662B55E00B65A44 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F931662B55E00B65A44 /* Default@2x.png */; };
 		E5204F961662B55E00B65A44 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5204F951662B55E00B65A44 /* Default-568h@2x.png */; };
-		E5204F9A1662B55E00B65A44 /* CharlieRose.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */; };
-		E5204F9D1662B55E00B65A44 /* CharlieRoseIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */; };
 		E5204FB91662B8F000B65A44 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FB61662B8F000B65A44 /* IIViewDeckController.m */; };
 		E5204FBA1662B8F000B65A44 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FB81662B8F000B65A44 /* WrapController.m */; };
 		E5204FBD1662B9BF00B65A44 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5204FBB1662B9AB00B65A44 /* QuartzCore.framework */; };
@@ -39,6 +37,8 @@
 		E5204FCF1662C8AC00B65A44 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FCE1662C8AC00B65A44 /* ShowCell.m */; };
 		E5204FD21662C8CD00B65A44 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD11662C8CD00B65A44 /* MenuCell.m */; };
 		E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD41662C8DE00B65A44 /* TopicCell.m */; };
+		E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */; };
+		E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BEC16C71CFC00200D87 /* CRDBHandler.m */; };
 		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
 		E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE316655AE500FAD6A5 /* InteractionsController.m */; };
 		E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */; };
@@ -50,13 +50,17 @@
 		E55CBEFE16658BCA00FAD6A5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBEFC16658BCA00FAD6A5 /* SettingsViewController.xib */; };
 		E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBF0016658BF600FAD6A5 /* AboutViewController.m */; };
 		E55CBF0316658BF600FAD6A5 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */; };
-		E565FA4C168B7A58004AC12A /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E565FA4B168B7A58004AC12A /* Show.m */; };
+		E561BF4A16C72CF200BB3ECE /* CRModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E561BF4816C72CF200BB3ECE /* CRModel.xcdatamodeld */; };
+		E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E561BF4C16C72DBF00BB3ECE /* Show.m */; };
 		E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */; };
 		E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = E595ED5B169F44CC0036B2A2 /* Default-568h.png */; };
 		E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */; };
 		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
 		E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */; };
 		E5C6A78916AAEC990091BD07 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C6A78816AAEC990091BD07 /* play_button.png */; };
+		E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */; };
+		E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */; };
+		E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,9 +91,6 @@
 		E5204F911662B55E00B65A44 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E5204F931662B55E00B65A44 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E5204F951662B55E00B65A44 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		E5204F991662B55E00B65A44 /* CharlieRose.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharlieRose.xcdatamodel; sourceTree = "<group>"; };
-		E5204F9B1662B55E00B65A44 /* CharlieRoseIncrementalStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CharlieRoseIncrementalStore.h; path = Classes/CharlieRoseIncrementalStore.h; sourceTree = "<group>"; };
-		E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CharlieRoseIncrementalStore.m; path = Classes/CharlieRoseIncrementalStore.m; sourceTree = "<group>"; };
 		E5204FB51662B8F000B65A44 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = Vendor/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
 		E5204FB61662B8F000B65A44 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = Vendor/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
 		E5204FB71662B8F000B65A44 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = Vendor/ViewDeck/WrapController.h; sourceTree = "<group>"; };
@@ -107,6 +108,10 @@
 		E5204FD11662C8CD00B65A44 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuCell.m; path = Classes/Views/Cells/MenuCell.m; sourceTree = "<group>"; };
 		E5204FD31662C8DE00B65A44 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicCell.h; path = Classes/Views/Cells/TopicCell.h; sourceTree = "<group>"; };
 		E5204FD41662C8DE00B65A44 /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicCell.m; path = Classes/Views/Cells/TopicCell.m; sourceTree = "<group>"; };
+		E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+CRAdditions.h"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.h"; sourceTree = "<group>"; };
+		E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+CRAdditions.m"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.m"; sourceTree = "<group>"; };
+		E5436BEB16C71CFC00200D87 /* CRDBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDBHandler.h; path = Classes/Utilities/CRDBHandler.h; sourceTree = "<group>"; };
+		E5436BEC16C71CFC00200D87 /* CRDBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRDBHandler.m; path = Classes/Utilities/CRDBHandler.m; sourceTree = "<group>"; };
 		E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CharlieRoseAdditions.h"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
 		E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CharlieRoseAdditions.m"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E55CBEE216655AE500FAD6A5 /* InteractionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractionsController.h; path = "Classes/View Controllers/InteractionsController.h"; sourceTree = "<group>"; };
@@ -126,8 +131,9 @@
 		E55CBEFF16658BF600FAD6A5 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = "Classes/View Controllers/AboutViewController.h"; sourceTree = "<group>"; };
 		E55CBF0016658BF600FAD6A5 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = "Classes/View Controllers/AboutViewController.m"; sourceTree = "<group>"; };
 		E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutViewController.xib; path = "Classes/View Controllers/AboutViewController.xib"; sourceTree = "<group>"; };
-		E565FA4A168B7A58004AC12A /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
-		E565FA4B168B7A58004AC12A /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
+		E561BF4916C72CF200BB3ECE /* CRModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRModel.xcdatamodel; sourceTree = "<group>"; };
+		E561BF4B16C72DBF00BB3ECE /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
+		E561BF4C16C72DBF00BB3ECE /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
 		E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CharlieRoseAdditions.h"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
 		E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CharlieRoseAdditions.m"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E595ED5B169F44CC0036B2A2 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
@@ -137,6 +143,12 @@
 		E5AE397F166BBAEB00F217D5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Utilities/Constants.m; sourceTree = "<group>"; };
 		E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		E5C6A78816AAEC990091BD07 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_button.png; path = "Resources/Images/Compiled/Play button/play_button.png"; sourceTree = "<group>"; };
+		E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MainFeedViewController+CRTableViewAdditions.h"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.h"; sourceTree = "<group>"; };
+		E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MainFeedViewController+CRTableViewAdditions.m"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.m"; sourceTree = "<group>"; };
+		E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+CRAdditions.h"; path = "Classes/Categories/NSError+CRAdditions.h"; sourceTree = "<group>"; };
+		E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+CRAdditions.m"; path = "Classes/Categories/NSError+CRAdditions.m"; sourceTree = "<group>"; };
+		E5F9D47A16C74B7B00603E88 /* NSString+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CRAdditions.h"; path = "Classes/Categories/NSString+CRAdditions.h"; sourceTree = "<group>"; };
+		E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CRAdditions.m"; path = "Classes/Categories/NSString+CRAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +250,7 @@
 				E55CBEDD166548B100FAD6A5 /* Categories */,
 				E5204FBE1662BA9300B65A44 /* View Controllers */,
 				E5204FC51662BD7300B65A44 /* Views */,
+				E5436BD316C6DA0800200D87 /* Core Data */,
 				E5204F841662B55E00B65A44 /* Networking */,
 				E5204F971662B55E00B65A44 /* Models */,
 				E5204F821662B55E00B65A44 /* Supporting Files */,
@@ -268,8 +281,6 @@
 			children = (
 				E5204F851662B55E00B65A44 /* CharlieRoseAPIClient.h */,
 				E5204F861662B55E00B65A44 /* CharlieRoseAPIClient.m */,
-				E5204F9B1662B55E00B65A44 /* CharlieRoseIncrementalStore.h */,
-				E5204F9C1662B55E00B65A44 /* CharlieRoseIncrementalStore.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -277,9 +288,9 @@
 		E5204F971662B55E00B65A44 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */,
-				E565FA4A168B7A58004AC12A /* Show.h */,
-				E565FA4B168B7A58004AC12A /* Show.m */,
+				E561BF4816C72CF200BB3ECE /* CRModel.xcdatamodeld */,
+				E561BF4B16C72DBF00BB3ECE /* Show.h */,
+				E561BF4C16C72DBF00BB3ECE /* Show.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -323,6 +334,10 @@
 		E5204FC41662BB0B00B65A44 /* Main Feed */ = {
 			isa = PBXGroup;
 			children = (
+				E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */,
+				E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */,
+				E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */,
+				E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */,
 				E5204FBF1662BB0500B65A44 /* MainFeedViewController.h */,
 				E5204FC01662BB0500B65A44 /* MainFeedViewController.m */,
 				E5204FC11662BB0500B65A44 /* MainFeedViewController.xib */,
@@ -361,6 +376,15 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		E5436BD316C6DA0800200D87 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				E5436BEB16C71CFC00200D87 /* CRDBHandler.h */,
+				E5436BEC16C71CFC00200D87 /* CRDBHandler.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		E55CBEDD166548B100FAD6A5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +396,10 @@
 				E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */,
 				E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */,
 				E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */,
+				E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */,
+				E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */,
+				E5F9D47A16C74B7B00603E88 /* NSString+CRAdditions.h */,
+				E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -532,8 +560,6 @@
 				E5204F871662B55E00B65A44 /* CharlieRoseAPIClient.m in Sources */,
 				E5204F8D1662B55E00B65A44 /* main.m in Sources */,
 				E5204F901662B55E00B65A44 /* AppDelegate.m in Sources */,
-				E5204F9A1662B55E00B65A44 /* CharlieRose.xcdatamodeld in Sources */,
-				E5204F9D1662B55E00B65A44 /* CharlieRoseIncrementalStore.m in Sources */,
 				E5204FB91662B8F000B65A44 /* IIViewDeckController.m in Sources */,
 				E5204FBA1662B8F000B65A44 /* WrapController.m in Sources */,
 				E5204FC21662BB0500B65A44 /* MainFeedViewController.m in Sources */,
@@ -551,9 +577,15 @@
 				E55CBEFD16658BCA00FAD6A5 /* SettingsViewController.m in Sources */,
 				E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */,
 				E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */,
-				E565FA4C168B7A58004AC12A /* Show.m in Sources */,
 				E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */,
 				E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */,
+				E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */,
+				E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */,
+				E561BF4A16C72CF200BB3ECE /* CRModel.xcdatamodeld in Sources */,
+				E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */,
+				E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */,
+				E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */,
+				E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,13 +702,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E5204F981662B55E00B65A44 /* CharlieRose.xcdatamodeld */ = {
+		E561BF4816C72CF200BB3ECE /* CRModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E5204F991662B55E00B65A44 /* CharlieRose.xcdatamodel */,
+				E561BF4916C72CF200BB3ECE /* CRModel.xcdatamodel */,
 			);
-			currentVersion = E5204F991662B55E00B65A44 /* CharlieRose.xcdatamodel */;
-			path = CharlieRose.xcdatamodeld;
+			currentVersion = E561BF4916C72CF200BB3ECE /* CRModel.xcdatamodel */;
+			name = CRModel.xcdatamodeld;
+			path = Classes/CoreData/CRModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

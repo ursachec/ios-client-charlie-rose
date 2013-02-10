@@ -8,6 +8,7 @@
 
 #import "CharlieRoseViewController.h"
 
-@interface MenuViewController : CharlieRoseViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MenuViewController : CharlieRoseViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 @property(nonatomic,readonly,strong) UITableView* tableView;
+
 @end

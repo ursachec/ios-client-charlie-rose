@@ -24,7 +24,7 @@
         
         self.opaque = YES;
         self.backgroundColor = _cell.backgroundColor;
-		
+    
     }
     
     return self;
@@ -111,22 +111,22 @@
 
 @end
 
+const CGRect kShowCellImageViewFrame = {5.0f, 5.0f, 140.f, 105.0f};
 
 @interface ShowCell()
-
 @property(nonatomic,strong,readwrite) UIView *overlayView;
-
 @property(nonatomic,strong,readwrite) UILabel *titleLabel;
-
 @end
 
 @implementation ShowCell
 
 - (void)setShow:(Show *)show {
 	_show = show;
-	
 	_headline = _show.headline;
-	_topics = _show.topics;	
+	_topics = _show.topics;
+    
+    [self setNeedsLayout];
+    [self setNeedsDisplay];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -142,8 +142,7 @@
         _cellContentView.contentMode = UIViewContentModeLeft;
         [self.contentView addSubview:_cellContentView];
 		
-        self.showImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5.0f, 5.0f, 140.0f,105.0f)];
-        _showImageView.backgroundColor = [UIColor dimmedBlack];
+        self.showImageView = [[UIImageView alloc] initWithFrame:kShowCellImageViewFrame];
         [self.contentView addSubview:_showImageView];
         
 		self.backgroundView =[[UIView alloc] initWithFrame:self.bounds];
@@ -161,17 +160,13 @@
     self.cellContentView.backgroundColor = backgroundColor;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.imageView.frame = kShowCellImageViewFrame;
+}
 
-- (void)setHighlighted:(BOOL)highlighted
-{
-    if (highlighted) {
-        self.overlayView.frame = self.contentView.bounds;
-        self.overlayView.backgroundColor = [UIColor colorWithRed:.3f green:.3f blue:.3f alpha:.1f];
-    }
-    else {
-        self.overlayView.backgroundColor = [UIColor colorWithRed:.0f green:.0f blue:.0f alpha:.0f];
-    }
-    
+- (void)setHighlighted:(BOOL)highlighted {
+//    [super setHighlighted:highlighted];
     [self setNeedsDisplay];
 }
 
