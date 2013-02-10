@@ -42,23 +42,12 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
 
 #pragma mark - functional methods
 
-//
 - (void)getShowsForTopic:(NSString*)topic 
                  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
     NSString *path = [NSString stringWithFormat:@"shows/topic/%@", topic];
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-//        
-//        __weak NSManagedObjectContext *context = [Show mainQueueContext];
-//        [context performBlockAndWait:^{
-//            for (NSDictionary *showDictionary in responseObject) {
-//                Show *task = [Show objectWithDictionary:showDictionary];
-//            }
-//            [context save:nil];
-//        }];
-        
         if (success) {
             success((AFJSONRequestOperation *)operation, responseObject);
         }

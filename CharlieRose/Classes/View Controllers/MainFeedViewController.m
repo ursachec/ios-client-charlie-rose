@@ -52,13 +52,24 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     NSString *topic = @"all";
     [self fetchDataForTopic:topic success:^(NSFetchedResultsController *controller) {
         if (controller.fetchedObjects.count == 0) {
-            [self networkImportShowsForTopic:topic success:success failure:failure];
+            [self initialNetworkImportWithSuccess:success failure:failure];
         } else {
             success();
         }
     } failure:^(NSFetchedResultsController *controller, NSError *error) {
         failure(error);
     }];
+}
+
+- (void)initialNetworkImportWithSuccess:(void (^)(void))success
+                                failure:(void (^)(NSError* error))failure {
+    if ([CharlieRoseAPIClient sharedClient].networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable) {
+        NSError *error = nil;
+        failure(error);
+    } else {
+        NSString *topic = @"all";
+        [self networkImportShowsForTopic:topic success:success failure:failure];
+    }
 }
 
 - (void)networkImportShowsForTopic:(NSString*)topic
@@ -83,7 +94,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
         failure(error);
     }];
 }
-
 
 - (void)handleDidLoadAllShowsFromNetworkOrDB {
     [self hideLoadingViewAnimated:YES];
