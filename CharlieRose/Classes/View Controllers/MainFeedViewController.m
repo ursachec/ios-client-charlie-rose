@@ -89,11 +89,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)handleDidFailLoadingAllShowsFromNetworkOrDBWithError:(NSError*)error {
     if ([error isNetworkingError]) {
-        NSLog(@"could not load all shows from network: %@", error);
-        
+        [self showViewForCouldNotContactServer];
     } else if ([error isCoreDataError]) {
-        NSLog(@"core data error: %@", error);
-        
+        [self showViewForCoreDataError];
     }
 }
 
@@ -107,8 +105,16 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     }];
 }
 
-- (void)showCouldNotContactServer {
+- (void)showViewForCouldNotContactServer {
 #warning TODO: implement method
+    NSLog(@"showCouldNotContactServer");
+    
+}
+
+- (void)showViewForCoreDataError {
+#warning TODO: implement method
+    NSLog(@"showViewForCoreDataError");
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -174,13 +180,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     self.titleLabel.text = [MainFeedViewController titleForTopic:topic];
 	[self fetchDataForTopic:self.currentTopic
                     success:^(NSFetchedResultsController *controller) {
-                        
                         [self.tableView reloadData];
-                        
     } failure:^(NSFetchedResultsController *controller, NSError *error) {
-        NSLog(@"did not fetch: %@", error);
-        
-#warning TODO: handle error
+        [self showViewForCoreDataError];
     }];
 }
 
