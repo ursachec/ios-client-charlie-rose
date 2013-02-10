@@ -11,8 +11,9 @@
 #import "IIViewDeckController.h"
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "UIView+CharlieRoseAdditions.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+
 #import "CharlieRoseAPIClient.h"
+#import <UIImageView+AFNetworking.h>
 
 #import "NSError+CRAdditions.h"
 #import "NSString+CRAdditions.h"
@@ -24,28 +25,13 @@
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 @interface MainFeedViewController ()<NSFetchedResultsControllerDelegate>
-
-- (void)refetchData;
-
-
-
 @property(nonatomic, strong, readwrite) IBOutlet UILabel* titleLabel;
 @property(nonatomic, strong, readwrite) IBOutlet UITableView* tableView;
 @property(nonatomic, strong, readwrite) NSString* currentTopic;
-
 @property(nonatomic, strong, readwrite) NSDateFormatter *dateFormatter;
-
 @end
 
 @implementation MainFeedViewController
-
-
-- (void)refetchData {
-    self.fetchedResultsController.fetchRequest.resultType = NSManagedObjectResultType;
-    NSLog(@"performFetch at MainFeedVC refetchData:");
-    [self.fetchedResultsController performFetch:nil];
-    
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -56,10 +42,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
         self.managedObjectContext = nil;
     }
     return self;
-}
-
-- (void)notifyCouldNotLoadAllShowsFromNetworkOrDBWithError:(NSError*)error {
-
 }
 
 -(void)loadAllShowsFromNetworkOrDBWithSuccess:(void (^)(void))success
@@ -211,28 +193,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 
 #pragma mark - resource loading
--(void)triggerImageLoadingForCell:(ShowCell*)cell {
-	Show* show = cell.show;
-	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:show.showID];
-    if (show.imageURL) {
-        url = [NSURL URLWithString:show.imageURL];
-    }    
-	[self triggerLoadingImageAtURL:url forImageView:cell.showImageView];
-}
 
--(void)triggerLoadingImageAtURL:(NSURL*)url forImageView:(UIImageView*)imageView {
-    __block NSURL* blockThumbURL = url;
-    __weak UIImageView* blockImageView = imageView;
-    
-    [blockImageView setImageWithURL:blockThumbURL
-                   placeholderImage:nil
-                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                              blockImageView.alpha = .0f;
-                              [UIView animateWithDuration:0.5f animations:^{
-                                  blockImageView.alpha = 1.0f;
-                              }];
-                          }];
-}
 
 - (Show*)showForRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSManagedObject *managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
@@ -243,6 +204,16 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 - (UIView*)superViewForLoadingView {
 	return self.tableView;
 }
+
+-(void)triggerImageLoadingForCell:(ShowCell*)cell {
+	Show* show = cell.show;
+	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:show.showID];
+    if (show.imageURL) {
+        url = [NSURL URLWithString:show.imageURL];
+    }
+    [cell.imageView setImageWithURL:url];
+}
+
 
 #pragma mark - show topic
 

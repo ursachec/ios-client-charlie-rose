@@ -7,12 +7,12 @@
 //
 
 #import <MediaPlayer/MediaPlayer.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 
 #import "ShowDetailViewController.h"
 #import "IIViewDeckController.h"
 #import "UIView+CharlieRoseAdditions.h"
 #import "Show.h"
+#import <UIImageView+AFNetworking.h>
 
 
 @interface ShowDetailViewController ()
@@ -140,14 +140,7 @@
     __block NSURL* blockThumbURL = [NSURL URLWithString:show.imageURL];
     __block UIImageView* blockImageView = self.showImageView;
     
-    [blockImageView setImageWithURL:blockThumbURL
-                   placeholderImage:nil
-                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                              blockImageView.alpha = .0f;
-                              [UIView animateWithDuration:0.5f animations:^{
-                                  blockImageView.alpha = 1.0f;
-                              }];
-                          }];
+
 }
 
 - (void)setShow:(Show *)show {
