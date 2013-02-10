@@ -41,8 +41,13 @@
 
 #pragma mark - error view
 
-- (void)showErrorViewWithMessage:(NSString*)message {
-    
+- (void)showErrorViewAnimated:(BOOL)animated
+                      message:(NSString*)message {
+    [self showErrorViewAnimated:animated withCompletion:NULL];
+}
+
+- (void)showErrorViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion {
+
 }
 
 #pragma mark - loading view
