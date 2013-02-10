@@ -58,7 +58,7 @@
 	CharlieRoseViewController* currentCenterController = (CharlieRoseViewController*)[self.deckController centerController];
 	BOOL shouldChangeCenterViewController = (currentCenterController!=controller);
 	if (shouldChangeCenterViewController) {
-		[currentCenterController showLoadingViewAnimated:YES withCompletion:^(BOOL finished) {
+		[currentCenterController showLoadingViewAnimated:YES completion:^(BOOL finished) {
 			if (finished) {
 				self.deckController.centerController = controller;
 				[controller hideLoadingViewAnimated:YES];

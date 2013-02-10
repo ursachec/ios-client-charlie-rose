@@ -44,10 +44,12 @@
 - (void)showErrorViewAnimated:(BOOL)animated
                       message:(NSString*)message {
     self.errorView.errorTextLabel.text = message;
-    [self showErrorViewAnimated:animated withCompletion:NULL];
+    [self showErrorViewAnimated:animated message:message completion:NULL];
 }
 
-- (void)showErrorViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion {
+- (void)showErrorViewAnimated:(BOOL)animated
+                      message:(NSString*)message
+                   completion:(void (^)(BOOL finished))completion {
     UIView* errorView = self.errorView;
 	if (animated==NO) {
 		errorView.alpha = 1.0f;
@@ -64,10 +66,10 @@
 }
 
 - (void)hideErrorViewAnimated:(BOOL)animated {
-	[self hideErrorViewAnimated:animated withCompletion:NULL];
+	[self hideErrorViewAnimated:animated completion:NULL];
 }
 
-- (void)hideErrorViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion {
+- (void)hideErrorViewAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
 	UIView* loadingView = self.loadingView;
 	if (animated==NO) {
 		[loadingView removeFromSuperview];
@@ -92,10 +94,10 @@
 #pragma mark - loading view
 
 - (void)showLoadingViewAnimated:(BOOL)animated {
-	[self showLoadingViewAnimated:animated withCompletion:NULL];
+	[self showLoadingViewAnimated:animated completion:NULL];
 }
 
-- (void)showLoadingViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion {
+- (void)showLoadingViewAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
 	UIView* loadingView = self.loadingView;
 	if (animated==NO) {
 		loadingView.alpha = 1.0f;

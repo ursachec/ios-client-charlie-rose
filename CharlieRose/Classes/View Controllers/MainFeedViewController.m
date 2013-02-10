@@ -86,6 +86,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 
 - (void)handleDidLoadAllShowsFromNetworkOrDB {
+    [self hideLoadingViewAnimated:YES];
+    [self hideErrorViewAnimated:YES];
 }
 
 - (void)handleDidFailLoadingAllShowsFromNetworkOrDBWithError:(NSError*)error {
@@ -107,16 +109,11 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 }
 
 - (void)showViewForCouldNotContactServer {
-#warning TODO: implement method
-    NSLog(@"showCouldNotContactServer");
-//    [self showLoadingViewAnimated:YES];
     [self showErrorViewAnimated:YES message:@"COULD NOT CONTACT SERVER"];
 }
 
 - (void)showViewForCoreDataError {
-#warning TODO: implement method
-    NSLog(@"showViewForCoreDataError");
-    
+    [self showErrorViewAnimated:YES message:@"A BAD THING HAS ACCOURED"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -199,15 +196,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {
         failure(self.fetchedResultsController, error);
-        
-#warning handle errors
-        
-	    /*
-	     Replace this implementation with code to handle the error appropriately.
-         
-	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	     */
-	    abort();
 	}
     
     success(self.fetchedResultsController);
