@@ -14,6 +14,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CharlieRoseAPIClient.h"
 
+#import "NSError+CRAdditions.h"
 #import "NSFetchedResultsController+CRAdditions.h"
 
 #import "Show.h"
@@ -56,25 +57,73 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     return self;
 }
 
+- (void)notifyCouldNotLoadAllShowsFromNetworkOrDBWithError:(NSError*)error {
+
+}
+
+-(void)loadAllShowsFromNetworkOrDBWithSuccess:(void (^)(void))success
+                                      failure:(void (^)(NSError* error))failure {
+    NSString *topic = @"all";
+    [self fetchDataForTopic:topic success:^(NSFetchedResultsController *controller) {
+        if (controller.fetchedObjects.count == 0) {
+            [self networkImportShowsForTopic:topic success:success failure:failure];
+        } else {
+            success();
+        }
+    } failure:^(NSFetchedResultsController *controller, NSError *error) {
+        failure(error);
+    }];
+}
+
+- (void)networkImportShowsForTopic:(NSString*)topic
+                           success:(void (^)(void))success
+                           failure:(void (^)(NSError* error))failure {
+    [self showLoadingViewAnimated:YES];
+    [[CharlieRoseAPIClient sharedClient] getShowsForTopic:topic
+                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                      
+                                                      NSError *error = nil;
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            [[CRDBHandler sharedDBHandler] importShowsArray:responseObject
+                                                   forTopic:topic
+                                                    success:success
+                                                    failure:failure];
+            [self hideLoadingViewAnimated:YES];
+        } else {
+            failure(error);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
+}
+
+
+- (void)handleDidLoadAllShowsFromNetworkOrDB {
+}
+
+- (void)handleDidFailLoadingAllShowsFromNetworkOrDBWithError:(NSError*)error {
+    if ([error isNetworkingError]) {
+        NSLog(@"could not load all shows from network: %@", error);
+        
+    } else if ([error isCoreDataError]) {
+        NSLog(@"core data error: %@", error);
+        
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-
-
-    
-    
-    [[CharlieRoseAPIClient sharedClient] getShowsForTopic:@"all" success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        if ([responseObject isKindOfClass:[NSArray class]]) {
-            [[CRDBHandler sharedDBHandler] importShowsArray:responseObject
-                                                   forTopic:@"all"];
-        }
-     
-     [self fetchDataForTopic:@"all"];
-     
-     
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    [self loadAllShowsFromNetworkOrDBWithSuccess:^{
+        [self handleDidLoadAllShowsFromNetworkOrDB];
+    } failure:^(NSError *error) {
+        [self handleDidFailLoadingAllShowsFromNetworkOrDBWithError:error];
     }];
+}
+
+- (void)showCouldNotContactServer {
+#warning TODO: implement method
 }
 
 - (void)didReceiveMemoryWarning {
@@ -216,17 +265,19 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	}
 	self.currentTopic = topic;
     self.titleLabel.text = [self titleForTopic:topic];
-	[self fetchDataForTopic:self.currentTopic];
+	[self fetchDataForTopic:self.currentTopic
+                    success:^(NSFetchedResultsController *controller) {
+        
+                        NSLog(@"didfetch: %d", controller.fetchedObjects.count);
+                        
+    } failure:^(NSFetchedResultsController *controller, NSError *error) {
+        NSLog(@"did not fetch: %@", error);
+    }];
 }
 
-
-- (void)handleResultsForFetchResultsController:(NSFetchedResultsController*)controller {
-    if (controller.fetchedObjects.count == 0) {
-#warning TODO: maybe trigger a load data
-    }
-}
-
-- (void)fetchDataForTopic:(NSString*)topic {
+- (void)fetchDataForTopic:(NSString*)topic
+                  success:(void (^)(NSFetchedResultsController* controller))success
+                  failure:(void (^)(NSFetchedResultsController* controller, NSError* error ))failure {
 	
     self.currentTopic = topic;
     
@@ -235,6 +286,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {
         
+        
+        failure(self.fetchedResultsController, error);
+        
 	    /*
 	     Replace this implementation with code to handle the error appropriately.
          
@@ -242,40 +296,29 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	     */
 //	    DBLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
+        
+        
 	}
+    
+    success(self.fetchedResultsController);
     
     [self.tableView reloadData];
     
     
-    return;
-    
 #warning replace this with real handling
     
-    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+//    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
     
 	if (TRUE) {
 		[self loadDataForTheFirstTimeForTopic:topic];
 	}
 	
-	if (FALSE) {
-		[self loadLatestDataForTopic:topic];
-	}
-	
-	if (FALSE) {
-		[self loadMoreDataForTopic:topic];
-	}
+    return;
 }
 
 - (void)loadDataForTheFirstTimeForTopic:(NSString*)topic {
     self.currentTopic = topic;
-    
-	[self showLoadingViewAnimated:YES];
-	int64_t delayInSeconds = 1.0;
-	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-			[self hideLoadingViewAnimated:YES];
-	});
 }
 
 - (void)loadLatestDataForTopic:(NSString*)topic {

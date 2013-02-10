@@ -58,6 +58,7 @@
 		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
 		E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */; };
 		E5C6A78916AAEC990091BD07 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C6A78816AAEC990091BD07 /* play_button.png */; };
+		E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +141,8 @@
 		E5AE397F166BBAEB00F217D5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Utilities/Constants.m; sourceTree = "<group>"; };
 		E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		E5C6A78816AAEC990091BD07 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_button.png; path = "Resources/Images/Compiled/Play button/play_button.png"; sourceTree = "<group>"; };
+		E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+CRAdditions.h"; path = "Classes/Categories/NSError+CRAdditions.h"; sourceTree = "<group>"; };
+		E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+CRAdditions.m"; path = "Classes/Categories/NSError+CRAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +388,8 @@
 				E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */,
 				E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */,
 				E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */,
+				E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */,
+				E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */,
 				E561BF4A16C72CF200BB3ECE /* CRModel.xcdatamodeld in Sources */,
 				E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */,
+				E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

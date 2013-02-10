@@ -13,7 +13,9 @@
 + (CRDBHandler *)sharedDBHandler;
 
 - (void)importShowsArray:(NSArray*)shows
-                forTopic:(NSString*)topic;
+                forTopic:(NSString*)topic
+                 success:(void (^)(void))success
+                 failure:(void (^)(NSError* error))failure;
 
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) NSManagedObjectContext *insertionContext;

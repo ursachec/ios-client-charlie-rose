@@ -32,9 +32,7 @@
     return _sharedDBHandler;
 }
 
-- (void)importShowFromDictionary:(NSDictionary*)dictionary {
-    NSLog(@"importing show: %@", dictionary[@"headline"]);
-    
+- (void)importShowFromDictionary:(NSDictionary*)dictionary {    
     self.show = nil;
     self.show.headline = dictionary[@"headline"];
     self.show.guests = dictionary[@"guests"];
@@ -51,126 +49,37 @@
     
 }
 
-- (void)importShowsToDatabaseWithArray:(NSArray*)shows {
-
+- (void)importShowsArray:(NSArray*)shows
+                forTopic:(NSString*)topic
+                 success:(void (^)(void))success
+                 failure:(void (^)(NSError* error))failure {
     
+    // create new managedObjectContext
     NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [managedObjectContext setPersistentStoreCoordinator:[self.insertionContext persistentStoreCoordinator]];
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(importerDidSave:) name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
-    NSError *saveError = nil;
-    
-    
-    //enumerate articles
+    [managedObjectContext setPersistentStoreCoordinator:[self.insertionContext persistentStoreCoordinator]];    
+
+    // save shows to DB
+    NSError* error = nil;
     for (NSDictionary* show in shows) {
-    
         [self importShowFromDictionary:show];
     }
-    [self.insertionContext save:&saveError];
+    [self.insertionContext save:&error];
     
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
-    
-    NSLog(@"error: %@", saveError);
-    
+    // call the relevat block
+    if (error != nil) {
+        failure(error);
+    } else {
+        success();
+    }    
 }
 
-- (void)importShowsArray:(NSArray*)shows
-                forTopic:(NSString*)topic {
+#pragma mark - Private methods
 
-    // do the database import
-    [self importShowsToDatabaseWithArray:shows];
-    
-    // announce to the relevant object that it's done
-    
-    
-    
-    
-}
-
--(void)importJSONWithMorePosts:(NSString*)jsonString forCategoryId:(NSString*)categoryId
-{
-//    LOG_CURRENT_FUNCTION_AND_CLASS()
-//    
-//    if([delegate respondsToSelector:@selector(didStartImportingData)]){
-//        [delegate didStartImportingData];
-//    }
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:delegate selector:@selector(importerDidSave:) name:NSManagedObjectContextDidSaveNotification object:self.insertionContext];
-//    
-//    SBJSON *parser = [[SBJSON alloc] init];
-//    
-//    NSString *json_string = [jsonString copy];
-//    NSDictionary *dictionaryFromJSON = [parser objectWithString:json_string error:nil];
-//    NSArray *articlesArray = [dictionaryFromJSON objectForKey:kTLArticles];
-//    
-//    //prepare importing
-//    NSManagedObjectContext *newManagedObjectContext = [[NSManagedObjectContext alloc] init];
-//    [newManagedObjectContext setPersistentStoreCoordinator:[self.insertionContext persistentStoreCoordinator]];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:delegate selector:@selector(importerDidSave:) name:NSManagedObjectContextDidSaveNotification object:newManagedObjectContext];
-//    NSError *saveError = nil;
-//    
-//    BOOL savedOk = NO;
-//    blogEntriesToBeSaved = 0;
-//    
-//    
-//    //----------------------------------------------------
-//    //IMPORT ARTICLES
-//    DBLog(@"importing articles...");
-//    
-//    //enumerate articles
-//    for (NSDictionary* oneArticle in articlesArray)
-//    {
-//        [self importOneArticleFromDictionary:oneArticle forceSave:NO];
-//    }
-//    
-//    DBLog(@"saving articles to the insertion context...");
-//    savedOk = [self.insertionContext save:&saveError];
-//    if (saveError==nil) {
-//        DBLog(@"saved articles to the insertion context...");
-//    }
-//    else {
-//        DBLog(@"failed to save articles to insertion context. error: %@", saveError);
-//    }
-//    
-//    DBLog(@"finished importing articles");
-//    
-//    DBLog(@"self.lastImportDateForMainPageArticle: %@", self.lastImportDateForMainPageArticle);
-//    DBLog(@"importJSONWithMorePosts __onecall_didFinishImportingData: savedOk: %@", savedOk ? @"TRUE" : @"FALSE");
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:delegate name:NSManagedObjectContextDidSaveNotification object:self.insertionContext];
-//    [[NSNotificationCenter defaultCenter] removeObserver:delegate name:NSManagedObjectContextDidSaveNotification object:newManagedObjectContext];
-//    
-//    if (savedOk) {
-//        
-//        //save date for least recent article
-//        [[UserDefaultsManager sharedDefautsManager] setDateForLeastRecentArticle:self.currentDateForLeastRecentArticle withCategoryId:categoryId];
-//        
-//        
-//        if([delegate respondsToSelector:@selector(didFinishImportingData)]){
-//            [delegate didFinishImportingData];
-//        }
-//    }
-//    else {
-//        if([delegate respondsToSelector:@selector(didFailImportingData)]){
-//            [delegate didFailImportingData];
-//        }
-//    }
-}
-
-#pragma mark - Application's Documents directory
-
-/**
- Returns the URL to the application's Documents directory.
- */
-- (NSURL *)applicationDocumentsDirectory
-{
+- (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-#pragma mark - appropriate getters
+#pragma mark - CoreData stuff
 
 - (NSManagedObjectContext *)insertionContext {
     if (_insertionContext == nil) {
@@ -187,12 +96,7 @@
     return _showEntityDescription;
 }
 
-/**
- Returns the persistent store coordinator for the application.
- If the coordinator doesn't already exist, it is created and the application's store added to it.
- */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
@@ -211,15 +115,8 @@
     return _persistentStoreCoordinator;
 }
 
-
-/**
- Returns the managed object model for the application.
- If the model doesn't already exist, it is created from the application's model.
- */
-- (NSManagedObjectModel *)managedObjectModel
-{
-    if (_managedObjectModel != nil)
-    {
+- (NSManagedObjectModel *)managedObjectModel {
+    if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CRModel" withExtension:@"momd"];
@@ -232,16 +129,6 @@
         _show = [[Show alloc] initWithEntity:self.showEntityDescription insertIntoManagedObjectContext:self.insertionContext];
     }
     return _show;
-}
-
-#pragma mark - IgnantImporter delegate methods
-// This method will be called on a secondary thread. Forward to the main thread for safe handling of UIKit objects.
-- (void)importerDidSave:(NSNotification *)saveNotification {
-    if ([NSThread isMainThread]) {
-        [self.insertionContext mergeChangesFromContextDidSaveNotification:saveNotification];
-    } else {
-        [self performSelectorOnMainThread:@selector(importerDidSave:) withObject:saveNotification waitUntilDone:NO];
-    }
 }
 
 @end
