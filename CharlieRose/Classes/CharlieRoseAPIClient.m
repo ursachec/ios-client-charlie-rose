@@ -47,7 +47,6 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
                  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
-
     NSString *path = [NSString stringWithFormat:@"shows/topic/%@", topic];
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -71,8 +70,6 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
     
 }
 
-
-//
 - (void)getShowWithID:(NSString*)showID
               success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
               failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
@@ -80,7 +77,6 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
     [self getPath:path parameters:nil success:success failure:failure];
 }
 
-//
 - (void)getLastContentUpdateWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                                 failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"last_content_update"];

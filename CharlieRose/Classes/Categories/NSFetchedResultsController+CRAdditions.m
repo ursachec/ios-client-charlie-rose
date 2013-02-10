@@ -10,18 +10,39 @@
 
 @implementation NSFetchedResultsController (CRAdditions)
 
++ (BOOL)isTopicHomeTopic:(NSString*)topic {
+    if (topic &&
+        ([topic caseInsensitiveCompare:@"Home"] != NSOrderedSame ||
+         [topic caseInsensitiveCompare:@"all"] != NSOrderedSame)) {
+            return YES;
+    }
+    return NO;
+}
+
++ (NSPredicate*)predicateForTopic:(NSString*)topic {
+    NSPredicate *predicate = nil;
+    if (NO == [self isTopicHomeTopic:topic]) {
+        predicate = [NSPredicate predicateWithFormat:@"topics contains[cd] %@", topic];
+    }
+    return predicate;
+}
+
++ (NSArray*)sortDescriptorsForTopic:(NSString*)topic {
+    NSMutableArray *sortDescriptiors = @[].mutableCopy;
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"datePublished" ascending:NO selector:@selector(compare:)];
+    [sortDescriptiors addObject:dateDescriptor];
+    return sortDescriptiors;
+}
+
 + (NSFetchRequest*)fetchRequestWithTopic:(NSString*)topic {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
     
-    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"datePublished" ascending:NO selector:@selector(compare:)];
-    
-#warning replce this with real topic --> predicate mapping
-    if (topic != nil && [topic caseInsensitiveCompare:@"Home"] != NSOrderedSame) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"topics contains[cd] %@", @"Technology"];
+    NSPredicate *predicate = [self predicateForTopic:topic];
+    if (predicate) {
         [fetchRequest setPredicate:predicate];
     }
     
-    fetchRequest.sortDescriptors = @[dateDescriptor];
+    fetchRequest.sortDescriptors = [self sortDescriptorsForTopic:topic];
     fetchRequest.returnsObjectsAsFaults = NO;
     return fetchRequest;
 }
