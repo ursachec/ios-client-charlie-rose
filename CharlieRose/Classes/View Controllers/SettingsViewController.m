@@ -23,6 +23,12 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self hideLoadingViewAnimated:NO];
+    [self hideErrorViewAnimated:NO];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
