@@ -9,12 +9,13 @@
 #import "CRDBHandler.h"
 
 #import "Show.h"
+#import <ISO8601DateFormatter.h>
 
 @interface CRDBHandler ()
 
 @property (nonatomic, strong) Show* show;
 
-@property (nonatomic, strong, readwrite) NSDateFormatter *articlesDateFormatter;
+@property (nonatomic, strong, readwrite) ISO8601DateFormatter *dateFormatter;
 @property (nonatomic, strong, readwrite) NSNumberFormatter *numberFormatter;
 @property (nonatomic, strong, readwrite) NSEntityDescription *showEntityDescription;
 
@@ -32,6 +33,15 @@
     return _sharedDBHandler;
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        
+        _dateFormatter = [[ISO8601DateFormatter alloc] init];        
+    }
+    return self;
+}
+
 - (void)importShowFromDictionary:(NSDictionary*)dictionary {    
     self.show = nil;
     self.show.headline = dictionary[@"headline"];
@@ -42,11 +52,10 @@
     self.show.keywords = dictionary[@"keywords"];
     self.show.showID = dictionary[@"show_id_string"];
     self.show.imageURL = dictionary[@"image_url"];
-    self.show.datePublished = [NSDate date];
     
-#warning TODO: set right date
-    //dictionary[@"date_published"]
-    
+    NSString *dateAsString = dictionary[@"date_published"];
+    NSDate* date = [self.dateFormatter dateFromString:dateAsString];
+    self.show.datePublished = date;
 }
 
 - (void)importShowsArray:(NSArray*)shows
