@@ -60,6 +60,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     [super viewDidLoad];
 	
 
+
+    
+    
     [[CharlieRoseAPIClient sharedClient] getShowsForTopic:@"all" success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if ([responseObject isKindOfClass:[NSArray class]]) {
@@ -67,7 +70,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
                                                    forTopic:@"all"];
         }
      
-     [self loadDataForForTopic:@"all"];
+     [self fetchDataForTopic:@"all"];
      
      
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -213,10 +216,17 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	}
 	self.currentTopic = topic;
     self.titleLabel.text = [self titleForTopic:topic];
-	[self loadDataForForTopic:self.currentTopic];
+	[self fetchDataForTopic:self.currentTopic];
 }
 
-- (void)loadDataForForTopic:(NSString*)topic {
+
+- (void)handleResultsForFetchResultsController:(NSFetchedResultsController*)controller {
+    if (controller.fetchedObjects.count == 0) {
+#warning TODO: maybe trigger a load data
+    }
+}
+
+- (void)fetchDataForTopic:(NSString*)topic {
 	
     self.currentTopic = topic;
     

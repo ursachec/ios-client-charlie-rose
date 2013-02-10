@@ -54,19 +54,23 @@
 - (void)importShowsToDatabaseWithArray:(NSArray*)shows {
 
     
-    NSManagedObjectContext *newManagedObjectContext = [[NSManagedObjectContext alloc] init];
-    [newManagedObjectContext setPersistentStoreCoordinator:[self.insertionContext persistentStoreCoordinator]];
+    NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] init];
+    [managedObjectContext setPersistentStoreCoordinator:[self.insertionContext persistentStoreCoordinator]];
     
     
-//    [[NSNotificationCenter defaultCenter] addObserver:delegate selector:@selector(importerDidSave:) name:NSManagedObjectContextDidSaveNotification object:newManagedObjectContext];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(importerDidSave:) name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
     NSError *saveError = nil;
     
     
     //enumerate articles
     for (NSDictionary* show in shows) {
+    
         [self importShowFromDictionary:show];
     }
     [self.insertionContext save:&saveError];
+    
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
     
     NSLog(@"error: %@", saveError);
     
@@ -229,4 +233,15 @@
     }
     return _show;
 }
+
+#pragma mark - IgnantImporter delegate methods
+// This method will be called on a secondary thread. Forward to the main thread for safe handling of UIKit objects.
+- (void)importerDidSave:(NSNotification *)saveNotification {
+    if ([NSThread isMainThread]) {
+        [self.insertionContext mergeChangesFromContextDidSaveNotification:saveNotification];
+    } else {
+        [self performSelectorOnMainThread:@selector(importerDidSave:) withObject:saveNotification waitUntilDone:NO];
+    }
+}
+
 @end
