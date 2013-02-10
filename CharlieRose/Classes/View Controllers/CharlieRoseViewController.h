@@ -19,4 +19,12 @@
 - (void)showLoadingViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion;
 - (void)hideLoadingViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion;
 
+
+- (void)showErrorViewAnimated:(BOOL)animated
+                      message:(NSString*)message;
+- (void)hideErrorViewAnimated:(BOOL)animated;
+- (void)showErrorViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion;
+- (void)hideErrorViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion;
+
+
 @end

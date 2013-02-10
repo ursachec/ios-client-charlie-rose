@@ -43,11 +43,50 @@
 
 - (void)showErrorViewAnimated:(BOOL)animated
                       message:(NSString*)message {
+    self.errorView.errorTextLabel.text = message;
     [self showErrorViewAnimated:animated withCompletion:NULL];
 }
 
 - (void)showErrorViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion {
+    UIView* errorView = self.errorView;
+	if (animated==NO) {
+		errorView.alpha = 1.0f;
+		[self.view addSubview:errorView];
+	} else {
+		errorView.alpha = 0.0f;
+		errorView.userInteractionEnabled = YES;
+		[self.view addSubview:errorView];
+		[UIView animateWithDuration:self.errorViewAnimationDuration
+						 animations:^{
+							 errorView.alpha = 1.0f;
+						 } completion:completion];
+	}
+}
 
+- (void)hideErrorViewAnimated:(BOOL)animated {
+	[self hideErrorViewAnimated:animated withCompletion:NULL];
+}
+
+- (void)hideErrorViewAnimated:(BOOL)animated withCompletion:(void (^)(BOOL finished))completion {
+	UIView* loadingView = self.loadingView;
+	if (animated==NO) {
+		[loadingView removeFromSuperview];
+	} else {
+		loadingView.alpha = 1.0f;
+		loadingView.userInteractionEnabled = YES;
+		[self.view addSubview:loadingView];
+		[UIView animateWithDuration:self.errorViewAnimationDuration
+						 animations:^{
+							 loadingView.alpha = 0.0f;
+						 } completion:completion];
+	}
+}
+
+- (CRErrorView*)errorView {
+	if (_errorView==nil) {
+		_errorView = [UIView newErrorViewWithSuperview:self.superViewForLoadingView];
+	}
+	return _errorView;
 }
 
 #pragma mark - loading view
@@ -70,7 +109,6 @@
 							 loadingView.alpha = 1.0f;
 						 } completion:completion];
 	}
-	return;
 }
 
 - (void)hideLoadingViewAnimated:(BOOL)animated {
@@ -90,14 +128,6 @@
 							 loadingView.alpha = 0.0f;
 						 } completion:completion];
 	}
-	return;
-}
-
-- (CRErrorView*)errorView {
-	if (_errorView==nil) {
-		_errorView = [UIView newErrorViewWithSuperview:self.superViewForLoadingView];
-	}
-	return _errorView;
 }
 
 - (UIView*)loadingView {
@@ -113,6 +143,10 @@
 
 - (CGFloat)loadingViewAnimationDuration {
 	return .3f;
+}
+
+- (CGFloat)errorViewAnimationDuration {
+	return self.loadingViewAnimationDuration;
 }
 
 @end

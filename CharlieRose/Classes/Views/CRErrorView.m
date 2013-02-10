@@ -15,9 +15,19 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
+        _errorTextLabel = [[UILabel alloc] init];
+        [_errorTextLabel setFrame:CGRectMake(40, 40, 40, 40)];
+        [_errorTextLabel setBackgroundColor:[UIColor cyanColor]];
     }
     return self;
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self addSubview:_errorTextLabel];
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -28,41 +28,27 @@
 	loadingViewLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
 	[loadingView addSubview:loadingViewLabel];
 	
-	
-	CGSize activityIndicatorSize = CGSizeMake(10.0f, 10.0f);
-	CGRect activityIndicatorRect = CGRectMake(15.0f, CGRectGetMinY(loadingViewLabel.frame)-activityIndicatorSize.height, labelSize.width, labelSize.height);
-	UIActivityIndicatorView* av = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-	av.frame = activityIndicatorRect;
-	//		[_loadingView addSubview:av];
-	[av startAnimating];
-	
 	return loadingView;
 }
 
 + (CRErrorView*)newErrorViewWithSuperview:(UIView*)superview {
     
-	UIView* errorView = nil;
+	CRErrorView* errorView = nil;
 	CGRect loadingViewRect = CGRectMake(CGRectGetMinX(superview.frame), CGRectGetMinY(superview.frame), CGRectGetWidth(superview.bounds), CGRectGetHeight(superview.bounds));
-	errorView = [[UIView alloc] initWithFrame:loadingViewRect];
+	errorView = [[CRErrorView alloc] initWithFrame:loadingViewRect];
 	errorView.backgroundColor = [UIColor dimmedBlack];
 	
 	CGSize labelSize = CGSizeMake(250.0f, 20.0f);
-	CGRect loadingViewLabelRect = CGRectMake((CGRectGetWidth(errorView.bounds)-labelSize.width)/2, 230.0f, labelSize.width, labelSize.height);
-	UILabel* loadingViewLabel = [[UILabel alloc] initWithFrame:loadingViewLabelRect];
-	loadingViewLabel.backgroundColor = [UIColor dimmedBlack];
-	loadingViewLabel.text = @"ERROR";
-	loadingViewLabel.textColor = [UIColor redColor];
-	loadingViewLabel.textAlignment = NSTextAlignmentCenter;
-	loadingViewLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
-	[errorView addSubview:loadingViewLabel];
-	
-	
-	CGSize activityIndicatorSize = CGSizeMake(10.0f, 10.0f);
-	CGRect activityIndicatorRect = CGRectMake(15.0f, CGRectGetMinY(loadingViewLabel.frame)-activityIndicatorSize.height, labelSize.width, labelSize.height);
-	UIActivityIndicatorView* av = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-	av.frame = activityIndicatorRect;
-	//		[_loadingView addSubview:av];
-	[av startAnimating];
+	CGRect errorViewLabelRect = CGRectMake((CGRectGetWidth(errorView.bounds)-labelSize.width)/2, 230.0f, labelSize.width, labelSize.height);
+	UILabel* errorViewLabel = [[UILabel alloc] initWithFrame:errorViewLabelRect];
+	errorViewLabel.backgroundColor = [UIColor dimmedBlack];
+	errorViewLabel.text = @"ERROR";
+	errorViewLabel.textColor = [UIColor redColor];
+	errorViewLabel.textAlignment = NSTextAlignmentCenter;
+	errorViewLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
+	[errorView addSubview:errorViewLabel];
+    
+    errorView.errorTextLabel = errorViewLabel;
 	
 	return errorView;
 }

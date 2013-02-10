@@ -10,4 +10,6 @@
 
 @interface CRErrorView : UIView
 
+@property(nonatomic, strong, readwrite) UILabel* errorTextLabel;
+
 @end
