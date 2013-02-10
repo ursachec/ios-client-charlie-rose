@@ -164,6 +164,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 }
 
 #pragma mark - loading view
+
 - (UIView*)superViewForLoadingView {
 	return self.tableView;
 }
@@ -175,20 +176,26 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	if (self.currentTopic!=nil && topicTheSameAsCurrentTopic) {
 		return;
 	}
-	self.currentTopic = topic;
+    
+    [self fetchDataAndShowFeedForTopic:topic];
+}
+
+- (void)fetchDataAndShowFeedForTopic:(NSString*)topic {
+    self.currentTopic = topic;
     self.titleLabel.text = [MainFeedViewController titleForTopic:topic];
 	[self fetchDataForTopic:self.currentTopic
                     success:^(NSFetchedResultsController *controller) {
                         [self.tableView reloadData];
-    } failure:^(NSFetchedResultsController *controller, NSError *error) {
-        [self showViewForCoreDataError];
-    }];
+                        [self hideLoadingViewAnimated:YES];
+                        [self hideErrorViewAnimated:YES];
+                    } failure:^(NSFetchedResultsController *controller, NSError *error) {
+                        [self showViewForCoreDataError];
+                    }];
 }
 
 - (void)fetchDataForTopic:(NSString*)topic
                   success:(void (^)(NSFetchedResultsController* controller))success
                   failure:(void (^)(NSFetchedResultsController* controller, NSError* error ))failure {
-	
     self.currentTopic = topic;
     
     self.fetchedResultsController = [NSFetchedResultsController fetchedResultsControllerWithTopic:topic delegate:self managedObjectContext:[CRDBHandler sharedDBHandler].insertionContext];
