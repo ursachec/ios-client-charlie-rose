@@ -10,7 +10,7 @@
 #import "ShowCell.h"
 #import "Show.h"
 #import "CharlieRoseAPIClient.h"
-#import <UIImageView+AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation MainFeedViewController (CRTableViewAdditions)
 
@@ -47,9 +47,8 @@
 	if (show.datePublished) {
 		cell.publishingDate = [self.dateFormatter stringFromDate:show.datePublished];
 	}
-	[self triggerImageLoadingForCell:cell];
+	[self triggerImageLoadingForCell:cell indexPath:indexPath];
 }
-
 
 #pragma mark - resource loading
 
@@ -58,14 +57,24 @@
 	return (Show*)managedObject;
 }
 
--(void)triggerImageLoadingForCell:(ShowCell*)cell {
+-(void)triggerImageLoadingForCell:(ShowCell*)cell indexPath:(NSIndexPath *)indexPath {
 	Show* show = cell.show;
 	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:show.showID];
     if (show.imageURL) {
         url = [NSURL URLWithString:show.imageURL];
     }
-    
-    [cell.imageView setImageWithURL:url];
+    [self setImageWithURL:url forCell:cell indexPath:indexPath];
+}
+
+- (void)setImageWithURL:(NSURL*)url forCell:(ShowCell*)cell indexPath:(NSIndexPath *)indexPath {
+    __weak UIImageView* weakImageView = cell.imageView;
+    [cell.imageView setImageWithURL:url
+                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                              weakImageView.alpha = 0.0f;
+                              [UIView animateWithDuration:0.5f animations:^{
+                                  weakImageView.alpha = 1.0f;
+                              }];
+                          }];
 }
 
 @end

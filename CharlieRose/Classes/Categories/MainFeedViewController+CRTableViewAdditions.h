@@ -8,7 +8,6 @@
 
 #import "MainFeedViewController.h"
 
-
 @class ShowCell;
 @class Show;
 
@@ -27,6 +26,7 @@
 
 #pragma mark - resource loading
 - (Show*)showForRowAtIndexPath:(NSIndexPath *)indexPath;
--(void)triggerImageLoadingForCell:(ShowCell*)cell;
-    
+- (void)triggerImageLoadingForCell:(ShowCell*)cell indexPath:(NSIndexPath *)indexPath;
+- (void)setImageWithURL:(NSURL*)url forCell:(ShowCell*)cell indexPath:(NSIndexPath *)indexPath;
+
 @end

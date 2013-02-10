@@ -13,7 +13,6 @@
 #import "UIView+CharlieRoseAdditions.h"
 
 #import "CharlieRoseAPIClient.h"
-#import <UIImageView+AFNetworking.h>
 
 #import "NSError+CRAdditions.h"
 #import "NSString+CRAdditions.h"
@@ -143,6 +142,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self configureCell:cell forRowAtIndexPath:indexPath];
+    NSLog(@"willDisplayCell: %d", indexPath.row);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

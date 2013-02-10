@@ -12,8 +12,6 @@
 #import "IIViewDeckController.h"
 #import "UIView+CharlieRoseAdditions.h"
 #import "Show.h"
-#import <UIImageView+AFNetworking.h>
-
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;
@@ -60,8 +58,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
@@ -69,9 +66,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	
-	
 }
 
 - (void)didReceiveMemoryWarning

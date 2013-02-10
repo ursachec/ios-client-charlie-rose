@@ -13,7 +13,6 @@
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "UIView+CharlieRoseAdditions.h"
 
-
 const NSInteger static kSectionTopics = 0;
 const NSInteger static kSectionMenuItems = 1;
 
@@ -31,8 +30,6 @@ const NSInteger static kIndexForContact = 2;
 @end
 
 @implementation MenuViewController
-
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -198,8 +195,5 @@ const NSInteger static kIndexForContact = 2;
 -(void)configureMenuCell:(MenuCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	cell.menuItemTitle = self.menuItems[indexPath.row];
 }
-
-
-
 
 @end
