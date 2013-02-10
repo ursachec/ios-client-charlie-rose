@@ -23,6 +23,7 @@
 
 #import "MainFeedViewController+CRTableViewAdditions.h"
 #import "MainFeedViewController+CRConfigurationData.h"
+#import "InteractionsController+Movement.h"
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
