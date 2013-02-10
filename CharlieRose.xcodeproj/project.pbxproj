@@ -58,6 +58,7 @@
 		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
 		E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */; };
 		E5C6A78916AAEC990091BD07 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C6A78816AAEC990091BD07 /* play_button.png */; };
+		E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */; };
 		E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */; };
 		E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */; };
 /* End PBXBuildFile section */
@@ -142,6 +143,8 @@
 		E5AE397F166BBAEB00F217D5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Utilities/Constants.m; sourceTree = "<group>"; };
 		E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		E5C6A78816AAEC990091BD07 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_button.png; path = "Resources/Images/Compiled/Play button/play_button.png"; sourceTree = "<group>"; };
+		E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MainFeedViewController+CRTableViewAdditions.h"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.h"; sourceTree = "<group>"; };
+		E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MainFeedViewController+CRTableViewAdditions.m"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.m"; sourceTree = "<group>"; };
 		E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+CRAdditions.h"; path = "Classes/Categories/NSError+CRAdditions.h"; sourceTree = "<group>"; };
 		E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+CRAdditions.m"; path = "Classes/Categories/NSError+CRAdditions.m"; sourceTree = "<group>"; };
 		E5F9D47A16C74B7B00603E88 /* NSString+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CRAdditions.h"; path = "Classes/Categories/NSString+CRAdditions.h"; sourceTree = "<group>"; };
@@ -333,6 +336,8 @@
 			children = (
 				E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */,
 				E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */,
+				E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */,
+				E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */,
 				E5204FBF1662BB0500B65A44 /* MainFeedViewController.h */,
 				E5204FC01662BB0500B65A44 /* MainFeedViewController.m */,
 				E5204FC11662BB0500B65A44 /* MainFeedViewController.xib */,
@@ -580,6 +585,7 @@
 				E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */,
 				E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */,
 				E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */,
+				E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,8 @@
 #import "Show.h"
 #import "CRDBHandler.h"
 
+#import "MainFeedViewController+CRTableViewAdditions.h"
+
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 @interface MainFeedViewController ()<NSFetchedResultsControllerDelegate>
@@ -155,65 +157,10 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	}
 }
 
-#pragma mark - table view cells instanstiation
-
--(UITableViewCell*)newCellForRowAtIndexPath:(NSIndexPath *)indexPath identifier:(NSString*)identifier {
-	UITableViewCell *cell = nil;
-	cell = [self newShowCellForRowAtIndexPath:indexPath identifier:identifier];
-	return cell;
-}
-
-- (ShowCell*)newShowCellForRowAtIndexPath:(NSIndexPath *)indexPath identifier:(NSString*)identifier {
-	ShowCell *cell = [[ShowCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-	return cell;
-}
-
-#pragma mark - table view helpers
--(NSString*)cellIdentifierForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *CellIdentifierShowCell = @"ShowCell";
-	NSString* currentIdentifier = nil;
-	currentIdentifier = CellIdentifierShowCell;
-	return currentIdentifier;
-}
-
-#pragma mark - table view cells configuration
-
--(void)configureCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	[self configureShowCell:(ShowCell *)cell forRowAtIndexPath:indexPath];
-}
-
--(void)configureShowCell:(ShowCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	Show* show = [self showForRowAtIndexPath:indexPath];
-    cell.show = show;
-	if (show.datePublished) {
-		cell.publishingDate = [self.dateFormatter stringFromDate:show.datePublished];
-	}
-	[self triggerImageLoadingForCell:cell];
-}
-
-
-#pragma mark - resource loading
-
-
-- (Show*)showForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSManagedObject *managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
-	return (Show*)managedObject;
-}
-
 #pragma mark - loading view
 - (UIView*)superViewForLoadingView {
 	return self.tableView;
 }
-
--(void)triggerImageLoadingForCell:(ShowCell*)cell {
-	Show* show = cell.show;
-	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:show.showID];
-    if (show.imageURL) {
-        url = [NSURL URLWithString:show.imageURL];
-    }
-    [cell.imageView setImageWithURL:url];
-}
-
 
 #pragma mark - show topic
 
@@ -243,8 +190,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     
     NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {
-        
-        
         failure(self.fetchedResultsController, error);
         
 	    /*
@@ -254,8 +199,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	     */
 //	    DBLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
-        
-        
 	}
     
     success(self.fetchedResultsController);
