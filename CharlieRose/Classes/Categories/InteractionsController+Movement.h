@@ -13,7 +13,6 @@
 
 @interface InteractionsController (Movement)
 - (void)showMainFeedWithTopic:(NSString*)topic;
-- (void)showDetailViewWithShowId:(NSString*)showId;
 
 - (void)showMainFeedAnimated:(BOOL)animated;
 - (void)showMenuAnimated:(BOOL)animated;

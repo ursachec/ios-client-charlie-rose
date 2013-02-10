@@ -45,16 +45,12 @@
         return nil;
     }
     
-    _show =show;
-    
+    _show = show;
     
     _dateFormatter = [[NSDateFormatter alloc] init];
     [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
     [_dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    
-//    [_show.managedObjectContext refreshObject:_show mergeChanges:NO];
-    
         
     return self;
 }
@@ -135,7 +131,7 @@
     __weak NSURL* blockThumbURL = [NSURL URLWithString:show.imageURL];
     __weak UIImageView* blockImageView = self.showImageView;
     [blockImageView setImageWithURL:blockThumbURL
-                   placeholderImage:nil
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                               blockImageView.alpha = .0f;
                               [UIView animateWithDuration:0.5f animations:^{
@@ -166,17 +162,6 @@
 	}
 	
 	self.show = show;
-	[self loadDataForShowID:self.currentShowID];
-}
-
-
-- (void)showWithShowId:(NSString*)showId {
-	BOOL showIdTheSameAsCurrent = ([self.currentShowID compare:showId]==NSOrderedSame);
-	if (self.currentShowID!=nil && showIdTheSameAsCurrent) {
-		return;
-	}
-	
-	self.currentShowID = showId;
 	[self loadDataForShowID:self.currentShowID];
 }
 

@@ -26,11 +26,7 @@
 
 - (void)showDetailViewWithShow:(Show*)show {
 	[self.deckController toggleRightView];
-	[self.showDetailViewController presentWithShow:show];}
-
-- (void)showDetailViewWithShowId:(NSString*)showId {
-	[self.deckController toggleRightView];
-	[self.showDetailViewController showWithShowId:showId];
+	[self.showDetailViewController presentWithShow:show];
 }
 
 - (void)showMenuAnimated:(BOOL)animated {
@@ -56,19 +52,6 @@
 	[self showViewController:self.mainFeedViewController inCenterViewAnimated:YES];
 	[self.deckController showCenterView];
 	[self.mainFeedViewController showTopic:@"home"];
-}
-
-- (void)showDetailAnimated:(BOOL)animated {
-	[self.deckController toggleRightView];
-	
-	[self.showDetailViewController showLoadingViewAnimated:YES];
-	
-	int64_t delayInSeconds = 1.0;
-	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-		[self.showDetailViewController hideLoadingViewAnimated:YES];
-	});
-	
 }
 
 - (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated {

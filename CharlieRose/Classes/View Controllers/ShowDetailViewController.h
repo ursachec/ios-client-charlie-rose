@@ -22,8 +22,6 @@
 @property(nonatomic, readonly, strong) UIImageView* showImageView;
 @property(nonatomic, readonly, strong) UITextView* descriptionTextView;
 
-- (void)showWithShowId:(NSString*)showId;
-
 - (id)initWithShow:(Show *)show;
 - (void)presentWithShow:(Show*)show;
 
