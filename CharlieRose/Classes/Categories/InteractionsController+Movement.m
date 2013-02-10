@@ -67,7 +67,7 @@
 - (void)showMainFeedAnimated:(BOOL)animated {
 	[self showViewController:self.mainFeedViewController inCenterViewAnimated:animated];
 	[self.deckController showCenterView];
-	[self.mainFeedViewController showTopic:@"home"];
+	[self.mainFeedViewController showTopicHome];
 }
 
 - (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated showLoadingView:(BOOL)showLoadingView {

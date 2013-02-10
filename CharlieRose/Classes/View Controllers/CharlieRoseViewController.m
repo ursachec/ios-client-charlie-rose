@@ -70,7 +70,7 @@
 }
 
 - (void)hideErrorViewAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
-	UIView* loadingView = self.loadingView;
+	UIView* loadingView = self.errorView;
 	if (animated==NO) {
 		[loadingView removeFromSuperview];
 	} else {

@@ -22,7 +22,7 @@
 }
 
 - (NSArray*)appTopics {
-    NSArray* items = @[@"HOME", @"Art & Design", @"Books", @"Business", @"Current Affairs", @"History", @"In Memoriam", @"Lifestyle", @"Movies, TV & Theater", @"Music", @"Science & Health", @"Sports", @"Technology" ];
+    NSArray* items = @[@"Home", @"Art & Design", @"Books", @"Business", @"Current Affairs", @"History", @"In Memoriam", @"Lifestyle", @"Movies, TV & Theater", @"Music", @"Science & Health", @"Sports", @"Technology" ];
     return [NSArray arrayWithUppercaseStrings:items];
 }
 

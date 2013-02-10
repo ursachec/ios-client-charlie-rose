@@ -16,4 +16,7 @@
 + (InteractionsController*)sharedInteractionsController {
 	return [InteractionsController sharedInteractionsController];
 }
+
+
+
 @end

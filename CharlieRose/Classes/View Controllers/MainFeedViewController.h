@@ -16,6 +16,7 @@
 @property(nonatomic, strong, readwrite) NSFetchedResultsController* fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+- (void)showTopicHome;
 - (void)showTopic:(NSString*)topic;
 
 @end

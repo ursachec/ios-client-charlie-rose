@@ -13,4 +13,5 @@
 @interface UIApplication (CharlieRoseAdditions)
 + (AppDelegate*)sharedAppDelegate;
 + (InteractionsController*)sharedInteractionsController;
+- (BOOL)hasImportedShowsForInitialImport;
 @end

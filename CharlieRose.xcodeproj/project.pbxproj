@@ -43,6 +43,7 @@
 		E53044B316C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044B216C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m */; };
 		E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */; };
 		E53044C216C83BA5009E3D3D /* CRErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044C116C83BA5009E3D3D /* CRErrorView.m */; };
+		E53044C516C85756009E3D3D /* NSUserDefaults+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */; };
 		E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */; };
 		E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BEC16C71CFC00200D87 /* CRDBHandler.m */; };
 		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
@@ -125,6 +126,8 @@
 		E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "InteractionsController+Movement.m"; path = "Classes/Categories/InteractionsController+Movement.m"; sourceTree = "<group>"; };
 		E53044C016C83BA5009E3D3D /* CRErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRErrorView.h; path = Classes/Views/CRErrorView.h; sourceTree = "<group>"; };
 		E53044C116C83BA5009E3D3D /* CRErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRErrorView.m; path = Classes/Views/CRErrorView.m; sourceTree = "<group>"; };
+		E53044C316C85756009E3D3D /* NSUserDefaults+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+CRAdditions.h"; path = "Classes/Categories/NSUserDefaults+CRAdditions.h"; sourceTree = "<group>"; };
+		E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+CRAdditions.m"; path = "Classes/Categories/NSUserDefaults+CRAdditions.m"; sourceTree = "<group>"; };
 		E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+CRAdditions.h"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.h"; sourceTree = "<group>"; };
 		E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+CRAdditions.m"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.m"; sourceTree = "<group>"; };
 		E5436BEB16C71CFC00200D87 /* CRDBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDBHandler.h; path = Classes/Utilities/CRDBHandler.h; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				E53044AC16C813BD009E3D3D /* NSArray+CRAdditions.m */,
 				E53044AE16C81560009E3D3D /* MenuViewController+CRConfigurationData.h */,
 				E53044AF16C81560009E3D3D /* MenuViewController+CRConfigurationData.m */,
+				E53044C316C85756009E3D3D /* NSUserDefaults+CRAdditions.h */,
+				E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -628,6 +633,7 @@
 				E53044B316C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m in Sources */,
 				E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */,
 				E53044C216C83BA5009E3D3D /* CRErrorView.m in Sources */,
+				E53044C516C85756009E3D3D /* NSUserDefaults+CRAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

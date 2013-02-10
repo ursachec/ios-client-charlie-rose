@@ -69,5 +69,4 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[UIBarButtonItem appearance] setTintColor:[UIColor dimmedBlack]];
 }
 
-
 @end

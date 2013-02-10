@@ -1,5 +1,8 @@
 #import <AFNetworking/AFHTTPClient.h>
 
+extern NSString * const kRemoteKeyForTopicHome;
+extern NSString * const kLocalKeyForTopicHome;
+
 @interface CharlieRoseAPIClient : AFHTTPClient
 
 + (CharlieRoseAPIClient *)sharedClient;

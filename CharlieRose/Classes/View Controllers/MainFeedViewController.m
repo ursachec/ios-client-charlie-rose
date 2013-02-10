@@ -25,6 +25,8 @@
 #import "MainFeedViewController+CRConfigurationData.h"
 #import "InteractionsController+Movement.h"
 
+#import "NSUserDefaults+CRAdditions.h"
+
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 @interface MainFeedViewController ()<NSFetchedResultsControllerDelegate>
@@ -49,8 +51,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 -(void)loadAllShowsFromNetworkOrDBWithSuccess:(void (^)(void))success
                                       failure:(void (^)(NSError* error))failure {
-    NSString *topic = @"all";
-    [self fetchDataForTopic:topic success:^(NSFetchedResultsController *controller) {
+    [self fetchDataForTopic:kRemoteKeyForTopicHome success:^(NSFetchedResultsController *controller) {
         if (controller.fetchedObjects.count == 0) {
             [self initialNetworkImportWithSuccess:success failure:failure];
         } else {
@@ -67,8 +68,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
         NSError *error = nil;
         failure(error);
     } else {
-        NSString *topic = @"all";
-        [self networkImportShowsForTopic:topic success:success failure:failure];
+        [self networkImportShowsForTopic:kRemoteKeyForTopicHome success:success failure:failure];
     }
 }
 
@@ -96,6 +96,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 }
 
 - (void)handleDidLoadAllShowsFromNetworkOrDB {
+    [UIApplication.sharedAppDelegate setHasImportedShowsForInitialImport:YES];
     [self hideLoadingViewAnimated:YES];
     [self hideErrorViewAnimated:YES];
 }
@@ -181,6 +182,10 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 #pragma mark - show topic
 
+- (void)showTopicHome {
+    [self showTopic:kLocalKeyForTopicHome];
+}
+
 - (void)showTopic:(NSString*)topic {
 	BOOL topicTheSameAsCurrentTopic = ([self.currentTopic compare:topic]==NSOrderedSame);
 	if (self.currentTopic!=nil && topicTheSameAsCurrentTopic) {
@@ -195,9 +200,11 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     self.titleLabel.text = [MainFeedViewController titleForTopic:topic];
 	[self fetchDataForTopic:self.currentTopic
                     success:^(NSFetchedResultsController *controller) {
-                        [self.tableView reloadData];
-                        [self hideLoadingViewAnimated:YES];
-                        [self hideErrorViewAnimated:YES];
+                        if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
+                            [self.tableView reloadData];
+                            [self hideLoadingViewAnimated:YES];
+                            [self hideErrorViewAnimated:YES];
+                        }
                     } failure:^(NSFetchedResultsController *controller, NSError *error) {
                         [self showViewForCoreDataError];
                     }];

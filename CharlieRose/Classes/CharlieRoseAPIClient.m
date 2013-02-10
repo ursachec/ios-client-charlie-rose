@@ -2,6 +2,9 @@
 #import "AFJSONRequestOperation.h"
 #import "Show.h"
 
+NSString * const kRemoteKeyForTopicHome = @"all";
+NSString * const kLocalKeyForTopicHome = @"home";
+
 static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5000";
 
 @implementation CharlieRoseAPIClient
@@ -45,9 +48,11 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
 - (void)getShowsForTopic:(NSString*)topic 
                  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                  failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
-    
     NSString *path = [NSString stringWithFormat:@"shows/topic/%@", topic];
-    [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:nil];
+    [request setTimeoutInterval:3];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success((AFJSONRequestOperation *)operation, responseObject);
         }
@@ -57,6 +62,7 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
         }
     }];
     
+    [self enqueueHTTPRequestOperation:operation];
 }
 
 - (void)getShowWithID:(NSString*)showID
@@ -71,6 +77,5 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
     NSString *path = [NSString stringWithFormat:@"last_content_update"];
     [self getPath:path parameters:nil success:success failure:failure];
 }
-
 
 @end
