@@ -11,9 +11,9 @@
 @implementation NSFetchedResultsController (CRAdditions)
 
 + (NSFetchRequest*)fetchRequestWithTopic:(NSString*)topic {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CRShow"];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
     
-    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date_published" ascending:NO selector:@selector(compare:)];
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"datePublished" ascending:NO selector:@selector(compare:)];
     
 #warning replce this with real topic --> predicate mapping
     if (topic != nil && [topic caseInsensitiveCompare:@"Home"] != NSOrderedSame) {

@@ -11,13 +11,13 @@
 #import "IIViewDeckController.h"
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "UIView+CharlieRoseAdditions.h"
-#import "Show.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CharlieRoseAPIClient.h"
 
 #import "NSFetchedResultsController+CRAdditions.h"
 
-#import "CRShow.h"
+#import "Show.h"
+#import "CRDBHandler.h"
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
@@ -51,7 +51,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 		_dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setDateStyle:NSDateFormatterShortStyle];
         
-        self.managedObjectContext = [CRShow mainQueueContext];
+        self.managedObjectContext = nil;
     }
     return self;
 }
@@ -62,11 +62,15 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
     [[CharlieRoseAPIClient sharedClient] getShowsForTopic:@"all" success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSLog(@"done: %@", operation.responseString);
-        
+        if ([responseObject isKindOfClass:[NSArray class]]) {
+            [[CRDBHandler sharedDBHandler] importShowsArray:responseObject
+                                                   forTopic:@"all"];
+        }
+     
+     [self loadDataForForTopic:@"all"];
+     
+     
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"failure: %@", operation.responseString);
     }];
 }
 
@@ -146,8 +150,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 -(void)configureShowCell:(ShowCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	Show* show = [self showForRowAtIndexPath:indexPath];
     cell.show = show;
-	if (show.date_published) {
-		cell.publishingDate = [self.dateFormatter stringFromDate:show.date_published];
+	if (show.datePublished) {
+		cell.publishingDate = [self.dateFormatter stringFromDate:show.datePublished];
 	}
 	[self triggerImageLoadingForCell:cell];
 }
@@ -156,8 +160,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 #pragma mark - resource loading
 -(void)triggerImageLoadingForCell:(ShowCell*)cell {
 	Show* show = cell.show;
-	NSString* currentShowId = show.show_id_string;
-	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:currentShowId];
+	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:show.showID];
     if (show.imageURL) {
         url = [NSURL URLWithString:show.imageURL];
     }    
@@ -217,7 +220,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	
     self.currentTopic = topic;
     
-    self.fetchedResultsController = [NSFetchedResultsController fetchedResultsControllerWithTopic:topic delegate:self managedObjectContext:self.managedObjectContext];
+    self.fetchedResultsController = [NSFetchedResultsController fetchedResultsControllerWithTopic:topic delegate:self managedObjectContext:[CRDBHandler sharedDBHandler].insertionContext];
     
     NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {

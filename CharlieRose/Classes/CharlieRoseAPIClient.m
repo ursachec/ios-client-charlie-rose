@@ -1,6 +1,6 @@
 #import "CharlieRoseAPIClient.h"
 #import "AFJSONRequestOperation.h"
-#import "CRShow.h"
+#import "Show.h"
 
 static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5000";
 
@@ -51,14 +51,14 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5
     NSString *path = [NSString stringWithFormat:@"shows/topic/%@", topic];
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        
-        __weak NSManagedObjectContext *context = [CRShow mainQueueContext];
-        [context performBlockAndWait:^{
-            for (NSDictionary *showDictionary in responseObject) {
-                CRShow *task = [CRShow objectWithDictionary:showDictionary];
-            }
-            [context save:nil];
-        }];
+//        
+//        __weak NSManagedObjectContext *context = [Show mainQueueContext];
+//        [context performBlockAndWait:^{
+//            for (NSDictionary *showDictionary in responseObject) {
+//                Show *task = [Show objectWithDictionary:showDictionary];
+//            }
+//            [context save:nil];
+//        }];
         
         if (success) {
             success((AFJSONRequestOperation *)operation, responseObject);

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CharlieRoseIncrementalStore.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

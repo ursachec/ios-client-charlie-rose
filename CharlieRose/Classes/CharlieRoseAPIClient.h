@@ -1,7 +1,6 @@
-#import "AFIncrementalStore.h"
-#import "AFRestClient.h"
+#import <AFNetworking/AFHTTPClient.h>
 
-@interface CharlieRoseAPIClient : AFRESTClient <AFIncrementalStoreHTTPClient>
+@interface CharlieRoseAPIClient : AFHTTPClient
 
 + (CharlieRoseAPIClient *)sharedClient;
 + (NSURL*)imageURLForShowId:(NSString*)showId;

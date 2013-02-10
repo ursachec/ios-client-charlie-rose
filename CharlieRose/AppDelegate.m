@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "InteractionsController.h"
+#import "CRDBHandler.h"
 
 @implementation AppDelegate
 
@@ -28,6 +29,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     InteractionsController *interactionsCtl = [InteractionsController sharedInteractionsController];
 
     [[InteractionsController sharedInteractionsController] initializeAndSetupViewDeckController];
+    
+    
     
     self.window.rootViewController = interactionsCtl.deckController;
     [self.window makeKeyAndVisible];
@@ -65,67 +68,16 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
 #pragma mark - Core Data
 
-- (void)saveContext {
-    NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-}
-
-- (NSManagedObjectContext *)managedObjectContext {
-    if (_managedObjectContext) {
-        return _managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    
-    return _managedObjectContext;
-}
-
-- (NSManagedObjectModel *)managedObjectModel {
-    if (_managedObjectModel) {
-        return _managedObjectModel;
-    }
-    
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CharlieRose" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    
-    return _managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator) {
-        return _persistentStoreCoordinator;
-    }
-    
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    
-    AFIncrementalStore *incrementalStore = (AFIncrementalStore *)[_persistentStoreCoordinator addPersistentStoreWithType:[CharlieRoseIncrementalStore type] configuration:nil URL:nil options:nil error:nil];
-    
-    NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:@"CharlieRose.sqlite"];
-    
-    NSDictionary *options = @{
-        NSInferMappingModelAutomaticallyOption : @(YES),
-        NSMigratePersistentStoresAutomaticallyOption: @(YES)
-    };
-    
-    NSError *error = nil;
-    if (![incrementalStore.backingPersistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _persistentStoreCoordinator;
-}
+//- (void)saveContext {
+//    NSError *error = nil;
+//    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+//    if (managedObjectContext) {
+//        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//            abort();
+//        }
+//    }
+//}
 
 #pragma mark - appearance proxy
 

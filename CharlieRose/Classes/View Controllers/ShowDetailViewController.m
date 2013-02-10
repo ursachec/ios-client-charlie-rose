@@ -124,7 +124,7 @@
 }
 
 - (void)setupPublishingDateLabelWithShow:(Show *)show {
-    NSString *dateString = [self.dateFormatter stringFromDate:show.date_published];
+    NSString *dateString = [self.dateFormatter stringFromDate:show.datePublished];
 	self.publishingDateLabel.backgroundColor = [UIColor clearColor];
 	self.publishingDateLabel.text = dateString;
 	self.publishingDateLabel.textColor = [UIColor publishingDateTextColor];
@@ -132,7 +132,7 @@
 
 - (void)setupDescriptionTextViewWithShow:(Show *)show {
 	self.descriptionTextView.backgroundColor = [UIColor clearColor];
-	self.descriptionTextView.text = show.videoDescription;
+	self.descriptionTextView.text = show.clipDescription;
 	self.descriptionTextView.textColor = [UIColor descriptionTextViewTextColor];
 }
 
@@ -165,8 +165,8 @@
 #pragma mark - high level show
 
 - (void)presentWithShow:(Show*)show {
-	BOOL showIdTheSameAsCurrent = ([self.show.show_id_string compare:show.show_id_string]==NSOrderedSame);
-	if (self.show.show_id_string!=nil && showIdTheSameAsCurrent) {
+	BOOL showIdTheSameAsCurrent = ([self.show.showID compare:show.showID]==NSOrderedSame);
+	if (self.show.showID!=nil && showIdTheSameAsCurrent) {
 		return;
 	}
 	

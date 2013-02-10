@@ -17,7 +17,6 @@
 #import "Show.h"
 
 #import "UIApplication+CharlieRoseAdditions.h"
-#import "CRManagedTableViewController.h"
 
 
 @interface InteractionsController ()
