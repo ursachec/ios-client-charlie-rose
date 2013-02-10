@@ -134,7 +134,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     if (cell == nil) {
         cell = [self newCellForRowAtIndexPath:indexPath identifier:currentIdentifier];
     }
-	
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+	[self triggerImageLoadingForCell:(ShowCell*)cell indexPath:indexPath];
+    
     return cell;
 }
 
@@ -229,8 +231,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    
-    NSLog(@"controllerDidChangeContent: ");
     [self.tableView reloadData];
 }
 

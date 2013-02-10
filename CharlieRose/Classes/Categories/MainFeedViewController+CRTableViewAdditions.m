@@ -47,7 +47,6 @@
 	if (show.datePublished) {
 		cell.publishingDate = [self.dateFormatter stringFromDate:show.datePublished];
 	}
-	[self triggerImageLoadingForCell:cell indexPath:indexPath];
 }
 
 #pragma mark - resource loading
@@ -68,13 +67,14 @@
 
 - (void)setImageWithURL:(NSURL*)url forCell:(ShowCell*)cell indexPath:(NSIndexPath *)indexPath {
     __weak UIImageView* weakImageView = cell.imageView;
-    [cell.imageView setImageWithURL:url
-                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                              weakImageView.alpha = 0.0f;
-                              [UIView animateWithDuration:0.5f animations:^{
-                                  weakImageView.alpha = 1.0f;
-                              }];
-                          }];
+    [weakImageView setImageWithURL:url
+                  placeholderImage:[UIImage imageNamed:@"Icon.png"]
+                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                             weakImageView.alpha = 0.0f;
+                             [UIView animateWithDuration:0.5f animations:^{
+                                 weakImageView.alpha = 1.0f;
+                             }];
+                         }];
 }
 
 @end
