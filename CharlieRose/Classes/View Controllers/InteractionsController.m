@@ -14,13 +14,10 @@
 #import "SettingsViewController.h"
 #import "ContactViewController.h"
 
-#import "Show.h"
-
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "InteractionsController+Movement.h"
 
 @interface InteractionsController ()
-
 @property (readwrite, strong, nonatomic) IIViewDeckController* deckController;
 @property (readwrite, strong, nonatomic) MenuViewController* menuViewController;
 @property (readwrite, strong, nonatomic) SettingsViewController* settingsViewController;
@@ -28,7 +25,6 @@
 @property (readwrite, strong, nonatomic) ContactViewController* contactViewController;
 @property (readwrite, strong, nonatomic) MainFeedViewController* mainFeedViewController;
 @property (readwrite, strong, nonatomic) ShowDetailViewController* showDetailViewController;
-
 @end
 
 @implementation InteractionsController
@@ -42,7 +38,6 @@
     
     return _sharedInteractionsController;
 }
-
 
 - (void)initializeAndSetupViewDeckController {
     self.mainFeedViewController = [[MainFeedViewController alloc] initWithNibName:nil bundle:nil];
@@ -59,9 +54,6 @@
     deckController.delegate = self;
 }
 
-
-
-
 #pragma mark - view deck controller delegate
 - (BOOL)viewDeckControllerWillOpenRightView:(IIViewDeckController *)viewDeckController
                                    animated:(BOOL)animated {
@@ -72,7 +64,6 @@
                                    animated:(BOOL)animated {
 	return YES;
 }
-
 
 #pragma mark - lazy fetching view controllers
 

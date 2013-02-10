@@ -13,14 +13,10 @@
 @class MainFeedViewController;
 @class ShowDetailViewController;
 @class IIViewDeckController;
-
 @class SettingsViewController;
 @class AboutViewController;
 @class ContactViewController;
 
-@class CharlieRoseViewController;
-
-@class Show;
 
 @interface InteractionsController : NSObject <IIViewDeckControllerDelegate>
 

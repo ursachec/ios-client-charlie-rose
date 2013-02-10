@@ -58,8 +58,6 @@
 	[self.mainFeedViewController showTopic:@"home"];
 }
 
-
-
 - (void)showDetailAnimated:(BOOL)animated {
 	[self.deckController toggleRightView];
 	

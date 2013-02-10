@@ -12,7 +12,6 @@
 @class Show;
 
 @interface InteractionsController (Movement)
-
 - (void)showMainFeedWithTopic:(NSString*)topic;
 - (void)showDetailViewWithShowId:(NSString*)showId;
 
@@ -23,9 +22,6 @@
 - (void)showContactAnimated:(BOOL)animated;
 
 - (void)showDetailViewWithShow:(Show*)show;
-
 - (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated;
-
-    
 @end
 
