@@ -59,6 +59,7 @@
 		E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */; };
 		E5C6A78916AAEC990091BD07 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C6A78816AAEC990091BD07 /* play_button.png */; };
 		E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */; };
+		E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,8 @@
 		E5C6A78816AAEC990091BD07 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_button.png; path = "Resources/Images/Compiled/Play button/play_button.png"; sourceTree = "<group>"; };
 		E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+CRAdditions.h"; path = "Classes/Categories/NSError+CRAdditions.h"; sourceTree = "<group>"; };
 		E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+CRAdditions.m"; path = "Classes/Categories/NSError+CRAdditions.m"; sourceTree = "<group>"; };
+		E5F9D47A16C74B7B00603E88 /* NSString+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CRAdditions.h"; path = "Classes/Categories/NSString+CRAdditions.h"; sourceTree = "<group>"; };
+		E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CRAdditions.m"; path = "Classes/Categories/NSString+CRAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +393,8 @@
 				E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */,
 				E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */,
 				E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */,
+				E5F9D47A16C74B7B00603E88 /* NSString+CRAdditions.h */,
+				E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				E561BF4A16C72CF200BB3ECE /* CRModel.xcdatamodeld in Sources */,
 				E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */,
 				E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */,
+				E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

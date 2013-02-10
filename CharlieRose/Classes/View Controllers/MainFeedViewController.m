@@ -15,6 +15,7 @@
 #import "CharlieRoseAPIClient.h"
 
 #import "NSError+CRAdditions.h"
+#import "NSString+CRAdditions.h"
 #import "NSFetchedResultsController+CRAdditions.h"
 
 #import "Show.h"
@@ -245,33 +246,19 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 #pragma mark - show topic
 
-- (NSString*)titleForTopic:(NSString*)topic {
-    
-#warning rewrite this using topic -> title mapping
-    
-    NSString* newTitle = @"";
-    if ([topic caseInsensitiveCompare:@"HOME"]==NSOrderedSame) {
-        newTitle = @"latest charlie rose shows";
-    } else {
-        newTitle = [NSString stringWithFormat:@"topic: %@",topic];
-    }
-    return [newTitle uppercaseString];
-}
-
 - (void)showTopic:(NSString*)topic {
 	BOOL topicTheSameAsCurrentTopic = ([self.currentTopic compare:topic]==NSOrderedSame);
 	if (self.currentTopic!=nil && topicTheSameAsCurrentTopic) {
 		return;
 	}
 	self.currentTopic = topic;
-    self.titleLabel.text = [self titleForTopic:topic];
+    self.titleLabel.text = [NSString titleForTopic:topic];
 	[self fetchDataForTopic:self.currentTopic
                     success:^(NSFetchedResultsController *controller) {
-        
-                        NSLog(@"didfetch: %d", controller.fetchedObjects.count);
-                        
     } failure:^(NSFetchedResultsController *controller, NSError *error) {
         NSLog(@"did not fetch: %@", error);
+        
+#warning TODO: handle error
     }];
 }
 
