@@ -12,7 +12,7 @@
 
 @interface ShowDetailViewController : CharlieRoseViewController <UINavigationControllerDelegate>
 
-@property(nonatomic,readonly,strong) NSString* currentShowId;
+@property(nonatomic,readonly,strong) NSString* currentShowID;
 @property(nonatomic,readonly,strong) UIScrollView* contentScrollView;
 
 @property(nonatomic, readonly, strong) UILabel* headlineLabel;

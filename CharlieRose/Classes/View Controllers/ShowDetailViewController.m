@@ -16,7 +16,7 @@
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;
-@property(nonatomic, readwrite, strong) NSString* currentShowId;
+@property(nonatomic, readwrite, strong) NSString* currentShowID;
 
 @property(nonatomic, readwrite, strong) NSDateFormatter *dateFormatter;
 
@@ -166,37 +166,28 @@
 	}
 	
 	self.show = show;
-	[self loadDataForShowId:self.currentShowId];
+	[self loadDataForShowID:self.currentShowID];
 }
 
 
 - (void)showWithShowId:(NSString*)showId {
-	BOOL showIdTheSameAsCurrent = ([self.currentShowId compare:showId]==NSOrderedSame);
-	if (self.currentShowId!=nil && showIdTheSameAsCurrent) {
+	BOOL showIdTheSameAsCurrent = ([self.currentShowID compare:showId]==NSOrderedSame);
+	if (self.currentShowID!=nil && showIdTheSameAsCurrent) {
 		return;
 	}
 	
-	self.currentShowId = showId;
-	[self loadDataForShowId:self.currentShowId];
+	self.currentShowID = showId;
+	[self loadDataForShowID:self.currentShowID];
 }
 
-- (void)loadDataForShowId:(NSString*)showId {
+- (void)loadDataForShowID:(NSString*)showID {
 	
-	if (TRUE) {
-		[self loadShowWithId:showId];
-	}
-	
-}
-
-- (void)loadShowWithId:(NSString*)showId {
-	[self showLoadingViewAnimated:NO];
+    [self showLoadingViewAnimated:NO];
 	int64_t delayInSeconds = 1.0;
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 		[self hideLoadingViewAnimated:YES];
-		
 		NSLog(@"headline: %@", self.show.headline);
-		
 	});
 }
 

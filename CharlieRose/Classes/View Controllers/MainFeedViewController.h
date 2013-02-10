@@ -18,6 +18,4 @@
 
 - (void)showTopic:(NSString*)topic;
 
-- (void)showFeedForTopic:(NSString*)topicString;
-
 @end

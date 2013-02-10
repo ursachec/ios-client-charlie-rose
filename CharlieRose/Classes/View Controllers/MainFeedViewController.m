@@ -144,11 +144,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self configureCell:cell forRowAtIndexPath:indexPath];
-    NSLog(@"willDisplayCell: %d", indexPath.row);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
 	BOOL isCenterControllerShown = ([self.viewDeckController rightControllerIsClosed] && [self.viewDeckController leftControllerIsClosed]);
 	if (isCenterControllerShown) {
 		Show* show = [self showForRowAtIndexPath:indexPath];
@@ -233,11 +231,5 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
 }
-
-#pragma mark - show feed for different topic
-
-- (void)showFeedForTopic:(NSString*)topicString {
-}
-
 
 @end
