@@ -41,6 +41,7 @@
 		E53044AD16C813BD009E3D3D /* NSArray+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044AC16C813BD009E3D3D /* NSArray+CRAdditions.m */; };
 		E53044B016C81560009E3D3D /* MenuViewController+CRConfigurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044AF16C81560009E3D3D /* MenuViewController+CRConfigurationData.m */; };
 		E53044B316C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044B216C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m */; };
+		E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */; };
 		E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */; };
 		E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BEC16C71CFC00200D87 /* CRDBHandler.m */; };
 		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
@@ -119,6 +120,8 @@
 		E53044AF16C81560009E3D3D /* MenuViewController+CRConfigurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MenuViewController+CRConfigurationData.m"; path = "Classes/Categories/MenuViewController+CRConfigurationData.m"; sourceTree = "<group>"; };
 		E53044B116C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MainFeedViewController+CRConfigurationData.h"; path = "Classes/Categories/MainFeedViewController+CRConfigurationData.h"; sourceTree = "<group>"; };
 		E53044B216C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MainFeedViewController+CRConfigurationData.m"; path = "Classes/Categories/MainFeedViewController+CRConfigurationData.m"; sourceTree = "<group>"; };
+		E53044BD16C8233C009E3D3D /* InteractionsController+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "InteractionsController+Movement.h"; path = "Classes/Categories/InteractionsController+Movement.h"; sourceTree = "<group>"; };
+		E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "InteractionsController+Movement.m"; path = "Classes/Categories/InteractionsController+Movement.m"; sourceTree = "<group>"; };
 		E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+CRAdditions.h"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.h"; sourceTree = "<group>"; };
 		E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+CRAdditions.m"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.m"; sourceTree = "<group>"; };
 		E5436BEB16C71CFC00200D87 /* CRDBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDBHandler.h; path = Classes/Utilities/CRDBHandler.h; sourceTree = "<group>"; };
@@ -331,6 +334,8 @@
 			children = (
 				E55CBEE216655AE500FAD6A5 /* InteractionsController.h */,
 				E55CBEE316655AE500FAD6A5 /* InteractionsController.m */,
+				E53044BD16C8233C009E3D3D /* InteractionsController+Movement.h */,
+				E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */,
 				E55CBEF4166583EE00FAD6A5 /* Abstract */,
 				E5204FC71662BE4B00B65A44 /* Menu */,
 				E5A7B3B8168DFA9D008A85F4 /* Topic Feed */,
@@ -616,6 +621,7 @@
 				E53044AD16C813BD009E3D3D /* NSArray+CRAdditions.m in Sources */,
 				E53044B016C81560009E3D3D /* MenuViewController+CRConfigurationData.m in Sources */,
 				E53044B316C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m in Sources */,
+				E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

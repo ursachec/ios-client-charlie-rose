@@ -17,7 +17,7 @@
 #import "Show.h"
 
 #import "UIApplication+CharlieRoseAdditions.h"
-
+#import "InteractionsController+Movement.h"
 
 @interface InteractionsController ()
 
@@ -59,10 +59,7 @@
     deckController.delegate = self;
 }
 
-- (void)showAboutAnimated:(BOOL)animated {
-	AboutViewController* aboutViewController = self.aboutViewController;
-	[self showViewController:aboutViewController inCenterViewAnimated:YES];
-}
+
 
 - (void)showContactAnimated:(BOOL)animated {
 	ContactViewController* contactViewController = self.contactViewController;
@@ -80,20 +77,7 @@
 	[self.mainFeedViewController showTopic:@"home"];
 }
 
-- (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated {
-	CharlieRoseViewController* currentCenterController = (CharlieRoseViewController*)[self.deckController centerController];
-	BOOL shouldChangeCenterViewController = (currentCenterController!=controller);
-	if (shouldChangeCenterViewController) {
-		[currentCenterController showLoadingViewAnimated:YES withCompletion:^(BOOL finished) {
-			if (finished) {
-				self.deckController.centerController = controller;
-				[controller hideLoadingViewAnimated:YES];
-				[currentCenterController hideLoadingViewAnimated:NO];
-			}
-		}];
-	}
-	[self.deckController showCenterView];
-}
+
 
 - (void)showDetailAnimated:(BOOL)animated {
 	[self.deckController toggleRightView];
@@ -108,13 +92,13 @@
 	
 }
 #pragma mark - view deck controller delegate
-- (BOOL)viewDeckControllerWillOpenRightView:(IIViewDeckController *)viewDeckController animated:(BOOL)animated {
-	
+- (BOOL)viewDeckControllerWillOpenRightView:(IIViewDeckController *)viewDeckController
+                                   animated:(BOOL)animated {
 	return YES;
 }
 
-- (BOOL)viewDeckControllerWillCloseLeftView:(IIViewDeckController*)viewDeckController animated:(BOOL)animated {
-	
+- (BOOL)viewDeckControllerWillCloseLeftView:(IIViewDeckController*)viewDeckController
+                                   animated:(BOOL)animated {
 	return YES;
 }
 

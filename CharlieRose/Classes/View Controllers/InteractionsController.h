@@ -18,6 +18,8 @@
 @class AboutViewController;
 @class ContactViewController;
 
+@class CharlieRoseViewController;
+
 @class Show;
 
 @interface InteractionsController : NSObject <IIViewDeckControllerDelegate>
@@ -35,7 +37,7 @@
 - (void)showMenuAnimated:(BOOL)animated;
 - (void)showDetailAnimated:(BOOL)animated;
 
-- (void)showAboutAnimated:(BOOL)animated;
+
 - (void)showContactAnimated:(BOOL)animated;
 - (void)showSettingsAnimated:(BOOL)animated;
 - (void)showMainFeedWithTopic:(NSString*)topic;

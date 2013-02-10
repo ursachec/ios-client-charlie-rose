@@ -13,6 +13,7 @@
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "UIView+CharlieRoseAdditions.h"
 #import "MenuViewController+CRConfigurationData.h"
+#import "InteractionsController+Movement.h"
 
 const NSInteger static kSectionTopics = 0;
 const NSInteger static kSectionMenuItems = 1;
