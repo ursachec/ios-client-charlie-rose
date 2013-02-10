@@ -55,6 +55,7 @@
 }
 
 #pragma mark - view deck controller delegate
+
 - (BOOL)viewDeckControllerWillOpenRightView:(IIViewDeckController *)viewDeckController
                                    animated:(BOOL)animated {
 	return YES;
@@ -87,10 +88,5 @@
 	}
 	return _contactViewController;
 }
-
-#pragma mark - show error view
-
-
-
 
 @end

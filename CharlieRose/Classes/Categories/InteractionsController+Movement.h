@@ -13,6 +13,7 @@
 
 @interface InteractionsController (Movement)
 - (void)showMainFeedWithTopic:(NSString*)topic;
+- (void)showDetailViewWithShow:(Show*)show;
 
 - (void)showMainFeedAnimated:(BOOL)animated;
 - (void)showMenuAnimated:(BOOL)animated;
@@ -20,7 +21,7 @@
 - (void)showSettingsAnimated:(BOOL)animated;
 - (void)showContactAnimated:(BOOL)animated;
 
-- (void)showDetailViewWithShow:(Show*)show;
 - (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated;
+- (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated showLoadingView:(BOOL)showLoadingView;
 @end
 
