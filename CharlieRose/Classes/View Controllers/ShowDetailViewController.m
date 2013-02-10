@@ -13,6 +13,8 @@
 #import "IIViewDeckController.h"
 #import "UIView+CharlieRoseAdditions.h"
 #import "Show.h"
+#import "InteractionsController.h"
+#import "InteractionsController+Movement.h"
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;
@@ -34,6 +36,7 @@
 @property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
 
 - (IBAction)playVideo:(id)sender;
+- (IBAction)didSwipeRight:(id)sender;
 
 @end
 
@@ -180,4 +183,17 @@
 	return self.contentScrollView;
 }
 
+#pragma mark - UIGestureRecognizer delegate methods
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+       shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UIButton class]]) {
+        return NO;
+    }
+    return YES;
+}
+
+- (IBAction)didSwipeRight:(id)sender {
+    [[InteractionsController sharedInteractionsController] showMainFeedAnimated:YES];
+}
 @end
