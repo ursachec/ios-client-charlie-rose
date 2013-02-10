@@ -1,5 +1,4 @@
 platform :ios, "6.0"
 pod "AFNetworking"
-pod "AFIncrementalStore"
 pod "SDWebImage"
 pod "SSDataKit"
