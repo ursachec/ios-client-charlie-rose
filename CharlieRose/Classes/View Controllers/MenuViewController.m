@@ -40,8 +40,8 @@ const NSInteger static kIndexForContact = 2;
 		_menuItems = @[@"SETTINGS", @"ABOUT", @"CONTACT"];
 		
 #warning load these from the network or a file
-        NSArray *preparedTopics = @[@"Home", @"Arts & Design", @"Books", @"Business", @"Current Affairs", @"History", @"In Memoriam", @"Lifestyle", @"Movies, TV & Theater", @"Music", @"Science & Health", @"Sports", @"Technology" ];
-        preparedTopics = @[@"HOME", @"ARTS & DESIGN", @"BOOKS", @"BUSINESS", @"CURRENT AFFAIRS", @"HISTORY", @"IN MEMORIAM", @"LIFESTYLE", @"MOVIES, TV & THEATER", @"MUSIC", @"SCIENCE & HEALTH", @"SPORTS", @"TECHNOLOGY" ];
+        NSArray *preparedTopics = @[@"Home", @"Art & Design", @"Books", @"Business", @"Current Affairs", @"History", @"In Memoriam", @"Lifestyle", @"Movies, TV & Theater", @"Music", @"Science & Health", @"Sports", @"Technology" ];
+        preparedTopics = @[@"HOME", @"ART & DESIGN", @"BOOKS", @"BUSINESS", @"CURRENT AFFAIRS", @"HISTORY", @"IN MEMORIAM", @"LIFESTYLE", @"MOVIES, TV & THEATER", @"MUSIC", @"SCIENCE & HEALTH", @"SPORTS", @"TECHNOLOGY" ];
         
         [preparedTopics makeObjectsPerformSelector:@selector(uppercaseString)];
         _topics = preparedTopics;
