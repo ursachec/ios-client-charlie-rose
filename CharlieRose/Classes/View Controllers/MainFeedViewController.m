@@ -174,6 +174,9 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     self.titleLabel.text = [MainFeedViewController titleForTopic:topic];
 	[self fetchDataForTopic:self.currentTopic
                     success:^(NSFetchedResultsController *controller) {
+                        
+                        [self.tableView reloadData];
+                        
     } failure:^(NSFetchedResultsController *controller, NSError *error) {
         NSLog(@"did not fetch: %@", error);
         
@@ -193,40 +196,17 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	if (![self.fetchedResultsController performFetch:&error]) {
         failure(self.fetchedResultsController, error);
         
+#warning handle errors
+        
 	    /*
 	     Replace this implementation with code to handle the error appropriately.
          
 	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
 	     */
-//	    DBLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
 	}
     
     success(self.fetchedResultsController);
-    
-    [self.tableView reloadData];
-    
-    
-#warning replace this with real handling
-    
-//    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-	if (TRUE) {
-		[self loadDataForTheFirstTimeForTopic:topic];
-	}
-	
-    return;
-}
-
-- (void)loadDataForTheFirstTimeForTopic:(NSString*)topic {
-    self.currentTopic = topic;
-}
-
-- (void)loadLatestDataForTopic:(NSString*)topic {
-}
-
-- (void)loadMoreDataForTopic:(NSString*)topic {
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
