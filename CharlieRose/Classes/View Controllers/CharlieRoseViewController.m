@@ -9,10 +9,12 @@
 #import "CharlieRoseViewController.h"
 
 #import "UIView+CharlieRoseAdditions.h"
+#import "CRErrorView.h"
 
 @interface CharlieRoseViewController ()
 @property(nonatomic, strong, readwrite) UIView* superViewForLoadingView;
 @property(nonatomic, strong, readwrite) UIView* loadingView;
+@property(nonatomic, strong, readwrite) CRErrorView* errorView;
 @property(nonatomic, assign, readwrite) CGFloat loadingViewAnimationDuration;
 
 @end
@@ -35,6 +37,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - error view
+
+- (void)showErrorViewWithMessage:(NSString*)message {
+    
 }
 
 #pragma mark - loading view
@@ -78,6 +86,13 @@
 						 } completion:completion];
 	}
 	return;
+}
+
+- (CRErrorView*)errorView {
+	if (_errorView==nil) {
+		_errorView = [UIView newErrorViewWithSuperview:self.superViewForLoadingView];
+	}
+	return _errorView;
 }
 
 - (UIView*)loadingView {

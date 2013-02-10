@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class CRErrorView;
+
 @interface UIView (CharlieRoseAdditions)
 
-+ (UIView*) newLoadingViewWithSuperview:(UIView*)superview;
++ (UIView*)newLoadingViewWithSuperview:(UIView*)superview;
++ (CRErrorView*)newErrorViewWithSuperview:(UIView*)superview;
 
 @end

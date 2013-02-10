@@ -15,6 +15,7 @@
 #import "Show.h"
 #import "InteractionsController.h"
 #import "InteractionsController+Movement.h"
+#import "CRErrorView.h"
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;

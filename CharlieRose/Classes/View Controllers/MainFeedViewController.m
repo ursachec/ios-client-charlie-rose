@@ -109,7 +109,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 - (void)showViewForCouldNotContactServer {
 #warning TODO: implement method
     NSLog(@"showCouldNotContactServer");
-    
+    [self showLoadingViewAnimated:YES];
 }
 
 - (void)showViewForCoreDataError {
