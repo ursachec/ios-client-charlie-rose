@@ -13,10 +13,6 @@
 
 @implementation AppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
@@ -24,15 +20,13 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 	
 	[self setupApperanceProxyCustomizations];
     
-    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    [AFNetworkActivityIndicatorManager.sharedManager setEnabled:YES];
 
-    InteractionsController *interactionsCtl = [InteractionsController sharedInteractionsController];
-
-    [[InteractionsController sharedInteractionsController] initializeAndSetupViewDeckController];
-    
-    
-    
+    InteractionsController *interactionsCtl = InteractionsController.sharedInteractionsController;
+    [interactionsCtl initializeAndSetupViewDeckController];
     self.window.rootViewController = interactionsCtl.deckController;
+    
+    
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -63,21 +57,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Saves changes in the application's managed object context before the application terminates.
-	[self saveContext];
+    [CRDBHandler.sharedDBHandler saveContext];
 }
 
-#pragma mark - Core Data
 
-//- (void)saveContext {
-//    NSError *error = nil;
-//    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-//    if (managedObjectContext) {
-//        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//            abort();
-//        }
-//    }
-//}
 
 #pragma mark - appearance proxy
 

@@ -17,6 +17,8 @@
                  success:(void (^)(void))success
                  failure:(void (^)(NSError* error))failure;
 
+- (void)saveContext;
+
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) NSManagedObjectContext *insertionContext;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;

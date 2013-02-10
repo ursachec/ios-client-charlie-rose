@@ -131,4 +131,17 @@
     return _show;
 }
 
+#pragma mark - Core Data
+
+- (void)saveContext {
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.insertionContext;
+    if (managedObjectContext) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
 @end

@@ -79,7 +79,7 @@
 		E5204F791662B55E00B65A44 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E5204F7B1662B55E00B65A44 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E5204F7D1662B55E00B65A44 /* CoreData.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E5204F801662B55E00B65A44 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		E5204F801662B55E00B65A44 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		E5204F831662B55E00B65A44 /* CharlieRose-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CharlieRose-Prefix.pch"; sourceTree = "<group>"; };
 		E5204F851662B55E00B65A44 /* CharlieRoseAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CharlieRoseAPIClient.h; path = Classes/CharlieRoseAPIClient.h; sourceTree = "<group>"; };
 		E5204F861662B55E00B65A44 /* CharlieRoseAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CharlieRoseAPIClient.m; path = Classes/CharlieRoseAPIClient.m; sourceTree = "<group>"; };
@@ -215,6 +215,7 @@
 				E5204FAA1662B88300B65A44 /* Vendor */,
 				E5204F761662B55E00B65A44 /* Frameworks */,
 				E5204F741662B55E00B65A44 /* Products */,
+				E5204F801662B55E00B65A44 /* Podfile */,
 				B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -244,7 +245,6 @@
 		E5204F7F1662B55E00B65A44 /* CharlieRose */ = {
 			isa = PBXGroup;
 			children = (
-				E5204F801662B55E00B65A44 /* Podfile */,
 				E5204F8E1662B55E00B65A44 /* AppDelegate.h */,
 				E5204F8F1662B55E00B65A44 /* AppDelegate.m */,
 				E55CBEDD166548B100FAD6A5 /* Categories */,
