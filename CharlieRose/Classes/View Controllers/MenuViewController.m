@@ -12,6 +12,7 @@
 #import "MenuCell.h"
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "UIView+CharlieRoseAdditions.h"
+#import "MenuViewController+CRConfigurationData.h"
 
 const NSInteger static kSectionTopics = 0;
 const NSInteger static kSectionMenuItems = 1;
@@ -36,15 +37,9 @@ const NSInteger static kIndexForContact = 2;
     if (self) {
         // Custom initialization
 		
-		_sections = @[@"Topics",@"MenuItems"];
-		_menuItems = @[@"SETTINGS", @"ABOUT", @"CONTACT"];
-		
-#warning load these from the network or a file
-        NSArray *preparedTopics = @[@"Home", @"Art & Design", @"Books", @"Business", @"Current Affairs", @"History", @"In Memoriam", @"Lifestyle", @"Movies, TV & Theater", @"Music", @"Science & Health", @"Sports", @"Technology" ];
-        preparedTopics = @[@"HOME", @"ART & DESIGN", @"BOOKS", @"BUSINESS", @"CURRENT AFFAIRS", @"HISTORY", @"IN MEMORIAM", @"LIFESTYLE", @"MOVIES, TV & THEATER", @"MUSIC", @"SCIENCE & HEALTH", @"SPORTS", @"TECHNOLOGY" ];
-        
-        [preparedTopics makeObjectsPerformSelector:@selector(uppercaseString)];
-        _topics = preparedTopics;
+		_sections = self.appSections;
+		_menuItems = self.appMenuItems;
+        _topics = self.appTopics;
         
     }
     return self;
