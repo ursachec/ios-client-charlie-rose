@@ -13,5 +13,7 @@
 - (NSArray*)appMenuItems;
 - (NSArray*)appSections;
 - (NSArray*)appTopics;
+    
++ (BOOL)isTopicHomeTopic:(NSString*)topic;
 
 @end

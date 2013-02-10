@@ -22,6 +22,7 @@
 #import "CRDBHandler.h"
 
 #import "MainFeedViewController+CRTableViewAdditions.h"
+#import "MainFeedViewController+CRConfigurationData.h"
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
@@ -170,7 +171,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 		return;
 	}
 	self.currentTopic = topic;
-    self.titleLabel.text = [NSString titleForTopic:topic];
+    self.titleLabel.text = [MainFeedViewController titleForTopic:topic];
 	[self fetchDataForTopic:self.currentTopic
                     success:^(NSFetchedResultsController *controller) {
     } failure:^(NSFetchedResultsController *controller, NSError *error) {

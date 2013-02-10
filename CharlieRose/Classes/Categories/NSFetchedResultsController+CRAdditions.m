@@ -7,21 +7,13 @@
 //
 
 #import "NSFetchedResultsController+CRAdditions.h"
+#import "MenuViewController+CRConfigurationData.h"
 
 @implementation NSFetchedResultsController (CRAdditions)
 
-+ (BOOL)isTopicHomeTopic:(NSString*)topic {
-    if (topic &&
-        ([topic caseInsensitiveCompare:@"Home"] == NSOrderedSame ||
-         [topic caseInsensitiveCompare:@"all"] == NSOrderedSame)) {
-            return YES;
-    }
-    return NO;
-}
-
 + (NSPredicate*)predicateForTopic:(NSString*)topic {
     NSPredicate *predicate = nil;
-    if (NO == [self isTopicHomeTopic:topic]) {
+    if (NO == [MenuViewController isTopicHomeTopic:topic]) {
         predicate = [NSPredicate predicateWithFormat:@"topics contains[cd] %@", topic];
     }
     return predicate;

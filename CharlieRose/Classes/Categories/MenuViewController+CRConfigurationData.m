@@ -26,4 +26,14 @@
     return [NSArray arrayWithUppercaseStrings:items];
 }
 
++ (BOOL)isTopicHomeTopic:(NSString*)topic {
+    if (topic &&
+        ([topic caseInsensitiveCompare:@"Home"] == NSOrderedSame ||
+         [topic caseInsensitiveCompare:@"all"] == NSOrderedSame)) {
+            return YES;
+        }
+    return NO;
+}
+
+
 @end

@@ -10,6 +10,4 @@
 
 @interface NSString (CRAdditions)
 
-+ (NSString*)titleForTopic:(NSString*)topic;
-
 @end
