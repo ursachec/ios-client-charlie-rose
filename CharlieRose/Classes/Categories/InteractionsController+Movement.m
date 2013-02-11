@@ -29,7 +29,7 @@
 
 - (void)showAboutAnimated:(BOOL)animated {
 	AboutViewController* aboutViewController = self.aboutViewController;
-	[self showViewController:aboutViewController inCenterViewAnimated:animated showLoadingView:NO];
+	[self showViewController:aboutViewController inCenterViewAnimated:animated];
 }
 
 - (void)showContactAnimated:(BOOL)animated {
@@ -66,8 +66,8 @@
         if (showLoadingView) {
             [currentCenterController showLoadingViewAnimated:animated completion:^(BOOL finished) {
                 if (finished) {
-                    [controller hideLoadingViewAnimated:animated];
-                    [currentCenterController hideLoadingViewAnimated:animated];
+                    [controller hideLoadingOrErrorViewAnimated:animated];
+                    [currentCenterController hideLoadingOrErrorViewAnimated:animated];
                 }
             }];
         }
@@ -76,7 +76,7 @@
 }
 
 - (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated {
-	[self showViewController:controller inCenterViewAnimated:animated showLoadingView:YES];
+	[self showViewController:controller inCenterViewAnimated:animated showLoadingView:NO];
 }
 
 @end
