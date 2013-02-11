@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class CRErrorView;
+
 @interface CharlieRoseViewController : UIViewController
 @property(nonatomic, strong, readonly) UIView* superViewForLoadingView;
 @property(nonatomic, strong, readonly) UIView* loadingView;
+@property(nonatomic, strong, readonly) CRErrorView* errorView;
 @property(nonatomic, assign, readonly) CGFloat loadingViewAnimationDuration;
 
 - (void)showLoadingViewAnimated:(BOOL)animated;

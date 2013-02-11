@@ -27,6 +27,8 @@
 
 #import "NSUserDefaults+CRAdditions.h"
 
+#import "CRErrorView.h"
+
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 @interface MainFeedViewController ()<NSFetchedResultsControllerDelegate>
@@ -189,6 +191,14 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 #pragma mark - show topic
 
+- (void)hideLoadingOrErrorViewAnimated:(BOOL)animated {
+    if (self.loadingView.superview) {
+        [self hideLoadingViewAnimated:YES];
+    }else if (self.errorView.superview) {
+        [self hideErrorViewAnimated:YES];
+    }
+}
+
 - (void)showTopicHome {
     [self showTopic:kLocalKeyForTopicHome];
 }
@@ -202,10 +212,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     [self fetchDataAndShowFeedForTopic:topic success:^(NSFetchedResultsController *controller) {
         if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
             [self.tableView reloadData];
-            [self hideLoadingViewAnimated:YES];
-            [self hideErrorViewAnimated:YES];
-        } else if (UIApplication.sharedAppDelegate.isImportingShowsForInitialImport) {
-        
+            [self hideLoadingOrErrorViewAnimated:YES];
         }
         else {
             [self handleTriedToFetchDataAndFoundNoDataFromInitialImport];

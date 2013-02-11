@@ -50,7 +50,7 @@
 - (void)showErrorViewAnimated:(BOOL)animated
                       message:(NSString*)message
                    completion:(void (^)(BOOL finished))completion {
-    UIView* errorView = self.errorView;
+    CRErrorView* errorView = self.errorView;
     if (errorView.superview) {
         return;
     }
@@ -74,7 +74,7 @@
 }
 
 - (void)hideErrorViewAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
-	UIView* errorView = self.errorView;
+	CRErrorView* errorView = self.errorView;
     
 	if (NO == animated) {
 		[errorView removeFromSuperview];
@@ -90,7 +90,7 @@
 }
 
 - (CRErrorView*)errorView {
-	if (_errorView==nil) {
+	if (_errorView == nil) {
 		_errorView = [UIView newErrorViewWithSuperview:self.superViewForLoadingView];
 	}
 	return _errorView;
