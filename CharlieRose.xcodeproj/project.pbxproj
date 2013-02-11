@@ -40,7 +40,6 @@
 		E53044A916C80258009E3D3D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E53044A816C80258009E3D3D /* placeholder.png */; };
 		E53044AD16C813BD009E3D3D /* NSArray+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044AC16C813BD009E3D3D /* NSArray+CRAdditions.m */; };
 		E53044B016C81560009E3D3D /* MenuViewController+CRConfigurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044AF16C81560009E3D3D /* MenuViewController+CRConfigurationData.m */; };
-		E53044B316C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044B216C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m */; };
 		E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */; };
 		E53044C216C83BA5009E3D3D /* CRErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044C116C83BA5009E3D3D /* CRErrorView.m */; };
 		E53044C516C85756009E3D3D /* NSUserDefaults+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */; };
@@ -120,8 +119,6 @@
 		E53044AC16C813BD009E3D3D /* NSArray+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+CRAdditions.m"; path = "Classes/Categories/NSArray+CRAdditions.m"; sourceTree = "<group>"; };
 		E53044AE16C81560009E3D3D /* MenuViewController+CRConfigurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MenuViewController+CRConfigurationData.h"; path = "Classes/Categories/MenuViewController+CRConfigurationData.h"; sourceTree = "<group>"; };
 		E53044AF16C81560009E3D3D /* MenuViewController+CRConfigurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MenuViewController+CRConfigurationData.m"; path = "Classes/Categories/MenuViewController+CRConfigurationData.m"; sourceTree = "<group>"; };
-		E53044B116C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MainFeedViewController+CRConfigurationData.h"; path = "Classes/Categories/MainFeedViewController+CRConfigurationData.h"; sourceTree = "<group>"; };
-		E53044B216C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MainFeedViewController+CRConfigurationData.m"; path = "Classes/Categories/MainFeedViewController+CRConfigurationData.m"; sourceTree = "<group>"; };
 		E53044BD16C8233C009E3D3D /* InteractionsController+Movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "InteractionsController+Movement.h"; path = "Classes/Categories/InteractionsController+Movement.h"; sourceTree = "<group>"; };
 		E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "InteractionsController+Movement.m"; path = "Classes/Categories/InteractionsController+Movement.m"; sourceTree = "<group>"; };
 		E53044C016C83BA5009E3D3D /* CRErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRErrorView.h; path = Classes/Views/CRErrorView.h; sourceTree = "<group>"; };
@@ -361,8 +358,6 @@
 				E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */,
 				E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */,
 				E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */,
-				E53044B116C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.h */,
-				E53044B216C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m */,
 				E5204FBF1662BB0500B65A44 /* MainFeedViewController.h */,
 				E5204FC01662BB0500B65A44 /* MainFeedViewController.m */,
 				E5204FC11662BB0500B65A44 /* MainFeedViewController.xib */,
@@ -630,7 +625,6 @@
 				E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */,
 				E53044AD16C813BD009E3D3D /* NSArray+CRAdditions.m in Sources */,
 				E53044B016C81560009E3D3D /* MenuViewController+CRConfigurationData.m in Sources */,
-				E53044B316C816AA009E3D3D /* MainFeedViewController+CRConfigurationData.m in Sources */,
 				E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */,
 				E53044C216C83BA5009E3D3D /* CRErrorView.m in Sources */,
 				E53044C516C85756009E3D3D /* NSUserDefaults+CRAdditions.m in Sources */,

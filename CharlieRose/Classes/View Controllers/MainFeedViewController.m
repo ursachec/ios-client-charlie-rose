@@ -22,7 +22,6 @@
 #import "CRDBHandler.h"
 
 #import "MainFeedViewController+CRTableViewAdditions.h"
-#import "MainFeedViewController+CRConfigurationData.h"
 #import "InteractionsController+Movement.h"
 
 #import "NSUserDefaults+CRAdditions.h"
@@ -244,6 +243,16 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
+}
+
++ (NSString*)titleForTopic:(NSString*)topic {
+    NSString* newTitle = @"";
+    if ([topic caseInsensitiveCompare:@"HOME"]==NSOrderedSame) {
+        newTitle = @"latest charlie rose shows";
+    } else {
+        newTitle = [NSString stringWithFormat:@"topic: %@",topic];
+    }
+    return [newTitle uppercaseString];
 }
 
 @end
