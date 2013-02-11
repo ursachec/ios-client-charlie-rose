@@ -32,5 +32,6 @@
 - (void)hideErrorViewAnimated:(BOOL)animated;
 - (void)hideErrorViewAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
 
+- (void)hideLoadingOrErrorViewAnimated:(BOOL)animated;
 
 @end

@@ -25,8 +25,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self hideLoadingViewAnimated:NO];
-    [self hideErrorViewAnimated:NO];
+    [self hideLoadingOrErrorViewAnimated:NO];
 }
 
 - (void)viewDidLoad

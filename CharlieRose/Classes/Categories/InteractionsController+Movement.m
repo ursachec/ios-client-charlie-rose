@@ -50,18 +50,6 @@
     [self showViewController:self.mainFeedViewController inCenterViewAnimated:animated];
 	[self.deckController showCenterView];
 	[self.mainFeedViewController showTopic:topic];
-    
-    MainFeedViewController *controller = self.mainFeedViewController;
-    BOOL showLoadingView = (NO == [controller.currentTopic isEqualToString:topic]);
-    if (showLoadingView && animated) {
-        [self.mainFeedViewController showLoadingViewAnimated:animated completion:^(BOOL finished) {
-            if (finished) {
-                [controller hideLoadingViewAnimated:animated];
-            }
-        }];
-    }
-    self.deckController.centerController = controller;
-	[self.deckController showCenterView];
 }
 
 - (void)showMainFeedAnimated:(BOOL)animated {

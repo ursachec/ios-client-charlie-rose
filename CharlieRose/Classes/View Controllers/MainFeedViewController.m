@@ -87,7 +87,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
                                                    forTopic:topic
                                                     success:success
                                                     failure:failure];
-            [self hideLoadingViewAnimated:YES];
+            [self hideLoadingOrErrorViewAnimated:YES];
         } else {
             failure(error);
         }
@@ -99,8 +99,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)handleDidLoadAllShowsFromNetworkOrDB {
     [UIApplication.sharedAppDelegate setHasImportedShowsForInitialImport:YES];
-    [self hideLoadingViewAnimated:YES];
-    [self hideErrorViewAnimated:YES];
+    [self hideLoadingOrErrorViewAnimated:YES];
 }
 
 - (void)handleDidFailLoadingAllShowsFromNetworkOrDBWithError:(NSError*)error {
@@ -190,14 +189,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 }
 
 #pragma mark - show topic
-
-- (void)hideLoadingOrErrorViewAnimated:(BOOL)animated {
-    if (self.loadingView.superview) {
-        [self hideLoadingViewAnimated:YES];
-    }else if (self.errorView.superview) {
-        [self hideErrorViewAnimated:YES];
-    }
-}
 
 - (void)showTopicHome {
     [self showTopic:kLocalKeyForTopicHome];

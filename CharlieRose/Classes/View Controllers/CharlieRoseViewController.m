@@ -153,11 +153,20 @@
 }
 
 - (CGFloat)loadingViewAnimationDuration {
-	return .7f;
+	return 1.2f;
 }
 
 - (CGFloat)errorViewAnimationDuration {
 	return self.loadingViewAnimationDuration;
+}
+
+
+- (void)hideLoadingOrErrorViewAnimated:(BOOL)animated {
+    if (self.loadingView.superview) {
+        [self hideLoadingViewAnimated:YES];
+    }else if (self.errorView.superview) {
+        [self hideErrorViewAnimated:YES];
+    }
 }
 
 @end
