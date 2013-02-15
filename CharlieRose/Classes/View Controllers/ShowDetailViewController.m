@@ -176,7 +176,6 @@
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 		[self hideLoadingViewAnimated:YES];
-		NSLog(@"headline: %@", self.show.headline);
 	});
 }
 
@@ -195,6 +194,6 @@
 }
 
 - (IBAction)didSwipeRight:(id)sender {
-    [[InteractionsController sharedInteractionsController] showMainFeedAnimated:YES];
+    [[InteractionsController sharedInteractionsController].deckController showCenterView];
 }
 @end
