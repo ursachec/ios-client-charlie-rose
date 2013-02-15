@@ -45,10 +45,7 @@
 		E53044C516C85756009E3D3D /* NSUserDefaults+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */; };
 		E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */; };
 		E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BEC16C71CFC00200D87 /* CRDBHandler.m */; };
-		E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */; };
 		E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE316655AE500FAD6A5 /* InteractionsController.m */; };
-		E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */; };
-		E55CBEF01665808300FAD6A5 /* UIView+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */; };
 		E55CBEF3166583E700FAD6A5 /* CharlieRoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEF2166583E600FAD6A5 /* CharlieRoseViewController.m */; };
 		E55CBEF816658B7C00FAD6A5 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEF616658B7C00FAD6A5 /* ContactViewController.m */; };
 		E55CBEF916658B7C00FAD6A5 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBEF716658B7C00FAD6A5 /* ContactViewController.xib */; };
@@ -58,12 +55,15 @@
 		E55CBF0316658BF600FAD6A5 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */; };
 		E561BF4A16C72CF200BB3ECE /* CRModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E561BF4816C72CF200BB3ECE /* CRModel.xcdatamodeld */; };
 		E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E561BF4C16C72DBF00BB3ECE /* Show.m */; };
-		E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */; };
 		E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = E595ED5B169F44CC0036B2A2 /* Default-568h.png */; };
 		E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */; };
 		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
 		E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */; };
 		E5C6A78916AAEC990091BD07 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E5C6A78816AAEC990091BD07 /* play_button.png */; };
+		E5DC8CDF16CEFECB00100B3C /* UIApplication+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CD816CEFECA00100B3C /* UIApplication+CRAdditions.m */; };
+		E5DC8CE016CEFECB00100B3C /* UIColor+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CDA16CEFECB00100B3C /* UIColor+CRAdditions.m */; };
+		E5DC8CE116CEFECB00100B3C /* UIFont+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CDC16CEFECB00100B3C /* UIFont+CRAdditions.m */; };
+		E5DC8CE216CEFECB00100B3C /* UIView+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CDE16CEFECB00100B3C /* UIView+CRAdditions.m */; };
 		E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */; };
 		E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */; };
 		E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */; };
@@ -129,14 +129,8 @@
 		E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+CRAdditions.m"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.m"; sourceTree = "<group>"; };
 		E5436BEB16C71CFC00200D87 /* CRDBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDBHandler.h; path = Classes/Utilities/CRDBHandler.h; sourceTree = "<group>"; };
 		E5436BEC16C71CFC00200D87 /* CRDBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRDBHandler.m; path = Classes/Utilities/CRDBHandler.m; sourceTree = "<group>"; };
-		E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CharlieRoseAdditions.h"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
-		E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CharlieRoseAdditions.m"; path = "Classes/Categories/UIFont+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E55CBEE216655AE500FAD6A5 /* InteractionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractionsController.h; path = "Classes/View Controllers/InteractionsController.h"; sourceTree = "<group>"; };
 		E55CBEE316655AE500FAD6A5 /* InteractionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InteractionsController.m; path = "Classes/View Controllers/InteractionsController.m"; sourceTree = "<group>"; };
-		E55CBEE516655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+CharlieRoseAdditions.h"; path = "Classes/Categories/UIApplication+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
-		E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+CharlieRoseAdditions.m"; path = "Classes/Categories/UIApplication+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
-		E55CBEEE1665808300FAD6A5 /* UIView+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CharlieRoseAdditions.h"; path = "Classes/Categories/UIView+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
-		E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CharlieRoseAdditions.m"; path = "Classes/Categories/UIView+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E55CBEF1166583E600FAD6A5 /* CharlieRoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CharlieRoseViewController.h; path = "Classes/View Controllers/CharlieRoseViewController.h"; sourceTree = "<group>"; };
 		E55CBEF2166583E600FAD6A5 /* CharlieRoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CharlieRoseViewController.m; path = "Classes/View Controllers/CharlieRoseViewController.m"; sourceTree = "<group>"; };
 		E55CBEF516658B7C00FAD6A5 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = "Classes/View Controllers/ContactViewController.h"; sourceTree = "<group>"; };
@@ -151,8 +145,6 @@
 		E561BF4916C72CF200BB3ECE /* CRModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRModel.xcdatamodel; sourceTree = "<group>"; };
 		E561BF4B16C72DBF00BB3ECE /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
 		E561BF4C16C72DBF00BB3ECE /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
-		E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CharlieRoseAdditions.h"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.h"; sourceTree = "<group>"; };
-		E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CharlieRoseAdditions.m"; path = "Classes/Categories/UIColor+CharlieRoseAdditions.m"; sourceTree = "<group>"; };
 		E595ED5B169F44CC0036B2A2 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		E5A7B3B4168DFA7A008A85F4 /* TopicFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicFeedViewController.h; path = "Classes/View Controllers/TopicFeedViewController.h"; sourceTree = "<group>"; };
 		E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicFeedViewController.m; path = "Classes/View Controllers/TopicFeedViewController.m"; sourceTree = "<group>"; };
@@ -160,6 +152,14 @@
 		E5AE397F166BBAEB00F217D5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Classes/Utilities/Constants.m; sourceTree = "<group>"; };
 		E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		E5C6A78816AAEC990091BD07 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_button.png; path = "Resources/Images/Compiled/Play button/play_button.png"; sourceTree = "<group>"; };
+		E5DC8CD716CEFECA00100B3C /* UIApplication+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+CRAdditions.h"; path = "Classes/Categories/UIApplication+CRAdditions.h"; sourceTree = "<group>"; };
+		E5DC8CD816CEFECA00100B3C /* UIApplication+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+CRAdditions.m"; path = "Classes/Categories/UIApplication+CRAdditions.m"; sourceTree = "<group>"; };
+		E5DC8CD916CEFECA00100B3C /* UIColor+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CRAdditions.h"; path = "Classes/Categories/UIColor+CRAdditions.h"; sourceTree = "<group>"; };
+		E5DC8CDA16CEFECB00100B3C /* UIColor+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CRAdditions.m"; path = "Classes/Categories/UIColor+CRAdditions.m"; sourceTree = "<group>"; };
+		E5DC8CDB16CEFECB00100B3C /* UIFont+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CRAdditions.h"; path = "Classes/Categories/UIFont+CRAdditions.h"; sourceTree = "<group>"; };
+		E5DC8CDC16CEFECB00100B3C /* UIFont+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CRAdditions.m"; path = "Classes/Categories/UIFont+CRAdditions.m"; sourceTree = "<group>"; };
+		E5DC8CDD16CEFECB00100B3C /* UIView+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CRAdditions.h"; path = "Classes/Categories/UIView+CRAdditions.h"; sourceTree = "<group>"; };
+		E5DC8CDE16CEFECB00100B3C /* UIView+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CRAdditions.m"; path = "Classes/Categories/UIView+CRAdditions.m"; sourceTree = "<group>"; };
 		E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MainFeedViewController+CRTableViewAdditions.h"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.h"; sourceTree = "<group>"; };
 		E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MainFeedViewController+CRTableViewAdditions.m"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.m"; sourceTree = "<group>"; };
 		E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+CRAdditions.h"; path = "Classes/Categories/NSError+CRAdditions.h"; sourceTree = "<group>"; };
@@ -418,14 +418,14 @@
 		E55CBEDD166548B100FAD6A5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				E55CBEDF166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.h */,
-				E55CBEE0166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m */,
-				E55CBEE516655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.h */,
-				E55CBEE616655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m */,
-				E55CBEEE1665808300FAD6A5 /* UIView+CharlieRoseAdditions.h */,
-				E55CBEEF1665808300FAD6A5 /* UIView+CharlieRoseAdditions.m */,
-				E565FA51168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.h */,
-				E565FA52168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m */,
+				E5DC8CD716CEFECA00100B3C /* UIApplication+CRAdditions.h */,
+				E5DC8CD816CEFECA00100B3C /* UIApplication+CRAdditions.m */,
+				E5DC8CD916CEFECA00100B3C /* UIColor+CRAdditions.h */,
+				E5DC8CDA16CEFECB00100B3C /* UIColor+CRAdditions.m */,
+				E5DC8CDB16CEFECB00100B3C /* UIFont+CRAdditions.h */,
+				E5DC8CDC16CEFECB00100B3C /* UIFont+CRAdditions.m */,
+				E5DC8CDD16CEFECB00100B3C /* UIView+CRAdditions.h */,
+				E5DC8CDE16CEFECB00100B3C /* UIView+CRAdditions.m */,
 				E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */,
 				E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */,
 				E5F9D47A16C74B7B00603E88 /* NSString+CRAdditions.h */,
@@ -605,16 +605,12 @@
 				E5204FD21662C8CD00B65A44 /* MenuCell.m in Sources */,
 				E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */,
 				E5140D14166436160087EB81 /* ShowDetailViewController.m in Sources */,
-				E55CBEE1166548D800FAD6A5 /* UIFont+CharlieRoseAdditions.m in Sources */,
 				E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */,
-				E55CBEE716655F9200FAD6A5 /* UIApplication+CharlieRoseAdditions.m in Sources */,
-				E55CBEF01665808300FAD6A5 /* UIView+CharlieRoseAdditions.m in Sources */,
 				E55CBEF3166583E700FAD6A5 /* CharlieRoseViewController.m in Sources */,
 				E55CBEF816658B7C00FAD6A5 /* ContactViewController.m in Sources */,
 				E55CBEFD16658BCA00FAD6A5 /* SettingsViewController.m in Sources */,
 				E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */,
 				E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */,
-				E565FA53168C8D7E004AC12A /* UIColor+CharlieRoseAdditions.m in Sources */,
 				E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */,
 				E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */,
 				E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */,
@@ -628,6 +624,10 @@
 				E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */,
 				E53044C216C83BA5009E3D3D /* CRErrorView.m in Sources */,
 				E53044C516C85756009E3D3D /* NSUserDefaults+CRAdditions.m in Sources */,
+				E5DC8CDF16CEFECB00100B3C /* UIApplication+CRAdditions.m in Sources */,
+				E5DC8CE016CEFECB00100B3C /* UIColor+CRAdditions.m in Sources */,
+				E5DC8CE116CEFECB00100B3C /* UIFont+CRAdditions.m in Sources */,
+				E5DC8CE216CEFECB00100B3C /* UIView+CRAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
