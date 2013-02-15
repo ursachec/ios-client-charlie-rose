@@ -15,13 +15,16 @@
 #import "MenuViewController+CRConfigurationData.h"
 #import "InteractionsController+Movement.h"
 
-const NSInteger static kSectionTopics = 0;
-const NSInteger static kSectionMenuItems = 1;
+typedef enum {
+    CRSectionIndexForTopics = 0,
+    CRSectionIndexForMenuItems = 1,
+} CRTableViewSectionIndex;
 
-const NSInteger static kIndexForSettings = 0;
-const NSInteger static kIndexForAbout = 1;
-const NSInteger static kIndexForContact = 2;
-
+typedef enum {
+    CRRowForSettings = 0,
+    CRRowForAbout = 1,
+    CRRowForContact = 2,
+} CRTableViewRowForOtherPages;
 
 @interface MenuViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UITableView* tableView;
@@ -65,16 +68,16 @@ const NSInteger static kIndexForContact = 2;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSInteger numberOfRowsInSection = 0;
-	if (section==kSectionMenuItems) {
+	if (section==CRSectionIndexForMenuItems) {
 		numberOfRowsInSection = self.menuItems.count;
-	} else if (section==kSectionTopics) {
+	} else if (section==CRSectionIndexForTopics) {
 		numberOfRowsInSection = self.topics.count;
 	}
     return numberOfRowsInSection;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	UIView* headerView = nil;
-	if (section==kSectionMenuItems) {
+	if (section==CRSectionIndexForMenuItems) {
 		headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 10.0f)];
 		headerView.backgroundColor = [UIColor redColor];
 		headerView.opaque = YES;
@@ -84,7 +87,7 @@ const NSInteger static kIndexForContact = 2;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	if (section==kSectionMenuItems) {
+	if (section==CRSectionIndexForMenuItems) {
 		return @"";
 	}
 	return nil;
@@ -100,7 +103,7 @@ const NSInteger static kIndexForContact = 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-	if (section==kSectionMenuItems) {
+	if (section==CRSectionIndexForMenuItems) {
 		return 10.0f;
 	}
 	return 0.0f;
@@ -113,20 +116,20 @@ const NSInteger static kIndexForContact = 2;
 }
 
 -(void)showMenuItemAtRow:(NSInteger)row {
-	if (row==kIndexForAbout) {
+	if (row==CRRowForAbout) {
 		[[UIApplication sharedInteractionsController] showAboutAnimated:YES];
-	} else if (row==kIndexForContact) {
+	} else if (row==CRRowForContact) {
 		[[UIApplication sharedInteractionsController] showContactAnimated:YES];
-	} else if (row==kIndexForSettings) {
+	} else if (row==CRRowForSettings) {
 		[[UIApplication sharedInteractionsController] showSettingsAnimated:YES];
 	}
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == kSectionMenuItems) {
+	if (indexPath.section == CRSectionIndexForMenuItems) {
 		[self showMenuItemAtRow:indexPath.row];
 	}
-	else if (indexPath.section == kSectionTopics) {
+	else if (indexPath.section == CRSectionIndexForTopics) {
 		NSString* currentTopic = self.topics[indexPath.row];
 		[[UIApplication sharedInteractionsController] showMainFeedWithTopic:currentTopic];
 	}
@@ -138,9 +141,9 @@ const NSInteger static kIndexForContact = 2;
 	static NSString *CellIdentifierMenu = @"MenuCell";
 	static NSString *CellIdentifierTopic = @"TopicCell";
 	NSString* currentIdentifier = nil;
-	if (indexPath.section==kSectionTopics) {
+	if (indexPath.section==CRSectionIndexForTopics) {
 		currentIdentifier = CellIdentifierTopic;
-	} else if (indexPath.section==kSectionMenuItems) {
+	} else if (indexPath.section==CRSectionIndexForMenuItems) {
 		currentIdentifier = CellIdentifierMenu;
 	} else {
 		currentIdentifier = CellIdentifierDefault;
@@ -152,9 +155,9 @@ const NSInteger static kIndexForContact = 2;
 
 -(UITableViewCell*)newCellForRowAtIndexPath:(NSIndexPath *)indexPath identifier:(NSString*)identifier {
 	UITableViewCell *cell = nil;
-	if (indexPath.section==kSectionTopics) {
+	if (indexPath.section==CRSectionIndexForTopics) {
 		cell = [self newTopicCellForRowAtIndexPath:indexPath identifier:identifier];
-	} else if (indexPath.section==kSectionMenuItems) {
+	} else if (indexPath.section==CRSectionIndexForMenuItems) {
 		cell = [self newMenuCellForRowAtIndexPath:indexPath identifier:identifier];
 	} else {
 		cell =	[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
@@ -175,9 +178,9 @@ const NSInteger static kIndexForContact = 2;
 #pragma mark - table view cells configuration
 
 -(void)configureCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section==kSectionTopics && [cell isKindOfClass:[TopicCell class]]) {
+	if (indexPath.section==CRSectionIndexForTopics && [cell isKindOfClass:[TopicCell class]]) {
 		[self configureTopicCell:(TopicCell*)cell forRowAtIndexPath:indexPath];
-	} else if (indexPath.section==kSectionMenuItems && [cell isKindOfClass:[MenuCell class]]) {
+	} else if (indexPath.section==CRSectionIndexForMenuItems && [cell isKindOfClass:[MenuCell class]]) {
 		[self configureMenuCell:(MenuCell *)cell forRowAtIndexPath:indexPath];
 	} else {
 		NSLog(@"no configure cell");
