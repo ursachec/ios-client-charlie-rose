@@ -1,5 +1,5 @@
 //
-//  UIApplication+CharlieRoseAdditions.h
+//  UIApplication+CRAdditions.h
 //  CharlieRose
 //
 //  Created by Claudiu-Vlad Ursache on 27.11.12.

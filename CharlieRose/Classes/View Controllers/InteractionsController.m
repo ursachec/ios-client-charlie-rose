@@ -14,7 +14,7 @@
 #import "SettingsViewController.h"
 #import "ContactViewController.h"
 
-#import "UIApplication+CharlieRoseAdditions.h"
+#import "UIApplication+CRAdditions.h"
 #import "InteractionsController+Movement.h"
 
 @interface InteractionsController ()

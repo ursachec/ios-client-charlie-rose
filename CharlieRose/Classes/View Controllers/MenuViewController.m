@@ -10,8 +10,8 @@
 #import "IIViewDeckController.h"
 #import "TopicCell.h"
 #import "MenuCell.h"
-#import "UIApplication+CharlieRoseAdditions.h"
-#import "UIView+CharlieRoseAdditions.h"
+#import "UIApplication+CRAdditions.h"
+#import "UIView+CRAdditions.h"
 #import "MenuViewController+CRConfigurationData.h"
 #import "InteractionsController+Movement.h"
 

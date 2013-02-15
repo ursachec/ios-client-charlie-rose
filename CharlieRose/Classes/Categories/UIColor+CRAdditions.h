@@ -1,5 +1,5 @@
 //
-//  UIColor+CharlieRoseAdditions.h
+//  UIColor+CRAdditions.h
 //  CharlieRose
 //
 //  Created by Claudiu-Vlad Ursache on 27.12.12.

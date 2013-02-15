@@ -11,7 +11,7 @@
 
 #import "ShowDetailViewController.h"
 #import "IIViewDeckController.h"
-#import "UIView+CharlieRoseAdditions.h"
+#import "UIView+CRAdditions.h"
 #import "Show.h"
 #import "InteractionsController.h"
 #import "InteractionsController+Movement.h"

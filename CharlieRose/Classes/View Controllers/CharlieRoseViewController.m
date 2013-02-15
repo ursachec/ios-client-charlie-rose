@@ -8,7 +8,7 @@
 
 #import "CharlieRoseViewController.h"
 
-#import "UIView+CharlieRoseAdditions.h"
+#import "UIView+CRAdditions.h"
 #import "CRErrorView.h"
 
 @interface CharlieRoseViewController ()

@@ -9,8 +9,8 @@
 #import "MainFeedViewController.h"
 #import "ShowCell.h"
 #import "IIViewDeckController.h"
-#import "UIApplication+CharlieRoseAdditions.h"
-#import "UIView+CharlieRoseAdditions.h"
+#import "UIApplication+CRAdditions.h"
+#import "UIView+CRAdditions.h"
 
 #import "CharlieRoseAPIClient.h"
 

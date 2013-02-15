@@ -1,12 +1,12 @@
 //
-//  UIColor+CharlieRoseAdditions.m
+//  UIColor+CRAdditions.m
 //  CharlieRose
 //
 //  Created by Claudiu-Vlad Ursache on 27.12.12.
 //  Copyright (c) 2012 Claudiu-Vlad Ursache. All rights reserved.
 //
 
-#import "UIColor+CharlieRoseAdditions.h"
+#import "UIColor+CRAdditions.h"
 
 @implementation UIColor (CRAdditions)
 

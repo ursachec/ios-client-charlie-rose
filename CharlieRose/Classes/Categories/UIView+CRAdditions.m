@@ -1,12 +1,12 @@
 //
-//  UIView+CharlieRoseAdditions.m
+//  UIView+CRAdditions.m
 //  CharlieRose
 //
 //  Created by Claudiu-Vlad Ursache on 28.11.12.
 //  Copyright (c) 2012 Claudiu-Vlad Ursache. All rights reserved.
 //
 
-#import "UIView+CharlieRoseAdditions.h"
+#import "UIView+CRAdditions.h"
 #import "CRErrorView.h"
 
 @implementation UIView (CRAdditions)
