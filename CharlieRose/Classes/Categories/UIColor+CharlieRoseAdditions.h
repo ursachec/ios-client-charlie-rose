@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (CharlieRoseAdditions)
+@interface UIColor (CRAdditions)
 
 + (UIColor*)dimmedBlack;
 

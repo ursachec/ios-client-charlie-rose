@@ -10,7 +10,7 @@
 
 @class CRErrorView;
 
-@interface UIView (CharlieRoseAdditions)
+@interface UIView (CRAdditions)
 
 + (UIView*)newLoadingViewWithSuperview:(UIView*)superview;
 + (CRErrorView*)newErrorViewWithSuperview:(UIView*)superview;

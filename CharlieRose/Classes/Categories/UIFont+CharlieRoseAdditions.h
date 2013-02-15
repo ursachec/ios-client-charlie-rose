@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIFont (CharlieRoseAdditions)
+@interface UIFont (CRAdditions)
 
 @end

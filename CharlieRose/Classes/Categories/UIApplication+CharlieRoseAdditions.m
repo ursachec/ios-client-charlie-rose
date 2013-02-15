@@ -9,7 +9,7 @@
 #import "UIApplication+CharlieRoseAdditions.h"
 #import "InteractionsController.h"
 
-@implementation UIApplication (CharlieRoseAdditions)
+@implementation UIApplication (CRAdditions)
 + (AppDelegate*)sharedAppDelegate {
 	return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }

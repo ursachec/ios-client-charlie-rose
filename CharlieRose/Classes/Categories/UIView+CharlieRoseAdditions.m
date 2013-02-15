@@ -9,7 +9,7 @@
 #import "UIView+CharlieRoseAdditions.h"
 #import "CRErrorView.h"
 
-@implementation UIView (CharlieRoseAdditions)
+@implementation UIView (CRAdditions)
 
 + (UIView*)newLoadingViewWithSuperview:(UIView*)superview {
 

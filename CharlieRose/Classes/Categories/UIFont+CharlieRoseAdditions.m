@@ -8,6 +8,6 @@
 
 #import "UIFont+CharlieRoseAdditions.h"
 
-@implementation UIFont (CharlieRoseAdditions)
+@implementation UIFont (CRAdditions)
 
 @end

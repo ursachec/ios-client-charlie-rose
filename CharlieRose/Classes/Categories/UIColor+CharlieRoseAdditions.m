@@ -8,7 +8,7 @@
 
 #import "UIColor+CharlieRoseAdditions.h"
 
-@implementation UIColor (CharlieRoseAdditions)
+@implementation UIColor (CRAdditions)
 
 + (UIColor*)dimmedBlack {
     return [UIColor colorWithRed:13.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];

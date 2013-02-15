@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "InteractionsController.h"
 
-@interface UIApplication (CharlieRoseAdditions)
+@interface UIApplication (CRAdditions)
 + (AppDelegate*)sharedAppDelegate;
 + (InteractionsController*)sharedInteractionsController;
 @end
