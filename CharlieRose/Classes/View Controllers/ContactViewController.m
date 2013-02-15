@@ -14,6 +14,17 @@
 
 @implementation ContactViewController
 
+
+/*
+ 
+ Charlie Rose Inc.
+ 731 Lexington Ave
+ New York, NY 10022
+ e-mail us your feedback on the show
+ e-mail us your feedback on the website
+ 
+ */
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
