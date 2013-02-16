@@ -13,6 +13,9 @@
 #import "UIColor+CRAdditions.h"
 #import "NSUserDefaults+CRAdditions.h"
 #import "Mixpanel.h"
+#import "SecretDefines.h"
+
+static NSString* kMixpanelToken = MIXPANEL_TOKEN;
 
 @implementation AppDelegate
 
@@ -29,6 +32,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [interactionsCtl initializeAndSetupViewDeckController];
     self.window.rootViewController = interactionsCtl.deckController;
     
+    if (NO == NSUserDefaults.hasSetTrackingDenied) {
+        [Mixpanel sharedInstanceWithToken:kMixpanelToken];
+        [Mixpanel.sharedInstance track:@"Launched Application"];
+    }
     
     [self.window makeKeyAndVisible];
     

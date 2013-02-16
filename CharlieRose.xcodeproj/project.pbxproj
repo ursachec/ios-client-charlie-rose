@@ -61,6 +61,8 @@
 		E573BDCF16D0206700C55364 /* NSData+MPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = E573BDC916D0206700C55364 /* NSData+MPBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E573BDD016D0206700C55364 /* Mixpanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E573BDCB16D0206700C55364 /* Mixpanel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E573BDD216D0238700C55364 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E573BDD116D0238700C55364 /* CoreTelephony.framework */; };
+		E573BDD516D0327F00C55364 /* SecretDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E573BDD316D0320C00C55364 /* SecretDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E573BDD716D0366E00C55364 /* PRIVACY_POLICY in Resources */ = {isa = PBXBuildFile; fileRef = E573BDD616D0366E00C55364 /* PRIVACY_POLICY */; };
 		E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = E595ED5B169F44CC0036B2A2 /* Default-568h.png */; };
 		E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */; };
 		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
@@ -163,6 +165,8 @@
 		E573BDCA16D0206700C55364 /* Mixpanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mixpanel.h; sourceTree = "<group>"; };
 		E573BDCB16D0206700C55364 /* Mixpanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mixpanel.m; sourceTree = "<group>"; };
 		E573BDD116D0238700C55364 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E573BDD316D0320C00C55364 /* SecretDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecretDefines.h; path = Classes/Utilities/SecretDefines.h; sourceTree = "<group>"; };
+		E573BDD616D0366E00C55364 /* PRIVACY_POLICY */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PRIVACY_POLICY; sourceTree = SOURCE_ROOT; };
 		E595ED5B169F44CC0036B2A2 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		E5A7B3B4168DFA7A008A85F4 /* TopicFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicFeedViewController.h; path = "Classes/View Controllers/TopicFeedViewController.h"; sourceTree = "<group>"; };
 		E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicFeedViewController.m; path = "Classes/View Controllers/TopicFeedViewController.m"; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				E5204F971662B55E00B65A44 /* Models */,
 				E5204F821662B55E00B65A44 /* Supporting Files */,
 				E5DC8CED16CF07A200100B3C /* Defines.h */,
+				E573BDD316D0320C00C55364 /* SecretDefines.h */,
 			);
 			path = CharlieRose;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 		E5204F821662B55E00B65A44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E573BDD616D0366E00C55364 /* PRIVACY_POLICY */,
 				E5204F831662B55E00B65A44 /* CharlieRose-Prefix.pch */,
 				E5204F881662B55E00B65A44 /* CharlieRose-Info.plist */,
 				E5204F891662B55E00B65A44 /* InfoPlist.strings */,
@@ -583,6 +589,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E573BDD416D0327400C55364 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E573BDD516D0327F00C55364 /* SecretDefines.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		E5204F721662B55E00B65A44 /* CharlieRose */ = {
 			isa = PBXNativeTarget;
@@ -592,6 +609,7 @@
 				E5204F701662B55E00B65A44 /* Frameworks */,
 				E5204F711662B55E00B65A44 /* Resources */,
 				6959836BBC6449E5B850C0D5 /* Copy Pods Resources */,
+				E573BDD416D0327400C55364 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -652,6 +670,7 @@
 				E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */,
 				E5C6A78916AAEC990091BD07 /* play_button.png in Resources */,
 				E53044A916C80258009E3D3D /* placeholder.png in Resources */,
+				E573BDD716D0366E00C55364 /* PRIVACY_POLICY in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

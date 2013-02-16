@@ -27,6 +27,7 @@
 #import "NSUserDefaults+CRAdditions.h"
 
 #import "CRErrorView.h"
+#import "Mixpanel.h"
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
@@ -188,9 +189,19 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	return self.tableView;
 }
 
+#pragma mark - tracking
+
+- (void)trackShowTopic:(NSString*)topic {
+    if (NO == [NSUserDefaults hasSetTrackingDenied]) {
+        NSString *trackMessage = [NSString stringWithFormat:@"Show Topic: <%@>",topic];
+        [Mixpanel.sharedInstance track:trackMessage];
+    }
+}
+
 #pragma mark - show topic
 
 - (void)showTopicHome {
+    [Mixpanel.sharedInstance track:@"Show topic home"];
     [self showTopic:kLocalKeyForTopicHome];
 }
 
@@ -199,6 +210,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	if (self.currentTopic!=nil && topicTheSameAsCurrentTopic) {
 		return;
 	}
+    
+    [self trackShowTopic:topic];
     
     [self fetchDataAndShowFeedForTopic:topic success:^(NSFetchedResultsController *controller) {
         if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
