@@ -11,12 +11,14 @@
 #import "InteractionsController.h"
 #import "CRDBHandler.h"
 #import "UIColor+CRAdditions.h"
+#import "NSUserDefaults+CRAdditions.h"
+#import "Mixpanel.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
+{
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	[self setupApperanceProxyCustomizations];

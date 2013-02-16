@@ -8,8 +8,16 @@
 
 #import "NSUserDefaults+CRAdditions.h"
 
+static NSString* kUserSettingTrackingDenied = @"kUserSettingTrackingDenied";
+
 @implementation NSUserDefaults (CRAdditions)
 
++(BOOL)hasSetTrackingDenied {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kUserSettingTrackingDenied];
+}
 
++(void)setTrackingDenied:(BOOL)allowed {
+    [[NSUserDefaults standardUserDefaults] setBool:allowed forKey:kUserSettingTrackingDenied];
+}
 
 @end

@@ -7,9 +7,11 @@
 //
 
 #import "SettingsViewController.h"
+#import "NSUserDefaults+CRAdditions.h"
 
 @interface SettingsViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
+@property(nonatomic,readwrite,strong) IBOutlet UISwitch* trackingAllowedSwitch;
 @end
 
 @implementation SettingsViewController
@@ -18,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -31,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.trackingAllowedSwitch addTarget:self action: @selector(flip:) forControlEvents: UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +43,11 @@
 
 - (UIView*)superViewForLoadingView {
 	return self.contentScrollView;
+}
+
+- (void)flip:(id)sender {
+    UISwitch *onoff = (UISwitch *) sender;
+    [NSUserDefaults setTrackingDenied:(!onoff.isOn)];
 }
 
 @end

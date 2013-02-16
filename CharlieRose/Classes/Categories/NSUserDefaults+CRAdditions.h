@@ -10,6 +10,7 @@
 
 @interface NSUserDefaults (CRAdditions)
 
-
++(BOOL)hasSetTrackingDenied;
++(void)setTrackingDenied:(BOOL)allowed;
 
 @end
