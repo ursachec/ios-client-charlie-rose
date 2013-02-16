@@ -17,6 +17,8 @@
 @class AboutViewController;
 @class ContactViewController;
 
+@protocol IIViewDeckControllerDelegate;
+
 @interface InteractionsController : NSObject <IIViewDeckControllerDelegate>
 
 @property (readonly, strong, nonatomic) IIViewDeckController* deckController;
