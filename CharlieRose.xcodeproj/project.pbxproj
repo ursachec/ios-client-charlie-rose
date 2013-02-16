@@ -341,10 +341,7 @@
 		E5204FBE1662BA9300B65A44 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E55CBEE216655AE500FAD6A5 /* InteractionsController.h */,
-				E55CBEE316655AE500FAD6A5 /* InteractionsController.m */,
-				E53044BD16C8233C009E3D3D /* InteractionsController+Movement.h */,
-				E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */,
+				E573BDBC16CF097B00C55364 /* InteractionsController */,
 				E55CBEF4166583EE00FAD6A5 /* Abstract */,
 				E5204FC71662BE4B00B65A44 /* Menu */,
 				E5A7B3B8168DFA9D008A85F4 /* Topic Feed */,
@@ -360,8 +357,6 @@
 		E5204FC41662BB0B00B65A44 /* Main Feed */ = {
 			isa = PBXGroup;
 			children = (
-				E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */,
-				E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */,
 				E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */,
 				E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */,
 				E5204FBF1662BB0500B65A44 /* MainFeedViewController.h */,
@@ -442,6 +437,8 @@
 				E53044AF16C81560009E3D3D /* MenuViewController+CRConfigurationData.m */,
 				E53044C316C85756009E3D3D /* NSUserDefaults+CRAdditions.h */,
 				E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */,
+				E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */,
+				E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -483,6 +480,17 @@
 				E55CBEF2166583E600FAD6A5 /* CharlieRoseViewController.m */,
 			);
 			name = Abstract;
+			sourceTree = "<group>";
+		};
+		E573BDBC16CF097B00C55364 /* InteractionsController */ = {
+			isa = PBXGroup;
+			children = (
+				E53044BD16C8233C009E3D3D /* InteractionsController+Movement.h */,
+				E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */,
+				E55CBEE216655AE500FAD6A5 /* InteractionsController.h */,
+				E55CBEE316655AE500FAD6A5 /* InteractionsController.m */,
+			);
+			name = InteractionsController;
 			sourceTree = "<group>";
 		};
 		E5A7B3B8168DFA9D008A85F4 /* Topic Feed */ = {
