@@ -7,6 +7,7 @@
 //
 
 #import "MenuCell.h"
+#import "UIColor+CRAdditions.h"
 
 @interface MenuCell ()
 @property(nonatomic, strong, readwrite) UIView* customContentView;

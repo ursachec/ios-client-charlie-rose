@@ -8,6 +8,7 @@
 
 #import "UIView+CRAdditions.h"
 #import "CRErrorView.h"
+#import "UIColor+CRAdditions.h"
 
 @implementation UIView (CRAdditions)
 

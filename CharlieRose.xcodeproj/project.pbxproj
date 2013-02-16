@@ -163,6 +163,7 @@
 		E5DC8CDE16CEFECB00100B3C /* UIView+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CRAdditions.m"; path = "Classes/Categories/UIView+CRAdditions.m"; sourceTree = "<group>"; };
 		E5DC8CE716CF041C00100B3C /* CRSharedDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRSharedDataHandler.h; path = Classes/Utilities/CRSharedDataHandler.h; sourceTree = "<group>"; };
 		E5DC8CE816CF041C00100B3C /* CRSharedDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRSharedDataHandler.m; path = Classes/Utilities/CRSharedDataHandler.m; sourceTree = "<group>"; };
+		E5DC8CED16CF07A200100B3C /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Defines.h; path = Classes/Utilities/Defines.h; sourceTree = "<group>"; };
 		E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MainFeedViewController+CRTableViewAdditions.h"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.h"; sourceTree = "<group>"; };
 		E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MainFeedViewController+CRTableViewAdditions.m"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.m"; sourceTree = "<group>"; };
 		E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+CRAdditions.h"; path = "Classes/Categories/NSError+CRAdditions.h"; sourceTree = "<group>"; };
@@ -276,6 +277,7 @@
 				E5DC8CE616CF03F300100B3C /* Utilities */,
 				E5204F971662B55E00B65A44 /* Models */,
 				E5204F821662B55E00B65A44 /* Supporting Files */,
+				E5DC8CED16CF07A200100B3C /* Defines.h */,
 			);
 			path = CharlieRose;
 			sourceTree = "<group>";

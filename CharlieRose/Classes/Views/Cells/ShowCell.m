@@ -8,6 +8,7 @@
 
 #import "ShowCell.h"
 #import "Show.h"
+#import "UIColor+CRAdditions.h"
 
 @interface ShowCellContentView : UIView
 @property(nonatomic, weak) ShowCell *cell;

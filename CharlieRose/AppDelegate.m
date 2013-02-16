@@ -10,6 +10,7 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "InteractionsController.h"
 #import "CRDBHandler.h"
+#import "UIColor+CRAdditions.h"
 
 @implementation AppDelegate
 

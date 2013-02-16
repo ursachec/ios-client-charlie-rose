@@ -16,6 +16,7 @@
 #import "InteractionsController.h"
 #import "InteractionsController+Movement.h"
 #import "CRErrorView.h"
+#import "UIColor+CRAdditions.h"
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;

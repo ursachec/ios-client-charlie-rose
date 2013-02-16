@@ -7,7 +7,7 @@
 //
 
 #import "TopicCell.h"
-
+#import "UIColor+CRAdditions.h"
 
 @interface TopicCell ()
 @property(nonatomic, strong, readwrite) UIView* customContentView;
