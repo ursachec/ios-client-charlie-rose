@@ -115,10 +115,11 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 }
 
 - (void)tryLoadingAllShowsFromNetworkOrDB {
+    __weak __typeof__(self) weakSelf = self;
     [self loadAllShowsFromNetworkOrDBWithSuccess:^{
-        [self handleDidLoadAllShowsFromNetworkOrDB];
+        [weakSelf handleDidLoadAllShowsFromNetworkOrDB];
     } failure:^(NSError *error) {
-        [self handleDidFailLoadingAllShowsFromNetworkOrDBWithError:error];
+        [weakSelf handleDidFailLoadingAllShowsFromNetworkOrDBWithError:error];
     }];
 }
 
