@@ -166,7 +166,6 @@ const CGRect kShowCellImageViewFrame = {5.0f, 5.0f, 140.f, 105.0f};
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
-//    [super setHighlighted:highlighted];
     [self setNeedsDisplay];
 }
 
