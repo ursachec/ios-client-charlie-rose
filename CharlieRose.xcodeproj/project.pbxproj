@@ -64,6 +64,7 @@
 		E5DC8CE016CEFECB00100B3C /* UIColor+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CDA16CEFECB00100B3C /* UIColor+CRAdditions.m */; };
 		E5DC8CE116CEFECB00100B3C /* UIFont+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CDC16CEFECB00100B3C /* UIFont+CRAdditions.m */; };
 		E5DC8CE216CEFECB00100B3C /* UIView+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CDE16CEFECB00100B3C /* UIView+CRAdditions.m */; };
+		E5DC8CE916CF041C00100B3C /* CRSharedDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5DC8CE816CF041C00100B3C /* CRSharedDataHandler.m */; };
 		E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */; };
 		E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47816C7455800603E88 /* NSError+CRAdditions.m */; };
 		E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */; };
@@ -160,6 +161,8 @@
 		E5DC8CDC16CEFECB00100B3C /* UIFont+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CRAdditions.m"; path = "Classes/Categories/UIFont+CRAdditions.m"; sourceTree = "<group>"; };
 		E5DC8CDD16CEFECB00100B3C /* UIView+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CRAdditions.h"; path = "Classes/Categories/UIView+CRAdditions.h"; sourceTree = "<group>"; };
 		E5DC8CDE16CEFECB00100B3C /* UIView+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CRAdditions.m"; path = "Classes/Categories/UIView+CRAdditions.m"; sourceTree = "<group>"; };
+		E5DC8CE716CF041C00100B3C /* CRSharedDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRSharedDataHandler.h; path = Classes/Utilities/CRSharedDataHandler.h; sourceTree = "<group>"; };
+		E5DC8CE816CF041C00100B3C /* CRSharedDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRSharedDataHandler.m; path = Classes/Utilities/CRSharedDataHandler.m; sourceTree = "<group>"; };
 		E5ED2B1716C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MainFeedViewController+CRTableViewAdditions.h"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.h"; sourceTree = "<group>"; };
 		E5ED2B1816C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MainFeedViewController+CRTableViewAdditions.m"; path = "Classes/Categories/MainFeedViewController+CRTableViewAdditions.m"; sourceTree = "<group>"; };
 		E5F9D47716C7455800603E88 /* NSError+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+CRAdditions.h"; path = "Classes/Categories/NSError+CRAdditions.h"; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 				E5204FC51662BD7300B65A44 /* Views */,
 				E5436BD316C6DA0800200D87 /* Core Data */,
 				E5204F841662B55E00B65A44 /* Networking */,
+				E5DC8CE616CF03F300100B3C /* Utilities */,
 				E5204F971662B55E00B65A44 /* Models */,
 				E5204F821662B55E00B65A44 /* Supporting Files */,
 			);
@@ -496,6 +500,15 @@
 			name = "Play button";
 			sourceTree = "<group>";
 		};
+		E5DC8CE616CF03F300100B3C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E5DC8CE716CF041C00100B3C /* CRSharedDataHandler.h */,
+				E5DC8CE816CF041C00100B3C /* CRSharedDataHandler.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -628,6 +641,7 @@
 				E5DC8CE016CEFECB00100B3C /* UIColor+CRAdditions.m in Sources */,
 				E5DC8CE116CEFECB00100B3C /* UIFont+CRAdditions.m in Sources */,
 				E5DC8CE216CEFECB00100B3C /* UIView+CRAdditions.m in Sources */,
+				E5DC8CE916CF041C00100B3C /* CRSharedDataHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
