@@ -205,9 +205,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
             [self.tableView reloadData];
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
             [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
-            [self hideLoadingOrErrorViewAnimated:YES];
-        }
-        else {
+        } else {
             [self handleTriedToFetchDataAndFoundNoDataFromInitialImport];
         }
     } failure:^(NSFetchedResultsController *controller, NSError *error) {
