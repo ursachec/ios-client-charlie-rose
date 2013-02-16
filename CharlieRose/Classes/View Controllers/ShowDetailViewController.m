@@ -17,6 +17,7 @@
 #import "InteractionsController+Movement.h"
 #import "CRErrorView.h"
 #import "UIColor+CRAdditions.h"
+#import "CharlieRoseAPIClient.h"
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;
@@ -77,9 +78,7 @@
 }
 
 - (IBAction)playVideo:(id)sender {
-    NSURL *url = [NSURL URLWithString:@"http://192.168.178.25:9999/cr/070212/prog_index.m3u8"];    
-    
-    
+    NSURL *url = [CharlieRoseAPIClient videoURLForShowId:self.show.showID];
     self.moviePlayer =  [[MPMoviePlayerController alloc] initWithContentURL:url];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(moviePlayBackDidFinish:)
