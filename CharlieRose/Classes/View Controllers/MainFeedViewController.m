@@ -202,6 +202,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     [self fetchDataAndShowFeedForTopic:topic success:^(NSFetchedResultsController *controller) {
         if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
             [self.tableView reloadData];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
             [self hideLoadingOrErrorViewAnimated:YES];
         }
         else {
