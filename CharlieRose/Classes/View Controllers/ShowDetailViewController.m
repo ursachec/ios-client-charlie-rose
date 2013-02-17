@@ -65,6 +65,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
+    
+    UIFont *font = [UIFont fontWithName:@"Vollkorn" size:16.0f];
+    self.headlineLabel.font = font;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
