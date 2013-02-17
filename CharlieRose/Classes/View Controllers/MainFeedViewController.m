@@ -205,6 +205,14 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     [self showTopic:kLocalKeyForTopicHome];
 }
 
+
+- (void)scrollToTopAndShowDataIfNeeded {
+    if(self.fetchedResultsController.fetchedObjects.count > 0) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
+}
+
 - (void)showTopic:(NSString*)topic {
 	BOOL topicTheSameAsCurrentTopic = ([self.currentTopic compare:topic]==NSOrderedSame);
 	if (self.currentTopic!=nil && topicTheSameAsCurrentTopic) {
@@ -213,11 +221,13 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     
     [self trackShowTopic:topic];
     
+    __weak __typeof(&*self)weakSelf = self;
+    
     [self fetchDataAndShowFeedForTopic:topic success:^(NSFetchedResultsController *controller) {
         if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
-            [self.tableView reloadData];
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+            [weakSelf.tableView reloadData];
+            [self scrollToTopAndShowDataIfNeeded];
+            
         } else {
             [self handleTriedToFetchDataAndFoundNoDataFromInitialImport];
         }
