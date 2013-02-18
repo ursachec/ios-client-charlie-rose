@@ -9,6 +9,7 @@
 #import "ShowCell.h"
 #import "Show.h"
 #import "UIColor+CRAdditions.h"
+#import "UIFont+CRAdditions.h"
 
 @interface ShowCellContentView : UIView
 @property(nonatomic, weak) ShowCell *cell;
@@ -67,8 +68,8 @@
     //image size: 148 * 96
     CGRect contentRect = self.bounds;
 	
-    UIFont *titleFont = [UIFont fontWithName:@"Helvetica" size:TITLE_FONT_SIZE];
-    UIFont *dateFont = [UIFont fontWithName:@"Helvetica" size:DATE_FONT_SIZE];
+    UIFont *titleFont = [UIFont showCellTitleFont];
+    UIFont *dateFont = [UIFont showCellDateFont];
     
     CGPoint pointToDraw = CGPointMake(0, 0);
     CGFloat actualFontSize = 0.0f;

@@ -10,4 +10,11 @@
 
 @interface UIFont (CRAdditions)
 
++ (UIFont*)menuCellLabelFont;
++ (UIFont*)showCellTitleFont;
++ (UIFont*)showCellDateFont;
++ (UIFont*)topicCellFont;
++ (UIFont*)loadingViewLabelFont;
++ (UIFont*)errorViewLabelFont;
+
 @end

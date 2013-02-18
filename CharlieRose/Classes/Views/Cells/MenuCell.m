@@ -8,6 +8,7 @@
 
 #import "MenuCell.h"
 #import "UIColor+CRAdditions.h"
+#import "UIFont+CRAdditions.h"
 
 @interface MenuCell ()
 @property(nonatomic, strong, readwrite) UIView* customContentView;
@@ -30,7 +31,7 @@
 		
 		UILabel* menuItemLabel = [[UILabel alloc] initWithFrame:cellContentView.frame];
 		menuItemLabel.textColor = [UIColor whiteColor];
-		menuItemLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0f];
+		menuItemLabel.font = [UIFont menuCellLabelFont];
 		menuItemLabel.backgroundColor = [UIColor dimmedBlack];
 		
 		_menuItemLabel = menuItemLabel;

@@ -8,6 +8,7 @@
 
 #import "TopicCell.h"
 #import "UIColor+CRAdditions.h"
+#import "UIFont+CRAdditions.h"
 
 @interface TopicCell ()
 @property(nonatomic, strong, readwrite) UIView* customContentView;
@@ -31,7 +32,7 @@
 		CGRect topicLabelFrame = CGRectMake(30.0f, 0, CGRectGetWidth(cellContentView.frame), CGRectGetHeight(cellContentView.frame));
 		UILabel* topicLabel = [[UILabel alloc] initWithFrame:topicLabelFrame];
 		topicLabel.textColor = [UIColor whiteColor];
-		topicLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
+		topicLabel.font = [UIFont topicCellFont];
 		topicLabel.backgroundColor = [UIColor dimmedBlack];
 		
 		_topicLabel = topicLabel;

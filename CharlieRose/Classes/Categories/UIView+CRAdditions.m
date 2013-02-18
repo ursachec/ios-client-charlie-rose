@@ -9,6 +9,7 @@
 #import "UIView+CRAdditions.h"
 #import "CRErrorView.h"
 #import "UIColor+CRAdditions.h"
+#import "UIFont+CRAdditions.h"
 
 @implementation UIView (CRAdditions)
 
@@ -26,7 +27,7 @@
 	loadingViewLabel.text = @"LOADING";
 	loadingViewLabel.textColor = [UIColor redColor];
 	loadingViewLabel.textAlignment = NSTextAlignmentCenter;
-	loadingViewLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
+	loadingViewLabel.font = [UIFont loadingViewLabelFont];
 	[loadingView addSubview:loadingViewLabel];
 	
 	return loadingView;
@@ -46,7 +47,7 @@
 	errorViewLabel.text = @"ERROR";
 	errorViewLabel.textColor = [UIColor redColor];
 	errorViewLabel.textAlignment = NSTextAlignmentCenter;
-	errorViewLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:12.0f];
+	errorViewLabel.font = [UIFont errorViewLabelFont];
 	[errorView addSubview:errorViewLabel];
     
     errorView.errorTextLabel = errorViewLabel;
