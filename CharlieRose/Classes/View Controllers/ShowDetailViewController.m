@@ -18,6 +18,7 @@
 #import "CRErrorView.h"
 #import "UIColor+CRAdditions.h"
 #import "CharlieRoseAPIClient.h"
+#import "UIFont+CRAdditions.h"
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;
@@ -65,9 +66,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-    
-    UIFont *font = [UIFont fontWithName:@"Vollkorn" size:16.0f];
-    self.headlineLabel.font = font;
+    self.headlineLabel.font = [UIFont detailHeadlineLabelFont];
+    self.guestsLabel.font = [UIFont detailGuestsLabelFont];
+    self.topicsLabel.font = [UIFont detailTopicsLabelFont];
+    self.publishingDateLabel.font = [UIFont detailPublishingDataLabelFont];
+    self.descriptionTextView.font = [UIFont detailDescriptionTextViewFont];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

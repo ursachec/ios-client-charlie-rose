@@ -28,6 +28,8 @@
 
 #import "CRErrorView.h"
 #import "Mixpanel.h"
+#import "UIFont+CRAdditions.h"
+
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
@@ -112,6 +114,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.titleLabel.font = [UIFont navigationTopicFont];
 	[self tryLoadingAllShowsFromNetworkOrDB];
 }
 
