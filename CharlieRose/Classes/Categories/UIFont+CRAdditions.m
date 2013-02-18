@@ -8,34 +8,71 @@
 
 #import "UIFont+CRAdditions.h"
 
-static NSString * kFontNameRegular = @"Vollkorn";
-static NSString * kFontNameBold = @"Vollkorn-Bold";
+const CGFloat kShowCellTitleFontSize = 12.0f;
+const CGFloat kShowCellDateFontSize = 10.0f;
+const CGFloat kShowCellTopicsFontSize = 10.0f;
+
+static NSString * kFontNameRegular = @"Merriweather";
+static NSString * kFontNameBold = @"Merriweather-Bold";
 
 @implementation UIFont (CRAdditions)
 
-+ (UIFont*)menuCellLabelFont {
-    return [UIFont fontWithName:kFontNameBold size:14.0f];
++ (UIFont*)applicationFontOfSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:kFontNameRegular size:fontSize];
+}
+
++ (UIFont*)boldApplicationFontOfSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:kFontNameBold size:fontSize];
+}
+
++ (UIFont*)navigationTopicFont {
+    return [UIFont applicationFontOfSize:12.0f];
 }
 
 + (UIFont*)showCellTitleFont {
-    return [UIFont fontWithName:kFontNameRegular size:12.0f];
+    return [UIFont applicationFontOfSize:kShowCellTitleFontSize];
 }
 
 + (UIFont*)showCellDateFont {
-    return [UIFont fontWithName:kFontNameRegular size:10.0f];
+    return [UIFont applicationFontOfSize:kShowCellDateFontSize];
+}
+
++ (UIFont*)showCellTopicsFont {
+    return [UIFont applicationFontOfSize:kShowCellTopicsFontSize];
+}
+
++ (UIFont*)menuCellLabelFont {
+    return [UIFont boldApplicationFontOfSize:14.0f];
 }
 
 + (UIFont*)topicCellFont {
-    return [UIFont fontWithName:kFontNameBold size:12.0f];
+    return [UIFont applicationFontOfSize:12.0f];
 }
 
 + (UIFont*)loadingViewLabelFont {
-    return [UIFont fontWithName:kFontNameBold size:12.0f];
+    return [UIFont boldApplicationFontOfSize:12.0f];
 }
 
 + (UIFont*)errorViewLabelFont {
-    return [UIFont fontWithName:kFontNameBold size:12.0f];
+    return [UIFont boldApplicationFontOfSize:12.0f];
 }
 
+#pragma mark - detail view controller
+
++ (UIFont*)detailHeadlineLabelFont {
+	return [UIFont applicationFontOfSize:16.0f];
+}
++ (UIFont*)detailGuestsLabelFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
++ (UIFont*)detailTopicsLabelFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
++ (UIFont*)detailPublishingDataLabelFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
++ (UIFont*)detailDescriptionTextViewFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
 
 @end

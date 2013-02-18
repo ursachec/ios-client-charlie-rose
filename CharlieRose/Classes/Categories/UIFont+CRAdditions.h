@@ -8,13 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
+extern CGFloat const kShowCellTitleFontSize;
+extern CGFloat const kShowCellDateFontSize;
+extern CGFloat const kShowCellTopicsFontSize;
+
 @interface UIFont (CRAdditions)
 
++ (UIFont*)applicationFontOfSize:(CGFloat)fontSize;
++ (UIFont*)boldApplicationFontOfSize:(CGFloat)fontSize;
+
++ (UIFont*)navigationTopicFont;
 + (UIFont*)menuCellLabelFont;
 + (UIFont*)showCellTitleFont;
 + (UIFont*)showCellDateFont;
++ (UIFont*)showCellTopicsFont;
 + (UIFont*)topicCellFont;
 + (UIFont*)loadingViewLabelFont;
 + (UIFont*)errorViewLabelFont;
+
++ (UIFont*)detailHeadlineLabelFont;
++ (UIFont*)detailGuestsLabelFont;
++ (UIFont*)detailTopicsLabelFont;
++ (UIFont*)detailPublishingDataLabelFont;
++ (UIFont*)detailDescriptionTextViewFont;
 
 @end
