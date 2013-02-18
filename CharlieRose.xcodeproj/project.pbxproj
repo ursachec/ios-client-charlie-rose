@@ -12,6 +12,11 @@
 		E507BCAA1699F65E00597F8E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCA81699F65E00597F8E /* Icon.png */; };
 		E507BCB8169A006100597F8E /* navigation_bar_no_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCB4169A006000597F8E /* navigation_bar_no_logo.png */; };
 		E507BCB9169A006100597F8E /* navigation_bar_no_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCB5169A006000597F8E /* navigation_bar_no_logo@2x.png */; };
+		E50C54FE16D2C235005FBE76 /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E50C54F916D2C235005FBE76 /* LICENCE.txt */; };
+		E50C54FF16D2C235005FBE76 /* Merriweather-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E50C54FA16D2C235005FBE76 /* Merriweather-Black.ttf */; };
+		E50C550016D2C235005FBE76 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E50C54FB16D2C235005FBE76 /* Merriweather-Bold.ttf */; };
+		E50C550116D2C235005FBE76 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E50C54FC16D2C235005FBE76 /* Merriweather-Light.ttf */; };
+		E50C550216D2C235005FBE76 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E50C54FD16D2C235005FBE76 /* Merriweather-Regular.ttf */; };
 		E5140D14166436160087EB81 /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5140D12166436160087EB81 /* ShowDetailViewController.m */; };
 		E5140D15166436160087EB81 /* ShowDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5140D13166436160087EB81 /* ShowDetailViewController.xib */; };
 		E5140D17166436950087EB81 /* jeff_bezos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5140D16166436950087EB81 /* jeff_bezos.jpg */; };
@@ -63,10 +68,6 @@
 		E573BDD216D0238700C55364 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E573BDD116D0238700C55364 /* CoreTelephony.framework */; };
 		E573BDD716D0366E00C55364 /* PRIVACY_POLICY in Resources */ = {isa = PBXBuildFile; fileRef = E573BDD616D0366E00C55364 /* PRIVACY_POLICY */; };
 		E573BDD916D0386600C55364 /* SecretDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E573BDD816D0386600C55364 /* SecretDefines.h */; };
-		E573BDE016D052E300C55364 /* Vollkorn-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E573BDDC16D052E300C55364 /* Vollkorn-Bold.ttf */; };
-		E573BDE116D052E300C55364 /* Vollkorn-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E573BDDD16D052E300C55364 /* Vollkorn-BoldItalic.ttf */; };
-		E573BDE216D052E300C55364 /* Vollkorn-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E573BDDE16D052E300C55364 /* Vollkorn-Italic.ttf */; };
-		E573BDE316D052E300C55364 /* Vollkorn-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E573BDDF16D052E300C55364 /* Vollkorn-Regular.ttf */; };
 		E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = E595ED5B169F44CC0036B2A2 /* Default-568h.png */; };
 		E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */; };
 		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
@@ -89,6 +90,11 @@
 		E507BCA81699F65E00597F8E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Images/Compiled/AppIcon/Icon.png; sourceTree = "<group>"; };
 		E507BCB4169A006000597F8E /* navigation_bar_no_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bar_no_logo.png; path = "Resources/Images/Compiled/Navigation Bar/navigation_bar_no_logo.png"; sourceTree = "<group>"; };
 		E507BCB5169A006000597F8E /* navigation_bar_no_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigation_bar_no_logo@2x.png"; path = "Resources/Images/Compiled/Navigation Bar/navigation_bar_no_logo@2x.png"; sourceTree = "<group>"; };
+		E50C54F916D2C235005FBE76 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
+		E50C54FA16D2C235005FBE76 /* Merriweather-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Black.ttf"; sourceTree = "<group>"; };
+		E50C54FB16D2C235005FBE76 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
+		E50C54FC16D2C235005FBE76 /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
+		E50C54FD16D2C235005FBE76 /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
 		E5140D11166436160087EB81 /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowDetailViewController.h; path = "Classes/View Controllers/ShowDetailViewController.h"; sourceTree = "<group>"; };
 		E5140D12166436160087EB81 /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowDetailViewController.m; path = "Classes/View Controllers/ShowDetailViewController.m"; sourceTree = "<group>"; };
 		E5140D13166436160087EB81 /* ShowDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDetailViewController.xib; path = "Classes/View Controllers/ShowDetailViewController.xib"; sourceTree = "<group>"; };
@@ -171,10 +177,6 @@
 		E573BDD116D0238700C55364 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		E573BDD616D0366E00C55364 /* PRIVACY_POLICY */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PRIVACY_POLICY; sourceTree = SOURCE_ROOT; };
 		E573BDD816D0386600C55364 /* SecretDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecretDefines.h; path = Classes/Utilities/SecretDefines.h; sourceTree = "<group>"; };
-		E573BDDC16D052E300C55364 /* Vollkorn-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Vollkorn-Bold.ttf"; path = "Resources/Fonts/Vollkorn-Bold.ttf"; sourceTree = "<group>"; };
-		E573BDDD16D052E300C55364 /* Vollkorn-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Vollkorn-BoldItalic.ttf"; path = "Resources/Fonts/Vollkorn-BoldItalic.ttf"; sourceTree = "<group>"; };
-		E573BDDE16D052E300C55364 /* Vollkorn-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Vollkorn-Italic.ttf"; path = "Resources/Fonts/Vollkorn-Italic.ttf"; sourceTree = "<group>"; };
-		E573BDDF16D052E300C55364 /* Vollkorn-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Vollkorn-Regular.ttf"; path = "Resources/Fonts/Vollkorn-Regular.ttf"; sourceTree = "<group>"; };
 		E595ED5B169F44CC0036B2A2 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		E5A7B3B4168DFA7A008A85F4 /* TopicFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicFeedViewController.h; path = "Classes/View Controllers/TopicFeedViewController.h"; sourceTree = "<group>"; };
 		E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicFeedViewController.m; path = "Classes/View Controllers/TopicFeedViewController.m"; sourceTree = "<group>"; };
@@ -247,6 +249,19 @@
 				E507BCB5169A006000597F8E /* navigation_bar_no_logo@2x.png */,
 			);
 			name = "Navigation Bar";
+			sourceTree = "<group>";
+		};
+		E50C54F816D2C235005FBE76 /* Merriweather */ = {
+			isa = PBXGroup;
+			children = (
+				E50C54F916D2C235005FBE76 /* LICENCE.txt */,
+				E50C54FA16D2C235005FBE76 /* Merriweather-Black.ttf */,
+				E50C54FB16D2C235005FBE76 /* Merriweather-Bold.ttf */,
+				E50C54FC16D2C235005FBE76 /* Merriweather-Light.ttf */,
+				E50C54FD16D2C235005FBE76 /* Merriweather-Regular.ttf */,
+			);
+			name = Merriweather;
+			path = Resources/Fonts/Merriweather;
 			sourceTree = "<group>";
 		};
 		E5140D10166435E70087EB81 /* Show Detail */ = {
@@ -581,10 +596,7 @@
 		E573BDDB16D052D800C55364 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E573BDDC16D052E300C55364 /* Vollkorn-Bold.ttf */,
-				E573BDDD16D052E300C55364 /* Vollkorn-BoldItalic.ttf */,
-				E573BDDE16D052E300C55364 /* Vollkorn-Italic.ttf */,
-				E573BDDF16D052E300C55364 /* Vollkorn-Regular.ttf */,
+				E50C54F816D2C235005FBE76 /* Merriweather */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -699,10 +711,11 @@
 				E5C6A78916AAEC990091BD07 /* play_button.png in Resources */,
 				E53044A916C80258009E3D3D /* placeholder.png in Resources */,
 				E573BDD716D0366E00C55364 /* PRIVACY_POLICY in Resources */,
-				E573BDE016D052E300C55364 /* Vollkorn-Bold.ttf in Resources */,
-				E573BDE116D052E300C55364 /* Vollkorn-BoldItalic.ttf in Resources */,
-				E573BDE216D052E300C55364 /* Vollkorn-Italic.ttf in Resources */,
-				E573BDE316D052E300C55364 /* Vollkorn-Regular.ttf in Resources */,
+				E50C54FE16D2C235005FBE76 /* LICENCE.txt in Resources */,
+				E50C54FF16D2C235005FBE76 /* Merriweather-Black.ttf in Resources */,
+				E50C550016D2C235005FBE76 /* Merriweather-Bold.ttf in Resources */,
+				E50C550116D2C235005FBE76 /* Merriweather-Light.ttf in Resources */,
+				E50C550216D2C235005FBE76 /* Merriweather-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
