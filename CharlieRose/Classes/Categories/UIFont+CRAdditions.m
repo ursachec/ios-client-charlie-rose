@@ -58,7 +58,6 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 }
 
 #pragma mark - detail view controller
-
 + (UIFont*)detailHeadlineLabelFont {
 	return [UIFont applicationFontOfSize:16.0f];
 }
@@ -72,6 +71,15 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 	return [UIFont applicationFontOfSize:12.0f];
 }
 + (UIFont*)detailDescriptionTextViewFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
+
+#pragma mark - settings view controller
++ (UIFont*)explanatoryTextViewFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
+
++ (UIFont*)toggleTrackingTitleLabelFont {
 	return [UIFont applicationFontOfSize:12.0f];
 }
 

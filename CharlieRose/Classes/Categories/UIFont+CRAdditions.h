@@ -26,10 +26,16 @@ extern CGFloat const kShowCellTopicsFontSize;
 + (UIFont*)loadingViewLabelFont;
 + (UIFont*)errorViewLabelFont;
 
+#pragma mark - detail view controller
 + (UIFont*)detailHeadlineLabelFont;
 + (UIFont*)detailGuestsLabelFont;
 + (UIFont*)detailTopicsLabelFont;
 + (UIFont*)detailPublishingDataLabelFont;
 + (UIFont*)detailDescriptionTextViewFont;
+
+#pragma mark - settings view controller
++ (UIFont*)explanatoryTextViewFont;
++ (UIFont*)toggleTrackingTitleLabelFont;
+
 
 @end

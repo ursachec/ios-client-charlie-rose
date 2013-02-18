@@ -8,10 +8,13 @@
 
 #import "SettingsViewController.h"
 #import "NSUserDefaults+CRAdditions.h"
+#import "UIFont+CRAdditions.h"
 
 @interface SettingsViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
 @property(nonatomic,readwrite,strong) IBOutlet UISwitch* trackingAllowedSwitch;
+@property(nonatomic,readwrite,strong) IBOutlet UITextView* explanatoryTextView;
+@property(nonatomic,readwrite,strong) IBOutlet UILabel* toggleTrackingTitleLabel;
 @end
 
 @implementation SettingsViewController
@@ -33,6 +36,9 @@
 {
     [super viewDidLoad];
     [self.trackingAllowedSwitch addTarget:self action: @selector(flip:) forControlEvents: UIControlEventValueChanged];
+    
+    self.toggleTrackingTitleLabel.font = [UIFont toggleTrackingTitleLabelFont];
+    self.explanatoryTextView.font = [UIFont explanatoryTextViewFont];
 }
 
 - (void)didReceiveMemoryWarning
