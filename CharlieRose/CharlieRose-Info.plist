@@ -27,8 +27,10 @@
 	<string>????</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Vollkorn-Regular.ttf</string>
-		<string>Vollkorn-Bold.ttf</string>
+		<string>Merriweather-Black.ttf</string>
+		<string>Merriweather-Bold.ttf</string>
+		<string>Merriweather-Light.ttf</string>
+		<string>Merriweather-Regular.ttf</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
