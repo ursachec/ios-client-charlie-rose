@@ -43,4 +43,10 @@ extern CGFloat const kShowCellTopicsFontSize;
 + (UIFont*)contactDeveloperTitleFont;
 + (UIFont*)contactDeveloperDetailFont;
 
+#pragma mark - about view controller
++ (UIFont*)aboutTheProgramTitleLabelFont;
++ (UIFont*)aboutTheProgramDescriptionTextViewFont;
++ (UIFont*)aboutTheAppLabelFont;
++ (UIFont*)aboutTheAppDescriptionTextViewFont;
+
 @end

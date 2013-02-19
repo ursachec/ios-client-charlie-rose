@@ -38,9 +38,15 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 @property(nonatomic, strong, readwrite) IBOutlet UITableView* tableView;
 @property(nonatomic, strong, readwrite) NSString* currentTopic;
 @property(nonatomic, strong, readwrite) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic, readwrite) IBOutlet UITapGestureRecognizer *dtGestureRecognizer;
 @end
 
 @implementation MainFeedViewController
+
+-(IBAction)didTapNavigationBar:(id)sender {
+    
+    NSLog(@"didTapNavigationBar:");
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -100,5 +100,18 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 	return [UIFont applicationFontOfSize:12.0f];
 }
 
+#pragma mark - about view controller
++ (UIFont*)aboutTheProgramTitleLabelFont {
+	return [self applicationFontOfSize:12.0f];
+}
++ (UIFont*)aboutTheProgramDescriptionTextViewFont {
+	return [self applicationFontOfSize:12.0f];
+}
++ (UIFont*)aboutTheAppLabelFont {
+	return [self applicationFontOfSize:12.0f];
+}
++ (UIFont*)aboutTheAppDescriptionTextViewFont {
+	return [self applicationFontOfSize:12.0f];
+}
 
 @end

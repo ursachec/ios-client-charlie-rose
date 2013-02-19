@@ -8,7 +8,7 @@
 
 #import "CharlieRoseViewController.h"
 
-@interface MainFeedViewController : CharlieRoseViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+@interface MainFeedViewController : CharlieRoseViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 @property(nonatomic,readonly,strong) UITableView* tableView;
 @property(nonatomic,readonly,strong) NSString* currentTopic;
 @property(nonatomic, readonly, readwrite) NSDateFormatter *dateFormatter;

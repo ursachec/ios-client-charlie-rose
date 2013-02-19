@@ -7,9 +7,14 @@
 //
 
 #import "AboutViewController.h"
+#import "UIFont+CRAdditions.h"
 
 @interface AboutViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
+@property(nonatomic,readwrite,strong) IBOutlet UILabel* aboutTheProgramTitleLabel;
+@property(nonatomic,readwrite,strong) IBOutlet UITextView* aboutTheProgramDescriptionTextView;
+@property(nonatomic,readwrite,strong) IBOutlet UILabel* aboutTheAppLabel;
+@property(nonatomic,readwrite,strong) IBOutlet UITextView* aboutTheAppDescriptionTextView;
 @end
 
 @implementation AboutViewController
@@ -32,6 +37,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.aboutTheProgramTitleLabel.font = [UIFont aboutTheProgramTitleLabelFont];
+    self.aboutTheProgramDescriptionTextView.font = [UIFont aboutTheProgramDescriptionTextViewFont];
+    self.aboutTheAppLabel.font = [UIFont aboutTheAppLabelFont];
+    self.aboutTheAppDescriptionTextView.font = [UIFont aboutTheProgramDescriptionTextViewFont];
+    
 }
 
 - (void)didReceiveMemoryWarning
