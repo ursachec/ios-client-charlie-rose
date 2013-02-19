@@ -48,7 +48,7 @@
 #define CELL_PADDING_TOP 5.0f
 #define TITLE_WIDTH 160.0f
 #define MAX_TITLE_HEIGHT 60.0f
-#define DATE_WIDTH 100.0f
+#define DATE_WIDTH 150.0f
 #define PADDING_FOR_TEXTS 155.0f
     
     //image size: 148 * 96
