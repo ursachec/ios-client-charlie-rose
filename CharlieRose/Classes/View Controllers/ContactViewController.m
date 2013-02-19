@@ -7,9 +7,14 @@
 //
 
 #import "ContactViewController.h"
+#import "UIFont+CRAdditions.h"
 
 @interface ContactViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
+@property(nonatomic,readwrite,strong) IBOutlet UILabel* contactCharlieRoseIncTitleLabel;
+@property(nonatomic,readwrite,strong) IBOutlet UILabel* contactCharlieRoseIncDetailLabel;
+@property(nonatomic,readwrite,strong) IBOutlet UILabel* contactDeveloperTitleLabel;
+@property(nonatomic,readwrite,strong) IBOutlet UILabel* contactDeveloperDetailLabel;
 @end
 
 @implementation ContactViewController
@@ -32,6 +37,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.contactCharlieRoseIncTitleLabel.font = [UIFont contactCharlieRoseIncTitleFont];
+    self.contactCharlieRoseIncDetailLabel.font = [UIFont contactCharlieRoseIncDetailFont];
+    self.contactDeveloperTitleLabel.font = [UIFont contactDeveloperTitleFont];
+    self.contactDeveloperDetailLabel.font = [UIFont contactDeveloperDetailFont];
 }
 
 - (void)didReceiveMemoryWarning

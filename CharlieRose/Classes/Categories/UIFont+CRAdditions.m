@@ -83,4 +83,22 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 	return [UIFont applicationFontOfSize:12.0f];
 }
 
+#pragma mark - contact view controller
++ (UIFont*)contactCharlieRoseIncTitleFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
+
++ (UIFont*)contactCharlieRoseIncDetailFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
+
++ (UIFont*)contactDeveloperTitleFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
+
++ (UIFont*)contactDeveloperDetailFont {
+	return [UIFont applicationFontOfSize:12.0f];
+}
+
+
 @end
