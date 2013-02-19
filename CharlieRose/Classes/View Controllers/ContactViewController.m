@@ -12,9 +12,9 @@
 @interface ContactViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
 @property(nonatomic,readwrite,strong) IBOutlet UILabel* contactCharlieRoseIncTitleLabel;
-@property(nonatomic,readwrite,strong) IBOutlet UILabel* contactCharlieRoseIncDetailLabel;
+@property(nonatomic,readwrite,strong) IBOutlet UITextView* contactCharlieRoseIncDetailTextView;
 @property(nonatomic,readwrite,strong) IBOutlet UILabel* contactDeveloperTitleLabel;
-@property(nonatomic,readwrite,strong) IBOutlet UILabel* contactDeveloperDetailLabel;
+@property(nonatomic,readwrite,strong) IBOutlet UITextView* contactDeveloperDetailTextView;
 @end
 
 @implementation ContactViewController
@@ -39,9 +39,9 @@
     // Do any additional setup after loading the view from its nib.
     
     self.contactCharlieRoseIncTitleLabel.font = [UIFont contactCharlieRoseIncTitleFont];
-    self.contactCharlieRoseIncDetailLabel.font = [UIFont contactCharlieRoseIncDetailFont];
+    self.contactCharlieRoseIncDetailTextView.font = [UIFont contactCharlieRoseIncDetailFont];
     self.contactDeveloperTitleLabel.font = [UIFont contactDeveloperTitleFont];
-    self.contactDeveloperDetailLabel.font = [UIFont contactDeveloperDetailFont];
+    self.contactDeveloperDetailTextView.font = [UIFont contactDeveloperDetailFont];
 }
 
 - (void)didReceiveMemoryWarning

@@ -25,6 +25,18 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
     return [UIFont fontWithName:kFontNameBold size:fontSize];
 }
 
++ (UIFont*)headline1Font {
+    return [UIFont applicationFontOfSize:16.0f];
+}
+
++ (UIFont*)headline3Font {
+    return [UIFont applicationFontOfSize:13.0f];
+}
+
++ (UIFont*)paragraphFont {
+    return [UIFont applicationFontOfSize:12.0f];
+}
+
 + (UIFont*)navigationTopicFont {
     return [UIFont applicationFontOfSize:12.0f];
 }
@@ -59,59 +71,59 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 
 #pragma mark - detail view controller
 + (UIFont*)detailHeadlineLabelFont {
-	return [UIFont applicationFontOfSize:16.0f];
+	return [UIFont headline1Font];
 }
 + (UIFont*)detailGuestsLabelFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont paragraphFont];
 }
 + (UIFont*)detailTopicsLabelFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont paragraphFont];
 }
 + (UIFont*)detailPublishingDataLabelFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont paragraphFont];
 }
 + (UIFont*)detailDescriptionTextViewFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont paragraphFont];
 }
 
 #pragma mark - settings view controller
 + (UIFont*)explanatoryTextViewFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont paragraphFont];
 }
 
 + (UIFont*)toggleTrackingTitleLabelFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont headline3Font];
 }
 
 #pragma mark - contact view controller
 + (UIFont*)contactCharlieRoseIncTitleFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont headline3Font];
 }
 
 + (UIFont*)contactCharlieRoseIncDetailFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont paragraphFont];
 }
 
 + (UIFont*)contactDeveloperTitleFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont headline3Font];
 }
 
 + (UIFont*)contactDeveloperDetailFont {
-	return [UIFont applicationFontOfSize:12.0f];
+	return [UIFont paragraphFont];
 }
 
 #pragma mark - about view controller
 + (UIFont*)aboutTheProgramTitleLabelFont {
-	return [self applicationFontOfSize:12.0f];
+	return [self headline3Font];
 }
 + (UIFont*)aboutTheProgramDescriptionTextViewFont {
-	return [self applicationFontOfSize:12.0f];
+	return [self paragraphFont];
 }
 + (UIFont*)aboutTheAppLabelFont {
-	return [self applicationFontOfSize:12.0f];
+	return [self headline3Font];
 }
 + (UIFont*)aboutTheAppDescriptionTextViewFont {
-	return [self applicationFontOfSize:12.0f];
+	return [self paragraphFont];
 }
 
 @end
