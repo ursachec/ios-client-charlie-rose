@@ -49,4 +49,8 @@ extern CGFloat const kShowCellTopicsFontSize;
 + (UIFont*)aboutTheAppLabelFont;
 + (UIFont*)aboutTheAppDescriptionTextViewFont;
 
+#pragma mark - privacy policy view controller
++ (UIFont*)privacyPolicyTextViewFont;
+
+
 @end

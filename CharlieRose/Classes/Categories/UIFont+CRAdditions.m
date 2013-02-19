@@ -131,4 +131,10 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 	return [self paragraphFont];
 }
 
+#pragma mark - privacy policy view controller
++ (UIFont*)privacyPolicyTextViewFont {
+    return [self paragraphFont];
+}
+
+
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "PrivacyPolicyViewController.h"
+#import "UIFont+CRAdditions.h"
 
 @interface PrivacyPolicyViewController ()
-
+@property(nonatomic,readwrite,strong) IBOutlet UITextView* privacyPolicyTextView;
 @end
 
 @implementation PrivacyPolicyViewController
@@ -27,6 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.privacyPolicyTextView.font = [UIFont privacyPolicyTextViewFont];
 }
 
 - (void)didReceiveMemoryWarning
