@@ -19,6 +19,7 @@
 #import "UIColor+CRAdditions.h"
 #import "CharlieRoseAPIClient.h"
 #import "UIFont+CRAdditions.h"
+#import "UIApplication+CRAdditions.h"
 
 @interface ShowDetailViewController ()
 @property(nonatomic, readwrite, strong) Show* show;
@@ -51,7 +52,6 @@
     if (!self) {
         return nil;
     }
-    
     _show = show;
     
     _dateFormatter = [[NSDateFormatter alloc] init];
@@ -71,10 +71,12 @@
     self.topicsLabel.font = [UIFont detailTopicsLabelFont];
     self.publishingDateLabel.font = [UIFont detailPublishingDataLabelFont];
     self.descriptionTextView.font = [UIFont detailDescriptionTextViewFont];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -170,8 +172,8 @@
 	if (self.show.showID!=nil && showIdTheSameAsCurrent) {
 		return;
 	}
-	
-	self.show = show;
+    
+    self.show = show;
 }
 
 - (UIView*)superViewForLoadingView {

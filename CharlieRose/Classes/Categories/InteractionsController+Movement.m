@@ -20,6 +20,7 @@
 @implementation InteractionsController (Movement)
 
 - (void)showDetailViewWithShow:(Show*)show {
+    NSLog(@"showDetailViewWithShow:%@",show);
 	[self.deckController toggleRightView];
 	[self.showDetailViewController presentWithShow:show];
 }

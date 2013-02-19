@@ -186,7 +186,6 @@ typedef enum {
 	} else if (indexPath.section==CRSectionIndexForMenuItems && [cell isKindOfClass:[MenuCell class]]) {
 		[self configureMenuCell:(MenuCell *)cell forRowAtIndexPath:indexPath];
 	} else {
-		NSLog(@"no configure cell");
 	}
 }
 

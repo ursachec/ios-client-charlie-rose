@@ -29,7 +29,8 @@
 #import "CRErrorView.h"
 #import "Mixpanel.h"
 #import "UIFont+CRAdditions.h"
-
+#import "InteractionsController.h"
+#import "ShowDetailViewController.h"
 
 static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
@@ -108,6 +109,13 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 - (void)handleDidLoadAllShowsFromNetworkOrDB {
     [UIApplication.sharedAppDelegate setHasImportedShowsForInitialImport:YES];
     [self hideLoadingOrErrorViewAnimated:YES];
+    
+    id firstFetchedObject = self.fetchedResultsController.fetchedObjects[0];
+    if ([firstFetchedObject isKindOfClass:Show.class]) {
+        Show* show = (Show*)firstFetchedObject;
+        InteractionsController* interactionController = InteractionsController.sharedInteractionsController;
+        [interactionController showDetailViewWithShow:show];
+    }
 }
 
 - (void)handleDidFailLoadingAllShowsFromNetworkOrDBWithError:(NSError*)error {
@@ -185,8 +193,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 	BOOL isCenterControllerShown = ([self.viewDeckController rightControllerIsClosed] && [self.viewDeckController leftControllerIsClosed]);
 	if (isCenterControllerShown) {
 		Show* show = [self showForRowAtIndexPath:indexPath];
-		[[UIApplication sharedInteractionsController] showDetailViewWithShow:show];
-		
+		[UIApplication.sharedInteractionsController showDetailViewWithShow:show];
 	} else {
 		[self.viewDeckController showCenterView];
 	}
