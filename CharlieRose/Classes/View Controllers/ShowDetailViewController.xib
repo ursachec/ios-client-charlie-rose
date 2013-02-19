@@ -194,6 +194,7 @@
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<bool key="IBUIEditable">NO</bool>
 								<string key="IBUIText">Jeff Bezos, CEO of Amazon.com and Fortune Magezine's "2012 Businessperson of the year"</string>
 								<reference key="IBUITextColor" ref="240736151"/>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
