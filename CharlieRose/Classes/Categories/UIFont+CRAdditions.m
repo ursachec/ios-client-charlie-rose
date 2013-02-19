@@ -41,6 +41,11 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
     return [UIFont applicationFontOfSize:12.0f];
 }
 
++ (UIFont*)applicationStateTextLabelFont {
+    return [UIFont boldApplicationFontOfSize:12.0f];
+}
+
+
 + (UIFont*)showCellTitleFont {
     return [UIFont applicationFontOfSize:kShowCellTitleFontSize];
 }
@@ -62,11 +67,11 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 }
 
 + (UIFont*)loadingViewLabelFont {
-    return [UIFont boldApplicationFontOfSize:12.0f];
+    return [UIFont applicationStateTextLabelFont];
 }
 
 + (UIFont*)errorViewLabelFont {
-    return [UIFont boldApplicationFontOfSize:12.0f];
+    return [UIFont applicationStateTextLabelFont];
 }
 
 #pragma mark - detail view controller
