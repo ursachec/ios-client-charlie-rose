@@ -24,6 +24,7 @@ typedef enum {
     CRRowForSettings = 0,
     CRRowForAbout = 1,
     CRRowForContact = 2,
+    CRRowForPrivacyPolicy = 3,
 } CRTableViewRowForOtherPages;
 
 @interface MenuViewController ()
@@ -122,6 +123,8 @@ typedef enum {
 		[[UIApplication sharedInteractionsController] showContactAnimated:YES];
 	} else if (row==CRRowForSettings) {
 		[[UIApplication sharedInteractionsController] showSettingsAnimated:YES];
+	} else if (row==CRRowForPrivacyPolicy) {
+		[[UIApplication sharedInteractionsController] showPrivacyPolicyAnimated:YES];
 	}
 }
 

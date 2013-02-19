@@ -20,6 +20,7 @@
 - (void)showAboutAnimated:(BOOL)animated;
 - (void)showSettingsAnimated:(BOOL)animated;
 - (void)showContactAnimated:(BOOL)animated;
+- (void)showPrivacyPolicyAnimated:(BOOL)animated;
 
 - (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated;
 - (void)showViewController:(CharlieRoseViewController*)controller inCenterViewAnimated:(BOOL)animated showLoadingView:(BOOL)showLoadingView;

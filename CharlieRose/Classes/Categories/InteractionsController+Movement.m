@@ -13,6 +13,7 @@
 #import "CharlieRoseViewController.h"
 #import "MainFeedViewController.h"
 #import "ShowDetailViewController.h"
+#import "PrivacyPolicyViewController.h"
 
 #import "Show.h"
 
@@ -40,6 +41,11 @@
 - (void)showSettingsAnimated:(BOOL)animated {
 	SettingsViewController* settingsViewController = self.settingsViewController;
 	[self showViewController:settingsViewController inCenterViewAnimated:animated];
+}
+
+- (void)showPrivacyPolicyAnimated:(BOOL)animated {
+	PrivacyPolicyViewController* privacyPolicyViewController = self.privacyPolicyViewController;
+	[self showViewController:privacyPolicyViewController inCenterViewAnimated:animated];
 }
 
 - (void)showMainFeedWithTopic:(NSString*)topic {

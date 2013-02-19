@@ -16,12 +16,14 @@
 @class SettingsViewController;
 @class AboutViewController;
 @class ContactViewController;
+@class PrivacyPolicyViewController;
 
 @protocol IIViewDeckControllerDelegate;
 
 @interface InteractionsController : NSObject <IIViewDeckControllerDelegate>
 
 @property (readonly, strong, nonatomic) IIViewDeckController* deckController;
+@property (readonly, strong, nonatomic) PrivacyPolicyViewController* privacyPolicyViewController;
 @property (readonly, strong, nonatomic) SettingsViewController* settingsViewController;
 @property (readonly, strong, nonatomic) AboutViewController* aboutViewController;
 @property (readonly, strong, nonatomic) ContactViewController* contactViewController;

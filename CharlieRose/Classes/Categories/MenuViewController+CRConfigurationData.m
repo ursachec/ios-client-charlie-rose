@@ -12,7 +12,7 @@
 @implementation MenuViewController (CRConfigurationData)
 
 - (NSArray*)appMenuItems {
-    NSArray* items = @[@"SETTINGS", @"ABOUT", @"CONTACT"];
+    NSArray* items = @[@"Settings", @"About", @"Contact", @"Privacy Policy"];
     return [NSArray arrayWithUppercaseStrings:items];
 }
 

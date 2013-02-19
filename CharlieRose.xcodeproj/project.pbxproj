@@ -17,6 +17,9 @@
 		E50C550016D2C235005FBE76 /* Merriweather-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E50C54FB16D2C235005FBE76 /* Merriweather-Bold.ttf */; };
 		E50C550116D2C235005FBE76 /* Merriweather-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E50C54FC16D2C235005FBE76 /* Merriweather-Light.ttf */; };
 		E50C550216D2C235005FBE76 /* Merriweather-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E50C54FD16D2C235005FBE76 /* Merriweather-Regular.ttf */; };
+		E50C550A16D2F7EB005FBE76 /* PrivacyPolicyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E50C550716D2F7EB005FBE76 /* PrivacyPolicyViewController.h */; };
+		E50C550B16D2F7EB005FBE76 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E50C550816D2F7EB005FBE76 /* PrivacyPolicyViewController.m */; };
+		E50C550C16D2F7EB005FBE76 /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E50C550916D2F7EB005FBE76 /* PrivacyPolicyViewController.xib */; };
 		E5140D14166436160087EB81 /* ShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5140D12166436160087EB81 /* ShowDetailViewController.m */; };
 		E5140D15166436160087EB81 /* ShowDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5140D13166436160087EB81 /* ShowDetailViewController.xib */; };
 		E5140D17166436950087EB81 /* jeff_bezos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5140D16166436950087EB81 /* jeff_bezos.jpg */; };
@@ -95,6 +98,9 @@
 		E50C54FB16D2C235005FBE76 /* Merriweather-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Bold.ttf"; sourceTree = "<group>"; };
 		E50C54FC16D2C235005FBE76 /* Merriweather-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Light.ttf"; sourceTree = "<group>"; };
 		E50C54FD16D2C235005FBE76 /* Merriweather-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merriweather-Regular.ttf"; sourceTree = "<group>"; };
+		E50C550716D2F7EB005FBE76 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrivacyPolicyViewController.h; path = "Classes/View Controllers/PrivacyPolicyViewController.h"; sourceTree = "<group>"; };
+		E50C550816D2F7EB005FBE76 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrivacyPolicyViewController.m; path = "Classes/View Controllers/PrivacyPolicyViewController.m"; sourceTree = "<group>"; };
+		E50C550916D2F7EB005FBE76 /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PrivacyPolicyViewController.xib; path = "Classes/View Controllers/PrivacyPolicyViewController.xib"; sourceTree = "<group>"; };
 		E5140D11166436160087EB81 /* ShowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowDetailViewController.h; path = "Classes/View Controllers/ShowDetailViewController.h"; sourceTree = "<group>"; };
 		E5140D12166436160087EB81 /* ShowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowDetailViewController.m; path = "Classes/View Controllers/ShowDetailViewController.m"; sourceTree = "<group>"; };
 		E5140D13166436160087EB81 /* ShowDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowDetailViewController.xib; path = "Classes/View Controllers/ShowDetailViewController.xib"; sourceTree = "<group>"; };
@@ -264,6 +270,16 @@
 			path = Resources/Fonts/Merriweather;
 			sourceTree = "<group>";
 		};
+		E50C550616D2F790005FBE76 /* Privacy Policy */ = {
+			isa = PBXGroup;
+			children = (
+				E50C550716D2F7EB005FBE76 /* PrivacyPolicyViewController.h */,
+				E50C550816D2F7EB005FBE76 /* PrivacyPolicyViewController.m */,
+				E50C550916D2F7EB005FBE76 /* PrivacyPolicyViewController.xib */,
+			);
+			name = "Privacy Policy";
+			sourceTree = "<group>";
+		};
 		E5140D10166435E70087EB81 /* Show Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +414,7 @@
 				E5140D10166435E70087EB81 /* Show Detail */,
 				E55CBEEA166569C800FAD6A5 /* Contact */,
 				E55CBEE9166569C400FAD6A5 /* About */,
+				E50C550616D2F790005FBE76 /* Privacy Policy */,
 				E55CBEE8166569BF00FAD6A5 /* Settings */,
 			);
 			name = "View Controllers";
@@ -635,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E573BDD916D0386600C55364 /* SecretDefines.h in Headers */,
+				E50C550A16D2F7EB005FBE76 /* PrivacyPolicyViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +734,7 @@
 				E50C550016D2C235005FBE76 /* Merriweather-Bold.ttf in Resources */,
 				E50C550116D2C235005FBE76 /* Merriweather-Light.ttf in Resources */,
 				E50C550216D2C235005FBE76 /* Merriweather-Regular.ttf in Resources */,
+				E50C550C16D2F7EB005FBE76 /* PrivacyPolicyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +802,7 @@
 				E573BDCE16D0206700C55364 /* MPCSerializedJSONData.m in Sources */,
 				E573BDCF16D0206700C55364 /* NSData+MPBase64.m in Sources */,
 				E573BDD016D0206700C55364 /* Mixpanel.m in Sources */,
+				E50C550B16D2F7EB005FBE76 /* PrivacyPolicyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

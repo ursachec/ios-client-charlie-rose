@@ -13,6 +13,7 @@
 #import "AboutViewController.h"
 #import "SettingsViewController.h"
 #import "ContactViewController.h"
+#import "PrivacyPolicyViewController.h"
 
 #import "UIApplication+CRAdditions.h"
 #import "InteractionsController+Movement.h"
@@ -21,6 +22,7 @@
 @property (readwrite, strong, nonatomic) IIViewDeckController* deckController;
 @property (readwrite, strong, nonatomic) MenuViewController* menuViewController;
 @property (readwrite, strong, nonatomic) SettingsViewController* settingsViewController;
+@property (readwrite, strong, nonatomic) PrivacyPolicyViewController* privacyPolicyViewController;
 @property (readwrite, strong, nonatomic) AboutViewController* aboutViewController;
 @property (readwrite, strong, nonatomic) ContactViewController* contactViewController;
 @property (readwrite, strong, nonatomic) MainFeedViewController* mainFeedViewController;
@@ -67,6 +69,13 @@
 }
 
 #pragma mark - lazy fetching view controllers
+
+- (PrivacyPolicyViewController*) privacyPolicyViewController {
+	if (_privacyPolicyViewController==nil) {
+		_privacyPolicyViewController = [[PrivacyPolicyViewController alloc] initWithNibName:nil bundle:nil];
+	}
+	return _privacyPolicyViewController;
+}
 
 - (SettingsViewController*) settingsViewController {
 	if (_settingsViewController==nil) {
