@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "InteractionsController.h"
+#import "InteractionsController+Movement.h"
 
 @interface UIApplication (CRAdditions)
 + (AppDelegate*)sharedAppDelegate;

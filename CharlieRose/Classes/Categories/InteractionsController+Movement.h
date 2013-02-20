@@ -11,7 +11,10 @@
 @class CharlieRoseViewController;
 @class Show;
 
+
 @interface InteractionsController (Movement)
+
+- (void)reactToTapOnNonChangingViewController;
 
 - (void)reactToTapOnContactViewControllerView;
 

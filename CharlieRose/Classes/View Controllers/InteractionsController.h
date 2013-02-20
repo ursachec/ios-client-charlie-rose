@@ -35,3 +35,8 @@
 - (void)initializeAndSetupViewDeckController;
 
 @end
+
+@protocol InteractionsControllerFullViewTapDelegate <NSObject>
+@optional
+- (IBAction)didTapOnView:(id)sender;
+@end
