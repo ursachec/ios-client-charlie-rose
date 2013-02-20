@@ -187,6 +187,7 @@
 								<string key="NSFrame">{{30, 366}, {280, 117}}</string>
 								<reference key="NSSuperview" ref="722013263"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -379,12 +380,12 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
 						<string key="label">gestureRecognizers</string>
-						<reference key="source" ref="722013263"/>
+						<reference key="source" ref="191373211"/>
 						<reference key="destination" ref="70041259"/>
 						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
 						<bool key="addsContentToExistingCollection">YES</bool>
 					</object>
-					<int key="connectionID">1030</int>
+					<int key="connectionID">1033</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -413,11 +414,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">didTapContentView:</string>
+						<string key="label">didTapOnView:</string>
 						<reference key="source" ref="70041259"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
-					<int key="connectionID">1031</int>
+					<int key="connectionID">1035</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1458,7 +1459,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1031</int>
+			<int key="maxID">1035</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1484,6 +1485,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="didSwipeRight:">id</string>
 						<string key="didTapContentView:">id</string>
+						<string key="didTapOnView:">id</string>
 						<string key="playVideo:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
@@ -1493,6 +1495,10 @@
 						</object>
 						<object class="IBActionInfo" key="didTapContentView:">
 							<string key="name">didTapContentView:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="didTapOnView:">
+							<string key="name">didTapOnView:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="playVideo:">

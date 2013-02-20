@@ -21,7 +21,7 @@
 #import "UIFont+CRAdditions.h"
 #import "UIApplication+CRAdditions.h"
 
-@interface ShowDetailViewController ()
+@interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
 @property(nonatomic, readwrite, strong) Show* show;
 @property(nonatomic, readwrite, strong) NSString* currentShowID;
 
@@ -192,10 +192,11 @@
 }
 
 - (IBAction)didSwipeRight:(id)sender {
-    [[InteractionsController sharedInteractionsController].deckController showCenterView];
+    [[UIApplication sharedInteractionsController] reactToSwipeOnShowDetailViewController];
 }
 
-- (IBAction)didTapContentView:(id)sender {
-    [[InteractionsController sharedInteractionsController].deckController showCenterView];
+- (IBAction)didTapOnView:(id)sender {
+    [[UIApplication sharedInteractionsController] reactToTapOnShowDetailViewController];
 }
+
 @end

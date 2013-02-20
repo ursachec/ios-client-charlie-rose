@@ -14,6 +14,8 @@
 
 @interface InteractionsController (Movement)
 
+- (void)reactToSwipeOnShowDetailViewController;
+- (void)reactToTapOnShowDetailViewController;
 - (void)reactToTapOnNonChangingViewController;
 
 - (void)reactToTapOnContactViewControllerView;

@@ -19,6 +19,12 @@
 
 @implementation InteractionsController (Movement)
 
+- (void)reactToSwipeOnShowDetailViewController {
+}
+    
+- (void)reactToTapOnShowDetailViewController {
+    [self reactToTapOnNonChangingViewController];
+}
 
 - (void)reactToTapOnNonChangingViewController {
     IIViewDeckController* deck = self.deckController;
