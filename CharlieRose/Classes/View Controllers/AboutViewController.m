@@ -8,8 +8,10 @@
 
 #import "AboutViewController.h"
 #import "UIFont+CRAdditions.h"
+#import "InteractionsController+Movement.h"
+#import "UIApplication+CRAdditions.h"
 
-@interface AboutViewController ()
+@interface AboutViewController ()<InteractionsControllerFullViewTapDelegate>
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
 @property(nonatomic,readwrite,strong) IBOutlet UILabel* aboutTheProgramTitleLabel;
 @property(nonatomic,readwrite,strong) IBOutlet UITextView* aboutTheProgramDescriptionTextView;
@@ -53,6 +55,10 @@
 
 - (UIView*)superViewForLoadingView {
 	return self.contentScrollView;
+}
+
+- (IBAction)didTapOnView:(id)sender {    
+    [[UIApplication sharedInteractionsController] reactToTapOnNonChangingViewController];
 }
 
 @end

@@ -8,8 +8,9 @@
 
 #import "PrivacyPolicyViewController.h"
 #import "UIFont+CRAdditions.h"
+#import "UIApplication+CRAdditions.h"
 
-@interface PrivacyPolicyViewController ()
+@interface PrivacyPolicyViewController () <InteractionsControllerFullViewTapDelegate>
 @property(nonatomic,readwrite,strong) IBOutlet UITextView* privacyPolicyTextView;
 @end
 
@@ -37,4 +38,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)didTapOnView:(id)sender {    
+    [[UIApplication sharedInteractionsController] reactToTapOnNonChangingViewController];
+}
+
 @end
+
+

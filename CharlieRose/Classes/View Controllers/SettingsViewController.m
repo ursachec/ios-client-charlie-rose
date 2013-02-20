@@ -9,6 +9,8 @@
 #import "SettingsViewController.h"
 #import "NSUserDefaults+CRAdditions.h"
 #import "UIFont+CRAdditions.h"
+#import "UIApplication+CRAdditions.h"
+
 
 @interface SettingsViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
@@ -54,6 +56,10 @@
 - (void)flip:(id)sender {
     UISwitch *onoff = (UISwitch *) sender;
     [NSUserDefaults setTrackingDenied:(!onoff.isOn)];
+}
+
+- (IBAction)didTapOnView:(id)sender {    
+    [[UIApplication sharedInteractionsController] reactToTapOnNonChangingViewController];
 }
 
 @end

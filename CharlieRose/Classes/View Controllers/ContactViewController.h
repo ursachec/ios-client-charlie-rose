@@ -10,6 +10,4 @@
 
 @interface ContactViewController : CharlieRoseViewController
 
-- (IBAction)didTapOnMainView:(id)sender;
-
 @end
