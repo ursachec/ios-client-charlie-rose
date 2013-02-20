@@ -39,7 +39,7 @@
 }
 
 - (IBAction)didTapOnView:(id)sender {    
-    [[UIApplication sharedInteractionsController] reactToTapOnNonChangingViewController];
+    [[UIApplication sharedInteractionsController] reactToTapOnPrivacyPolicyViewController];
 }
 
 @end

@@ -19,12 +19,7 @@
 
 @implementation InteractionsController (Movement)
 
-- (void)reactToSwipeOnShowDetailViewController {
-}
-    
-- (void)reactToTapOnShowDetailViewController {
-    [self reactToTapOnNonChangingViewController];
-}
+#pragma mark - react to taps
 
 - (void)reactToTapOnNonChangingViewController {
     IIViewDeckController* deck = self.deckController;
@@ -35,18 +30,31 @@
     }
 }
 
+- (void)reactToSwipeOnShowDetailViewController {
+    [self reactToTapOnNonChangingViewController];
+}
+    
+- (void)reactToTapOnShowDetailViewController {
+    [self reactToTapOnNonChangingViewController];
+}
+
+- (void)reactToTapOnPrivacyPolicyViewController {
+    [self reactToTapOnNonChangingViewController];
+}
+
+- (void)reactToTapOnSettingsViewController {
+    [self reactToTapOnNonChangingViewController];
+}
+
 - (void)reactToTapOnAboutViewController {
     [self reactToTapOnNonChangingViewController];
 }
 
 - (void)reactToTapOnContactViewControllerView {
-    IIViewDeckController* deck = self.deckController;
-    if (deck.leftControllerIsClosed && deck.rightControllerIsClosed) {
-        [deck openLeftView];
-    } else {
-        [deck showCenterView];
-    }
+    [self reactToTapOnNonChangingViewController];
 }
+
+#pragma mark - other interactions
 
 - (void)showMainFeedInteractionForTapOnNavigationBar {
     IIViewDeckController* deck = self.deckController;

@@ -16,9 +16,11 @@
 
 - (void)reactToSwipeOnShowDetailViewController;
 - (void)reactToTapOnShowDetailViewController;
-- (void)reactToTapOnNonChangingViewController;
-
+- (void)reactToTapOnPrivacyPolicyViewController;
+- (void)reactToTapOnSettingsViewController;
+- (void)reactToTapOnAboutViewController;
 - (void)reactToTapOnContactViewControllerView;
+
 
 - (void)showMainFeedInteractionForTapOnNavigationBar;
 
