@@ -42,7 +42,6 @@
 
 - (IBAction)playVideo:(id)sender;
 - (IBAction)didSwipeRight:(id)sender;
-- (IBAction)didTapContentView:(id)sender;
 
 @end
 
