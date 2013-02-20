@@ -12,6 +12,9 @@
 @class Show;
 
 @interface InteractionsController (Movement)
+
+- (void)showMainFeedInteractionForTapOnNavigationBar;
+
 - (void)showMainFeedWithTopic:(NSString*)topic;
 - (void)showDetailViewWithShow:(Show*)show;
 

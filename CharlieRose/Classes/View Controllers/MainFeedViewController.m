@@ -46,7 +46,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 -(IBAction)didTapNavigationBar:(id)sender {
     
-    NSLog(@"didTapNavigationBar:");
+    
+    [[UIApplication sharedInteractionsController] showMainFeedInteractionForTapOnNavigationBar];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

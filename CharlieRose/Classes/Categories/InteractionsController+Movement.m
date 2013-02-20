@@ -19,8 +19,16 @@
 
 @implementation InteractionsController (Movement)
 
+- (void)showMainFeedInteractionForTapOnNavigationBar {
+    IIViewDeckController* deck = self.deckController;
+    if (deck.leftControllerIsClosed && deck.rightControllerIsClosed) {
+        [deck openLeftView];
+    } else {
+        [deck showCenterView]; 
+    }
+}
+
 - (void)showDetailViewWithShow:(Show*)show {
-    NSLog(@"showDetailViewWithShow:%@",show);
 	[self.deckController toggleRightView];
 	[self.showDetailViewController presentWithShow:show];
 }
