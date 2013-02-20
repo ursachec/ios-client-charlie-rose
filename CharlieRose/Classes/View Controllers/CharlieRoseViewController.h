@@ -16,6 +16,8 @@
 @property(nonatomic, strong, readonly) CRErrorView* errorView;
 @property(nonatomic, assign, readonly) CGFloat loadingViewAnimationDuration;
 
+- (IBAction)didTapOnMainView:(id)sender;
+
 - (void)showLoadingViewAnimated:(BOOL)animated;
 - (void)hideLoadingViewAnimated:(BOOL)animated;
 

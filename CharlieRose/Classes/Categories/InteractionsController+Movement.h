@@ -13,6 +13,8 @@
 
 @interface InteractionsController (Movement)
 
+- (void)reactToTapOnContactViewControllerView;
+
 - (void)showMainFeedInteractionForTapOnNavigationBar;
 
 - (void)showMainFeedWithTopic:(NSString*)topic;

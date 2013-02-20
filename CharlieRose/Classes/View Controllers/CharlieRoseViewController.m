@@ -169,4 +169,9 @@
     }
 }
 
+#pragma mark - Interface Builder actions
+
+- (IBAction)didTapOnMainView:(id)sender {
+}
+
 @end

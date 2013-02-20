@@ -19,6 +19,15 @@
 
 @implementation InteractionsController (Movement)
 
+- (void)reactToTapOnContactViewControllerView {
+    IIViewDeckController* deck = self.deckController;
+    if (deck.leftControllerIsClosed && deck.rightControllerIsClosed) {
+        [deck openLeftView];
+    } else {
+        [deck showCenterView];
+    }
+}
+
 - (void)showMainFeedInteractionForTapOnNavigationBar {
     IIViewDeckController* deck = self.deckController;
     if (deck.leftControllerIsClosed && deck.rightControllerIsClosed) {

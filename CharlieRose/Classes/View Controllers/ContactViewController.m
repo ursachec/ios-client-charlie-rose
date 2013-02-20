@@ -8,6 +8,7 @@
 
 #import "ContactViewController.h"
 #import "UIFont+CRAdditions.h"
+#import "InteractionsController+Movement.h"
 
 @interface ContactViewController ()
 @property(nonatomic,readwrite,strong) IBOutlet UIScrollView* contentScrollView;
@@ -52,6 +53,10 @@
 
 - (UIView*)superViewForLoadingView {
 	return self.contentScrollView;
+}
+
+- (IBAction)didTapOnMainView:(id)sender {
+    [[InteractionsController sharedInteractionsController] reactToTapOnContactViewControllerView];
 }
 
 @end
