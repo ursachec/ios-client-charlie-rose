@@ -42,6 +42,7 @@
 
 - (IBAction)playVideo:(id)sender;
 - (IBAction)didSwipeRight:(id)sender;
+- (IBAction)didTapContentView:(id)sender;
 
 @end
 
@@ -191,6 +192,10 @@
 }
 
 - (IBAction)didSwipeRight:(id)sender {
+    [[InteractionsController sharedInteractionsController].deckController showCenterView];
+}
+
+- (IBAction)didTapContentView:(id)sender {
     [[InteractionsController sharedInteractionsController].deckController showCenterView];
 }
 @end
