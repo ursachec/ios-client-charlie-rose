@@ -20,6 +20,7 @@
 #import "CharlieRoseAPIClient.h"
 #import "UIFont+CRAdditions.h"
 #import "UIApplication+CRAdditions.h"
+#import "UIDevice+CRAdditions.h"
 
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
 
@@ -82,15 +83,15 @@
     self.publishingDateLabel.font = [UIFont detailPublishingDataLabelFont];
     self.descriptionTextView.font = [UIFont detailDescriptionTextViewFont];
     
+    // hide the decription text view if older than iPhone5
+    if (NO == UIDevice.isIphone5) {
+        [self.descriptionTextView removeFromSuperview];
+        self.descriptionTextView = nil;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-    
-    CGRect frame = self.descriptionTextView.frame;
-    frame.size.height = self.descriptionTextView.contentSize.height;
-    self.descriptionTextView.frame = frame;
-    
 }
 
 - (void)didReceiveMemoryWarning
