@@ -12,6 +12,8 @@
 
 @interface ShowDetailViewController : CharlieRoseViewController <UINavigationControllerDelegate>
 
+@property(nonatomic, readwrite, strong) Show* show;
+
 @property(nonatomic,readonly,strong) NSString* currentShowID;
 @property(nonatomic,readonly,strong) UIScrollView* contentScrollView;
 

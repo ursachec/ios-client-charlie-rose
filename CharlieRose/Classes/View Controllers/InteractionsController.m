@@ -44,7 +44,7 @@
 - (void)initializeAndSetupViewDeckController {
     self.mainFeedViewController = [[MainFeedViewController alloc] initWithNibName:nil bundle:nil];
 	self.menuViewController = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
-	self.showDetailViewController = [[ShowDetailViewController alloc] initWithNibName:nil bundle:nil];
+	self.showDetailViewController = [[ShowDetailViewController alloc] init];
     
 	IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.mainFeedViewController
                                                                                     leftViewController:self.menuViewController

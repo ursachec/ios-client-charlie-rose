@@ -22,7 +22,7 @@
 #import "UIApplication+CRAdditions.h"
 
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
-@property(nonatomic, readwrite, strong) Show* show;
+
 @property(nonatomic, readwrite, strong) NSString* currentShowID;
 
 @property(nonatomic, readwrite, strong) NSDateFormatter *dateFormatter;
@@ -47,6 +47,19 @@
 
 @implementation ShowDetailViewController
 
+- (id)init {
+    self = [self initWithShow:nil];
+    if (self) {
+        
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
+        [_dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+        
+    }
+    return self;
+}
+
 - (id)initWithShow:(Show *)show {
     self = [super initWithNibName:nil bundle:nil];
     if (!self) {
@@ -54,10 +67,7 @@
     }
     _show = show;
     
-    _dateFormatter = [[NSDateFormatter alloc] init];
-    [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
-    [_dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    
         
     return self;
 }
@@ -76,6 +86,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+    
+    CGRect frame = self.descriptionTextView.frame;
+    frame.size.height = self.descriptionTextView.contentSize.height;
+    self.descriptionTextView.frame = frame;
     
 }
 
@@ -122,14 +136,14 @@
 
 - (void)setupTopicsLabelWithShow:(Show *)show {
 	self.topicsLabel.backgroundColor = [UIColor clearColor];
-	self.topicsLabel.text = show.topics;
+	self.topicsLabel.text = [NSString stringWithFormat:@"in %@", show.topics];
 	self.topicsLabel.textColor = [UIColor topicsLabelTextColor];
 }
 
 - (void)setupPublishingDateLabelWithShow:(Show *)show {
     NSString *dateString = [self.dateFormatter stringFromDate:show.datePublished];
 	self.publishingDateLabel.backgroundColor = [UIColor clearColor];
-	self.publishingDateLabel.text = dateString;
+	self.publishingDateLabel.text = [NSString stringWithFormat:@"on %@",dateString];
 	self.publishingDateLabel.textColor = [UIColor publishingDateTextColor];
 }
 

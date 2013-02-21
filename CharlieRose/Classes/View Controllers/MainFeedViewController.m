@@ -115,7 +115,8 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     if ([firstFetchedObject isKindOfClass:Show.class]) {
         Show* show = (Show*)firstFetchedObject;
         InteractionsController* interactionController = InteractionsController.sharedInteractionsController;
-        [interactionController showDetailViewWithShow:show];
+        [interactionController.showDetailViewController presentWithShow:show];
+        
     }
 }
 
