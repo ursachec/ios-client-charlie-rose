@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B5F467EE9C9E4D979541AEE8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0DA9567B9E44FC919D177E /* libPods.a */; };
+		E50650B016D6AF3600B136A9 /* UIDevice+CRAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E50650AE16D6AF3600B136A9 /* UIDevice+CRAdditions.h */; };
+		E50650B116D6AF3600B136A9 /* UIDevice+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E50650AF16D6AF3600B136A9 /* UIDevice+CRAdditions.m */; };
 		E507BCA91699F65E00597F8E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCA71699F65E00597F8E /* Icon@2x.png */; };
 		E507BCAA1699F65E00597F8E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCA81699F65E00597F8E /* Icon.png */; };
 		E507BCB8169A006100597F8E /* navigation_bar_no_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E507BCB4169A006000597F8E /* navigation_bar_no_logo.png */; };
@@ -89,6 +91,8 @@
 /* Begin PBXFileReference section */
 		B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BE0DA9567B9E44FC919D177E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E50650AE16D6AF3600B136A9 /* UIDevice+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+CRAdditions.h"; path = "Classes/Categories/UIDevice+CRAdditions.h"; sourceTree = "<group>"; };
+		E50650AF16D6AF3600B136A9 /* UIDevice+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+CRAdditions.m"; path = "Classes/Categories/UIDevice+CRAdditions.m"; sourceTree = "<group>"; };
 		E507BCA71699F65E00597F8E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Images/Compiled/AppIcon/Icon@2x.png"; sourceTree = "<group>"; };
 		E507BCA81699F65E00597F8E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Images/Compiled/AppIcon/Icon.png; sourceTree = "<group>"; };
 		E507BCB4169A006000597F8E /* navigation_bar_no_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bar_no_logo.png; path = "Resources/Images/Compiled/Navigation Bar/navigation_bar_no_logo.png"; sourceTree = "<group>"; };
@@ -505,6 +509,8 @@
 				E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */,
 				E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */,
 				E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */,
+				E50650AE16D6AF3600B136A9 /* UIDevice+CRAdditions.h */,
+				E50650AF16D6AF3600B136A9 /* UIDevice+CRAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 			files = (
 				E573BDD916D0386600C55364 /* SecretDefines.h in Headers */,
 				E50C550A16D2F7EB005FBE76 /* PrivacyPolicyViewController.h in Headers */,
+				E50650B016D6AF3600B136A9 /* UIDevice+CRAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +810,7 @@
 				E573BDCF16D0206700C55364 /* NSData+MPBase64.m in Sources */,
 				E573BDD016D0206700C55364 /* Mixpanel.m in Sources */,
 				E50C550B16D2F7EB005FBE76 /* PrivacyPolicyViewController.m in Sources */,
+				E50650B116D6AF3600B136A9 /* UIDevice+CRAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
