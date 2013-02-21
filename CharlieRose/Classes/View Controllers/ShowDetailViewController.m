@@ -89,8 +89,8 @@
     NSURL *url = [CharlieRoseAPIClient videoURLForShowId:self.show.showID];
     self.moviePlayer =  [[MPMoviePlayerController alloc] initWithContentURL:url];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(moviePlayBackDidFinish:)
-                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                             selector:@selector(playbackStateChanged:)
+                                                 name:MPMoviePlayerPlaybackStateDidChangeNotification
                                                object:self.moviePlayer];
     self.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
     self.moviePlayer.shouldAutoplay = YES;
@@ -98,10 +98,10 @@
     [self.moviePlayer setFullscreen:YES animated:NO];
 }
 
-- (void) moviePlayBackDidFinish:(NSNotification*)notification {
+- (void) playbackStateChanged:(NSNotification*)notification {
     MPMoviePlayerController *player = [notification object];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
-    if ([player respondsToSelector:@selector(setFullscreen:animated:)]) {
+    if (player.playbackState == MPMoviePlaybackStatePaused) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
         [player.view removeFromSuperview];
     }
 }
