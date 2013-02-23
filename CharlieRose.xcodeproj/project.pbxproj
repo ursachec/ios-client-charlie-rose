@@ -90,6 +90,8 @@
 		E5FAD47516D91F540094DC2A /* UINonSelectableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FAD47316D91F540094DC2A /* UINonSelectableTextView.m */; };
 		E5FAD47C16D92B550094DC2A /* CRNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = E5FAD47A16D92B550094DC2A /* CRNavigationController.h */; };
 		E5FAD47D16D92B550094DC2A /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FAD47B16D92B550094DC2A /* CRNavigationController.m */; };
+		E5FAD48016D93F930094DC2A /* CVUMoviePlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E5FAD47E16D93F930094DC2A /* CVUMoviePlayerView.h */; };
+		E5FAD48116D93F930094DC2A /* CVUMoviePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FAD47F16D93F930094DC2A /* CVUMoviePlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -219,6 +221,8 @@
 		E5FAD47316D91F540094DC2A /* UINonSelectableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UINonSelectableTextView.m; path = Classes/Views/UINonSelectableTextView/UINonSelectableTextView.m; sourceTree = "<group>"; };
 		E5FAD47A16D92B550094DC2A /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRNavigationController.h; path = "Classes/View Controllers/CRNavigationController.h"; sourceTree = "<group>"; };
 		E5FAD47B16D92B550094DC2A /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRNavigationController.m; path = "Classes/View Controllers/CRNavigationController.m"; sourceTree = "<group>"; };
+		E5FAD47E16D93F930094DC2A /* CVUMoviePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVUMoviePlayerView.h; path = Vendor/CVUMoviePlayerView/CVUMoviePlayerView.h; sourceTree = "<group>"; };
+		E5FAD47F16D93F930094DC2A /* CVUMoviePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVUMoviePlayerView.m; path = Vendor/CVUMoviePlayerView/CVUMoviePlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +404,7 @@
 			children = (
 				E573BDBE16D0206700C55364 /* Mixpanel */,
 				E5204FB41662B8DC00B65A44 /* ViewDeck */,
+				E5FAD48216D93F990094DC2A /* CVUMoviePlayerView */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -670,6 +675,15 @@
 			name = "Navigation Controller";
 			sourceTree = "<group>";
 		};
+		E5FAD48216D93F990094DC2A /* CVUMoviePlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				E5FAD47E16D93F930094DC2A /* CVUMoviePlayerView.h */,
+				E5FAD47F16D93F930094DC2A /* CVUMoviePlayerView.m */,
+			);
+			name = CVUMoviePlayerView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -682,6 +696,7 @@
 				E50650B016D6AF3600B136A9 /* UIDevice+CRAdditions.h in Headers */,
 				E5FAD47416D91F540094DC2A /* UINonSelectableTextView.h in Headers */,
 				E5FAD47C16D92B550094DC2A /* CRNavigationController.h in Headers */,
+				E5FAD48016D93F930094DC2A /* CVUMoviePlayerView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,6 +850,7 @@
 				E50650B116D6AF3600B136A9 /* UIDevice+CRAdditions.m in Sources */,
 				E5FAD47516D91F540094DC2A /* UINonSelectableTextView.m in Sources */,
 				E5FAD47D16D92B550094DC2A /* CRNavigationController.m in Sources */,
+				E5FAD48116D93F930094DC2A /* CVUMoviePlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
