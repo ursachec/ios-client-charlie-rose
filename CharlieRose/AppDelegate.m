@@ -14,6 +14,7 @@
 #import "NSUserDefaults+CRAdditions.h"
 #import "Mixpanel.h"
 #import "SecretDefines.h"
+#import "CRNavigationController.h"
 
 static NSString* kMixpanelToken = MIXPANEL_TOKEN;
 
@@ -45,7 +46,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 }
 
 - (void)setupNavigationControllerWithInteractionsController:(InteractionsController*)controller {
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[UINavigationBar class] toolbarClass:[UIToolbar class]];
+    CRNavigationController *navigationController = [[CRNavigationController alloc] initWithNavigationBarClass:[UINavigationBar class] toolbarClass:[UIToolbar class]];
     navigationController.navigationBarHidden = YES;
     NSArray *viewControllers = @[controller.deckController];
     navigationController.viewControllers = viewControllers;

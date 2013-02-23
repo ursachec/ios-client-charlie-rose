@@ -88,6 +88,8 @@
 		E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */; };
 		E5FAD47416D91F540094DC2A /* UINonSelectableTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = E5FAD47216D91F540094DC2A /* UINonSelectableTextView.h */; };
 		E5FAD47516D91F540094DC2A /* UINonSelectableTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FAD47316D91F540094DC2A /* UINonSelectableTextView.m */; };
+		E5FAD47C16D92B550094DC2A /* CRNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = E5FAD47A16D92B550094DC2A /* CRNavigationController.h */; };
+		E5FAD47D16D92B550094DC2A /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FAD47B16D92B550094DC2A /* CRNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -215,6 +217,8 @@
 		E5F9D47B16C74B7B00603E88 /* NSString+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CRAdditions.m"; path = "Classes/Categories/NSString+CRAdditions.m"; sourceTree = "<group>"; };
 		E5FAD47216D91F540094DC2A /* UINonSelectableTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UINonSelectableTextView.h; path = Classes/Views/UINonSelectableTextView/UINonSelectableTextView.h; sourceTree = "<group>"; };
 		E5FAD47316D91F540094DC2A /* UINonSelectableTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UINonSelectableTextView.m; path = Classes/Views/UINonSelectableTextView/UINonSelectableTextView.m; sourceTree = "<group>"; };
+		E5FAD47A16D92B550094DC2A /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRNavigationController.h; path = "Classes/View Controllers/CRNavigationController.h"; sourceTree = "<group>"; };
+		E5FAD47B16D92B550094DC2A /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRNavigationController.m; path = "Classes/View Controllers/CRNavigationController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +418,7 @@
 		E5204FBE1662BA9300B65A44 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E5FAD47916D92B2A0094DC2A /* Navigation Controller */,
 				E573BDBC16CF097B00C55364 /* InteractionsController */,
 				E55CBEF4166583EE00FAD6A5 /* Abstract */,
 				E5204FC71662BE4B00B65A44 /* Menu */,
@@ -656,6 +661,15 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		E5FAD47916D92B2A0094DC2A /* Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5FAD47A16D92B550094DC2A /* CRNavigationController.h */,
+				E5FAD47B16D92B550094DC2A /* CRNavigationController.m */,
+			);
+			name = "Navigation Controller";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -667,6 +681,7 @@
 				E50C550A16D2F7EB005FBE76 /* PrivacyPolicyViewController.h in Headers */,
 				E50650B016D6AF3600B136A9 /* UIDevice+CRAdditions.h in Headers */,
 				E5FAD47416D91F540094DC2A /* UINonSelectableTextView.h in Headers */,
+				E5FAD47C16D92B550094DC2A /* CRNavigationController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +834,7 @@
 				E50C550B16D2F7EB005FBE76 /* PrivacyPolicyViewController.m in Sources */,
 				E50650B116D6AF3600B136A9 /* UIDevice+CRAdditions.m in Sources */,
 				E5FAD47516D91F540094DC2A /* UINonSelectableTextView.m in Sources */,
+				E5FAD47D16D92B550094DC2A /* CRNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2111,5 +2111,11 @@ static const char* viewDeckControllerKey = "ViewDeckController";
     [self viewDidDisappear:animated];
 }
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 @end
