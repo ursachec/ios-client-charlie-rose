@@ -126,6 +126,7 @@
 								</object>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<bool key="IBUIEditable">NO</bool>
 								<string key="IBUIText">@ursachec claudiu@cvursache.com Claudiu-Vlad Ursache</string>
@@ -151,6 +152,7 @@
 								<reference key="IBUIBackgroundColor" ref="862520508"/>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<bool key="IBUIEditable">NO</bool>
 								<string type="base64-UTF8" key="IBUIText">Q2hhcmxpZSBSb3NlIEluYy4KNzMxIExleGluZ3RvbiBBdmUKTmV3IFlvcmssIE5ZIDEwMDIyA</string>
@@ -374,17 +376,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ContactViewController</string>
 					<string key="superclassName">CharlieRoseViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">didTapOnView:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">didTapOnView:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">didTapOnView:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="contactCharlieRoseIncDetailTextView">UITextView</string>
 						<string key="contactCharlieRoseIncTitleLabel">UILabel</string>

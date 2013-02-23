@@ -5,9 +5,9 @@
 NSString * const kRemoteKeyForTopicHome = @"all";
 NSString * const kLocalKeyForTopicHome = @"home";
 
-//static NSString * const kCharlieRoseAPIBaseURLString = @"http://api-charlie-rose-show.herokuapp.com/";
+static NSString * const kCharlieRoseAPIBaseURLString = @"http://api-charlie-rose-show.herokuapp.com/";
 
-static NSString * const kCharlieRoseAPIBaseURLString = @"http://localhost:5000/";
+//static NSString * const kCharlieRoseAPIBaseURLString = @"http://localhost:5000/";
 
 
 @implementation CharlieRoseAPIClient
@@ -30,6 +30,7 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://localhost:5000/"
     
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setDefaultHeader:@"Accept" value:@"application/json"];
+
     
     return self;
 }
