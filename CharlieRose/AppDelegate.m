@@ -30,7 +30,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
     InteractionsController *interactionsCtl = InteractionsController.sharedInteractionsController;
     [interactionsCtl initializeAndSetupViewDeckController];
-    self.window.rootViewController = interactionsCtl.deckController;
+    [self setupNavigationControllerWithInteractionsController:interactionsCtl];
+    
+    self.window.rootViewController = self.navigationController;
     
     if (NO == NSUserDefaults.hasSetTrackingDenied) {
         [Mixpanel sharedInstanceWithToken:kMixpanelToken];
@@ -40,6 +42,14 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)setupNavigationControllerWithInteractionsController:(InteractionsController*)controller {
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[UINavigationBar class] toolbarClass:[UIToolbar class]];
+    navigationController.navigationBarHidden = YES;
+    NSArray *viewControllers = @[controller.deckController];
+    navigationController.viewControllers = viewControllers;
+    self.navigationController = navigationController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
