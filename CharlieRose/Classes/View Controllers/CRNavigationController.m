@@ -37,16 +37,10 @@
 
 #pragma mark - autorotation
 
-- (BOOL)shouldAutorotate
-{
-    NSLog(@"shouldAutorotate");
-//    return NO;
+- (BOOL)shouldAutorotate {
     return self.topViewController.shouldAutorotate;
 }
-- (NSUInteger)supportedInterfaceOrientations
-{
-    NSLog(@"supportedInterfaceOrientations");
-//    return UIInterfaceOrientationMaskPortrait;
+- (NSUInteger)supportedInterfaceOrientations {
     return self.topViewController.supportedInterfaceOrientations;
 }
 
