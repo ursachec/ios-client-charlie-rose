@@ -8,6 +8,7 @@
 
 #import "UIApplication+CRAdditions.h"
 #import "InteractionsController.h"
+#import "CRNavigationController.h"
 
 @implementation UIApplication (CRAdditions)
 + (AppDelegate*)sharedAppDelegate {
@@ -17,6 +18,9 @@
 	return [InteractionsController sharedInteractionsController];
 }
 
++ (CRNavigationController*)sharedNavigationController {
+    return self.sharedAppDelegate.navigationController;
+}
 
 
 @end

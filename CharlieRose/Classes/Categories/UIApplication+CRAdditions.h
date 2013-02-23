@@ -10,7 +10,10 @@
 #import "AppDelegate.h"
 #import "InteractionsController+Movement.h"
 
+@class CRNavigationController;
+
 @interface UIApplication (CRAdditions)
 + (AppDelegate*)sharedAppDelegate;
 + (InteractionsController*)sharedInteractionsController;
++ (CRNavigationController*)sharedNavigationController;
 @end
