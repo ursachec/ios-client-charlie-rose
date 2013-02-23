@@ -10,4 +10,21 @@
 
 @interface CVUMoviePlayerView : UIView
 
+@property(nonatomic, strong, readonly) UIView* videoPlayerPlaceholderView;
+@property(nonatomic, strong, readonly) UIImageView* videoPlayerPlaceholderImageView;
+@property(nonatomic, strong, readonly) UIButton* videoPlayerPlaceholderPlayVideoButton;
+
+/**
+ * <#add description#>
+ */
+- (id)initWithFrame:(CGRect)frame
+   placeholderImage:(UIImage*)placeholderImage
+           videoURL:(NSURL*)videoURL;
+
+/**
+ * <#add description#>
+ */
+- (id)initWithFrame:(CGRect)frame
+   placeholderImage:(UIImage*)placeholderImage;
+
 @end
