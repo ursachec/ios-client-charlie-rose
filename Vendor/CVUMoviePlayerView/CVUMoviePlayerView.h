@@ -13,6 +13,7 @@
 @property(nonatomic, strong, readonly) UIView* videoPlayerPlaceholderView;
 @property(nonatomic, strong, readonly) UIImageView* videoPlayerPlaceholderImageView;
 @property(nonatomic, strong, readonly) UIButton* videoPlayerPlaceholderPlayVideoButton;
+@property(nonatomic, strong, readwrite) UIImage* placeholderImage;
 
 /**
  * <#add description#>

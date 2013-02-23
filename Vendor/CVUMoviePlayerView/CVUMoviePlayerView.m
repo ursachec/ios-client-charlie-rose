@@ -12,7 +12,6 @@
 @property(nonatomic, strong, readwrite) UIView* videoPlayerPlaceholderView;
 @property(nonatomic, strong, readwrite) UIImageView* videoPlayerPlaceholderImageView;
 @property(nonatomic, strong, readwrite) UIButton* videoPlayerPlaceholderPlayVideoButton;
-@property(nonatomic, strong, readwrite) UIImage* placeholderImage;
 @property(nonatomic, copy, readwrite) NSURL* videoURL;
 @end
 
@@ -47,21 +46,29 @@
     return self;
 }
 
+- (void)setPlaceholderImage:(UIImage *)placeholderImage {
+    self.videoPlayerPlaceholderImageView.image = placeholderImage;
+    _placeholderImage = placeholderImage;
+}
+
 #pragma mark - private view setup methods
 
 - (void)initVideoPlayerPlaceholderViewWithFrame:(CGRect)frame
                                placeholderImage:(UIImage*)placeholderImage {
-    _videoPlayerPlaceholderView = [[UIView alloc] initWithFrame:frame];
+    CGRect placeholderViewFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    _videoPlayerPlaceholderView = [[UIView alloc] initWithFrame:placeholderViewFrame];
+    _videoPlayerPlaceholderView.backgroundColor = [UIColor greenColor];
     
-    CGRect videoPlayerPlaceholderImageViewFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
-    _videoPlayerPlaceholderImageView = [[UIImageView alloc] initWithFrame:videoPlayerPlaceholderImageViewFrame];
+    CGRect placeholderImageViewFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    _videoPlayerPlaceholderImageView = [[UIImageView alloc] initWithFrame:placeholderImageViewFrame];
     _videoPlayerPlaceholderImageView.image = placeholderImage;
+    _videoPlayerPlaceholderImageView.backgroundColor = [UIColor clearColor];
     [_videoPlayerPlaceholderView addSubview:_videoPlayerPlaceholderImageView];
     
-    CGSize videoPlayerPlaceholderPlayVideoButtonSize = CGSizeMake(50, 50);
-    CGRect videoPlayerPlaceholderPlayVideoButtonFrame = CGRectMake(0, 0, (frame.size.width - videoPlayerPlaceholderPlayVideoButtonSize.width) / 2, (frame.size.height - videoPlayerPlaceholderPlayVideoButtonSize.height) / 2);
+    CGSize playButtonSize = CGSizeMake(50, 50);
+    CGRect playButtonFrame = CGRectMake((frame.size.width - playButtonSize.width) / 2, (frame.size.height - playButtonSize.height) / 2, playButtonSize.width , playButtonSize.height ) ;
     _videoPlayerPlaceholderPlayVideoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _videoPlayerPlaceholderPlayVideoButton.frame = videoPlayerPlaceholderPlayVideoButtonFrame;
+    _videoPlayerPlaceholderPlayVideoButton.frame = playButtonFrame;
     [_videoPlayerPlaceholderPlayVideoButton addTarget:self action:@selector(didPushVideoPlayButton:) forControlEvents:UIControlEventTouchDown];
     [_videoPlayerPlaceholderView addSubview:_videoPlayerPlaceholderPlayVideoButton];
     
