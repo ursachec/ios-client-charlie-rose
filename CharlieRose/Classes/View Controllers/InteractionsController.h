@@ -33,7 +33,8 @@
 + (InteractionsController *)sharedInteractionsController;
 
 - (void)initializeAndSetupViewDeckController;
-
+- (void)showVideoPlayerForURL:(NSURL*)videoURL;
+    
 @end
 
 @protocol InteractionsControllerFullViewTapDelegate <NSObject>

@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Claudiu-Vlad Ursache. All rights reserved.
 //
 
-#import <MediaPlayer/MediaPlayer.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "ShowDetailViewController.h"
@@ -38,8 +37,6 @@
 @property(nonatomic, readwrite, strong) IBOutlet UITextView* descriptionTextView;
 
 @property(nonatomic, readwrite, strong) IBOutlet UIButton* playButton;
-
-@property (strong, nonatomic) MPMoviePlayerController *moviePlayer;
 
 - (IBAction)playVideo:(id)sender;
 - (IBAction)didSwipeRight:(id)sender;
@@ -102,23 +99,7 @@
 
 - (IBAction)playVideo:(id)sender {
     NSURL *url = [CharlieRoseAPIClient videoURLForShowId:self.show.showID];
-    self.moviePlayer =  [[MPMoviePlayerController alloc] initWithContentURL:url];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(playbackStateChanged:)
-                                                 name:MPMoviePlayerPlaybackStateDidChangeNotification
-                                               object:self.moviePlayer];
-    self.moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
-    self.moviePlayer.shouldAutoplay = YES;
-    [self.view addSubview:self.moviePlayer.view];
-    [self.moviePlayer setFullscreen:YES animated:NO];
-}
-
-- (void) playbackStateChanged:(NSNotification*)notification {
-    MPMoviePlayerController *player = [notification object];
-    if (player.playbackState == MPMoviePlaybackStatePaused) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:player];
-        [player.view removeFromSuperview];
-    }
+    [[UIApplication sharedInteractionsController] showVideoPlayerForURL:url];
 }
 
 #pragma mark - setters

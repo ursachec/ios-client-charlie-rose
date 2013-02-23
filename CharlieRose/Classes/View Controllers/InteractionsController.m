@@ -98,4 +98,9 @@
 	return _contactViewController;
 }
 
+#pragma mark - present video player
+- (void)showVideoPlayerForURL:(NSURL*)videoURL {
+    NSLog(@"showVideoPlayerForURL: %@", videoURL);
+}
+
 @end
