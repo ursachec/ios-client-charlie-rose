@@ -20,6 +20,7 @@
 #import "UIFont+CRAdditions.h"
 #import "UIApplication+CRAdditions.h"
 #import "UIDevice+CRAdditions.h"
+#import "CVUMoviePlayerView.h"
 
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
 
@@ -35,7 +36,7 @@
 @property(nonatomic, readwrite, strong) IBOutlet UILabel* publishingDateLabel;
 @property(nonatomic, readwrite, strong) IBOutlet UIImageView* showImageView;
 @property(nonatomic, readwrite, strong) IBOutlet UITextView* descriptionTextView;
-
+@property(nonatomic, readwrite, strong) IBOutlet CVUMoviePlayerView* moviePlayerView;
 @property(nonatomic, readwrite, strong) IBOutlet UIButton* playButton;
 
 - (IBAction)playVideo:(id)sender;
@@ -85,6 +86,13 @@
         [self.descriptionTextView removeFromSuperview];
         self.descriptionTextView = nil;
     }
+    
+    self.moviePlayerView = [[CVUMoviePlayerView alloc] initWithFrame:self.showImageView.frame];
+    self.moviePlayerView.backgroundColor = [UIColor redColor];
+    self.moviePlayerView.placeholderImage = [UIImage imageNamed:@"jeff_bezos.jpg"];
+    [self.moviePlayerView.videoPlayerPlaceholderPlayVideoButton setImage:[UIImage imageNamed:@"play_button.png"] forState:UIControlStateNormal];
+    [self.view addSubview:self.moviePlayerView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
