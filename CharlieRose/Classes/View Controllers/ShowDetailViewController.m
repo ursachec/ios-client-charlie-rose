@@ -23,13 +23,10 @@
 #import "CVUMoviePlayerView.h"
 
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
-
 @property(nonatomic, readwrite, strong) NSString* currentShowID;
-
 @property(nonatomic, readwrite, strong) NSDateFormatter *dateFormatter;
 
 @property(nonatomic, readwrite, strong) IBOutlet UIScrollView* contentScrollView;
-
 @property(nonatomic, readwrite, strong) IBOutlet UILabel* headlineLabel;
 @property(nonatomic, readwrite, strong) IBOutlet UILabel* guestsLabel;
 @property(nonatomic, readwrite, strong) IBOutlet UILabel* topicsLabel;
@@ -41,21 +38,14 @@
 
 - (IBAction)playVideo:(id)sender;
 - (IBAction)didSwipeRight:(id)sender;
-
 @end
 
 @implementation ShowDetailViewController
 
+
+#pragma mark - lifecycle init
 - (id)init {
     self = [self initWithShow:nil];
-    if (self) {
-        
-        _dateFormatter = [[NSDateFormatter alloc] init];
-        [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-        [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
-        [_dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-        
-    }
     return self;
 }
 
@@ -66,8 +56,11 @@
     }
     _show = show;
     
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [_dateFormatter setDateStyle:NSDateFormatterFullStyle];
+    [_dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     
-        
     return self;
 }
 
@@ -86,14 +79,6 @@
         [self.descriptionTextView removeFromSuperview];
         self.descriptionTextView = nil;
     }
-    
-    NSURL* videoURL = [NSURL URLWithString:@"https://devimages.apple.com.edgekey.net/resources/http-streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8"];
-    UIImage* placeholderImage = [UIImage imageNamed:@"jeff_bezos.jpg"];
-    self.moviePlayerView = [[CVUMoviePlayerView alloc] initWithFrame:self.showImageView.frame placeholderImage:placeholderImage videoURL:videoURL];
-    [self.moviePlayerView.placeholderPlayVideoButton setImage:[UIImage imageNamed:@"play_button.png"] forState:UIControlStateNormal];
-    self.moviePlayerView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.moviePlayerView];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -144,20 +129,6 @@
 	self.descriptionTextView.textColor = [UIColor descriptionTextViewTextColor];
 }
 
-- (void)setupImageViewWithShow:(Show *)show {
-    NSURL* thumbURL = [NSURL URLWithString:show.imageURL];
-    __weak UIImageView* blockImageView = self.showImageView;
-    [blockImageView setImageWithURL:thumbURL
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]
-                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                              blockImageView.alpha = .0f;
-                              [UIView animateWithDuration:0.5f animations:^{
-                                  blockImageView.alpha = 1.0f;
-                              }];
-                          }];
-
-}
-
 - (void)setShow:(Show *)show {
 	_show = show;
 	if (show) {
@@ -166,8 +137,50 @@
 		[self setupTopicsLabelWithShow:show];
 		[self setupPublishingDateLabelWithShow:show];
 		[self setupDescriptionTextViewWithShow:show];
-        [self setupImageViewWithShow:show];
+        [self showVideoPlayerWithShow:show];
 	}
+}
+
+#pragma mark - video player
+
+- (void)removeCurrentMoviePlayerView {
+    [self.moviePlayerView pauseVideo];
+    [self.moviePlayerView removeFromSuperview];
+    self.moviePlayerView = nil;
+}
+
+- (void)loadMoviePlayerPlaceholderImageAtURL:(NSURL*)imageURL
+                            placeholderImage:(UIImage*)placeholderImage {
+    __weak UIImageView* blockImageView = self.moviePlayerView.placeholderImageView;
+    [blockImageView setImageWithURL:imageURL
+                   placeholderImage:placeholderImage
+                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                          }];
+}
+
+- (void)showMoviePlayerViewInFrame:(CGRect)frame
+                          videoURL:(NSURL*)videoURL {
+    UIImage* playButtonImage = [UIImage imageNamed:@"play_button.png"];
+    self.moviePlayerView = [[CVUMoviePlayerView alloc] initWithFrame:frame
+                                                    placeholderImage:nil
+                                                            videoURL:videoURL
+                                                     playButtonImage:playButtonImage];
+    [self.view addSubview:self.moviePlayerView];
+}
+
+- (void)showVideoPlayerWithShow:(Show*)show {
+    
+    [self removeCurrentMoviePlayerView];
+    
+    CGRect frame = self.showImageView.frame;
+    NSURL* videoURL = [NSURL URLWithString:@"https://devimages.apple.com.edgekey.net/resources/http-streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8"];
+    [self showMoviePlayerViewInFrame:frame
+                            videoURL:videoURL];
+    
+    UIImage* placeholderImage = [UIImage imageNamed:@"placeholder.png"];
+    NSURL* thumbURL = [NSURL URLWithString:show.imageURL];
+    [self loadMoviePlayerPlaceholderImageAtURL:thumbURL
+                              placeholderImage:placeholderImage];
 }
 
 #pragma mark - high level show
