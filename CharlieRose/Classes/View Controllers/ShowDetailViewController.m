@@ -87,10 +87,11 @@
         self.descriptionTextView = nil;
     }
     
-    self.moviePlayerView = [[CVUMoviePlayerView alloc] initWithFrame:self.showImageView.frame];
+    NSURL* videoURL = [NSURL URLWithString:@"https://devimages.apple.com.edgekey.net/resources/http-streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8"];
+    UIImage* placeholderImage = [UIImage imageNamed:@"jeff_bezos.jpg"];
+    self.moviePlayerView = [[CVUMoviePlayerView alloc] initWithFrame:self.showImageView.frame placeholderImage:placeholderImage videoURL:videoURL];
+    [self.moviePlayerView.placeholderPlayVideoButton setImage:[UIImage imageNamed:@"play_button.png"] forState:UIControlStateNormal];
     self.moviePlayerView.backgroundColor = [UIColor redColor];
-    self.moviePlayerView.placeholderImage = [UIImage imageNamed:@"jeff_bezos.jpg"];
-    [self.moviePlayerView.videoPlayerPlaceholderPlayVideoButton setImage:[UIImage imageNamed:@"play_button.png"] forState:UIControlStateNormal];
     [self.view addSubview:self.moviePlayerView];
     
 }
