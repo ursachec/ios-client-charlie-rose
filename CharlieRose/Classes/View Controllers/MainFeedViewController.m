@@ -97,7 +97,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
                                                    forTopic:topic
                                                     success:success
                                                     failure:failure];
-            [self hideLoadingOrErrorViewAnimated:YES];
         } else {
             failure(error);
         }
