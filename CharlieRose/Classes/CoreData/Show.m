@@ -2,7 +2,7 @@
 //  Show.m
 //  CharlieRose
 //
-//  Created by Claudiu-Vlad Ursache on 10.02.13.
+//  Created by Claudiu-Vlad Ursache on 26.02.13.
 //  Copyright (c) 2013 Claudiu-Vlad Ursache. All rights reserved.
 //
 
@@ -11,6 +11,7 @@
 
 @implementation Show
 
+@dynamic clipDescription;
 @dynamic collections;
 @dynamic datePublished;
 @dynamic guests;
@@ -18,8 +19,8 @@
 @dynamic imageURL;
 @dynamic keywords;
 @dynamic showID;
-@dynamic topics;
 @dynamic showURL;
-@dynamic clipDescription;
+@dynamic topics;
+@dynamic vidlyURL;
 
 @end

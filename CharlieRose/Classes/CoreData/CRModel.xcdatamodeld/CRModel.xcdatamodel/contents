@@ -11,8 +11,9 @@
         <attribute name="showID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="showURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topics" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vidlyURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Show" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Show" positionX="160" positionY="192" width="128" height="210"/>
     </elements>
 </model>

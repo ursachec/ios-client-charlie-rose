@@ -47,6 +47,8 @@
 		E5204FCF1662C8AC00B65A44 /* ShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FCE1662C8AC00B65A44 /* ShowCell.m */; };
 		E5204FD21662C8CD00B65A44 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD11662C8CD00B65A44 /* MenuCell.m */; };
 		E5204FD51662C8DE00B65A44 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5204FD41662C8DE00B65A44 /* TopicCell.m */; };
+		E521ADC016DD665C00A44EA9 /* Show.h in Headers */ = {isa = PBXBuildFile; fileRef = E521ADBE16DD665C00A44EA9 /* Show.h */; };
+		E521ADC116DD665C00A44EA9 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E521ADBF16DD665C00A44EA9 /* Show.m */; };
 		E53044A916C80258009E3D3D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = E53044A816C80258009E3D3D /* placeholder.png */; };
 		E53044AD16C813BD009E3D3D /* NSArray+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044AC16C813BD009E3D3D /* NSArray+CRAdditions.m */; };
 		E53044B016C81560009E3D3D /* MenuViewController+CRConfigurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044AF16C81560009E3D3D /* MenuViewController+CRConfigurationData.m */; };
@@ -64,7 +66,6 @@
 		E55CBF0216658BF600FAD6A5 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBF0016658BF600FAD6A5 /* AboutViewController.m */; };
 		E55CBF0316658BF600FAD6A5 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */; };
 		E561BF4A16C72CF200BB3ECE /* CRModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E561BF4816C72CF200BB3ECE /* CRModel.xcdatamodeld */; };
-		E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = E561BF4C16C72DBF00BB3ECE /* Show.m */; };
 		E573BDCC16D0206700C55364 /* MPCJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E573BDC216D0206700C55364 /* MPCJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E573BDCD16D0206700C55364 /* MPCJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E573BDC416D0206700C55364 /* MPCJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E573BDCE16D0206700C55364 /* MPCSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = E573BDC616D0206700C55364 /* MPCSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -147,6 +148,8 @@
 		E5204FD11662C8CD00B65A44 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuCell.m; path = Classes/Views/Cells/MenuCell.m; sourceTree = "<group>"; };
 		E5204FD31662C8DE00B65A44 /* TopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicCell.h; path = Classes/Views/Cells/TopicCell.h; sourceTree = "<group>"; };
 		E5204FD41662C8DE00B65A44 /* TopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicCell.m; path = Classes/Views/Cells/TopicCell.m; sourceTree = "<group>"; };
+		E521ADBE16DD665C00A44EA9 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
+		E521ADBF16DD665C00A44EA9 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
 		E53044A816C80258009E3D3D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = Resources/Images/Compiled/Cells/placeholder.png; sourceTree = "<group>"; };
 		E53044AB16C813BD009E3D3D /* NSArray+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+CRAdditions.h"; path = "Classes/Categories/NSArray+CRAdditions.h"; sourceTree = "<group>"; };
 		E53044AC16C813BD009E3D3D /* NSArray+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+CRAdditions.m"; path = "Classes/Categories/NSArray+CRAdditions.m"; sourceTree = "<group>"; };
@@ -176,8 +179,6 @@
 		E55CBF0016658BF600FAD6A5 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = "Classes/View Controllers/AboutViewController.m"; sourceTree = "<group>"; };
 		E55CBF0116658BF600FAD6A5 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutViewController.xib; path = "Classes/View Controllers/AboutViewController.xib"; sourceTree = "<group>"; };
 		E561BF4916C72CF200BB3ECE /* CRModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRModel.xcdatamodel; sourceTree = "<group>"; };
-		E561BF4B16C72DBF00BB3ECE /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Show.h; path = Classes/CoreData/Show.h; sourceTree = "<group>"; };
-		E561BF4C16C72DBF00BB3ECE /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Show.m; path = Classes/CoreData/Show.m; sourceTree = "<group>"; };
 		E573BDC116D0206700C55364 /* MPCJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCJSONDataSerializer.h; sourceTree = "<group>"; };
 		E573BDC216D0206700C55364 /* MPCJSONDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCJSONDataSerializer.m; sourceTree = "<group>"; };
 		E573BDC316D0206700C55364 /* MPCJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCJSONSerializer.h; sourceTree = "<group>"; };
@@ -389,8 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				E561BF4816C72CF200BB3ECE /* CRModel.xcdatamodeld */,
-				E561BF4B16C72DBF00BB3ECE /* Show.h */,
-				E561BF4C16C72DBF00BB3ECE /* Show.m */,
+				E521ADBE16DD665C00A44EA9 /* Show.h */,
+				E521ADBF16DD665C00A44EA9 /* Show.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -682,6 +683,7 @@
 				E50650B016D6AF3600B136A9 /* UIDevice+CRAdditions.h in Headers */,
 				E5FAD47416D91F540094DC2A /* UINonSelectableTextView.h in Headers */,
 				E5FAD47C16D92B550094DC2A /* CRNavigationController.h in Headers */,
+				E521ADC016DD665C00A44EA9 /* Show.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,7 +814,6 @@
 				E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */,
 				E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */,
 				E561BF4A16C72CF200BB3ECE /* CRModel.xcdatamodeld in Sources */,
-				E561BF4D16C72DBF00BB3ECE /* Show.m in Sources */,
 				E5F9D47916C7455800603E88 /* NSError+CRAdditions.m in Sources */,
 				E5F9D47C16C74B7B00603E88 /* NSString+CRAdditions.m in Sources */,
 				E5ED2B1916C751CA00C025FC /* MainFeedViewController+CRTableViewAdditions.m in Sources */,
@@ -835,6 +836,7 @@
 				E50650B116D6AF3600B136A9 /* UIDevice+CRAdditions.m in Sources */,
 				E5FAD47516D91F540094DC2A /* UINonSelectableTextView.m in Sources */,
 				E5FAD47D16D92B550094DC2A /* CRNavigationController.m in Sources */,
+				E521ADC116DD665C00A44EA9 /* Show.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
