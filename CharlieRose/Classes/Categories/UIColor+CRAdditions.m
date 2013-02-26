@@ -14,23 +14,31 @@
     return [UIColor colorWithRed:13.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
 }
 
++ (UIColor*)dimmedWhite {
+    return [UIColor colorWithRed:1 green:1 blue:1 alpha:0.75f];
+}
+
 + (UIColor*)headlineLabelTextColor {
-    return [UIColor colorForElementsOnDescriptionViewController];
+    return [UIColor redColor];
 }
 
 + (UIColor*)guestsLabelTextColor {
-    return [UIColor colorForElementsOnDescriptionViewController];
+    return [UIColor colorForSubHeadlineOnDescriptionViewController];
 }
 + (UIColor*)topicsLabelTextColor {
-    return [UIColor colorForElementsOnDescriptionViewController];
+    return [UIColor colorForSubHeadlineOnDescriptionViewController];
 }
 
 + (UIColor*)publishingDateTextColor {
-    return [UIColor colorForElementsOnDescriptionViewController];
+    return [UIColor colorForSubHeadlineOnDescriptionViewController];
 }
 
 + (UIColor*)descriptionTextViewTextColor {
-    return [UIColor colorForElementsOnDescriptionViewController];
+    return [UIColor whiteColor];
+}
+
++ (UIColor*)colorForSubHeadlineOnDescriptionViewController {
+    return [UIColor whiteColor];
 }
 
 + (UIColor*)colorForElementsOnDescriptionViewController  {
