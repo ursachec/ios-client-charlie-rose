@@ -52,6 +52,7 @@
     self.show.keywords = dictionary[@"keywords"];
     self.show.showID = dictionary[@"show_id_string"];
     self.show.imageURL = dictionary[@"image_url"];
+    self.show.vidlyURL = dictionary[@"vidly_url"];
     
     NSString *dateAsString = dictionary[@"date_published"];
     NSDate* date = [self.dateFormatter dateFromString:dateAsString];
