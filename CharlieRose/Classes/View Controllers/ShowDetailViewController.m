@@ -34,7 +34,6 @@
 @property(nonatomic, readwrite, strong) IBOutlet UIImageView* showImageView;
 @property(nonatomic, readwrite, strong) IBOutlet UITextView* descriptionTextView;
 @property(nonatomic, readwrite, strong) IBOutlet CVUMoviePlayerView* moviePlayerView;
-@property(nonatomic, readwrite, strong) IBOutlet UIButton* playButton;
 
 - (IBAction)playVideo:(id)sender;
 - (IBAction)didSwipeRight:(id)sender;
@@ -173,13 +172,17 @@
     [self removeCurrentMoviePlayerView];
     
     CGRect frame = self.showImageView.frame;
-    NSURL* videoURL = [NSURL URLWithString:@"https://devimages.apple.com.edgekey.net/resources/http-streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8"];
+    NSString* videoURLString = [NSString stringWithFormat:@"http://vid.ly/%@", show.vidlyURL];
     [self showMoviePlayerViewInFrame:frame
-                            videoURL:videoURL];
+                            videoURL:[NSURL URLWithString:videoURLString]];
     
+    NSURL* imageURL = [NSURL URLWithString:show.imageURL];
+    [self loadMoviePlayerPlaceHolderImageAtURL:imageURL];
+}
+
+- (void)loadMoviePlayerPlaceHolderImageAtURL:(NSURL*)imageURL {
     UIImage* placeholderImage = [UIImage imageNamed:@"placeholder.png"];
-    NSURL* thumbURL = [NSURL URLWithString:show.imageURL];
-    [self loadMoviePlayerPlaceholderImageAtURL:thumbURL
+    [self loadMoviePlayerPlaceholderImageAtURL:imageURL
                               placeholderImage:placeholderImage];
 }
 
