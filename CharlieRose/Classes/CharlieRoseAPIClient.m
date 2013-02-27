@@ -7,8 +7,7 @@ NSString * const kLocalKeyForTopicHome = @"home";
 
 static NSString * const kCharlieRoseAPIBaseURLString = @"http://api-charlie-rose-show.herokuapp.com/";
 
-//static NSString * const kCharlieRoseAPIBaseURLString = @"http://localhost:5000/";
-
+//static NSString * const kCharlieRoseAPIBaseURLString = @"http://192.168.178.25:5000/";
 
 @implementation CharlieRoseAPIClient
 
