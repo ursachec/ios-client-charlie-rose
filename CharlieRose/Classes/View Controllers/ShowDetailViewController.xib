@@ -67,7 +67,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Jeff Bezos, Founder and CEO, Amazon.com</string>
+						<string key="IBUIText"/>
 						<object class="NSColor" key="IBUITextColor" id="240736151">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -113,7 +113,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">in Technology, Business, Books </string>
+						<string key="IBUIText"/>
 						<reference key="IBUITextColor" ref="240736151"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
@@ -141,7 +141,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">with Jeff Bezos</string>
+						<string key="IBUIText"/>
 						<reference key="IBUITextColor" ref="240736151"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
@@ -162,7 +162,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">on Friday, November 16, 2012</string>
+						<string key="IBUIText"/>
 						<reference key="IBUITextColor" ref="240736151"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
@@ -191,7 +191,7 @@
 						<double key="IBUIContentInset.left">-6</double>
 						<double key="IBUIContentInset.right">0.0</double>
 						<bool key="IBUIEditable">NO</bool>
-						<string key="IBUIText">Jeff Bezos, CEO of Amazon.com and Fortune Magezine's "2012 Businessperson of the year"</string>
+						<string key="IBUIText"/>
 						<reference key="IBUITextColor" ref="240736151"/>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocapitalizationType">2</int>
