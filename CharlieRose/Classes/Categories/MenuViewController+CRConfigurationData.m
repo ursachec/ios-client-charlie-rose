@@ -22,8 +22,8 @@
 }
 
 - (NSArray*)appTopics {
-    NSArray* items = @[@"Home", @"Art & Design", @"Books", @"Business", @"Current Affairs", @"History", @"In Memoriam", @"Lifestyle", @"Movies, TV & Theater", @"Music", @"Science & Health", @"Sports", @"Technology" ];
-    items = @[@"Home", @"Art & Design", @"Business", @"Technology" ];
+//    NSArray* items = @[@"Home", @"Art & Design", @"Books", @"Business", @"Current Affairs", @"History", @"In Memoriam", @"Lifestyle", @"Movies, TV & Theater", @"Music", @"Science & Health", @"Sports", @"Technology" ];
+    NSArray* items = @[@"Home", @"Art & Design", @"Business", @"Movies, TV & Theater", @"Music", @"Technology" ];
     return [NSArray arrayWithUppercaseStrings:items];
 }
 
