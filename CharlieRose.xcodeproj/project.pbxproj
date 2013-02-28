@@ -909,6 +909,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */;
 			buildSettings = {
+				ALTERNATE_GROUP = "";
+				ALTERNATE_OWNER = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
 				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";
@@ -921,6 +923,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */;
 			buildSettings = {
+				ALTERNATE_GROUP = "";
+				ALTERNATE_OWNER = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
 				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";
