@@ -106,28 +106,33 @@
 #pragma mark - autorotation
 
 -(void)registerForNotificationsFromMoviePlayer:(MPMoviePlayerController*)moviePlayer {
+    if (nil == moviePlayer) {
+        return;
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notification_didEnterFullscreen:)
+                                             selector:@selector(notification_moviePlayerDidEnterFullscreen:)
                                                  name:MPMoviePlayerDidEnterFullscreenNotification object:moviePlayer];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notification_willExitFullscreen:)
-                                                 name:MPMoviePlayerWillExitFullscreenNotification object:moviePlayer];    
+                                             selector:@selector(notification_moviePlayerWillExitFullscreen:)
+                                                 name:MPMoviePlayerWillExitFullscreenNotification object:moviePlayer];
 }
 
 -(void)deregisterForNotificationsFromMoviePlayer:(MPMoviePlayerController*)moviePlayer {
+    if (nil == moviePlayer) {
+        return;
+    }
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerDidEnterFullscreenNotification object:moviePlayer];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerWillExitFullscreenNotification object:moviePlayer];
 }
 
-- (void)notification_didEnterFullscreen:(NSNotification*)notification {
+- (void)notification_moviePlayerDidEnterFullscreen:(NSNotification*)notification {
     [self.deckController.viewDeckController setAllowRotation:YES];
 }
 
-- (void)notification_willExitFullscreen:(NSNotification*)notification {
+- (void)notification_moviePlayerWillExitFullscreen:(NSNotification*)notification {
     [self.deckController.viewDeckController setAllowRotation:NO];
-    if ([notification.object isKindOfClass:MPMoviePlayerController.class] ) {
-        [self deregisterForNotificationsFromMoviePlayer:notification.object];
-    }
 }
 
 @end

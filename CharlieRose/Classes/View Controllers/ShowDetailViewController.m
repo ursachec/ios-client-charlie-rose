@@ -22,10 +22,15 @@
 #import "UIDevice+CRAdditions.h"
 #import "CVUMoviePlayerView.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "Reachability.h"
+
 
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
 @property(nonatomic, readwrite, strong) NSString* currentShowID;
 @property(nonatomic, readwrite, strong) NSDateFormatter *dateFormatter;
+
+@property(nonatomic, readwrite, strong) UILabel* moviePlayerStateLabel;
+
 
 @property(nonatomic, readwrite, strong) IBOutlet UIScrollView* contentScrollView;
 @property(nonatomic, readwrite, strong) IBOutlet UILabel* headlineLabel;
@@ -72,6 +77,7 @@
     self.topicsLabel.font = [UIFont detailTopicsLabelFont];
     self.publishingDateLabel.font = [UIFont detailPublishingDataLabelFont];
     self.descriptionTextView.font = [UIFont detailDescriptionTextViewFont];
+    self.moviePlayerStateLabel.font = [UIFont moviePlayerLoadingStateLabelFont];
     
     // hide the decription text view if older than iPhone5
     if (NO == UIDevice.isIphone5) {
@@ -90,7 +96,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - setters
+
+- (UILabel*)moviePlayerStateLabel {
+    if (nil == _moviePlayerStateLabel) {
+        _moviePlayerStateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    }
+    return _moviePlayerStateLabel;
+}
+
+#pragma mark - view setup
 
 - (void)setupHeadlineLabelWithShow:(Show *)show {
 	self.headlineLabel.backgroundColor = [UIColor clearColor];
@@ -139,6 +153,12 @@
 
 - (void)removeCurrentMoviePlayerView {
     [self.moviePlayerView pauseVideo];
+    
+    [[InteractionsController sharedInteractionsController]
+     deregisterForNotificationsFromMoviePlayer:self.moviePlayerView.moviePlayerController];
+    
+    [self deregisterForNotificationsFromMoviePlayerView:self.moviePlayerView];
+    
     [self.moviePlayerView removeFromSuperview];
     self.moviePlayerView = nil;
 }
@@ -159,6 +179,7 @@
                                                     placeholderImage:nil
                                                             videoURL:videoURL
                                                      playButtonImage:playButtonImage];
+    [self setupMoviePlayerLoadStateLabel:self.moviePlayerView.loadingStateLabel];
     [self.view addSubview:self.moviePlayerView];
 }
 
@@ -175,8 +196,16 @@
     NSURL* imageURL = [CharlieRoseAPIClient imageURLForShowId:show.showID];
     [self loadMoviePlayerPlaceHolderImageAtURL:imageURL];
     
-    
     [[InteractionsController sharedInteractionsController] registerForNotificationsFromMoviePlayer:self.moviePlayerView.moviePlayerController];
+    
+    [self registerForNotificationsFromMoviePlayerView:self.moviePlayerView];
+}
+
+- (void)setupMoviePlayerLoadStateLabel:(UILabel*)label {
+    label.text = @"loading";
+    label.font = [UIFont moviePlayerLoadingStateLabelFont];
+    label.backgroundColor = [UIColor moviePlayerLoadingStateLabelBackgroundColor];
+    label.textColor = [UIColor moviePlayerLoadingStateLabelTextColor];
 }
 
 - (void)loadMoviePlayerPlaceHolderImageAtURL:(NSURL*)imageURL {
@@ -217,5 +246,32 @@
 - (IBAction)didTapOnView:(id)sender {
     [[UIApplication sharedInteractionsController] reactToTapOnShowDetailViewController];
 }
+
+#pragma mark - notifications
+
+-(void)registerForNotificationsFromMoviePlayerView:(CVUMoviePlayerView*)moviePlayerView {
+    if (nil == moviePlayerView) {
+        return;
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notification_moviePlayerViewDidShowLoadingStateLabel:)
+                                                 name:CVUMoviePlayerViewDidShowLoadingStateLabel
+                                               object:moviePlayerView];
+}
+
+-(void)deregisterForNotificationsFromMoviePlayerView:(CVUMoviePlayerView*)moviePlayerView {
+    if (nil == moviePlayerView) {
+        return;
+    }
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:CVUMoviePlayerViewDidShowLoadingStateLabel object:moviePlayerView];
+}
+
+- (void)notification_moviePlayerViewDidShowLoadingStateLabel:(NSNotification*)notification {
+    Reachability* internetReach = [Reachability reachabilityForInternetConnection];
+    if ([internetReach currentReachabilityStatus] == NotReachable) {
+            self.moviePlayerView.loadingStateLabel.text = @"no internet connection";
+    }
+}
+
 
 @end
