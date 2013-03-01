@@ -90,11 +90,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)playVideo:(id)sender {
-    NSURL *url = [CharlieRoseAPIClient videoURLForShowId:self.show.showID];
-    [[UIApplication sharedInteractionsController] showVideoPlayerForURL:url];
-}
-
 #pragma mark - setters
 
 - (void)setupHeadlineLabelWithShow:(Show *)show {
@@ -172,11 +167,12 @@
     [self removeCurrentMoviePlayerView];
     
     CGRect frame = self.showImageView.frame;
-    NSString* videoURLString = [NSString stringWithFormat:@"http://vid.ly/%@", show.vidlyURL];
-    [self showMoviePlayerViewInFrame:frame
-                            videoURL:[NSURL URLWithString:videoURLString]];
     
-    NSURL* imageURL = [NSURL URLWithString:show.imageURL];
+    NSURL* videoURL = [CharlieRoseAPIClient videoURLForShowVidlyURL:show.vidlyURL];
+    [self showMoviePlayerViewInFrame:frame
+                            videoURL:videoURL];
+    
+    NSURL* imageURL = [CharlieRoseAPIClient imageURLForShowId:show.showID];
     [self loadMoviePlayerPlaceHolderImageAtURL:imageURL];
 }
 
