@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import "IIViewDeckController.h"
 
 @class MenuViewController;
@@ -34,7 +35,10 @@
 
 - (void)initializeAndSetupViewDeckController;
 - (void)showVideoPlayerForURL:(NSURL*)videoURL;
-    
+
+-(void)registerForNotificationsFromMoviePlayer:(MPMoviePlayerController*)moviePlayer;
+-(void)deregisterForNotificationsFromMoviePlayer:(MPMoviePlayerController*)moviePlayer;
+
 @end
 
 @protocol InteractionsControllerFullViewTapDelegate <NSObject>

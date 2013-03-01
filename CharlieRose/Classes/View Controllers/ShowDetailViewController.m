@@ -21,6 +21,7 @@
 #import "UIApplication+CRAdditions.h"
 #import "UIDevice+CRAdditions.h"
 #import "CVUMoviePlayerView.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
 @property(nonatomic, readwrite, strong) NSString* currentShowID;
@@ -35,7 +36,6 @@
 @property(nonatomic, readwrite, strong) IBOutlet UITextView* descriptionTextView;
 @property(nonatomic, readwrite, strong) IBOutlet CVUMoviePlayerView* moviePlayerView;
 
-- (IBAction)playVideo:(id)sender;
 - (IBAction)didSwipeRight:(id)sender;
 @end
 
@@ -174,6 +174,9 @@
     
     NSURL* imageURL = [CharlieRoseAPIClient imageURLForShowId:show.showID];
     [self loadMoviePlayerPlaceHolderImageAtURL:imageURL];
+    
+    
+    [[InteractionsController sharedInteractionsController] registerForNotificationsFromMoviePlayer:self.moviePlayerView.moviePlayerController];
 }
 
 - (void)loadMoviePlayerPlaceHolderImageAtURL:(NSURL*)imageURL {

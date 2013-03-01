@@ -103,4 +103,31 @@
     NSLog(@"showVideoPlayerForURL: %@", videoURL);
 }
 
+#pragma mark - autorotation
+
+-(void)registerForNotificationsFromMoviePlayer:(MPMoviePlayerController*)moviePlayer {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notification_didEnterFullscreen:)
+                                                 name:MPMoviePlayerDidEnterFullscreenNotification object:moviePlayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notification_willExitFullscreen:)
+                                                 name:MPMoviePlayerWillExitFullscreenNotification object:moviePlayer];    
+}
+
+-(void)deregisterForNotificationsFromMoviePlayer:(MPMoviePlayerController*)moviePlayer {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerDidEnterFullscreenNotification object:moviePlayer];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerWillExitFullscreenNotification object:moviePlayer];
+}
+
+- (void)notification_didEnterFullscreen:(NSNotification*)notification {
+    [self.deckController.viewDeckController setAllowRotation:YES];
+}
+
+- (void)notification_willExitFullscreen:(NSNotification*)notification {
+    [self.deckController.viewDeckController setAllowRotation:NO];
+    if ([notification.object isKindOfClass:MPMoviePlayerController.class] ) {
+        [self deregisterForNotificationsFromMoviePlayer:notification.object];
+    }
+}
+
 @end
