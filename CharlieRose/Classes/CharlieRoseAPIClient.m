@@ -37,13 +37,13 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://api-charlie-rose
 # pragma mark - url helpers
 
 + (NSURL*)imageURLForShowId:(NSString*)showId {
-	NSString* link = [NSString stringWithFormat:@"%@/images/%@", kCharlieRoseAPIBaseURLString, showId];
+	NSString* link = [NSString stringWithFormat:@"%@images/%@", kCharlieRoseAPIBaseURLString, showId];
 	return [NSURL URLWithString:link];
 }
 
-+ (NSURL*)videoURLForShowId:(NSString*)showId {
-	NSString* link = [NSString stringWithFormat:@"%@/videos/%@", kCharlieRoseAPIBaseURLString, showId];
-	return [NSURL URLWithString:link];
++ (NSURL*)videoURLForShowVidlyURL:(NSString*)showVidlyURL {
+    NSString* videoURLString = [NSString stringWithFormat:@"http://vid.ly/%@", showVidlyURL];
+	return [NSURL URLWithString:videoURLString];
 }
 
 #pragma mark - functional methods

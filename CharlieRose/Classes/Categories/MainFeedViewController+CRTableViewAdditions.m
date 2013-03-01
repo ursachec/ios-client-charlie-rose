@@ -59,9 +59,6 @@
 -(void)triggerImageLoadingForCell:(ShowCell*)cell indexPath:(NSIndexPath *)indexPath {
 	Show* show = cell.show;
 	NSURL* url = [CharlieRoseAPIClient imageURLForShowId:show.showID];
-    if (show.imageURL) {
-        url = [NSURL URLWithString:show.imageURL];
-    }
     [self setImageWithURL:url forCell:cell indexPath:indexPath];
 }
 

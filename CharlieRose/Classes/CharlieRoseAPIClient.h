@@ -7,7 +7,7 @@ extern NSString * const kLocalKeyForTopicHome;
 
 + (CharlieRoseAPIClient *)sharedClient;
 + (NSURL*)imageURLForShowId:(NSString*)showId;
-+ (NSURL*)videoURLForShowId:(NSString*)showId;
++ (NSURL*)videoURLForShowVidlyURL:(NSString*)showVidlyURL;
 
 - (void)getShowsForTopic:(NSString*)topic
                  success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
