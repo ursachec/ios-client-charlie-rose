@@ -75,6 +75,8 @@
 		E573BDD916D0386600C55364 /* SecretDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E573BDD816D0386600C55364 /* SecretDefines.h */; };
 		E592D0B016D43ECB00F4AB3D /* PRIVACY_POLICY.md in Resources */ = {isa = PBXBuildFile; fileRef = E592D0AF16D43ECA00F4AB3D /* PRIVACY_POLICY.md */; };
 		E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = E595ED5B169F44CC0036B2A2 /* Default-568h.png */; };
+		E59C768E16E1715D000BF7FD /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = E59C768C16E1715D000BF7FD /* Reachability.h */; };
+		E59C768F16E1715D000BF7FD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E59C768D16E1715D000BF7FD /* Reachability.m */; };
 		E5A7B3B6168DFA7A008A85F4 /* TopicFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */; };
 		E5AE3980166BBAEB00F217D5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E5AE397F166BBAEB00F217D5 /* Constants.m */; };
 		E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */; };
@@ -193,6 +195,8 @@
 		E573BDD816D0386600C55364 /* SecretDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecretDefines.h; path = Classes/Utilities/SecretDefines.h; sourceTree = "<group>"; };
 		E592D0AF16D43ECA00F4AB3D /* PRIVACY_POLICY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PRIVACY_POLICY.md; sourceTree = SOURCE_ROOT; };
 		E595ED5B169F44CC0036B2A2 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
+		E59C768C16E1715D000BF7FD /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E59C768D16E1715D000BF7FD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E5A7B3B4168DFA7A008A85F4 /* TopicFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicFeedViewController.h; path = "Classes/View Controllers/TopicFeedViewController.h"; sourceTree = "<group>"; };
 		E5A7B3B5168DFA7A008A85F4 /* TopicFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicFeedViewController.m; path = "Classes/View Controllers/TopicFeedViewController.m"; sourceTree = "<group>"; };
 		E5AE397E166BBAEB00F217D5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Utilities/Constants.h; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 		E5204FAA1662B88300B65A44 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				E59C768B16E1715D000BF7FD /* Reachability */,
 				E573BDBE16D0206700C55364 /* Mixpanel */,
 				E5204FB41662B8DC00B65A44 /* ViewDeck */,
 			);
@@ -636,6 +641,16 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		E59C768B16E1715D000BF7FD /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				E59C768C16E1715D000BF7FD /* Reachability.h */,
+				E59C768D16E1715D000BF7FD /* Reachability.m */,
+			);
+			name = Reachability;
+			path = Vendor/Reachability;
+			sourceTree = "<group>";
+		};
 		E5A7B3B8168DFA9D008A85F4 /* Topic Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +699,7 @@
 				E5FAD47416D91F540094DC2A /* UINonSelectableTextView.h in Headers */,
 				E5FAD47C16D92B550094DC2A /* CRNavigationController.h in Headers */,
 				E521ADC016DD665C00A44EA9 /* Show.h in Headers */,
+				E59C768E16E1715D000BF7FD /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,6 +853,7 @@
 				E5FAD47516D91F540094DC2A /* UINonSelectableTextView.m in Sources */,
 				E5FAD47D16D92B550094DC2A /* CRNavigationController.m in Sources */,
 				E521ADC116DD665C00A44EA9 /* Show.m in Sources */,
+				E59C768F16E1715D000BF7FD /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

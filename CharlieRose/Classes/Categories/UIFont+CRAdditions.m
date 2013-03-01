@@ -90,6 +90,9 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 + (UIFont*)detailDescriptionTextViewFont {
 	return [UIFont paragraphFont];
 }
++ (UIFont*)moviePlayerLoadingStateLabelFont {
+	return [UIFont paragraphFont];
+}
 
 #pragma mark - settings view controller
 + (UIFont*)explanatoryTextViewFont {
@@ -135,6 +138,7 @@ static NSString * kFontNameBold = @"Merriweather-Bold";
 + (UIFont*)privacyPolicyTextViewFont {
     return [self paragraphFont];
 }
+
 
 
 @end

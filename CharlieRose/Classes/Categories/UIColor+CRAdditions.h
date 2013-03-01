@@ -17,6 +17,7 @@
 + (UIColor*)topicsLabelTextColor;
 + (UIColor*)publishingDateTextColor;
 + (UIColor*)descriptionTextViewTextColor;
-
++ (UIColor*)moviePlayerLoadingStateLabelBackgroundColor;
++ (UIColor*)moviePlayerLoadingStateLabelTextColor;
 
 @end

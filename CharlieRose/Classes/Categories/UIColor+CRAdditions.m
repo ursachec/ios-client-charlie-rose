@@ -18,6 +18,14 @@
     return [UIColor colorWithRed:1 green:1 blue:1 alpha:0.75f];
 }
 
++ (UIColor*)moviePlayerLoadingStateLabelBackgroundColor {
+    return [UIColor dimmedBlack];
+}
+
++ (UIColor*)moviePlayerLoadingStateLabelTextColor {
+    return [UIColor redColor];
+}
+
 + (UIColor*)headlineLabelTextColor {
     return [UIColor redColor];
 }

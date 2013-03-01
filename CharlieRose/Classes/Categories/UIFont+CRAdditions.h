@@ -32,6 +32,7 @@ extern CGFloat const kShowCellTopicsFontSize;
 + (UIFont*)detailTopicsLabelFont;
 + (UIFont*)detailPublishingDataLabelFont;
 + (UIFont*)detailDescriptionTextViewFont;
++ (UIFont*)moviePlayerLoadingStateLabelFont;
 
 #pragma mark - settings view controller
 + (UIFont*)explanatoryTextViewFont;
