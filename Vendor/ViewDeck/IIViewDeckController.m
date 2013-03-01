@@ -208,6 +208,16 @@ __typeof__(h) __h = (h);                                    \
 @synthesize elastic = _elastic;
 @synthesize automaticallyUpdateTabBarItems = _automaticallyUpdateTabBarItems;
 @synthesize panningGestureDelegate = _panningGestureDelegate;
+@synthesize allowRotation = _allowRotation;
+
+#pragma mark - autorotation
+
+- (BOOL)shouldAutorotate {
+    return self.allowRotation;
+}
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
 
 #pragma mark - Initalisation and deallocation
 
@@ -2055,7 +2065,6 @@ static const char* viewDeckControllerKey = "ViewDeckController";
     [self vdc_swizzle];
 }
 
-
 @end
 
 @implementation UIViewController (UIViewDeckController_ViewContainmentEmulation_Fakes) 
@@ -2111,11 +2120,6 @@ static const char* viewDeckControllerKey = "ViewDeckController";
     [self viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotate {
-    return NO;
-}
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
+
 
 @end

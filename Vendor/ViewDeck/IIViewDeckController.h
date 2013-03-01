@@ -68,6 +68,8 @@ typedef enum {
 
 typedef void (^IIViewDeckControllerBlock) (IIViewDeckController *controller);
 
+@property (nonatomic) BOOL allowRotation;
+
 @property (nonatomic, assign) id<IIViewDeckControllerDelegate> delegate;
 @property (nonatomic, retain) UIViewController* centerController;
 @property (nonatomic, retain) UIViewController* leftController;
