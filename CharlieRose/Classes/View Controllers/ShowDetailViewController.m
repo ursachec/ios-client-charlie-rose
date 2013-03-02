@@ -23,6 +23,7 @@
 #import "CVUMoviePlayerView.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "Reachability.h"
+#import <Mixpanel.h>
 
 
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
@@ -199,6 +200,8 @@
     [[InteractionsController sharedInteractionsController] registerForNotificationsFromMoviePlayer:self.moviePlayerView.moviePlayerController];
     
     [self registerForNotificationsFromMoviePlayerView:self.moviePlayerView];
+    
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"showVideoPlayerWithShow: %@", show.showID]];
 }
 
 - (void)setupMoviePlayerLoadStateLabel:(UILabel*)label {
@@ -270,6 +273,9 @@
     Reachability* internetReach = [Reachability reachabilityForInternetConnection];
     if ([internetReach currentReachabilityStatus] == NotReachable) {
             self.moviePlayerView.loadingStateLabel.text = @"no internet connection";
+        [[Mixpanel sharedInstance] track:@"did show no internet on movie player"];
+    } else {
+    [[Mixpanel sharedInstance] track:@"did show loading state label"];
     }
 }
 
