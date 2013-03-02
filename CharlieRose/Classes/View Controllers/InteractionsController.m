@@ -51,7 +51,7 @@
                                                                                     leftViewController:self.menuViewController
                                                                                    rightViewController:self.showDetailViewController];
     deckController.leftLedge = 120;
-	deckController.rightLedge = 30;
+	deckController.rightLedge = 0;
 	self.deckController = deckController;
     
     deckController.delegate = self;

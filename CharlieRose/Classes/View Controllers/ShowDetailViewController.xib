@@ -57,7 +57,7 @@
 					<object class="IBUILabel" id="571836148">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{40, 47}, {250, 64}}</string>
+						<string key="NSFrame">{{10, 47}, {300, 64}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="580478856"/>
@@ -87,7 +87,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-						<double key="preferredMaxLayoutWidth">250</double>
+						<double key="preferredMaxLayoutWidth">300</double>
 					</object>
 					<object class="IBUIImageView" id="1065753939">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -103,7 +103,7 @@
 					<object class="IBUILabel" id="97967375">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{41, 127}, {250, 15}}</string>
+						<string key="NSFrame">{{10, 127}, {300, 15}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="455627194"/>
@@ -131,7 +131,7 @@
 					<object class="IBUILabel" id="580478856">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{41, 110}, {250, 15}}</string>
+						<string key="NSFrame">{{10, 110}, {300, 15}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="97967375"/>
@@ -152,7 +152,7 @@
 					<object class="IBUILabel" id="455627194">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{41, 144}, {250, 15}}</string>
+						<string key="NSFrame">{{10, 144}, {300, 15}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1065753939"/>
@@ -173,7 +173,7 @@
 					<object class="IBUITextView" id="12276251">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">260</int>
-						<string key="NSFrame">{{35, 391}, {262, 148}}</string>
+						<string key="NSFrame">{{10, 391}, {300, 148}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
@@ -472,7 +472,6 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="didSwipeRight:">id</string>
 						<string key="didTapOnView:">id</string>
-						<string key="playVideo:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="didSwipeRight:">
@@ -481,10 +480,6 @@
 						</object>
 						<object class="IBActionInfo" key="didTapOnView:">
 							<string key="name">didTapOnView:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="playVideo:">
-							<string key="name">playVideo:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
