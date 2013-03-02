@@ -14,6 +14,7 @@
 #import "UIView+CRAdditions.h"
 #import "MenuViewController+CRConfigurationData.h"
 #import "InteractionsController+Movement.h"
+#import <Mixpanel.h>
 
 typedef enum {
     CRSectionIndexForTopics = 0,

@@ -210,7 +210,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 
 - (void)trackShowTopic:(NSString*)topic {
     if (NO == [NSUserDefaults hasSetTrackingDenied]) {
-        NSString *trackMessage = [NSString stringWithFormat:@"Show Topic: <%@>",topic];
+        NSString *trackMessage = [NSString stringWithFormat:@"[movement] showTopic: %@", topic];
         [Mixpanel.sharedInstance track:trackMessage];
     }
 }
@@ -218,7 +218,7 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 #pragma mark - show topic
 
 - (void)showTopicHome {
-    [Mixpanel.sharedInstance track:@"Show topic home"];
+    [self trackShowTopic:@"home"];
     [self showTopic:kLocalKeyForTopicHome];
 }
 

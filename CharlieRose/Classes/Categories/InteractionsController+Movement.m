@@ -14,7 +14,7 @@
 #import "MainFeedViewController.h"
 #import "ShowDetailViewController.h"
 #import "PrivacyPolicyViewController.h"
-
+#import <Mixpanel.h>
 #import "Show.h"
 
 @implementation InteractionsController (Movement)
@@ -56,42 +56,55 @@
 
 #pragma mark - other interactions
 
-- (void)showMainFeedInteractionForTapOnNavigationBar {
+- (void)showMainFeedInteractionForTapOnNavigationBar {    
     IIViewDeckController* deck = self.deckController;
     if (deck.leftControllerIsClosed && deck.rightControllerIsClosed) {
         [deck openLeftView];
     } else {
         [deck showCenterView]; 
     }
+    [self trackMovementWithMethod:@"showMainFeedInteractionForTapOnNavigationBar"];
+}
+
+- (void)trackMovementWithMethod:(NSString*)method {
+    NSString* trackingName = [NSString stringWithFormat:@"[movement] %@",method];
+    [[Mixpanel sharedInstance] track:trackingName];
 }
 
 - (void)showDetailViewWithShow:(Show*)show {
 	[self.deckController toggleRightView];
 	[self.showDetailViewController presentWithShow:show];
+    NSString* trackingName = [NSString stringWithFormat:@"[movement] showDetailViewWithShow:%@",show.showID];
+    [self trackMovementWithMethod:trackingName];
 }
 
 - (void)showMenuAnimated:(BOOL)animated {
 	[self.deckController toggleLeftView];
+    [self trackMovementWithMethod:@"showMenuAnimated"];
 }
 
 - (void)showAboutAnimated:(BOOL)animated {
 	AboutViewController* aboutViewController = self.aboutViewController;
 	[self showViewController:aboutViewController inCenterViewAnimated:animated];
+    [self trackMovementWithMethod:@"showAboutAnimated"];
 }
 
 - (void)showContactAnimated:(BOOL)animated {
 	ContactViewController* contactViewController = self.contactViewController;
 	[self showViewController:contactViewController inCenterViewAnimated:animated];
+    [self trackMovementWithMethod:@"showContactAnimated"];
 }
 
 - (void)showSettingsAnimated:(BOOL)animated {
 	SettingsViewController* settingsViewController = self.settingsViewController;
 	[self showViewController:settingsViewController inCenterViewAnimated:animated];
+    [self trackMovementWithMethod:@"showSettingsAnimated"];
 }
 
 - (void)showPrivacyPolicyAnimated:(BOOL)animated {
 	PrivacyPolicyViewController* privacyPolicyViewController = self.privacyPolicyViewController;
 	[self showViewController:privacyPolicyViewController inCenterViewAnimated:animated];
+    [self trackMovementWithMethod:@"showPrivacyPolicyAnimated"];
 }
 
 - (void)showMainFeedWithTopic:(NSString*)topic {
