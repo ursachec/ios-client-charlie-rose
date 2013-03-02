@@ -17,6 +17,7 @@
 
 #import "UIApplication+CRAdditions.h"
 #import "InteractionsController+Movement.h"
+#import <Mixpanel.h>
 
 @interface InteractionsController ()
 @property (readwrite, strong, nonatomic) IIViewDeckController* deckController;
@@ -129,10 +130,12 @@
 
 - (void)notification_moviePlayerDidEnterFullscreen:(NSNotification*)notification {
     [self.deckController.viewDeckController setAllowRotation:YES];
+    [[Mixpanel sharedInstance] track:@"[movie player] did enter fullscreen"];
 }
 
 - (void)notification_moviePlayerWillExitFullscreen:(NSNotification*)notification {
     [self.deckController.viewDeckController setAllowRotation:NO];
+    [[Mixpanel sharedInstance] track:@"[movie player] will exit fullscreen"];
 }
 
 @end
