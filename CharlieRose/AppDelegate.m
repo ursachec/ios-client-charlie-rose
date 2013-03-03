@@ -11,6 +11,7 @@
 #import "InteractionsController.h"
 #import "CRDBHandler.h"
 #import "UIColor+CRAdditions.h"
+#import "UIFont+CRAdditions.h"
 #import "NSUserDefaults+CRAdditions.h"
 #import "Mixpanel.h"
 #import "SecretDefines.h"
@@ -92,6 +93,12 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[UISwitch appearance] setOnTintColor:[UIColor redColor]];
     [[UISwitch appearance] setTintColor:[UIColor dimmedBlack]];
     [[UISwitch appearance] setThumbTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor dimmedBlack]];
+    
+    NSMutableDictionary* attributes = @{}.mutableCopy;
+    attributes[UITextAttributeTextColor] = [UIColor whiteColor];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes
+                                                forState:UIControlStateNormal];
 }
 
 @end
