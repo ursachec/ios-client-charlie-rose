@@ -29,10 +29,6 @@
 @interface ShowDetailViewController ()<InteractionsControllerFullViewTapDelegate>
 @property(nonatomic, readwrite, strong) NSString* currentShowID;
 @property(nonatomic, readwrite, strong) NSDateFormatter *dateFormatter;
-
-@property(nonatomic, readwrite, strong) UILabel* moviePlayerStateLabel;
-
-
 @property(nonatomic, readwrite, strong) IBOutlet UIScrollView* contentScrollView;
 @property(nonatomic, readwrite, strong) IBOutlet UILabel* headlineLabel;
 @property(nonatomic, readwrite, strong) IBOutlet UILabel* guestsLabel;
@@ -46,7 +42,6 @@
 @end
 
 @implementation ShowDetailViewController
-
 
 #pragma mark - lifecycle init
 - (id)init {
@@ -86,18 +81,9 @@
 	[super viewWillAppear:animated];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-- (UILabel*)moviePlayerStateLabel {
-    if (nil == _moviePlayerStateLabel) {
-        _moviePlayerStateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    }
-    return _moviePlayerStateLabel;
 }
 
 #pragma mark - view setup
@@ -108,7 +94,6 @@
     self.topicsLabel.font = [UIFont detailTopicsLabelFont];
     self.publishingDateLabel.font = [UIFont detailPublishingDataLabelFont];
     self.descriptionTextView.font = [UIFont detailDescriptionTextViewFont];
-    self.moviePlayerStateLabel.font = [UIFont moviePlayerLoadingStateLabelFont];
 }
 
 - (void)setupHeadlineLabelWithShow:(Show *)show {
@@ -195,8 +180,7 @@
     CGRect frame = self.showImageView.frame;
     
     NSURL* videoURL = [CharlieRoseAPIClient videoURLForShowVidlyURL:show.vidlyURL];
-    [self showMoviePlayerViewInFrame:frame
-                            videoURL:videoURL];
+    [self showMoviePlayerViewInFrame:frame videoURL:videoURL];
     
     NSURL* imageURL = [CharlieRoseAPIClient imageURLForShowId:show.showID];
     [self loadMoviePlayerPlaceHolderImageAtURL:imageURL];
