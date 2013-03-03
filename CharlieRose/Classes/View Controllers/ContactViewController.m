@@ -110,15 +110,6 @@ NSString * const kEmailCharlieRose = @"charlierose@pbs.org";
     [[Mixpanel sharedInstance] track:message];
 }
 
-#pragma mark - UIGestureRecognizer delegate methods
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-       shouldReceiveTouch:(UITouch *)touch {
-    if ([touch.view isKindOfClass:[UIButton class]]) {
-        return NO;
-    }
-    return YES;
-}
-
 #pragma mark - mail results
 
 

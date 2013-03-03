@@ -222,7 +222,6 @@
 }
 
 #pragma mark - high level show
-
 - (void)presentWithShow:(Show*)show {
 	BOOL showIdTheSameAsCurrent = ([self.show.showID compare:show.showID]==NSOrderedSame);
 	if (self.show.showID!=nil && showIdTheSameAsCurrent) {
@@ -237,15 +236,6 @@
 }
 
 #pragma mark - UIGestureRecognizer delegate methods
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-       shouldReceiveTouch:(UITouch *)touch {
-    if ([touch.view isKindOfClass:[UIButton class]]) {
-        return NO;
-    }
-    return YES;
-}
-
 - (IBAction)didSwipeRight:(id)sender {
     [[UIApplication sharedInteractionsController] reactToSwipeOnShowDetailViewController];
 }
@@ -255,7 +245,6 @@
 }
 
 #pragma mark - notifications
-
 -(void)registerForNotificationsFromMoviePlayerView:(CVUMoviePlayerView*)moviePlayerView {
     if (nil == moviePlayerView) {
         return;
@@ -276,10 +265,10 @@
 - (void)notification_moviePlayerViewDidShowLoadingStateLabel:(NSNotification*)notification {
     Reachability* internetReach = [Reachability reachabilityForInternetConnection];
     if ([internetReach currentReachabilityStatus] == NotReachable) {
-            self.moviePlayerView.loadingStateLabel.text = @"no internet connection";
+        self.moviePlayerView.loadingStateLabel.text = @"no internet connection";
         [[Mixpanel sharedInstance] track:@"did show no internet on movie player"];
     } else {
-    [[Mixpanel sharedInstance] track:@"did show loading state label"];
+        [[Mixpanel sharedInstance] track:@"did show loading state label"];
     }
 }
 
