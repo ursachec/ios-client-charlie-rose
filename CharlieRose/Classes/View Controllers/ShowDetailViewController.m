@@ -224,7 +224,7 @@
 #pragma mark - high level show
 - (void)presentWithShow:(Show*)show {
 	BOOL showIdTheSameAsCurrent = ([self.show.showID compare:show.showID]==NSOrderedSame);
-	if (self.show.showID!=nil && showIdTheSameAsCurrent) {
+	if (self.show.showID && showIdTheSameAsCurrent) {
 		return;
 	}
     
