@@ -88,6 +88,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 -(void)setupApperanceProxyCustomizations {
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     [[UIBarButtonItem appearance] setTintColor:[UIColor dimmedBlack]];
+    
+    [[UISwitch appearance] setOnTintColor:[UIColor redColor]];
+    [[UISwitch appearance] setTintColor:[UIColor dimmedBlack]];
+    [[UISwitch appearance] setThumbTintColor:[UIColor whiteColor]];
 }
 
 @end
