@@ -189,7 +189,8 @@
     
     [self registerForNotificationsFromMoviePlayerView:self.moviePlayerView];
     
-    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"showVideoPlayerWithShow: %@", show.showID]];
+    NSString* eventName = [NSString stringWithFormat:@"showVideoPlayerWithShow: %@", show.showID];
+    [self trackEventWithName:eventName];
 }
 
 - (void)setupMoviePlayerLoadStateLabel:(UILabel*)label {
@@ -250,11 +251,16 @@
     Reachability* internetReach = [Reachability reachabilityForInternetConnection];
     if ([internetReach currentReachabilityStatus] == NotReachable) {
         self.moviePlayerView.loadingStateLabel.text = @"no internet connection";
-        [[Mixpanel sharedInstance] track:@"did show no internet on movie player"];
+        [self trackEventWithName:@"did show no internet on movie player"];
     } else {
-        [[Mixpanel sharedInstance] track:@"did show loading state label"];
+        [self trackEventWithName:@"did show loading state label"];
     }
 }
 
+#pragma mark - tracking
+- (void)trackEventWithName:(NSString*)event {
+    NSString* eventName = [NSString stringWithFormat:@"[detail] %@", event];
+    [[Mixpanel sharedInstance] track:eventName];
+}
 
 @end
