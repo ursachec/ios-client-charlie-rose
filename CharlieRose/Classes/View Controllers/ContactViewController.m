@@ -76,7 +76,7 @@ NSString * const kEmailCharlieRose = @"charlierose@pbs.org";
     NSArray *toRecipients = @[recepient];
     [controller setToRecipients:toRecipients];
     
-    NSString* emailSubject = @"";
+    NSString* emailSubject = @" ";
     [controller setSubject:emailSubject];
     
     NSString *emailBody = @"";
