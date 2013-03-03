@@ -45,8 +45,11 @@ NSString * const kEmailCharlieRose = @"charlierose@pbs.org";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
+    [self setupFonts];
+}
+
+- (void)setupFonts {
     self.contactCharlieRoseIncTitleLabel.font = [UIFont contactCharlieRoseIncTitleFont];
     self.contactCharlieRoseIncDetailTextView.font = [UIFont contactCharlieRoseIncDetailFont];
     self.contactDeveloperTitleLabel.font = [UIFont contactDeveloperTitleFont];
@@ -82,7 +85,6 @@ NSString * const kEmailCharlieRose = @"charlierose@pbs.org";
     NSString *emailBody = @"";
     [controller setMessageBody:emailBody isHTML:NO];
     
-    // Present the mail composition interface.
     [self presentViewController:controller animated:YES completion:^{
     }];
 }
@@ -111,8 +113,6 @@ NSString * const kEmailCharlieRose = @"charlierose@pbs.org";
 }
 
 #pragma mark - mail results
-
-
 - (NSString*)mailComposeResultStringForResult:(MFMailComposeResult)result {
     NSString* resultString = nil;
     switch (result) {
