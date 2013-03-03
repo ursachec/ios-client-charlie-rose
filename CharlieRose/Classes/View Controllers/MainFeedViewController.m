@@ -109,14 +109,6 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
 - (void)handleDidLoadAllShowsFromNetworkOrDB {
     [UIApplication.sharedAppDelegate setHasImportedShowsForInitialImport:YES];
     [self hideLoadingOrErrorViewAnimated:YES];
-    
-    id firstFetchedObject = self.fetchedResultsController.fetchedObjects[0];
-    if ([firstFetchedObject isKindOfClass:Show.class]) {
-        Show* show = (Show*)firstFetchedObject;
-        InteractionsController* interactionController = InteractionsController.sharedInteractionsController;
-        [interactionController.showDetailViewController presentWithShow:show];
-        
-    }
 }
 
 - (void)handleDidFailLoadingAllShowsFromNetworkOrDBWithError:(NSError*)error {
