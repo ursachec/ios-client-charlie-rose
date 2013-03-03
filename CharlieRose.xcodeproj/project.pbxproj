@@ -55,6 +55,7 @@
 		E53044BF16C8233C009E3D3D /* InteractionsController+Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044BE16C8233C009E3D3D /* InteractionsController+Movement.m */; };
 		E53044C216C83BA5009E3D3D /* CRErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044C116C83BA5009E3D3D /* CRErrorView.m */; };
 		E53044C516C85756009E3D3D /* NSUserDefaults+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */; };
+		E5330FA316E3A7B800FDABBC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5330FA216E3A7B800FDABBC /* MessageUI.framework */; };
 		E5436BE716C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */; };
 		E5436BED16C71CFC00200D87 /* CRDBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5436BEC16C71CFC00200D87 /* CRDBHandler.m */; };
 		E55CBEE416655AE500FAD6A5 /* InteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E55CBEE316655AE500FAD6A5 /* InteractionsController.m */; };
@@ -163,6 +164,7 @@
 		E53044C116C83BA5009E3D3D /* CRErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRErrorView.m; path = Classes/Views/CRErrorView.m; sourceTree = "<group>"; };
 		E53044C316C85756009E3D3D /* NSUserDefaults+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+CRAdditions.h"; path = "Classes/Categories/NSUserDefaults+CRAdditions.h"; sourceTree = "<group>"; };
 		E53044C416C85756009E3D3D /* NSUserDefaults+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+CRAdditions.m"; path = "Classes/Categories/NSUserDefaults+CRAdditions.m"; sourceTree = "<group>"; };
+		E5330FA216E3A7B800FDABBC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E5436BE516C6F71300200D87 /* NSFetchedResultsController+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFetchedResultsController+CRAdditions.h"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.h"; sourceTree = "<group>"; };
 		E5436BE616C6F71300200D87 /* NSFetchedResultsController+CRAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFetchedResultsController+CRAdditions.m"; path = "Classes/Categories/NSFetchedResultsController+CRAdditions.m"; sourceTree = "<group>"; };
 		E5436BEB16C71CFC00200D87 /* CRDBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRDBHandler.h; path = Classes/Utilities/CRDBHandler.h; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5330FA316E3A7B800FDABBC /* MessageUI.framework in Frameworks */,
 				E573BDD216D0238700C55364 /* CoreTelephony.framework in Frameworks */,
 				E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */,
 				E5204F781662B55E00B65A44 /* UIKit.framework in Frameworks */,
@@ -310,6 +313,7 @@
 		E5204F681662B55E00B65A44 = {
 			isa = PBXGroup;
 			children = (
+				E5330FA216E3A7B800FDABBC /* MessageUI.framework */,
 				E5204F7F1662B55E00B65A44 /* CharlieRose */,
 				E573BDDA16D052D100C55364 /* Resources */,
 				E5204FAA1662B88300B65A44 /* Vendor */,
