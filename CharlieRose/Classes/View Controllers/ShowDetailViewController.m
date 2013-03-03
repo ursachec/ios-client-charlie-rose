@@ -73,12 +73,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-    self.headlineLabel.font = [UIFont detailHeadlineLabelFont];
-    self.guestsLabel.font = [UIFont detailGuestsLabelFont];
-    self.topicsLabel.font = [UIFont detailTopicsLabelFont];
-    self.publishingDateLabel.font = [UIFont detailPublishingDataLabelFont];
-    self.descriptionTextView.font = [UIFont detailDescriptionTextViewFont];
-    self.moviePlayerStateLabel.font = [UIFont moviePlayerLoadingStateLabelFont];
+    [self setupFonts];
     
     // hide the decription text view if older than iPhone5
     if (NO == UIDevice.isIphone5) {
@@ -106,6 +101,15 @@
 }
 
 #pragma mark - view setup
+
+- (void)setupFonts {
+    self.headlineLabel.font = [UIFont detailHeadlineLabelFont];
+    self.guestsLabel.font = [UIFont detailGuestsLabelFont];
+    self.topicsLabel.font = [UIFont detailTopicsLabelFont];
+    self.publishingDateLabel.font = [UIFont detailPublishingDataLabelFont];
+    self.descriptionTextView.font = [UIFont detailDescriptionTextViewFont];
+    self.moviePlayerStateLabel.font = [UIFont moviePlayerLoadingStateLabelFont];
+}
 
 - (void)setupHeadlineLabelWithShow:(Show *)show {
 	self.headlineLabel.backgroundColor = [UIColor clearColor];
