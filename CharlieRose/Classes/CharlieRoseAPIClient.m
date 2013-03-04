@@ -54,7 +54,6 @@ static NSString * const kCharlieRoseAPIBaseURLString = @"http://api-charlie-rose
     NSString *path = [NSString stringWithFormat:@"shows/topic/%@", topic];
     
     NSMutableURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:nil];
-    [request setTimeoutInterval:3];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
             success((AFJSONRequestOperation *)operation, responseObject);
