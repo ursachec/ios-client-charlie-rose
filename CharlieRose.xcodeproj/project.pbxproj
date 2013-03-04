@@ -935,6 +935,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
 				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";
+				INSTALL_GROUP = "";
+				INSTALL_OWNER = claudiu.ursache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -949,6 +951,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
 				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";
+				INSTALL_GROUP = "";
+				INSTALL_OWNER = claudiu.ursache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
