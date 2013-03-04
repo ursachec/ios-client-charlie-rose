@@ -209,6 +209,7 @@ __typeof__(h) __h = (h);                                    \
 @synthesize automaticallyUpdateTabBarItems = _automaticallyUpdateTabBarItems;
 @synthesize panningGestureDelegate = _panningGestureDelegate;
 @synthesize allowRotation = _allowRotation;
+@synthesize isSliding = _isSliding;
 
 #pragma mark - autorotation
 

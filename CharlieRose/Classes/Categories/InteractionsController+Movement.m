@@ -22,11 +22,22 @@
 #pragma mark - react to taps
 
 - (void)reactToTapOnNonChangingViewController {
-    IIViewDeckController* deck = self.deckController;
-    if (deck.leftControllerIsClosed && deck.rightControllerIsClosed) {
-        [deck openLeftView];
+    IIViewDeckController* deckController = self.deckController;
+    if (deckController.isSliding) {
+        return;
+    }
+    
+    deckController.isSliding = YES;
+    if (deckController.leftControllerIsClosed && deckController.rightControllerIsClosed) {
+        [deckController openLeftViewAnimated:YES
+                                  completion:
+         ^(IIViewDeckController *controller) {
+                controller.isSliding = NO;
+        }];
     } else {
-        [deck showCenterView];
+        [deckController showCenterView:YES completion:^(IIViewDeckController *controller) {
+            controller.isSliding = NO;
+        }];
     }
 }
 
