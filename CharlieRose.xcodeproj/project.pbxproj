@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		549D344917D8ED24002E49E0 /* GFSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549D344117D8ED24002E49E0 /* GFSettings.storyboard */; };
+		549D344A17D8ED24002E49E0 /* lookback-app-toggler-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D344217D8ED24002E49E0 /* lookback-app-toggler-off@2x.png */; };
+		549D344B17D8ED24002E49E0 /* lookback-app-toggler-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D344317D8ED24002E49E0 /* lookback-app-toggler-on@2x.png */; };
+		549D344C17D8ED24002E49E0 /* lookback-app-toggler-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D344417D8ED24002E49E0 /* lookback-app-toggler-pressed@2x.png */; };
+		549D344D17D8ED24002E49E0 /* lookback-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D344517D8ED24002E49E0 /* lookback-logo@2x.png */; };
+		549D344E17D8ED24002E49E0 /* lookback-start-recording@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D344617D8ED24002E49E0 /* lookback-start-recording@2x.png */; };
+		549D344F17D8ED24002E49E0 /* lookback-stop-recording@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549D344717D8ED24002E49E0 /* lookback-stop-recording@2x.png */; };
+		549D345017D8ED24002E49E0 /* LookBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D344817D8ED24002E49E0 /* LookBack.framework */; };
+		549D345217D8ED70002E49E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D345117D8ED70002E49E0 /* AVFoundation.framework */; };
+		549D345417D8ED77002E49E0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D345317D8ED77002E49E0 /* AudioToolbox.framework */; };
+		549D345617D8ED7F002E49E0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D345517D8ED7F002E49E0 /* CoreVideo.framework */; };
+		549D345817D8ED85002E49E0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D345717D8ED85002E49E0 /* CoreMedia.framework */; };
+		549D345A17D8ED96002E49E0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D345917D8ED96002E49E0 /* SystemConfiguration.framework */; };
 		B5F467EE9C9E4D979541AEE8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0DA9567B9E44FC919D177E /* libPods.a */; };
 		E50650B016D6AF3600B136A9 /* UIDevice+CRAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E50650AE16D6AF3600B136A9 /* UIDevice+CRAdditions.h */; };
 		E50650B116D6AF3600B136A9 /* UIDevice+CRAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E50650AF16D6AF3600B136A9 /* UIDevice+CRAdditions.m */; };
@@ -97,6 +110,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		549D344117D8ED24002E49E0 /* GFSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GFSettings.storyboard; sourceTree = "<group>"; };
+		549D344217D8ED24002E49E0 /* lookback-app-toggler-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookback-app-toggler-off@2x.png"; sourceTree = "<group>"; };
+		549D344317D8ED24002E49E0 /* lookback-app-toggler-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookback-app-toggler-on@2x.png"; sourceTree = "<group>"; };
+		549D344417D8ED24002E49E0 /* lookback-app-toggler-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookback-app-toggler-pressed@2x.png"; sourceTree = "<group>"; };
+		549D344517D8ED24002E49E0 /* lookback-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookback-logo@2x.png"; sourceTree = "<group>"; };
+		549D344617D8ED24002E49E0 /* lookback-start-recording@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookback-start-recording@2x.png"; sourceTree = "<group>"; };
+		549D344717D8ED24002E49E0 /* lookback-stop-recording@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookback-stop-recording@2x.png"; sourceTree = "<group>"; };
+		549D344817D8ED24002E49E0 /* LookBack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LookBack.framework; path = "../../../Downloads/lookback-0.4.4/LookBack.framework"; sourceTree = "<group>"; };
+		549D345117D8ED70002E49E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		549D345317D8ED77002E49E0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		549D345517D8ED7F002E49E0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		549D345717D8ED85002E49E0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		549D345917D8ED96002E49E0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B6012EB9BC0B4904A4FB8348 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		BE0DA9567B9E44FC919D177E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50650AE16D6AF3600B136A9 /* UIDevice+CRAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+CRAdditions.h"; path = "Classes/Categories/UIDevice+CRAdditions.h"; sourceTree = "<group>"; };
@@ -233,6 +259,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549D345A17D8ED96002E49E0 /* SystemConfiguration.framework in Frameworks */,
+				549D345817D8ED85002E49E0 /* CoreMedia.framework in Frameworks */,
+				549D345617D8ED7F002E49E0 /* CoreVideo.framework in Frameworks */,
+				549D345417D8ED77002E49E0 /* AudioToolbox.framework in Frameworks */,
+				549D345217D8ED70002E49E0 /* AVFoundation.framework in Frameworks */,
+				549D345017D8ED24002E49E0 /* LookBack.framework in Frameworks */,
 				E5330FA316E3A7B800FDABBC /* MessageUI.framework in Frameworks */,
 				E573BDD216D0238700C55364 /* CoreTelephony.framework in Frameworks */,
 				E5BBBF3F1687822E00FC2B56 /* MediaPlayer.framework in Frameworks */,
@@ -248,6 +280,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		549D344017D8ED24002E49E0 /* LookBack-Resources */ = {
+			isa = PBXGroup;
+			children = (
+				549D344117D8ED24002E49E0 /* GFSettings.storyboard */,
+				549D344217D8ED24002E49E0 /* lookback-app-toggler-off@2x.png */,
+				549D344317D8ED24002E49E0 /* lookback-app-toggler-on@2x.png */,
+				549D344417D8ED24002E49E0 /* lookback-app-toggler-pressed@2x.png */,
+				549D344517D8ED24002E49E0 /* lookback-logo@2x.png */,
+				549D344617D8ED24002E49E0 /* lookback-start-recording@2x.png */,
+				549D344717D8ED24002E49E0 /* lookback-stop-recording@2x.png */,
+			);
+			name = "LookBack-Resources";
+			path = "../../../Downloads/lookback-0.4.4/LookBack-Resources";
+			sourceTree = "<group>";
+		};
 		E507BC9A1699D6E000597F8E /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +382,13 @@
 		E5204F761662B55E00B65A44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				549D345917D8ED96002E49E0 /* SystemConfiguration.framework */,
+				549D345717D8ED85002E49E0 /* CoreMedia.framework */,
+				549D345517D8ED7F002E49E0 /* CoreVideo.framework */,
+				549D345317D8ED77002E49E0 /* AudioToolbox.framework */,
+				549D345117D8ED70002E49E0 /* AVFoundation.framework */,
+				549D344017D8ED24002E49E0 /* LookBack-Resources */,
+				549D344817D8ED24002E49E0 /* LookBack.framework */,
 				E573BDD116D0238700C55364 /* CoreTelephony.framework */,
 				E5BBBF3E1687822E00FC2B56 /* MediaPlayer.framework */,
 				E5204FBB1662B9AB00B65A44 /* QuartzCore.framework */,
@@ -761,11 +815,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5204F811662B55E00B65A44 /* Podfile in Resources */,
+				549D344B17D8ED24002E49E0 /* lookback-app-toggler-on@2x.png in Resources */,
 				E5204F8B1662B55E00B65A44 /* InfoPlist.strings in Resources */,
 				E5204F921662B55E00B65A44 /* Default.png in Resources */,
 				E5204F941662B55E00B65A44 /* Default@2x.png in Resources */,
 				E5204F961662B55E00B65A44 /* Default-568h@2x.png in Resources */,
 				E5204FC31662BB0500B65A44 /* MainFeedViewController.xib in Resources */,
+				549D344E17D8ED24002E49E0 /* lookback-start-recording@2x.png in Resources */,
 				E5204FCC1662BE9E00B65A44 /* MenuViewController.xib in Resources */,
 				E5140D15166436160087EB81 /* ShowDetailViewController.xib in Resources */,
 				E5140D17166436950087EB81 /* jeff_bezos.jpg in Resources */,
@@ -775,15 +831,20 @@
 				E507BCA91699F65E00597F8E /* Icon@2x.png in Resources */,
 				E507BCAA1699F65E00597F8E /* Icon.png in Resources */,
 				E507BCB8169A006100597F8E /* navigation_bar_no_logo.png in Resources */,
+				549D344917D8ED24002E49E0 /* GFSettings.storyboard in Resources */,
 				E507BCB9169A006100597F8E /* navigation_bar_no_logo@2x.png in Resources */,
 				E595ED5C169F44CC0036B2A2 /* Default-568h.png in Resources */,
 				E5C6A78916AAEC990091BD07 /* play_button.png in Resources */,
+				549D344C17D8ED24002E49E0 /* lookback-app-toggler-pressed@2x.png in Resources */,
+				549D344F17D8ED24002E49E0 /* lookback-stop-recording@2x.png in Resources */,
 				E53044A916C80258009E3D3D /* placeholder.png in Resources */,
 				E50C54FE16D2C235005FBE76 /* LICENCE.txt in Resources */,
+				549D344D17D8ED24002E49E0 /* lookback-logo@2x.png in Resources */,
 				E50C54FF16D2C235005FBE76 /* Merriweather-Black.ttf in Resources */,
 				E50C550016D2C235005FBE76 /* Merriweather-Bold.ttf in Resources */,
 				E50C550116D2C235005FBE76 /* Merriweather-Light.ttf in Resources */,
 				E50C550216D2C235005FBE76 /* Merriweather-Regular.ttf in Resources */,
+				549D344A17D8ED24002E49E0 /* lookback-app-toggler-off@2x.png in Resources */,
 				E50C550C16D2F7EB005FBE76 /* PrivacyPolicyViewController.xib in Resources */,
 				E592D0B016D43ECB00F4AB3D /* PRIVACY_POLICY.md in Resources */,
 			);
@@ -932,6 +993,10 @@
 			buildSettings = {
 				ALTERNATE_GROUP = "";
 				ALTERNATE_OWNER = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/claudiu-vladursache/Downloads/lookback-0.4.4",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
 				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";
@@ -948,6 +1013,10 @@
 			buildSettings = {
 				ALTERNATE_GROUP = "";
 				ALTERNATE_OWNER = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/claudiu-vladursache/Downloads/lookback-0.4.4",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CharlieRose/CharlieRose-Prefix.pch";
 				INFOPLIST_FILE = "CharlieRose/CharlieRose-Info.plist";

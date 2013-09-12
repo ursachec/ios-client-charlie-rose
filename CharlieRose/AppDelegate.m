@@ -17,13 +17,28 @@
 #import "SecretDefines.h"
 #import "CRNavigationController.h"
 
+#import <LookBack/LookBack.h>
+
 static NSString* kMixpanelToken = MIXPANEL_TOKEN;
 
+@interface AppDelegate ()
+@property(nonatomic) LookBack *lookBack;
+@end
+
 @implementation AppDelegate
+
+- (IBAction)showLookbackSettings:(id)sender
+{
+    UIViewController *vc = [GFSettingsViewController settingsViewControllerForInstance:[LookBack lookback]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [LookBack setupWithAppToken:@"Y3WQS5a8FNgJMYLt6"];
+    
+    
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	[self setupApperanceProxyCustomizations];
@@ -41,7 +56,15 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
         [Mixpanel.sharedInstance track:@"Launched Application"];
     }
     
+    UIButton *lookbackSettingsButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [lookbackSettingsButton setBackgroundColor:[UIColor clearColor]];
+    lookbackSettingsButton.frame = CGRectMake(0, 0, 80, 80);
+    [lookbackSettingsButton addTarget:self action:@selector(showLookbackSettings:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.view addSubview:lookbackSettingsButton];
+    
+    
     [self.window makeKeyAndVisible];
+    
     
     return YES;
 }
