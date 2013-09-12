@@ -235,13 +235,13 @@ static const CGFloat kHeightForRowAtIndexPath = 120.0f;
     [self fetchDataAndShowFeedForTopic:topic success:^(NSFetchedResultsController *controller) {
         if (UIApplication.sharedAppDelegate.hasImportedShowsForInitialImport) {
             [weakSelf.tableView reloadData];
-            [self scrollToTopAndShowDataIfNeeded];
+            [weakSelf scrollToTopAndShowDataIfNeeded];
             
         } else {
-            [self handleTriedToFetchDataAndFoundNoDataFromInitialImport];
+            [weakSelf handleTriedToFetchDataAndFoundNoDataFromInitialImport];
         }
     } failure:^(NSFetchedResultsController *controller, NSError *error) {
-        [self showViewForCoreDataError];
+        [weakSelf showViewForCoreDataError];
     }];
 }
 
