@@ -29,7 +29,8 @@
         cellContentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         cellContentView.contentMode = UIViewContentModeLeft;
 		
-		UILabel* menuItemLabel = [[UILabel alloc] initWithFrame:cellContentView.frame];
+        CGRect menuItemLabelFrame = CGRectInset(cellContentView.frame, 10.0f, 0);
+		UILabel* menuItemLabel = [[UILabel alloc] initWithFrame:menuItemLabelFrame];
 		menuItemLabel.textColor = [UIColor whiteColor];
 		menuItemLabel.font = [UIFont menuCellLabelFont];
 		menuItemLabel.backgroundColor = [UIColor dimmedBlack];
@@ -46,6 +47,8 @@
         
         self.selectedBackgroundView =[[UIView alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView.backgroundColor = [UIColor dimmedBlack];
+        
+        self.backgroundColor = [UIColor dimmedBlack];
 		
     }
     return self;

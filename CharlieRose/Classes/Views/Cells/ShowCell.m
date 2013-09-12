@@ -140,6 +140,8 @@ const CGRect kShowCellImageViewFrame = {5.0f, 5.0f, 140.f, 105.0f};
         
         self.selectedBackgroundView =[[UIView alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView.backgroundColor = [UIColor dimmedBlack];
+        
+        self.backgroundColor = [UIColor dimmedBlack];
     }
     return self;
 }

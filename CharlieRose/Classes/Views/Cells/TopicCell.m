@@ -47,7 +47,8 @@
         
         self.selectedBackgroundView =[[UIView alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView.backgroundColor = [UIColor dimmedBlack];
-		
+                
+        self.backgroundColor = [UIColor dimmedBlack];
     }
     return self;
 }
